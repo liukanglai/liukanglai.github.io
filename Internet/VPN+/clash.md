@@ -25,3 +25,20 @@
 重启clash服务：$clashdir/start.sh restart
 
 更新订阅文件：$clashdir/start.sh getyaml
+
+
+~/.config/clash
+/usr/lib/systemd/system/clash@.service:
+
+        [Unit]
+        Description=A rule based proxy in Go for %i.
+        After=network.target
+
+        [Service]
+        Type=exec
+        User=%i
+        Restart=on-abort
+        ExecStart=/usr/bin/clash
+
+        [Install]
+        WantedBy=multi-user.target

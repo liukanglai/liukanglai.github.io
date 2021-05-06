@@ -1,3 +1,4 @@
+6个月：https://www.educative.io/paths
 #
 > https://github.com/tagnja/resources-of-learning/blob/master/%23cs-foundations.md
 > https://github.com/CyC2018/CS-Notes

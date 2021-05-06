@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/CLionProjects.dir/demo/main.c.o -o CLionProjects 

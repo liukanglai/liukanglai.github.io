@@ -1,0 +1,80 @@
+Matrix A is 100 x 100, matrix B is 100 x 100
+
+used 0.00133 s, 1.50 GFlop/s
+
+Matrix A is 200 x 200, matrix B is 200 x 200
+
+used 0.01118 s, 1.43 GFlop/s
+
+Matrix A is 300 x 300, matrix B is 300 x 300
+
+used 0.02688 s, 2.01 GFlop/s
+
+Matrix A is 400 x 400, matrix B is 400 x 400
+
+used 0.07242 s, 1.77 GFlop/s
+
+Matrix A is 500 x 500, matrix B is 500 x 500
+
+used 0.12366 s, 2.02 GFlop/s
+
+Matrix A is 600 x 600, matrix B is 600 x 600
+
+used 0.21535 s, 2.01 GFlop/s
+
+Matrix A is 700 x 700, matrix B is 700 x 700
+
+used 0.34364 s, 2.00 GFlop/s
+
+Matrix A is 800 x 800, matrix B is 800 x 800
+
+used 0.63364 s, 1.62 GFlop/s
+
+Matrix A is 900 x 900, matrix B is 900 x 900
+
+used 0.78422 s, 1.86 GFlop/s
+
+Matrix A is 1000 x 1000, matrix B is 1000 x 1000
+
+used 1.57273 s, 1.27 GFlop/s
+
+Matrix A is 1100 x 1100, matrix B is 1100 x 1100
+
+used 1.55374 s, 1.71 GFlop/s
+
+Matrix A is 1200 x 1200, matrix B is 1200 x 1200
+
+used 2.28916 s, 1.51 GFlop/s
+
+Matrix A is 1300 x 1300, matrix B is 1300 x 1300
+
+used 3.14497 s, 1.40 GFlop/s
+
+Matrix A is 1400 x 1400, matrix B is 1400 x 1400
+
+used 3.43000 s, 1.60 GFlop/s
+
+Matrix A is 1500 x 1500, matrix B is 1500 x 1500
+
+used 5.41349 s, 1.25 GFlop/s
+
+Matrix A is 1600 x 1600, matrix B is 1600 x 1600
+
+used 10.87437 s, 0.75 GFlop/s
+
+Matrix A is 1700 x 1700, matrix B is 1700 x 1700
+
+used 13.99641 s, 0.70 GFlop/s
+
+Matrix A is 1800 x 1800, matrix B is 1800 x 1800
+
+used 18.79972 s, 0.62 GFlop/s
+
+Matrix A is 1900 x 1900, matrix B is 1900 x 1900
+
+used 25.27928 s, 0.54 GFlop/s
+
+Matrix A is 2000 x 2000, matrix B is 2000 x 2000
+
+used 28.75452 s, 0.56 GFlop/s
+

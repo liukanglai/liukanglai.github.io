@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/liukanglai/Learning-diary/Code/CLionProjects/demo/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+sys/time.h
+-
+openblas_config.h
+-
+generated/cblas.h
+-
+omp.h
+-
+

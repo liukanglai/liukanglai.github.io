@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="62587506-f09a-467c-aee1-81327f2cf093" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Art/books.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Art/books.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Blog/blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Blog/blog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C+C++/c/7Input-Output/Input.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../C+C++/c/7Input-Output/Input.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../English/grammar/CompoundSentence.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../English/grammar/CompoundSentence.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../English/grammar/SimpleSentence.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../English/grammar/SimpleSentence.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Git+/git/ssh.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Git+/git/ssh.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Internet/VPN+/clash.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Internet/VPN+/clash.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Leetcode/01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Leetcode/01.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Leetcode/02.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Leetcode/03.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Linux/arch/config.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Linux/arch/config.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Markdown/alpha" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Markdown/markdown.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Way.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Way.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1rksHliN4WYaAG1d5TAi5ijwo95" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="62587506-f09a-467c-aee1-81327f2cf093" name="Default Changelist" comment="" />
+      <created>1619531337284</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619531337284</updated>
+      <workItem from="1619531338491" duration="207000" />
+      <workItem from="1620183166803" duration="481000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
