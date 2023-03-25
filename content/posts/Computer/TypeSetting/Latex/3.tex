@@ -1,0 +1,30 @@
+%! TEX program = xelatex
+\documentclass[
+  a4paper, 
+  punct,
+  space=true,
+  fancyhdr, 
+  fntef,
+  UTF8,
+  scheme=chinese     % scheme = ⟨(chinese)|plain⟩
+  ]{ctexart}
+
+%\usepackage{tex_utils} % 引入常用宏包
+
+\title{}
+\author{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+\cfoot{\zihao{-5}第 \ \thepage \ 页 \ 共 \ \pageref{lastpage} 页}%%%%lastpage为末页标签
+
+\pagenumbering{arabic}%页码使用阿拉伯数字
+\setcounter{page}{0}  %重新设置页码计数
+\pagestyle{fancy}
+	
+hello
+\label{lastpage}
+\end{document}
