@@ -1,0 +1,9 @@
+[submodule "content/post/themes/ananke"]
+	path = content/post/themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke
+[submodule "themes/even"]
+	path = themes/even
+	url = https://github.com/olOwOlo/hugo-theme-even
+[submodule "themes/paper"]
+	path = themes/paper
+	url = git@github.com:adityatelange/hugo-PaperMod.git
