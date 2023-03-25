@@ -1,37 +1,13 @@
 ---
-title: ""
+title: "词根词汇"
+date: 2023-03-25T20:54:19+08:00
 draft: false
-tags: ["first"]
+tags: ["en"]
 author: "liukanglai"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
----#
+description: " "
+---
+
+## 词汇
 
 - 词根：有独立的含义
 - 前缀/后缀：决定一个词的含义
@@ -1080,3 +1056,5 @@ hum: ground Gaia/Geo
 
 - become(比 get 更正式) get(口语 become) go(负面的，颜色) trun(天气，颜色) (link verb. + adj. or n.)
 - defensive aggressive
+
+---

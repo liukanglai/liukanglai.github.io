@@ -82,6 +82,12 @@ params:
     Content: >
       Welcome!
 
+      - What I have learned.
+
+      - principle: ___静___   ___恕___   ___新___   ___斗___   ___灵___   ___逆___   ___放___    ___真___    ___淡___    ___易___
+
+      - want  health  life(record)  learn  free plan
+
   socialIcons:
     - name: github
       url: "https://github.com/liukanglai"
