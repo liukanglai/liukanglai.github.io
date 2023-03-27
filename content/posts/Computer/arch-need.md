@@ -1,37 +1,11 @@
 ---
-title: ""
+title: "Arch individual config"
+date: 2023-03-27T19:10:38+08:00
 draft: false
-tags: ["first"]
+tags: ["Arch"]
 author: "liukanglai"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
----# individual config
+description: " "
+---
 
 ## install
 
@@ -108,7 +82,7 @@ vim neovim kate bind
 
 ## vim
 
-1. lunarvim
+lunarvim
 
 - cargo: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 - yay -S lazygit ripgrep sqlite fd yarn lldb go unzip zoxide xclip
@@ -142,3 +116,5 @@ vim neovim kate bind
 - kdegraphics-thumbnailers
 - dolphin-plugins
 - poppler poppler-data(pdf)
+
+---

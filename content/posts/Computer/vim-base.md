@@ -1,66 +1,46 @@
 ---
-title: ""
+title: "Vim Base"
+date: 2023-03-27T18:48:46+08:00
 draft: false
-tags: ["first"]
+tags: ["vim"]
 author: "liukanglai"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
----# easy operation
+description: "一些基础的vim操作"
+---
 
-[[ 跳转到代码块的开头去(但要求代码块中'{'必须单独占一行)
+## easy operation
+
+- [[ 跳转到代码块的开头去(但要求代码块中 '{' 必须单独占一行)
 
 - gD 跳转到局部变量的定义处
 
-## easymotion
-
-- <Leader><Leader>+w b e ge/tT/fF/kj/nN to start
 - good operation
 
-        _/$ {/} % zz/zt/zb
+```text
+_：行首 $：行尾
+{：上一文本块 }：下
+%：匹配括号
+zz/zt/zb：将当前行移动到中央，顶，底
+f+
+vi"
+*/#
+c-o/c-i/''
+cc
+mx/'x
+:Ex
+>> <<  缩进
+```
 
-        f+
-        vi"
-        */#
-        c-o/c-i/''
-        cc
-        mx/'x
-        :Ex
-        >> <<  缩进
+- 使用 easymotion
+- `<Leader><Leader>`+ w b e ge/tT/fF/kj/nN to start
 
-# g
+## g
 
 - gj gk: for long sentence
 - gh: select mode???
 - gf: go to file
 - gd: like \*, #
 
-# 移动光标（普通模式下）
+## 移动光标（普通模式下）
 
 - h j k l
 - ctr+f(b,d,u) (翻页)
@@ -78,13 +58,13 @@ editPost:
 - 页: H M L zt (把当前行移动到当前屏幕的最上方) zz (中间) zb (尾部???)
 - \*（或 g*) 和 # 匹配光标当前所在的单词，移动光标到下一个（或者上一个）匹配的单词（ * 是下一个，# 是上一个）
 
-# 返回回撤
+## 返回回撤
 
 - 光标返回： ctr+o(ctr+i 反) /‘’
 
 > ^M 是 Ctrl + v + m 打出来的（按下这三个键，VIM 会显示成 ^M ）,^M 代表快捷键是 Ctrl + m ,
 
-# 编辑
+## 编辑
 
 - 进入插入模式： i a I A s(删除字符后进入, ns) gi(上一次插入)
 - delete: x
@@ -107,7 +87,7 @@ editPost:
 - g~\~: 改变当前行字母的大小写
 - gUU 将当前行的字母改成大写 gUw(词) guu 小写 guw
 
-# Mark
+## Mark
 
 - mx 设置书签,x 只能是 a-z 的 26 个字母 a-zA-Z 是创建标记的名字，小写字母用来创建单个文件的标记，大些字母用来创建文件之间的标记。
 - \`x 跳转到书签处("\`"是 1 左边的键) \`撇号通常用来定位到之前光标所在的位置 ‘单引号通常用来定位到标记所在的行
@@ -115,24 +95,24 @@ editPost:
 - :delmarks 删除指定的标记
 - :delmarks! 删除所有标记（大些字母的标记除外)
 
-# 可视模式
+## 可视模式
 
 - v/V
 - :normal command (ps: isome)
 - ctr+v no need, then :norm $cw..
 - o to move
 
-# 注释
+## 注释
 
 - "
 - <space>cc //nerdcommenter
 
-# 插入模式
+## 插入模式
 
 - ctr+p/n:补全
 - c-o: go into normal, than return
 
-# 命令模式 (ex 模式 Q into（无）)
+## 命令模式 (ex 模式 Q into（无）)
 
 - shift+k: can find a function in man
 - . 该命令是重复上一个操作的命令 (n.)
@@ -155,7 +135,7 @@ editPost:
 
 - :color (default)
 
-# terminal mode
+## terminal mode
 
 - :! :后面紧跟着!，!后面紧跟着 linux 命令（command 指操作 Linux 系统的一系列命令，如创建文件，新建文件夹，查询文件的属性的等
 - 保存: `:w !sudo tee % `
@@ -173,7 +153,7 @@ editPost:
 - c-w+": 寄存器
 - c-w,c-c...
 
-# 替换
+## 替换
 
 - substitute
 - g: 行，
@@ -196,7 +176,7 @@ editPost:
 - %s/zempty/handsome/gi 替换掉所有行出现 zempty (不区分大小写) 为 handsome
 - c 表示需要确认 e 表示不显示错误
 
-# 搜索:
+## 搜索:
 
 - /(front): n(next) N(before)
 - ?(back)
@@ -213,3 +193,5 @@ editPost:
 - sudo apt-get install ack-grep // linux use ack
 - ack.vim
 - :ack --file what
+
+---
