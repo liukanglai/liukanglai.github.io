@@ -1,41 +1,17 @@
 ---
-title: ""
+title: "java连接数据库"
+date: 2023-03-28T12:56:46+08:00
 draft: false
-tags: ["first"]
+tags: ["java"]
 author: "liukanglai"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
----# idea
+description: " "
+---
+
+# idea
 
 `https://wiki.archlinux.org/title/JDBC_and_MySQL`
 
-> in /etc/my.cnf: should #skip-networking, bind-address = *
+> in /etc/my.cnf: should #skip-networking, bind-address = \*
 
 - 导入 jar 包
 - yay -S mariadb-jdbc
@@ -63,9 +39,9 @@ import java.sql.Statement;
  *        6.释放资源
  */
 public class connectionBasic {
-    
+
     public static void main(String[] args) throws Exception {
-        
+
         //1.注册驱动
         Class.forName("com.mysql.cj.jdbc.Driver");
         //MySQL版本在8.0之前的驱动的全限定类名是"com.mysql.jdbc.Driver"
@@ -120,12 +96,13 @@ public class connectionBasic {
             }
         }
     }
-    
+
 }
 
 ```
 
-
 # tomcat
 
 - chmod -R 777 conf
+
+---

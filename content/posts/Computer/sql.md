@@ -1,37 +1,13 @@
 ---
-title: ""
+title: "Sql"
+date: 2023-03-28T12:49:43+08:00
 draft: false
-tags: ["first"]
+tags: ["sql"]
 author: "liukanglai"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
----# mysql
+description: " "
+---
+
+# mysql
 
 ## install
 
@@ -96,7 +72,7 @@ MariaDB> quit
 - ingore case
 - comment: -- #; `/* */`
 
-## DDL
+## DDL(Data Definition Language)
 
 1. basic types
 
@@ -117,7 +93,7 @@ MariaDB> quit
       select database();
       use Student;
 
-## DML
+## DML(Data Manipulation Language)
 
 > Except number, all other types need to use '' or "" to include.
 
@@ -161,7 +137,7 @@ MariaDB> quit
         if null(name, Name);
         as;
 
-## j
+## 逻辑符
 
         >,<,>=,<=,=,<>
         BETWEEN...AND
@@ -172,7 +148,7 @@ MariaDB> quit
         or or ||
         not or !
 
-## k
+## 函数
 
         order by name (asc);
         order by name desc;
@@ -186,3 +162,5 @@ MariaDB> quit
         group by name;
 
         limit 1;
+
+---

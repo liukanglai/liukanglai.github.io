@@ -31,7 +31,8 @@ editPost:
     URL: "https://github.com/<path_to_repo>/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
----# 4
+---
+# 4
 
 - (1)冯诺依曼及哈佛体系结构、程序的简单运行原理 、系统层次结构、系统性能指标
 

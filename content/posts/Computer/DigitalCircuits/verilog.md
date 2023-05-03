@@ -31,7 +31,8 @@ editPost:
     URL: "https://github.com/<path_to_repo>/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
----#
+---
+#
 
 - 行为级模型：主要用于test bench，着重系统行为和算法，不在于电路实现，不可综合（initial，fork/join，task，function，repeat，wait，event，while等）。
 

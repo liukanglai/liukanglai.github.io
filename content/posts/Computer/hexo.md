@@ -1,37 +1,13 @@
 ---
-title: ""
+title: "Hexo"
+date: 2023-03-28T13:00:12+08:00
 draft: false
-tags: ["first"]
+tags: ["blog"]
 author: "liukanglai"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
----# install
+description: " "
+---
+
+# install
 
 1. node.js
 2. npm (or cnpm..)
@@ -105,10 +81,11 @@ editPost:
 menu:
 home: / || home
 about: /about/ || user
-+ tags: /tags/ || tags
-+ categories: /categories/ || th
-+ archives: /archives/ || archive
-其中，|| 之前的值表示菜单链接，之后的值表示所用的 FontAwesome 图标名称。
+
+- tags: /tags/ || tags
+- categories: /categories/ || th
+- archives: /archives/ || archive
+  其中，|| 之前的值表示菜单链接，之后的值表示所用的 FontAwesome 图标名称。
 ```
 
 - hexo new page ... in `http://localhost:4000/.../`
@@ -151,3 +128,5 @@ npm install hexo-generator-sitemap --save
 ## HTTPs
 
 - `https://tzhou2018.github.io/2018/04/%E4%B8%BAGitHub-Pages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%B9%B6%E6%B7%BB%E5%8A%A0SSL-%E5%BC%80%E5%90%AFHTTPS%E5%BC%BA%E5%88%B6/`
+
+---

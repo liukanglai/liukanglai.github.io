@@ -31,7 +31,8 @@ editPost:
     URL: "https://github.com/<path_to_repo>/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
----# register
+---
+# register
 
 - 寄存器不管正负数，一律是 0/1
 - sf: 结果开头是 1 就是1

@@ -1,37 +1,13 @@
 ---
-title: ""
+title: "Git"
+date: 2023-03-28T13:01:49+08:00
 draft: false
-tags: ["first"]
+tags: ["git"]
 author: "liukanglai"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
----# git
+description: " "
+---
+
+# git
 
 - 工作区 暂存区(stage) git 仓库
 
@@ -132,3 +108,5 @@ editPost:
 
 - 下面把访问方式改为 ssh 方式，输入如下命令：
 - git remote set-url origin git@github.com:liukanglai/Learing.git
+
+---
