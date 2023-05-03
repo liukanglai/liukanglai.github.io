@@ -2,7 +2,7 @@
 title: "Tips"
 date: 2023-03-25T20:50:43+08:00
 draft: false
-tags: ["first"]
+tags: ["health"]
 author: "liukanglai"
 description: " "
 ---
