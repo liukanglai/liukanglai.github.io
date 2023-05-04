@@ -1,0 +1,3 @@
+/home/liukanglai/Learing/Code/C/course扫地僧/socket/cmake-build-debug/CMakeFiles/socket.dir
+/home/liukanglai/Learing/Code/C/course扫地僧/socket/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/liukanglai/Learing/Code/C/course扫地僧/socket/cmake-build-debug/CMakeFiles/rebuild_cache.dir

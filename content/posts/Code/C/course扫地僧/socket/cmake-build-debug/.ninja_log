@@ -1,0 +1,10 @@
+# ninja log v5
+0	305	1682480093145643943	CMakeFiles/socket.dir/mainclass.cpp.o	fa19c8ba59325b8d
+305	399	1682480093238976108	socket	46f2dc293fb1be6e
+0	65	1682480092908980239	CMakeFiles/socket.dir/CSckFactoryImap1.cpp.o	f133bd59f7a86cdd
+0	30	1682480374059268774	build.ninja	4d1d6f839cba45ad
+0	59	1682480374125934814	CMakeFiles/socket.dir/CSckFactoryImp1.cpp.o	749bf59aae186c0
+0	292	1682480374359265950	CMakeFiles/socket.dir/mainclass.cpp.o	fa19c8ba59325b8d
+0	296	1682480445175285429	CMakeFiles/socket.dir/mainclass.cpp.o	fa19c8ba59325b8d
+1	384	1682481793239874037	CMakeFiles/socket.dir/mainclass.cpp.o	fa19c8ba59325b8d
+385	480	1682481793333206862	socket	c26d09c4354c6552

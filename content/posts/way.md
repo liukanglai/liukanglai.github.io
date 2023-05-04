@@ -7,6 +7,8 @@ author: "liukanglai"
 description: " "
 ---
 
+![计算机基础](/img/com-way.png)
+
 ## The way of learning
 
 > 6 个月：`https://www.educative.io/paths`

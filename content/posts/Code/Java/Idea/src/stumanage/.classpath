@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="D:/WeChat Files/wxid_f2ehqolq8xk322/FileStorage/File/2020-06/sqljdbc41.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

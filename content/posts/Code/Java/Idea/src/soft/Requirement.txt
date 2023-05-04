@@ -1,0 +1,225 @@
+- j
+ 
+// 连接数据库
+try {
+    Class.forName("org.mariadb.jdbc.Driver"); //1.先注册驱动
+    Connection conn = DriverManager.getConnection(
+            "jdbc:mariadb://localhost:3306/DB", "liukanglai", "archlkl"
+    ); //2.获取连接
+    System.out.println("Connection Success");
+
+    //3.获取连接
+    Statement st = conn.createStatement();
+} catch (Exception e) {
+    e.printStackTrace();
+}
+
+
+// 用户登录
+JButton yes_button = new JButton("确定"); // 建立图形按钮
+yes_button.setFont(new Font(null, Font.PLAIN, 15));
+yes_button.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String user = nameField.getText();
+        String pwd = new String(passwordField.getPassword());
+        String sql = "select * from user where user_name = ? and user_pwd = ?"; // 提取用户信息
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, user);
+            ps.setString(2, pwd);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) { //有数据 -- 用户名密码都正确
+                if (user.startsWith("M")) { // 判断是管理员
+                    cLayout.show(card_panel, "manage");
+                    win.setSize(800, 200);
+                    win.setTitle("管理界面");
+                } else if (user.startsWith("T")) { // 判断是老师
+                    cLayout.show(card_panel, "tea");
+                    win.setSize(800, 200);
+                    win.setTitle("老师界面");
+                } else {
+                    JOptionPane.showMessageDialog(null, "用户名格式错误！！！");
+                }
+            } else { //没数据 -- 用户名或密码不正确
+                //JOptionPane.showMessageDialog(null, user);
+                //JOptionPane.showMessageDialog(null, pwd);
+                JOptionPane.showMessageDialog(null, "用户名或密码错误！！！");
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+});
+
+// 更改密码
+JButton password_button = new JButton("更改密码");
+password_button.setFont(new Font(null, Font.PLAIN, 15));
+password_button.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // 当用户密码有同时出错，不想改了
+        String old_pwd = JOptionPane.showInputDialog("请输入旧密码：");
+        String new_pwd = JOptionPane.showInputDialog("请输入新密码：");
+        ResultSet rs = null;
+        try {
+            int id = 0;
+            rs = st.executeQuery("select user_id from user where user_pwd = '" + old_pwd + "'");
+            if (rs.next()) { //有数据 -- 用户名密码都正确
+                id = rs.getInt(1);
+                rs = st.executeQuery("update user set user_pwd = '" + new_pwd + "' where user_id = '"
+                        + id + "'");
+            } else {
+                JOptionPane.showMessageDialog(null, "密码错误！！！");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "出错!");
+            ex.printStackTrace();
+        }
+        JOptionPane.showMessageDialog(null, "更改成功!");
+    }
+});
+
+// 排课信息界面生成
+Object[][] data = new Object[6][6];
+String[] week = {"时间", "星期一", "星期二", "星期三", "星期四", "星期五"};
+data[1][0] = "8:00-10:00";
+data[2][0] = "10:00-11:30";
+data[3][0] = "13:00-15:00";
+data[4][0] = "15:00-17:00";
+data[5][0] = "18:00-20:00";
+
+JTable table = new JTable(data, week); // JTable 表格显示信息
+table.setRowHeight(30);
+table.setFont(new Font(null, Font.PLAIN, 15));
+JScrollPane info_panel = new JScrollPane(table);
+
+public void actionPerformed(ActionEvent actionEvent) {
+    for (int i = 1; i < 6; i++) {
+        for (int j = 1; j < 6; j++) {
+            data[i][j] = " ";
+        }
+    }
+    String cid = JOptionPane.showInputDialog("请输入教室ID：");
+
+    ResultSet rs = null;
+    ResultSet rs1 = null;
+    try {
+        rs1 = st.executeQuery("select course_id,week_num,time_num from classroom_course_status " +
+                "where classroom_id='" + cid + "'");
+        while (rs1.next()) {
+            int course_id = rs1.getInt(1);
+            int week_num = rs1.getInt(2);
+            int time_num = rs1.getInt(3);
+            table.setValueAt("教室" + cid + "\n课程" + course_id, time_num, week_num);
+          }
+      } catch (SQLException ex) {
+          ex.printStackTrace();
+      }
+  }
+
+
+// 注册账户
+JButton create_button = new JButton("注册");
+create_button.setFont(new Font(null, Font.PLAIN, 15));
+create_button.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String user = nameField.getText();
+        String pwd = new String(passwordField.getPassword());
+        ResultSet rs = null;
+        try {
+            if (user.startsWith("M") | (user.startsWith("T"))) {
+                rs = st.executeQuery("insert into user values (null, '" + user + "','" + pwd + "')");
+                JOptionPane.showMessageDialog(null, "注册成功!");
+                cLayout.first(card_panel);
+                win.setSize(600, 500);
+                win.setTitle("登录窗口");
+            } else {
+                JOptionPane.showMessageDialog(null, "用户名格式错误(以T或M开头)！！！");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "注册失败!");
+            ex.printStackTrace();
+        }
+    }
+});
+
+# 自主排课算法
+create function schedule1(classroomId int, courseId int, weekNum int, timeNum int, number int, type varchar(40))
+    returns int
+begin
+    declare a, tem_num int; # 记录要排课的教室类型
+    declare tem_type varchar(40); # 记录要排课的教室类型
+    declare flag int;
+    set flag = 1;
+    select class_max into tem_num from classroom where class_id = classroomId;
+    if (number <= tem_num) then
+        select count(*) into a from classroom_course_status where classroom_id = classroomId and week_num = weekNUM and time_num = timeNum;
+        if (a = 0) then
+            select class_type into tem_type from classroom where class_id = classroomId;
+            if(tem_type = type) then
+                insert into classroom_course_status value (classroomId, courseId, weekNum, timeNum);
+            else
+                set flag = 0;
+            end if;
+        else
+            set flag = 0;
+        end if;
+    else
+        set flag = 0;
+    end if;
+    return flag;
+end;
+
+# 随机排课算法
+create function random_schedule(courseId int, number int, type varchar(40))
+    returns int
+begin
+    declare a, i, max int;
+    declare flag int;
+    declare tem_num int;
+    declare tem_type varchar(40); # 记录要排课的教室类型
+    declare week, time int;
+
+    set week = 1;
+    set time = 1;
+    set flag = 1;
+    set i = 0;
+    select count(*) from classroom into max;
+    outer_label:
+    begin
+        while(i < max)
+            do
+                select class_max into tem_num from classroom limit i, 1;
+                select class_type into tem_type from classroom limit i, 1;
+                if (tem_num >= number) then
+                    while(week < 6)
+                        do
+                            while (time < 6)
+                                do
+                                    select count(*)
+                                    into a
+                                    from classroom_course_status
+                                    where classroom_id = i+1 and week_num = week and time_num = time;
+                                    if (a = 0 AND tem_type = type) then
+                                        insert into classroom_course_status value (i+1, courseId, week, time);
+                                        leave outer_label;
+                                    end if;
+                                    set time = time + 1;
+                                end while;
+                            set time = 1;
+                            set week = week + 1;
+                        end while;
+                    set week = 1;
+                end if;
+                set i = i + 1;
+            end while;
+    end outer_label;
+    if (i = max) then
+        set flag = 0;
+    end if;
+    return flag;
+end;
