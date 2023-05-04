@@ -7,8 +7,6 @@ author: "liukanglai"
 description: " "
 ---
 
-# Hugo
-
 ## install
 
 - sudo pacman -S hugo
@@ -55,7 +53,7 @@ git push -u origin main
 - git pull
 
 - 需要修改 config.toml 里的 baseURL 的参数，确保改成 username.github.io
-- baseURL = "http://nightan42643.github.io"
+- baseURL = `"http://nightan42643.github.io"`
 
 > the draft will not publish
 
@@ -64,4 +62,9 @@ git push -u origin main
 
 ## config
 
----
+### picture
+
+- add static/img, put file in it.
+- use (/img/...)
+
+- ***
