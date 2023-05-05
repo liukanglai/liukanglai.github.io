@@ -52,11 +52,12 @@ packagekit-qt5 packagekit appstream-qt appstream # 确保Discover(软件中心)�
 gwenview deepin-screenshot flameshot cheese vlc net-tools(ifconfig) kdeconnect
 tlp okular neofetch Foliate (sudo systemctl start tlp.service) filelight
 git make libconfig wget curl npm exfat-utils cmake ctags nodejs pip python
-google-chrome aliyunpan-liupan1890 baidunetdisk-bin
+google-chrome aliyunpan-liupan1890 baidunetdisk-bin calibre
 vim neovim kate bind
+utools
 ```
 
-- yay -S node-fanyi
+- yay -S node-fanyi rime-ice
 
 1. 美化
 

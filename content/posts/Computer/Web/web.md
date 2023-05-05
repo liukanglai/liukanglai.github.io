@@ -1,73 +1,245 @@
 ---
-title: ""
+title: "Web基础"
+date: 2023-05-05T10:30:53+08:00
 draft: false
-tags: ["first"]
+tags: ["web"]
 author: "liukanglai"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
----#
+description: " "
+---
 
-## j
+## html
 
-- 当浏览器向服务器发送请求获取 HTML 文件时，HTML 文件通常包含 `<link>` 和 `<script>` 元素，
-- 这些元素分别指向了外部的 CSS 样式表文件和 JavaScript 脚本文件。
-- 了解这些文件被浏览器解析的顺序是很重要的：
+- 超文本标记语言
+- 标签
 
-1. 浏览器首先解析 HTML 文件，并从中识别出所有的 `<link>` 和 `<script>` 元素，获取它们指向的外部文件的链接。
+### 框架
 
-1. 继续解析 HTML 文件的同时，浏览器根据外部文件的链接向服务器发送请求，获取并解析 CSS 文件和 JavaScript 脚本文件。
+- !DOCTYPE html
+- html
+- head
+- body
 
-1. 接着浏览器会给解析后的 HTML 文件生成一个 DOM 树（在内存中），
+### head
 
-1. 会给解析后的 CSS 文件生成一个 CSSOM 树（在内存中），并且会编译和执行解析后的 JavaScript 脚本文件。
+- title: seo
+- meta: 单标签 charset=utf-8
 
-1. 伴随着构建 DOM 树、应用 CSSOM 树的样式、以及执行 JavaScript 脚本文件，浏览器会在屏幕上绘制出网页的界面；用户看到网页界面也就可以跟网页进行交互了。
+### 元素标签
 
-## npm
+- 标题：h1-6
 
-- command: npm update npm audit npm ls npm run dev
+- 段落：p
+- 换行：br（单标签）
+- 水平线：hr（单标签）
+- em
+- b
+- i
+- strong
+- del
+- span
 
-- npm init: create package.json
-- npm install parcel
-- npx parcel
-- npx parcel build index.html
+- 分割线：
 
-1. for reduce
+### 属性
 
-- parcel build index.html --experimental-scope-hoisting
+- align: left/center/right
+- color
+- width
+  > 像素：1920 宽 px
+- size
 
-## toolchain
+### picture
 
-- JSX, a React-related set of syntax extensions that allow you to do things like defining component structures inside JavaScript. You won't need to know React to follow this tutorial, but we've included this to give you an idea of how a non-native web language could be integrated into a toolchain.
-- The latest built-in JavaScript features (at time of writing), such as import.
-- Useful development tools such as Prettier for formatting and ESLint for linting.
-- PostCSS: to provide CSS nesting capabilities.
-- Parcel: to build and minify our code, and to write a bunch of configuration file content automatically for us.
-- GitHub: to manage our source code control.
-- Netlify: to automate our deployment process.
+- 单标签 img
+- src= path
+- alt= 无法显示的文本
+- width
+- height
+- title: 鼠标悬停显示
+
+### link
+
+- 超文本链接 a
+- href= path
+- title: 鼠标悬停显示
+
+### list
+
+- 有序列表: ol -> li (type=)
+- 无序列表: ul -> li (type=disc circle square none)
+
+### table
+
+- 表格 table
+- 行 tr
+- 列 td
+
+- 属性：
+- border
+- cellpadding
+- cellspacing
+- align
+- width
+- height
+
+- 合并单元格
+- rowspan
+- colspan
+
+### form 表单
+
+- 交互
+
+- 属性：
+- action：服务器地址
+- name：表单名字
+- method：get, post
+
+- 标签： input
+- 文本框： type=text name=
+- 密码框：type=password
+- 按钮： type=submit value=
+- 文本框：type=textarea
+- 标签： type=select
+
+### 块元素和内联元素
+
+- 块元素： div, form, h1, hr, p, table, ul
+- 独占一行，可以设置 width，height 等，可以包含其他元素
+
+- 内联元素： a, span, em, i, strong, b, u, s
+- 只占自身大小，无 widhth 等
+
+- 行内块级元素：可以识别 width (button, img, input)
+
+### 其他
+
+- div 容器标签
+
+- html5 新标签：
+
+## css
+
+- style 三种添加方式（标签内，head 内，单独文件）link ref="stylesheet" type=text/css href=path
+- 层叠样式表，级联样式表
+- 选择器+样式（属性+属性值）
+
+### 选择器
+
+1. 全局选择器
+
+- \*{}
+
+1. 标签选择器
+
+- p,span,h{}
+
+1. 类选择器
+
+- 先在标签中加 class 属性
+- .oneclass{}
+
+1. ID 选择器
+
+- 对某一特定标签，只能使用一次，ID 唯一
+- #...{}
+
+1. 合并选择器
+
+- p,span,h,
+
+> 优先级问题
+
+### CSS 属性
+
+1. 外观
+
+- color: red, #ff0000, rgb(255,0,0)
+- font-size(最小是 12px)
+- font-weight: bold, normal, bolder, lighter(700 最常用)
+- font-style: italic, oblique, normal
+- font-family: "Microsoft YaHei", "", "宋体"
+
+1. 背景
+
+- background-color
+- background-image
+- background-repeat: no-repeat
+- background-attachment
+- background-position：起始位置，默认左上方开始
+- background-size(cover)
+
+1. 文本
+
+- text-align: left/center/right/justify/center/justify/left/right/
+- text-decoration: none/underline/overline/line-through
+- text-transform: captical/uppercase/lowercase/none
+- text-indent: 缩进
+- letter-spacing: 字间距
+
+1. 表格
+
+- border
+- border-collapse: collapse
+- cellpadding
+- cellspacing
+- text-align
+- vertical-align
+- width
+- height
+- padding: 周围间距
+
+### 关系选择器
+
+1. 后代选择器
+
+- 以空格隔开
+
+1. 子代选择器（直系后代）
+
+- use \>
+
+1. 相邻兄弟选择器（相邻的）
+
+- use +
+
+1. 通用兄弟选择器 (all)
+
+- use ~
+
+### CSS 盒子模型 Box Model
+
+- margin(外边距), border(边框), padding(内间距), content
+
+### 弹性盒模型（flex box）
+
+1. 弹性容器：
+
+- display: flex
+- flex-direction: row/column/row-reverse/column-reverse（盒子排列）
+- justify-content: flex-start/flex-end/center/space-between/space-around （垂直）
+- align-items: flex-start/flex-end/center/baseline/stretch （水平）
+
+1. 弹性元素
+
+- flex-grow/flex（份数）
+- flex-shrink
+- flex-basis
+
+### 文档流
+
+> 对象的排列，高矮不齐，底边不齐；空格折叠；元素无空隙
+
+脱离文档流，会创建一个新的文档流，组件与原组件覆盖：
+
+- 浮动 float，只有左右浮动
+- 绝对定位
+- 固定定位
+
+## javascript
+
+### ES6
+
+## Vue
+
+---
