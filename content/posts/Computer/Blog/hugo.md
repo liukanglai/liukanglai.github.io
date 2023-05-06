@@ -17,18 +17,24 @@ description: " "
 
 1. git init
 
-2. theme
+1. theme
 
    - git submodule add `https://github.com/olOwOlo/hugo-theme-even themes/even`
    - cp themes/even/exampleSite/config.toml ./
 
-3. content
+```shell
+git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+# needed when you reclone your repo (submodules may not get cloned automatically)
+git submodule update --init --recursive
+```
+
+1. content
 
    - hugo new posts/my-first-post.md (in even, need post)
 
-4. hugo serve -D(-D make draft push)
+1. hugo serve -D(-D make draft push)
 
-5. `http://127.0.0.1:1313`
+1. `http://127.0.0.1:1313`
 
 > build static pages: hugo -D, int /public, (don't need if you use github pages)
 
@@ -59,6 +65,8 @@ git push -u origin main
 
 - domain:
 - static/CNAME: write your domain: liukanglai.tk
+
+> git submodule update
 
 ## config
 
