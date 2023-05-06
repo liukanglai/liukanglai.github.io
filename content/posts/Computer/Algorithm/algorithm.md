@@ -1,8 +1,8 @@
 ---
-title: "Algorithm"
+title: "Algorithm基础"
 date: 2023-03-28T12:41:16+08:00
 draft: false
-tags: ["first"]
+tags: ["Algorithm"]
 author: "liukanglai"
 description: " "
 ---

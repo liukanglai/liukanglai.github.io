@@ -1,8 +1,8 @@
 ---
-title: "IntroductionToAlgorithm"
+title: "IntroductionToAlgorithm小记"
 date: 2023-03-28T12:44:45+08:00
 draft: false
-tags: ["first"]
+tags: ["Algorithm"]
 author: "liukanglai"
 description: " "
 ---
