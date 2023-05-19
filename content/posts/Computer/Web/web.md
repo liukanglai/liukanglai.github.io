@@ -232,14 +232,233 @@ description: " "
 
 脱离文档流，会创建一个新的文档流，组件与原组件覆盖：
 
-- 浮动 float，只有左右浮动
+- 浮动 float，只有左右浮动，直接加入属性 float
 - 绝对定位
 - 固定定位
 
+> 浮动的缺点：造成父元素的高度塌陷，也会对后续元素产生影响
+
+- 清除浮动
+
+- 固定位置，相对定位，绝对定位
+
+### CSS3 特性
+
+- 圆角
+- 阴影
+- 动画
+- 媒体查询
+- 雪碧图
+- 字体图标： 阿里
+
 ## javascript
+
+- 脚本语言：不具备开发 OS，只用来控制程序的脚本。嵌入式语言
+
+- 操纵浏览器
+- 广泛使用，易学
+
+> ECMAScript 是规范，JavaScript 是实现
+
+1. 执行
+
+- js 不是简单的从上到下执行，变量提升
+
+1. 语法
+
+- 注释: // /\*\*/
+- 数据类型：原始类型：数值类型，字符串类型，布尔类型；引用类型，对象{}(object); 特殊值：null 一般对象，undefined 一般数值
+- \+ - \* / % ++ -- = += ... < ... (==是相等 ===严格相等，比较类型)(!= !==)
+- ! && ||(对非字符串基本为 false，除了 null, 0, NaN, "", undefined, false)
+
+1. 关键字
+
+- console.log(typeof 123)，一般判断基本类型，其他不用
+- if/else switch ( ? :)
+- for while break continue
+
+1. 字符串
+
+- 单引号和双引号一样，可以相互嵌套（转义\\）
+- \\ 可以换行
+- str.length
+- charAt()
+- concat() 所有类型都转为字符串 （直接用 + 即可）
+- substring(0, 2) 不包含 2，为负数自动转换为 0，第二个参数更大会自动换成第一个参数
+- substr() 第二个参数是长度，第一个参数为负到着数，第二个参数为负转为 0
+- indexOf() 匹配字符或字符串的第一个位置，没有为-1。第二个参数为从那开始匹配，前面不匹配
+- trim() 去除前后端的空白符(\t, \v, \n, \r) （ES6：trimStart, trimEnd）
+- split("|",5) 将字符串分割，返回数组，传空("")切成字符
+- replace() 替换字符串，返回替换后的字符串
+
+1. 数组
+
+- var arr = [1, 2, 3]; arr[4] = "j";
+- 不用管大小和类型，可以随便加
+- arr.length
+- 遍历：for, which, for(var i in arr) {arr[i]}
+- Array.isArray(arr), typeof 不行
+- arr.push(), arr.pop()
+- arr.shift(), arr.unshift(). while(item = arr.shift){}
+- arr.join() 转为字符串
+- arr.concat() 合并
+- arr.reverse() 翻转，实现字符串的翻转
+- arr.indexOf()
+
+1. 函数
+
+- 函数名的提升，先调用后创建！
+- function add(a, b) {return a + b}
+
+1. 对象
+
+- 键值对
+- var obj = {name: "tom", age: 18}
+
+- Math.abs() (max, min, floor, ceil) Math.random()(>=0, <1)
+- function random(min, max) {return Math.random() \* (max - min) + min}
+
+- Date
+- Date.now(); 时间戳指的是 1970 年 1 月 1 日 0 时 0 分 0 秒 到现在的总秒数（Unix 出现）（北京时间是 8 时）
+- Date(Date.now())/Date()：转为为现在时间
+- Date(Date.now()).getDate() (getDay, getFullYear, getMouth...)
+
+```javascript
+function daysToNewYear() {
+  const today = new Date();
+  const newYear = new Date(today.getFullYear() + 1, 0, 1);
+  const diff = newYear - today;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  return days;
+}
+
+console.log("距离下一年还有 " + daysToNewYear() + " 天");
+```
+
+1. DOM
+
+- 文档对象模型，Document Object Model，将网页转为一个 javascript 对象，从而进行操作
+- 浏览器根据 DOM 模型，将 HTML 解析成一系列的节点，组成一个树状图（DOM tree）
+- 节点有七个类型：
+
+  1. Document: HTML
+  1. DocumentType: DOCTYPE
+  1. Element:
+  1. Attribute:
+  1. Text:
+  1. Comment:
+  1. DocumentFragment:
+
+- document.nodeType == ?
+
+- var d = document.getElementsByTagName("div")\[0] (getElementsByClassName, getElementsByName, getElementsById)
+- var el = document.querySelector(".class") var el = document.querySelectorAll("div")
+- document.createElement
+- innerHTML 和 innerText
+- 查询器获取元素的值，属性，style 等，进行操作，操作 css 等
+
+- 事件处理：HTML 事件和 DOM 事件，html 与 js 是否分离
+
+- onclick="function()", addEventListener("click", function(){})
+- ondblclick onmousedown onmouseup onmouseover onmouseout onkeydown onkeypress
+- Event 事件对象，上面 addEventListener 中的 click 即是
+- event.targer, event.type, event.preventDefault(阻止默认的行为，如链接跳转), event.stopPropagation(组件嵌套)
+
+- 事件代理，委托
+- 用 event.targer.tagName === "子元素"，父元素处理
+
+1. 定时器
+
+- setTimeout(function(){}, 3000)，3000ms 后执行 function， clearTimeout(timer)
+- setInterval()
+
+- 防抖
+- 节流
 
 ### ES6
 
-## Vue
+- babel：将 ES6 转为 ES5(npm install)
+- .babelrc 文件
 
+1. let const
+
+- 作用域只有块级作用域，不用于 var 函数级作用域
+- let 没有变量提升
+- const 常量
+
+1. 对象解构赋值
+
+- const {name, age} = user;
+
+1. string
+
+- unicode
+- for(let i of string){}
+- 字符串模板: ${}
+- includes() startsWith() endsWith() repeat() padStart() padEnd() trimStart() trimEnd() at()
+
+1. 数组
+
+- 拓展运算符： var arr = [1, 2, 3]; (...arr);
+- Math.max.apply(null, arr) -> Math.max(...arr)
+- Array.from(); (arguments, 元素集合，对象数组) Array.of(1, 2, 3); Array(3);
+
+1. 对象
+
+- 属性的简洁表示法
+- 属性名的表达式
+- 对象的拓展运算符
+
+1. 函数
+
+- var fun = (x, y) => ({add: x + y; div: x/y}); 后面的()是为了返回对象
+
+1. set
+
+- 集合，值唯一
+- var a = new Set();
+- a.add(); a.size(); delete() has() clear()
+
+1. Promise
+
+- 异步编程
+
+```javascript
+const promise = new Promise(function(resolve, reject){
+    // code
+    if(){
+            resolve(value);
+    }else{
+        reject(error);
+    }
+});
+promise.then(function(value){
+    },function(error){
+    });
+```
+
+- Ajax
+- Async 异步变同步(async await) 网络请求的顺序依赖
+
+1. Class类
+
+```
+class Person {
+    constructor(name){
+        this.name = name;
+    }
+    sayName(){
+        console.log(this.name);
+    }
+}
+
+var a = new Person("h");
+```
+
+- static
+- extends
+
+1. Module
+
+- export default var ...; import{.. as ..} from "x.js"; import \* ...
 ---
