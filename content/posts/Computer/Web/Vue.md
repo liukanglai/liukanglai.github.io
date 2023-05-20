@@ -27,7 +27,7 @@ description: "vue知识"
 
 1. 文本
 
-   - {{message}}; data(){return{message: "h"}}
+   - {{message}}; data(){return{message: "h"}} 表示动态变量
    - v-html
    - v-bind:id="..." (v-bind 可省略不写)
 
@@ -57,6 +57,41 @@ description: "vue知识"
 - components:{my...}
 - \<my... />
 - scoped: style 不作用与其它引用组件
+
+- props 在组件间传递数据
+
+## 插件
+
+- swiper：滚动图
+- ElementPlus
+
+1. Axios
+
+   - 封装：utils 文件夹 拦截器基本配置
+   - 跨域：后台 cors 解决，前台 proxy(vue.config.js 中加入相关代码，重启 serve)
+
+> 全局引入: this.$axios
+
+## 路由
+
+- npm install vue-router
+- router 文件夹，index.js 文件中注册
+- views 文件夹，页面
+- 嵌套路由：children
+
+- 页面传递数据：index.js : path/:id，传递时加参数即可； 使用 $route.params.name
+
+## Vue 状态管理
+
+- Vuex 组件的数据交互
+- store 文件夹，index.js 文件中注册
+- Getter, mutation, Action
+
+## Vue3
+
+- ref reactive
+- 组合式 api：setup(){} 不再需要 data(), methods() (没有 this)
+- provide() inject()
 
 ## 目录
 
