@@ -1,0 +1,6 @@
+# c
+.cache
+.ccls-cache
+*.out
+nweb.log
+webserver.log

@@ -31,7 +31,9 @@ editPost:
     URL: "https://github.com/<path_to_repo>/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
----# leader
+---
+
+## leader
 
 - tmux -V
 - tmux to open
@@ -54,8 +56,7 @@ editPost:
         # 重新加载当前的 Tmux 配置
         $ tmux source-file ~/.tmux.conf
 
-
-# windows
+## windows
 
 - vsplit: leader + %
 
@@ -107,7 +108,7 @@ editPost:
 
         Ctrl+b q：显示窗格编号。
 
-# 会话(detach)
+## 会话(detach)
 
 > 会话与窗口分离
 
@@ -122,7 +123,6 @@ editPost:
 - exit(don't leave the window, can recover): leader + d, tmux detach
 - kill: tmux kill-session -t name
 
-
         # Smart pane switching with awareness of Vim splits.
         # See: https://github.com/christoomey/vim-tmux-navigator
         is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
@@ -135,60 +135,30 @@ editPost:
         bind-key -T copy-mode-vi C-j select-pane -D
         bind-key -T copy-mode-vi C-k select-pane -U
         bind-key -T copy-mode-vi C-l select-pane -R
-        # use with tpm: 
+        # use with tpm:
         set -g @plugin 'christoomey/vim-tmux-navigator'
         run '~/.tmux/plugins/tpm/tpm'
 
-
-# copy-mode
+## copy-mode
 
 - leader + [
 - use vi: setw -g mode-keys vi
 
+## TPM
 
-# TPM 
-> https://github.com/tmux-plugins/tpm
+> `https://github.com/tmux-plugins/tpm`
 
-- git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+## theme & color
 
-# theme & color
-
-- https://github.com/egel/tmux-gruvbox
+- `https://github.com/egel/tmux-gruvbox`
 
 - in terminal: echo $TERM
 - in tmux: echo $TERM
 
 > set -g default-terminal "xterm-256color" or "screen-256color" same as the terminal
->> use "set -g default-terminal "tmux-256color"" int tmux (form neovim)
+>
+> > use "set -g default-terminal "tmux-256color"" int tmux (form neovim)
 
-# escape-time
+## escape-time
 
 > [韦易笑](https://zhuanlan.zhihu.com/p/47801331)
-
-- set-option -g escape-time 0
-
-可以解决 ESC 键延迟，终端标准 VT220 下面，所有光标，功能键都是一系列以 ESC 字符（ascii 码 0x1b）开头的字符串，你可以终端下用下面命令：
-
-showkey -a
-测试下各种 F1-F12，光标键，ALT+字符，Hom/End 等按键是不是如此。那么终端，包括 ncurses 库都是根据一个超时（默认一秒）来判断用户到底是单独按下了 ESC 键，还是按下了一个功能键，如果是按下一个功能键，后面的控制字符串应该很快一起发送过来，如果超时了，就判断为单独按下 ESC。
-
-那么除非你不打算在 tmux 里使用 ALT 键或者功能键来控制 tmux，否则你设置成 0的话，tmux中判断功能键和 ALT+字符 会经常失效，因为不可能每次键盘扫描码都同时到达，你在本机测似没问题，但透过网络的话，功能键就会经常失效。
-
-比如我们如果想在 tmux 中绑定一些 F1/F12，功能键，ALT+字符 等按键，就必须设置成一个合理值，比如久经考验的 50 毫秒：
-
-set-option -g escape-time 50
-那么当 tmux 通过 50 毫秒，通常更短（没有匹配被绑定的热键的键盘码字符串，或者匹配到了）就可以决定是要把该键盘码传给低下的程序呢，还是该按键是需要触发一个 tmux 功能？
-
-所以我们里面使用 vim 的话，设置 ttimeoutlen 时就需要判断一下：
-
-        if $TMUX != ''
-        	set ttimeoutlen=20
-        elseif &ttimeoutlen > 60 || &ttimeoutlen <= 0
-        	set ttimeoutlen=60
-        endif
-
-如果外层已经有一个 tmux 了，那么 tmux 服务相对 vim 是本地通信，可以把 ttimeoutlen 设置短一些，因为是本地网络传输，否则长一点。
-
-这样就不会因为 tmux 的超时设置影响 vim 里面的超时判断的时间了。
-
-
