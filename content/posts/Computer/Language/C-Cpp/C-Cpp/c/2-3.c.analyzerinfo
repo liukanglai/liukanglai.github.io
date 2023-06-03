@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="15186623195983993516">
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;tree::location&apos; is never used." verbose="struct member &apos;tree::location&apos; is never used." cwe="563" file0="/home/liukanglai/Learing/Computer/Algorithm/c/2-3.c">
+            <location file="/home/liukanglai/Learing/Computer/Algorithm/c/2-3.c" line="5" column="7"/>
+            <symbol>tree::location</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;tree::next&apos; is never used." verbose="struct member &apos;tree::next&apos; is never used." cwe="563" file0="/home/liukanglai/Learing/Computer/Algorithm/c/2-3.c">
+            <location file="/home/liukanglai/Learing/Computer/Algorithm/c/2-3.c" line="6" column="16"/>
+            <symbol>tree::next</symbol>
+        </error>
+  <FileInfo check="Class">
+<class name="tree" file="/home/liukanglai/Learing/Computer/Algorithm/c/2-3.c" line="4" col="9" hash="2502142356162814768"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="main" lineNumber="9"/>
+    <functiondecl functionName="myMethod" lineNumber="28"/>
+    <functioncall functionName="L"/>
+    <functioncall functionName="begin"/>
+    <functioncall functionName="count"/>
+    <functioncall functionName="end"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="i"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="j"/>
+    <functioncall functionName="n"/>
+    <functioncall functionName="printf"/>
+    <functioncall functionName="scanf"/>
+  </FileInfo>
+</analyzerinfo>

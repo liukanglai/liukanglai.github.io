@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="11323594033246919465">
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="main" lineNumber="4"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="nCases"/>
+    <functioncall functionName="nFeet"/>
+    <functioncall functionName="printf"/>
+    <functioncall functionName="scanf"/>
+  </FileInfo>
+</analyzerinfo>

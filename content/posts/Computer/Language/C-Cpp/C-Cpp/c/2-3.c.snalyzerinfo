@@ -1,0 +1,2 @@
+main call:[printf,scanf] noreturn:[printf]
+myMethod call:[if,scanf]
