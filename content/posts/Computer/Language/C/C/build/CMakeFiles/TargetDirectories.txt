@@ -1,3 +1,0 @@
-/home/liukanglai/Learing/Code/C/build/CMakeFiles/main.dir
-/home/liukanglai/Learing/Code/C/build/CMakeFiles/edit_cache.dir
-/home/liukanglai/Learing/Code/C/build/CMakeFiles/rebuild_cache.dir
