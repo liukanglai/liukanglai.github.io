@@ -69,13 +69,13 @@ class SolutionPlus {
       auto pos = *i - 'a';
       auto len = 1;
 
-      while (i + 1 != text.end() && *i == *(i + 1)) {
+      while (i < text.end() - 1 && *i == *(i + 1)) {
         len++;
         i++;
       }
 
       auto j = i + 2;
-      if (j != text.end() && *i == *j) {
+      if (i < text.end() - 2 && *i == *j) {
         len++;
         while (j + 1 != text.end() && *j == *(j + 1)) {
           len++;
@@ -119,7 +119,7 @@ class SolutionHash {
       auto k = i;
       auto len = 1;
 
-      while (i + 1 != text.end() && *i == *(i + 1)) {
+      while (i < text.end() - 1 && *i == *(i + 1)) {
         len++;
         i++;
       }
