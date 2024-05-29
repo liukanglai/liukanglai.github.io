@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="">
+<meta name="description" content="变量 vs 常量 变量用来找内存空间(&amp;a: 地址)，它自己存在代码区 a=10 同 ((int)1000000) =10;
+int a = 10; a is 10, *a is wrong? &amp;a is address.
+int *a; a is address, *a is 10, &amp;a is address of pointer?
+typedef: 数据结构（cpp 可不用），对数据类型起别名，那对内存空间取别名？
+函数也是数据类型？可 typedef
+内存四区 代码区：二进制文件， 全局区(static)：OS 释放，全局和静态变量，字符串常量在这， 堆：自动分配释放，函数参数值，局部变量， 栈：动态内存申请，程序员释放，程序结束 OS 也释放 数组 把数组看成指针，解决所有问题 数组是什么数据类型 数据类型的本质是空间的大小 数组是复杂的数据类型，由元素类型和空间大小共同决定 定义数组类型：typedef int (MYINT5)[5]; MYINT5 array; // = int array[5]; 数组名代表什么意思 int a[10]; a is &amp;a[0], *a is 10, &amp;a is ?">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/c0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/c0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="变量 vs 常量 变量用来找内存空间(&amp;a: 地址)，它自己存在代码区 a=10 同 ((int)1000000) =10;
+int a = 10; a is 10, *a is wrong? &amp;a is address.
+int *a; a is address, *a is 10, &amp;a is address of pointer?
+typedef: 数据结构（cpp 可不用），对数据类型起别名，那对内存空间取别名？
+函数也是数据类型？可 typedef
+内存四区 代码区：二进制文件， 全局区(static)：OS 释放，全局和静态变量，字符串常量在这， 堆：自动分配释放，函数参数值，局部变量， 栈：动态内存申请，程序员释放，程序结束 OS 也释放 数组 把数组看成指针，解决所有问题 数组是什么数据类型 数据类型的本质是空间的大小 数组是复杂的数据类型，由元素类型和空间大小共同决定 定义数组类型：typedef int (MYINT5)[5]; MYINT5 array; // = int array[5]; 数组名代表什么意思 int a[10]; a is &amp;a[0], *a is 10, &amp;a is ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/c0/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="变量 vs 常量 变量用来找内存空间(&amp;a: 地址)，它自己存在代码区 a=10 同 ((int)1000000) =10;
+int a = 10; a is 10, *a is wrong? &amp;a is address.
+int *a; a is address, *a is 10, &amp;a is address of pointer?
+typedef: 数据结构（cpp 可不用），对数据类型起别名，那对内存空间取别名？
+函数也是数据类型？可 typedef
+内存四区 代码区：二进制文件， 全局区(static)：OS 释放，全局和静态变量，字符串常量在这， 堆：自动分配释放，函数参数值，局部变量， 栈：动态内存申请，程序员释放，程序结束 OS 也释放 数组 把数组看成指针，解决所有问题 数组是什么数据类型 数据类型的本质是空间的大小 数组是复杂的数据类型，由元素类型和空间大小共同决定 定义数组类型：typedef int (MYINT5)[5]; MYINT5 array; // = int array[5]; 数组名代表什么意思 int a[10]; a is &amp;a[0], *a is 10, &amp;a is ?"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/c0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "变量 vs 常量 变量用来找内存空间(\u0026amp;a: 地址)，它自己存在代码区 a=10 同 ((int)1000000) =10;\nint a = 10; a is 10, *a is wrong? \u0026amp;a is address.\nint *a; a is address, *a is 10, \u0026amp;a is address of pointer?\ntypedef: 数据结构（cpp 可不用），对数据类型起别名，那对内存空间取别名？\n函数也是数据类型？可 typedef\n内存四区 代码区：二进制文件， 全局区(static)：OS 释放，全局和静态变量，字符串常量在这， 堆：自动分配释放，函数参数值，局部变量， 栈：动态内存申请，程序员释放，程序结束 OS 也释放 数组 把数组看成指针，解决所有问题 数组是什么数据类型 数据类型的本质是空间的大小 数组是复杂的数据类型，由元素类型和空间大小共同决定 定义数组类型：typedef int (MYINT5)[5]; MYINT5 array; // = int array[5]; 数组名代表什么意思 int a[10]; a is \u0026amp;a[0], *a is 10, \u0026amp;a is ?",
+  "keywords": [
+    
+  ],
+  "articleBody": " 变量 vs 常量 变量用来找内存空间(\u0026a: 地址)，它自己存在代码区 a=10 同 ((int)1000000) =10;\nint a = 10; a is 10, *a is wrong? \u0026a is address.\nint *a; a is address, *a is 10, \u0026a is address of pointer?\ntypedef: 数据结构（cpp 可不用），对数据类型起别名，那对内存空间取别名？\n函数也是数据类型？可 typedef\n内存四区 代码区：二进制文件， 全局区(static)：OS 释放，全局和静态变量，字符串常量在这， 堆：自动分配释放，函数参数值，局部变量， 栈：动态内存申请，程序员释放，程序结束 OS 也释放 数组 把数组看成指针，解决所有问题 数组是什么数据类型 数据类型的本质是空间的大小 数组是复杂的数据类型，由元素类型和空间大小共同决定 定义数组类型：typedef int (MYINT5)[5]; MYINT5 array; // = int array[5]; 数组名代表什么意思 int a[10]; a is \u0026a[0], *a is 10, \u0026a is ? a 有两个含义，一当指针 a[0]，二当数组类型 *a 是一个含义，\u0026a 是另一个含义: 同 a 不变，但它是整个数组的地址!, a+1:, \u0026a+1 数组 a 不可变,为了释放内存\n关于多维数组名的含义，见下指针 数组指针 VS 指针数组 指针数组：数组里的元素全是指针: char *array[] = {\"111\", \"22\"}\n数组指针：指向数组的指针，二级指针\n定义数组类型：\ntypedef int (MYINT5)[5]; MYINT5 *pArray; int array[5]; pArray = \u0026array; (*pArray)[0] == array[0]\n定义数组指针类型：\ntypedef int (*MYINT5)[5]; MYINT5 pArray; int array[5]; pArray = \u0026array; (*pArray)[0] == array[0]\n直接定义：\nint (*pArray)[5];\n指针 指针考虑两个东西：指向的数据类型以及步长\n多级指针做形参，只是 4 个字节，但内存是个地址，不管它是几维\n野指针，已释放，但还用。方法：\nchar *p1 = NULL; p1=(char*)malloc(100); if(p1!=NULL){free(p1); p1=NULL;}\n形参不要随便更改，再定义一个指针，函数指针传递更改值是特色，注意传来的空指针判断。\n函数出错立马判断，不要先是对的执行代码，会导致嵌套过多。\nconst int a; = int const a; a 不可更改，但可通过 a 的地址间接修改！\nconst char *a;(*a 值不可改) char* const a;(a 不可改)\n二维指针 int a[3][5]; int (*A)[5]; A = a; a 是数组指针，a 的步长 20(一维的长度)，*a 是第一行的首地址， *(*(a+i)+j) == a[i][j]; char *a[100] 指针数组，每个元素都是指针。= char a[][100] 但前面的 a 是一个 char*指针，后面是一个 char 数组指针 多维指针 多级指针的退化问题，做函数参数会退化！这样高效，只用复制地址 野指针: 分配时 NULL，一半内存分配成功？后面释放， ‘\\0’ 空间需要，字符串空间+1 main 函数 int main(int argc, char* argv[], char** env) OS 分配内存，env 以\\0 结束 结构体 定义变量方法：typedef 或直接 struct；在定义时同时定义变量；匿名类型定义变量 . 和 -\u003e 操作，取东西，是寻址操作，计算相对起始的偏移量 结构体中有指针，要分配内存，释放时也要单独释放 结构体 = 操作，浅 copy，只把值复制进去，不会开辟空间 ",
+  "wordCount" : "224",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/c0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Language/C-Cpp/course%e6%89%ab%e5%9c%b0%e5%83%a7/c0.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%8f%98%e9%87%8f-vs-%e5%b8%b8%e9%87%8f" aria-label="变量 vs 常量">变量 vs 常量</a></li>
+                <li>
+                    <a href="#%e5%86%85%e5%ad%98%e5%9b%9b%e5%8c%ba" aria-label="内存四区">内存四区</a></li>
+                <li>
+                    <a href="#%e6%95%b0%e7%bb%84" aria-label="数组">数组</a></li>
+                <li>
+                    <a href="#%e6%8c%87%e9%92%88" aria-label="指针">指针</a></li>
+                <li>
+                    <a href="#main-%e5%87%bd%e6%95%b0" aria-label="main 函数">main 函数</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e6%9e%84%e4%bd%93" aria-label="结构体">结构体</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="heading"><a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h1>
+<h2 id="变量-vs-常量">变量 vs 常量<a hidden class="anchor" aria-hidden="true" href="#变量-vs-常量">#</a></h2>
+<ul>
+<li>
+<p>变量用来找内存空间(&amp;a: 地址)，它自己存在代码区 a=10 同 <em>((int</em>)1000000) =10;</p>
+</li>
+<li>
+<p>int a = 10; a is 10, *a is wrong? &amp;a is address.</p>
+</li>
+<li>
+<p>int *a; a is address, *a is 10, &amp;a is address of pointer?</p>
+</li>
+<li>
+<p>typedef: 数据结构（cpp 可不用），对数据类型起别名，那对内存空间取别名？</p>
+</li>
+<li>
+<p>函数也是数据类型？可 typedef</p>
+</li>
+</ul>
+<h2 id="内存四区">内存四区<a hidden class="anchor" aria-hidden="true" href="#内存四区">#</a></h2>
+<ul>
+<li>代码区：二进制文件，</li>
+<li>全局区(static)：OS 释放，全局和静态变量，字符串常量在这，</li>
+<li>堆：自动分配释放，函数参数值，局部变量，</li>
+<li>栈：动态内存申请，程序员释放，程序结束 OS 也释放</li>
+</ul>
+<h2 id="数组">数组<a hidden class="anchor" aria-hidden="true" href="#数组">#</a></h2>
+<ul>
+<li>把数组看成指针，解决所有问题</li>
+</ul>
+<ol>
+<li>数组是什么数据类型</li>
+</ol>
+<ul>
+<li>数据类型的本质是空间的大小</li>
+<li>数组是复杂的数据类型，由元素类型和空间大小共同决定</li>
+<li>定义数组类型：<code>typedef int (MYINT5)[5]; MYINT5 array; // = int array[5];</code></li>
+</ul>
+<ol>
+<li>数组名代表什么意思</li>
+</ol>
+<ul>
+<li>int a[10]; a is &amp;a[0], *a is 10, &amp;a is ?</li>
+<li>a 有两个含义，一当指针 a[0]，二当数组类型</li>
+<li>*a 是一个含义，&amp;a 是另一个含义: 同 a 不变，但它是整个数组的地址!, a+1:, &amp;a+1</li>
+</ul>
+<blockquote>
+<p>数组 a 不可变,为了释放内存</p>
+</blockquote>
+<ul>
+<li>关于多维数组名的含义，见下指针</li>
+</ul>
+<ol>
+<li>数组指针 VS 指针数组</li>
+</ol>
+<ul>
+<li>
+<p>指针数组：数组里的元素全是指针: <code>char *array[] = {&quot;111&quot;, &quot;22&quot;}</code></p>
+</li>
+<li>
+<p>数组指针：指向数组的指针，二级指针</p>
+<blockquote>
+<p>定义数组类型：</p>
+<blockquote>
+<p><code>typedef int (MYINT5)[5]; MYINT5 *pArray; int array[5]; pArray = &amp;array; (*pArray)[0] == array[0]</code></p>
+</blockquote>
+<p>定义数组指针类型：</p>
+<blockquote>
+<p><code>typedef int (*MYINT5)[5]; MYINT5 pArray; int array[5]; pArray = &amp;array; (*pArray)[0] == array[0]</code></p>
+</blockquote>
+<p>直接定义：</p>
+<blockquote>
+<p><code>int (*pArray)[5];</code></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="指针">指针<a hidden class="anchor" aria-hidden="true" href="#指针">#</a></h2>
+<ul>
+<li>
+<p>指针考虑两个东西：指向的数据类型以及步长</p>
+</li>
+<li>
+<p>多级指针做形参，只是 4 个字节，但内存是个地址，不管它是几维</p>
+</li>
+<li>
+<p>野指针，已释放，但还用。方法：</p>
+</li>
+<li>
+<p><code>char *p1 = NULL; p1=(char*)malloc(100); if(p1!=NULL){free(p1); p1=NULL;}</code></p>
+</li>
+<li>
+<p>形参不要随便更改，再定义一个指针，函数指针传递更改值是特色，注意传来的空指针判断。</p>
+</li>
+<li>
+<p>函数出错立马判断，不要先是对的执行代码，会导致嵌套过多。</p>
+</li>
+<li>
+<p>const int a; = int const a; a 不可更改，但可通过 a 的地址间接修改！</p>
+</li>
+<li>
+<p>const char *a;(*a 值不可改) char* const a;(a 不可改)</p>
+</li>
+</ul>
+<ol>
+<li>二维指针</li>
+</ol>
+<ul>
+<li><code>int a[3][5]; int (*A)[5]; A = a;</code></li>
+<li>a 是数组指针，a 的步长 20(一维的长度)，*a 是第一行的首地址， <code>*(*(a+i)+j) == a[i][j];</code></li>
+<li><code>char *a[100]</code> 指针数组，每个元素都是指针。= <code>char a[][100]</code></li>
+<li>但前面的 a 是一个 char*指针，后面是一个 char 数组指针</li>
+</ul>
+<ol>
+<li>多维指针</li>
+</ol>
+<ul>
+<li>多级指针的退化问题，做函数参数会退化！这样高效，只用复制地址</li>
+<li>野指针: 分配时 NULL，一半内存分配成功？后面释放，</li>
+<li>&lsquo;\0&rsquo; 空间需要，字符串空间+1</li>
+</ul>
+<h2 id="main-函数">main 函数<a hidden class="anchor" aria-hidden="true" href="#main-函数">#</a></h2>
+<ul>
+<li><code>int main(int argc, char* argv[], char** env)</code></li>
+<li>OS 分配内存，env 以\0 结束</li>
+</ul>
+<h2 id="结构体">结构体<a hidden class="anchor" aria-hidden="true" href="#结构体">#</a></h2>
+<ol>
+<li>定义变量方法：typedef 或直接 struct；在定义时同时定义变量；匿名类型定义变量</li>
+<li>. 和 -&gt; 操作，取东西，是寻址操作，计算相对起始的偏移量</li>
+<li>结构体中有指针，要分配内存，释放时也要单独释放</li>
+<li>结构体 = 操作，浅 copy，只把值复制进去，不会开辟空间</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/1%E6%8E%A5%E5%8F%A3%E6%A8%A1%E5%9D%97/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp0/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

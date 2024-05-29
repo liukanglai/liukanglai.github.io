@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>ArchLinux 软件，问题 | My Blog Site</title>
+<meta name="keywords" content="Arch">
+<meta name="description" content=" ">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/linux/arch/arch-more/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/linux/arch/arch-more/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="ArchLinux 软件，问题" />
+<meta property="og:description" content=" " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/linux/arch/arch-more/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-27T19:10:34+08:00" />
+<meta property="article:modified_time" content="2023-03-27T19:10:34+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="ArchLinux 软件，问题"/>
+<meta name="twitter:description" content=" "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "ArchLinux 软件，问题",
+      "item": "http://localhost:1313/posts/computer/linux/arch/arch-more/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ArchLinux 软件，问题",
+  "name": "ArchLinux 软件，问题",
+  "description": " ",
+  "keywords": [
+    "Arch"
+  ],
+  "articleBody": " yay -S octopi #包管理器前端界面 Imagemask rime ~/.local/share/fcitx5/rime/build/default.yaml: put simple first(in schema_list)\nuse new file(no deffect default.yaml), in build fold, create default.custom.yaml:\nyay -S rime-cloverpinyin (schema_list: - schema: clover)\nhttps://github.com/fkxxyz/rime-cloverpinyin/wiki/linux\nyay -S ttf-apple-emoji 软件 code clion idea qtcreater\nsublime-text-dev 代码编辑器\nranger\nvnote typora suziwen/markdownxiaoshujiang https://github.com/marktext/marktext\ngimp\ninstall deepin-wine firstly\ndeepin-wine-qq\ndeepin-wine-wechat\ndeepin-wine-tim\ntelegram-desktop 客户端开源的加密聊天工具\nqbittorrent 好用的 BT 下载工具\ngoogle-chrome/chromium (Chromium 的用户资料在~/.config/chromium/Default)\nwoeusb\nopenssh 远程连接工具\nSimpleScreenRecorder 轻量的录屏软件\nkdenlive shotcut 强大的视频剪辑软件\nredshift 显示屏色温调节工具\ncalibre 电子书转换、编辑、阅读工具\ngthumb 图片浏览工具,可简单编辑图片,可清除照片元数据\npeek 录制 GIF 动图\ninkscape 强大的矢量图形编辑软件\nfontforge 字体设计、编辑软件\ncool tips:\nneofetch sl(steam locomotive) cmatrix aalib (aafire -driver curses) fortune-mod yes lufei(c-r) 系统时间 24 小时：\nqt5-base-24h windows 修改 Windows 硬件时钟为 UTC 时间\n以管理员身份打开 「PowerShell」，输入以下命令： Reg add HKLM\\SYSTEM\\CurrentControlSet\\Control\\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1 或者打开「注册表编辑器」，定位到 计算机\\HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\TimeZoneInformation 目录下，新建一个 DWORD 类型，名称为 RealTimeIsUniversal 的键，并修改键值为 1 即可。\nsudo pacman -S ntpdate sudo ntpdate time.windows.com sudo hwclock –localtime –systohc hwclock –show hwclock –systohc deb 安装 yay -S debtap\n也应该安装 bash， binutils ，pkgfile 和 fakeroot 依赖包。\n创建/更新 pkgfile 和 debtap 数据库。\nsudo debtap -u\n转换 deb 包 debtap (-q / -Q: no question) *.deb\n安装 sudo pacman -U # /usr/bin/debtap 替换：http://ftp.debian.org/debian/dists 为：https://mirrors.ustc.edu.cn/debian/dists 替换：http://archive.ubuntu.com/ubuntu/dists 为：https://mirrors.ustc.edu.cn/ubuntu/dists/ display vim /etc/sddm.conf.d/dpi.conf: [X11] ServerArguments=-dpi 96 录屏 obs-studio nvenc 编码不行就改 录制的声音太大/太吵可以调小麦克风音量\nyay -S wemeet-bin(二维码一直弹不出来，开启独显才好。)\nyay -S skypeforlinux-stable-bin\nyay -S deskreen(投屏)\nulauncher utools stacer vmbox // sudo pacman -S linux-headers\nvirtualbox virtualbox-ext-vnc virtualbox-guest-iso virtualbox-host-modules-arch\n再去官网下载 Oracle VM VirtualBox Extension Pack ，在设置中导入使用\nsudo restart systemd-modules-load.service\nshare fold sudo mount -t vboxsf share /mnt/kylin 全屏 选择不同分辨率 hibernate cat /sys/power/image_size: swap size sudo filefrag -v /swapfile | sed -n ‘4p’ | awk ‘{print $4+0}’ : get resume_offset sudo vim /boot/leader/entries/arch.conf: options root=UUID=SOMEUUID rw resume=/dev/sda1 resume_offset=12345 sudo vim /etc/mkinitcpio.conf: HOOKS=( base udev resume autodetect modconf block filesystems keyboard fsck ) – add resume sudo mkinitcpio -p linux space mkdir /home/space mount /dev/… /home/space vim /etc/fstab: /dev/... /home/space ext4 defaults 1 1 Easyconnect https://www.wannaexpresso.com/2020/06/07/easy-connect-manjaro/\n错：您的客户端版本与服务器不匹配，请下载更新\n由于最新版与服务器要求版本不一致，所以需要修改源码包中的 PKGBUILD 文件，然后重新手动 makepkg 生成服务器要求版本然后再安装。\n修改 PKGBUILD 文件\nsource=(\"http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_767/EasyConnect_x64_7_6_7_3.deb\" \"http://ftp.acc.umu.se/pub/GNOME/sources/pango/1.42/pango-1.42.4.tar.xz\") md5sums=('ac2020ce44583d5ee4552c81563dce9c' 'deb171a31a3ad76342d5195a1b5bbc7c') 修改为\nsource=(\"http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_01/EasyConnect_x64.deb\" \"http://ftp.acc.umu.se/pub/GNOME/sources/pango/1.42/pango-1.42.4.tar.xz\") md5sums=('6ed6273f7754454f19835a456ee263e3' 'deb171a31a3ad76342d5195a1b5bbc7c') 打印机 对于日常办公来说，打印机是非常必要的。除此之外，我们建议读者维持一份纸质的密码，包括你可以将你虚拟货币钱包中的私钥打印出来保存，这是非常好的一个方案。对于打印机的品牌，我们建议使用惠普打印机。其对于 Linux 的支持非常到位，可以去其网站查看所支持的设备等详情。在 Arch Linux 上，安装包 hplip 即可。\nsudo pacman -S hplip\nworng 一般屏幕会出现形如 A stop job is running for…(1m30s)的信息，这是经常会遇到的关机卡住 1 分 30 秒的问题，一般来说这种情况是出现了某个进程在关机时不愿停止，需要等到超时时间到达强行停止。通用的解决办法是调整缩短这个等待时间，建议从 1 分 30 秒调整至 30 秒，30 秒已经足够几乎所有进程正常结束。\n编辑 /etc/systemd/system.conf\nsudo vim /etc/systemd/system.conf 找到其中 DefaultTimeoutStopSec 一项，将其前方的井号去掉，并赋值为 30s 即可。最后执行 daemon-reload 使其生效。\nsudo systemctl daemon-reload 上述解决方案其实只是将这个等待时间缩小了，并没有解决实际问题。如果你想排查问题真正的原因所在，在关机时如果出现了 A stop job is running for…(1m30s)的信息，耐心等待其结束关机，然后重新启动电脑，执行以下命令：\njournalctl -p5 按/(斜杠键)搜索 Killing 关键字，找到你关机的时间附近所在的匹配行，你可以在附近看到到底是哪一个进程导致了 timeout,然后再去排查这个进程有什么问题即可。\n升级系统时出现形如 unable to lock database 的错误 可能存在升级系统时异常关机或程序异常退出的情况，或者多个 pacman 的相关程序在同时执行。移除 pacman 的 db 锁即可\nsudo rm /var/lib/pacman/db.lck\n",
+  "wordCount" : "392",
+  "inLanguage": "en",
+  "datePublished": "2023-03-27T19:10:34+08:00",
+  "dateModified": "2023-03-27T19:10:34+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/linux/arch/arch-more/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      ArchLinux 软件，问题
+    </h1>
+    <div class="post-description">
+       
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-03-27 19:10:34 &#43;0800 CST&#39;&gt;March 27, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;2 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Linux/arch/arch-more.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#rime" aria-label="rime">rime</a></li>
+                <li>
+                    <a href="#%e8%bd%af%e4%bb%b6" aria-label="软件">软件</a></li></ul>
+                    
+                <li>
+                    <a href="#%e7%b3%bb%e7%bb%9f%e6%97%b6%e9%97%b4" aria-label="系统时间">系统时间</a></li>
+                <li>
+                    <a href="#deb-%e5%ae%89%e8%a3%85" aria-label="deb 安装">deb 安装</a></li>
+                <li>
+                    <a href="#display" aria-label="display">display</a></li>
+                <li>
+                    <a href="#%e5%bd%95%e5%b1%8f" aria-label="录屏">录屏</a><ul>
+                        
+                <li>
+                    <a href="#ulauncher-utools-stacer" aria-label="ulauncher utools stacer">ulauncher utools stacer</a></li>
+                <li>
+                    <a href="#vmbox" aria-label="vmbox">vmbox</a></li>
+                <li>
+                    <a href="#hibernate" aria-label="hibernate">hibernate</a></li>
+                <li>
+                    <a href="#space" aria-label="space">space</a></li>
+                <li>
+                    <a href="#easyconnect" aria-label="Easyconnect">Easyconnect</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%89%93%e5%8d%b0%e6%9c%ba" aria-label="打印机">打印机</a></li>
+                <li>
+                    <a href="#worng" aria-label="worng">worng</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><ul>
+<li>yay -S octopi #包管理器前端界面</li>
+<li>Imagemask</li>
+</ul>
+<h2 id="rime">rime<a hidden class="anchor" aria-hidden="true" href="#rime">#</a></h2>
+<ul>
+<li>
+<p>~/.local/share/fcitx5/rime/build/default.yaml: put simple first(in schema_list)</p>
+</li>
+<li>
+<p>use new file(no deffect default.yaml), in build fold, create default.custom.yaml:</p>
+</li>
+<li>
+<p>yay -S rime-cloverpinyin (schema_list: - schema: clover)</p>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://github.com/fkxxyz/rime-cloverpinyin/wiki/linux">https://github.com/fkxxyz/rime-cloverpinyin/wiki/linux</a></p>
+</blockquote>
+<ul>
+<li>yay -S ttf-apple-emoji</li>
+</ul>
+<h2 id="软件">软件<a hidden class="anchor" aria-hidden="true" href="#软件">#</a></h2>
+<ul>
+<li>
+<p>code clion idea qtcreater</p>
+</li>
+<li>
+<p>sublime-text-dev 代码编辑器</p>
+</li>
+<li>
+<p>ranger</p>
+</li>
+<li>
+<p>vnote typora suziwen/markdownxiaoshujiang <a href="https://github.com/marktext/marktext">https://github.com/marktext/marktext</a></p>
+</li>
+<li>
+<p>gimp</p>
+</li>
+<li>
+<p>install deepin-wine firstly</p>
+</li>
+<li>
+<p>deepin-wine-qq</p>
+</li>
+<li>
+<p>deepin-wine-wechat</p>
+</li>
+<li>
+<p>deepin-wine-tim</p>
+</li>
+<li>
+<p>telegram-desktop 客户端开源的加密聊天工具</p>
+</li>
+<li>
+<p>qbittorrent 好用的 BT 下载工具</p>
+</li>
+<li>
+<p>google-chrome/chromium (Chromium 的用户资料在~/.config/chromium/Default)</p>
+</li>
+<li>
+<p>woeusb</p>
+</li>
+<li>
+<p>openssh 远程连接工具</p>
+</li>
+<li>
+<p>SimpleScreenRecorder 轻量的录屏软件</p>
+</li>
+<li>
+<p>kdenlive shotcut 强大的视频剪辑软件</p>
+</li>
+<li>
+<p>redshift 显示屏色温调节工具</p>
+</li>
+<li>
+<p>calibre 电子书转换、编辑、阅读工具</p>
+</li>
+<li>
+<p>gthumb 图片浏览工具,可简单编辑图片,可清除照片元数据</p>
+</li>
+<li>
+<p>peek 录制 GIF 动图</p>
+</li>
+<li>
+<p>inkscape 强大的矢量图形编辑软件</p>
+</li>
+<li>
+<p>fontforge 字体设计、编辑软件</p>
+</li>
+</ul>
+<p>cool tips:</p>
+<ul>
+<li>neofetch</li>
+<li>sl(steam locomotive)</li>
+<li>cmatrix</li>
+<li>aalib (aafire -driver curses)</li>
+<li>fortune-mod</li>
+<li>yes lufei(c-r)</li>
+</ul>
+<h1 id="系统时间">系统时间<a hidden class="anchor" aria-hidden="true" href="#系统时间">#</a></h1>
+<ol>
+<li>
+<p>24 小时：</p>
+<ul>
+<li>qt5-base-24h</li>
+</ul>
+</li>
+<li>
+<p>windows 修改 Windows 硬件时钟为 UTC 时间</p>
+<ul>
+<li>以管理员身份打开 「PowerShell」，输入以下命令：</li>
+</ul>
+<p>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
+或者打开「注册表编辑器」，定位到 计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation 目录下，新建一个 DWORD 类型，名称为 RealTimeIsUniversal 的键，并修改键值为 1 即可。</p>
+</li>
+</ol>
+<ul>
+<li>sudo pacman -S ntpdate</li>
+<li>sudo ntpdate time.windows.com</li>
+<li>sudo hwclock &ndash;localtime &ndash;systohc</li>
+<li>hwclock &ndash;show</li>
+<li>hwclock &ndash;systohc</li>
+</ul>
+<h1 id="deb-安装">deb 安装<a hidden class="anchor" aria-hidden="true" href="#deb-安装">#</a></h1>
+<ul>
+<li>
+<p>yay -S debtap</p>
+</li>
+<li>
+<p>也应该安装 bash， binutils ，pkgfile 和 fakeroot 依赖包。</p>
+</li>
+<li>
+<p>创建/更新 pkgfile 和 debtap 数据库。</p>
+</li>
+<li>
+<p>sudo debtap -u</p>
+</li>
+<li>
+<p>转换 deb 包 debtap (-q / -Q: no question) *.deb</p>
+</li>
+<li>
+<p>安装 sudo pacman -U <package-name></p>
+<pre><code>  # /usr/bin/debtap
+  替换：http://ftp.debian.org/debian/dists
+  为：https://mirrors.ustc.edu.cn/debian/dists
+
+  替换：http://archive.ubuntu.com/ubuntu/dists
+  为：https://mirrors.ustc.edu.cn/ubuntu/dists/
+</code></pre>
+</li>
+</ul>
+<h1 id="display">display<a hidden class="anchor" aria-hidden="true" href="#display">#</a></h1>
+<ul>
+<li>vim /etc/sddm.conf.d/dpi.conf: <code>[X11] ServerArguments=-dpi 96</code></li>
+</ul>
+<h1 id="录屏">录屏<a hidden class="anchor" aria-hidden="true" href="#录屏">#</a></h1>
+<ul>
+<li>obs-studio</li>
+<li>nvenc 编码不行就改</li>
+</ul>
+<blockquote>
+<p>录制的声音太大/太吵可以调小麦克风音量</p>
+</blockquote>
+<ul>
+<li>
+<p>yay -S wemeet-bin(二维码一直弹不出来，开启独显才好。)</p>
+</li>
+<li>
+<p>yay -S skypeforlinux-stable-bin</p>
+</li>
+<li>
+<p>yay -S deskreen(投屏)</p>
+</li>
+</ul>
+<h2 id="ulauncher-utools-stacer">ulauncher utools stacer<a hidden class="anchor" aria-hidden="true" href="#ulauncher-utools-stacer">#</a></h2>
+<h2 id="vmbox">vmbox<a hidden class="anchor" aria-hidden="true" href="#vmbox">#</a></h2>
+<ul>
+<li>
+<p>// sudo pacman -S linux-headers</p>
+</li>
+<li>
+<p>virtualbox virtualbox-ext-vnc virtualbox-guest-iso virtualbox-host-modules-arch</p>
+</li>
+<li>
+<p>再去官网下载 Oracle VM VirtualBox Extension Pack ，在设置中导入使用</p>
+</li>
+<li>
+<p>sudo restart systemd-modules-load.service</p>
+</li>
+</ul>
+<ol>
+<li>share fold</li>
+</ol>
+<ul>
+<li>sudo mount -t vboxsf share /mnt/kylin</li>
+</ul>
+<ol start="2">
+<li>全屏</li>
+</ol>
+<ul>
+<li>选择不同分辨率</li>
+</ul>
+<h2 id="hibernate">hibernate<a hidden class="anchor" aria-hidden="true" href="#hibernate">#</a></h2>
+<ul>
+<li>cat /sys/power/image_size: swap size</li>
+<li>sudo filefrag -v /swapfile | sed -n &lsquo;4p&rsquo; | awk &lsquo;{print $4+0}&rsquo; : get resume_offset</li>
+<li>sudo vim /boot/leader/entries/arch.conf: options root=UUID=SOMEUUID rw resume=/dev/sda1 resume_offset=12345</li>
+<li>sudo vim /etc/mkinitcpio.conf: HOOKS=( base udev <strong>resume</strong> autodetect modconf block filesystems keyboard fsck ) &ndash; add resume</li>
+<li>sudo mkinitcpio -p linux</li>
+</ul>
+<h2 id="space">space<a hidden class="anchor" aria-hidden="true" href="#space">#</a></h2>
+<ul>
+<li>mkdir /home/space</li>
+<li>mount /dev/&hellip; /home/space</li>
+<li>vim /etc/fstab: <code>/dev/... /home/space ext4 defaults 1 1</code></li>
+</ul>
+<h2 id="easyconnect">Easyconnect<a hidden class="anchor" aria-hidden="true" href="#easyconnect">#</a></h2>
+<ul>
+<li>
+<p><code>https://www.wannaexpresso.com/2020/06/07/easy-connect-manjaro/</code></p>
+</li>
+<li>
+<p>错：您的客户端版本与服务器不匹配，请下载更新</p>
+</li>
+<li>
+<p>由于最新版与服务器要求版本不一致，所以需要修改源码包中的 PKGBUILD 文件，然后重新手动 makepkg 生成服务器要求版本然后再安装。</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>修改 PKGBUILD 文件</p>
+<pre><code>source=(&quot;http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_767/EasyConnect_x64_7_6_7_3.deb&quot;
+      &quot;http://ftp.acc.umu.se/pub/GNOME/sources/pango/1.42/pango-1.42.4.tar.xz&quot;)
+md5sums=('ac2020ce44583d5ee4552c81563dce9c'
+      'deb171a31a3ad76342d5195a1b5bbc7c')
+</code></pre>
+</li>
+</ol>
+<ul>
+<li>
+<p>修改为</p>
+<pre><code>  source=(&quot;http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_01/EasyConnect_x64.deb&quot;
+        &quot;http://ftp.acc.umu.se/pub/GNOME/sources/pango/1.42/pango-1.42.4.tar.xz&quot;)
+  md5sums=('6ed6273f7754454f19835a456ee263e3'
+        'deb171a31a3ad76342d5195a1b5bbc7c')
+</code></pre>
+</li>
+</ul>
+<h1 id="打印机">打印机<a hidden class="anchor" aria-hidden="true" href="#打印机">#</a></h1>
+<p>对于日常办公来说，打印机是非常必要的。除此之外，我们建议读者维持一份纸质的密码，包括你可以将你虚拟货币钱包中的私钥打印出来保存，这是非常好的一个方案。对于打印机的品牌，我们建议使用惠普打印机。其对于 Linux 的支持非常到位，可以去其网站查看所支持的设备等详情。在 Arch Linux 上，安装包 hplip 即可。</p>
+<p>sudo pacman -S hplip</p>
+<h1 id="worng">worng<a hidden class="anchor" aria-hidden="true" href="#worng">#</a></h1>
+<p>一般屏幕会出现形如 A stop job is running for&hellip;(1m30s)的信息，这是经常会遇到的关机卡住 1 分 30 秒的问题，一般来说这种情况是出现了某个进程在关机时不愿停止，需要等到超时时间到达强行停止。通用的解决办法是调整缩短这个等待时间，建议从 1 分 30 秒调整至 30 秒，30 秒已经足够几乎所有进程正常结束。</p>
+<p>编辑 /etc/systemd/system.conf</p>
+<p>sudo vim /etc/systemd/system.conf
+找到其中 DefaultTimeoutStopSec 一项，将其前方的井号去掉，并赋值为 30s 即可。最后执行 daemon-reload 使其生效。</p>
+<p>sudo systemctl daemon-reload
+上述解决方案其实只是将这个等待时间缩小了，并没有解决实际问题。如果你想排查问题真正的原因所在，在关机时如果出现了 A stop job is running for&hellip;(1m30s)的信息，耐心等待其结束关机，然后重新启动电脑，执行以下命令：</p>
+<p>journalctl -p5
+按/(斜杠键)搜索 Killing 关键字，找到你关机的时间附近所在的匹配行，你可以在附近看到到底是哪一个进程导致了 timeout,然后再去排查这个进程有什么问题即可。</p>
+<p>升级系统时出现形如 unable to lock database 的错误
+可能存在升级系统时异常关机或程序异常退出的情况，或者多个 pacman 的相关程序在同时执行。移除 pacman 的 db 锁即可</p>
+<p>sudo rm /var/lib/pacman/db.lck</p>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/arch/">Arch</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/linux/arch/arch-need/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Arch individual config</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/linux/arch/arch-config/">
+    <span class="title">Next »</span>
+    <br>
+    <span>ArchLinux Config</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

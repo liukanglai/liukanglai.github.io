@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimrc/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimrc/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/ide+/vim+/vimrc/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "~/.vim/vimrc \" is comment :syntax on map \" Resize splits with arrow keys “noremap :res +5 “noremap :res -5 “noremap :vertical resize-5 “noremap :vertical resize+5\n\"” Place the two screens up and down “noremap sh tK \"” Place the two screens side by side “noremap sv tH\n\"” Disable the default s key “noremap s map 递归映射（可自定义再定义），noremap 非递归(系统默认) : Ctrl+u /: Alt+u : Shift+u 表示回车 bs 退格 箭头 上下翻页 … 无操作 :help index :map g\nnore is no recursive, ps:\nnoremap j gj \" it will use the original meaning of gj, rather than the meaning after changing.\nnmap/nnoremap 正常模式\nvmap/vnoremap 可视，选择模式\nxmap/xnoremap 可视模式?\nsmap/snoremap 选择模式\nomap/onoremap 操作待决模式?\nmap!/noremap! 插入和命令行模式\nimap/inoremap 插入模式\ncmap/cnoremap 命令行模式\ninoremap \" \"\"i leader default: \\ let mapleader = \" \" or “” 定义在前 全局配置 关闭 vi 兼容模式 set nocompatible (nocp) 设置历史记录步数: set history=1000 “开启相关插件” “侦测文件类型” filetype on “载入文件类型插件” filetype plugin on “为特定文件类型载入相关缩进文件” filetype indent on\n“当文件在外部被修改时，自动更新该文件” set autoread “激活鼠标的使用” set mouse=a / set selection=exclusive / set selectmode=mouse,key\n“保存全局变量” set viminfo+=!\n“带有如下符号的单词不要被换行分割” set iskeyword+=_,$,@,%,#,-\n“通过使用: commands 命令，告诉我们文件的哪一行被改变过” set report=0\n“被分割的窗口间显示空白，便于阅读” set fillchars=vert:\\ ,stl:\\ ,stlnc:\\\n字体和颜色 \" 高亮多余的空白字符及 Tab: highlight RedundantSpaces ctermbg=red guibg=red / match RedundantSpaces /\\s+$| +\\ze\\t|\\t/\n“自动开启语法高亮” syntax enable\n“设置字体” set guifont=dejaVu\\ Sans\\ MONO\\ 10 / set guifont=Courier_New:h10:cANSI\n“设置颜色” “colorscheme desert\n“高亮显示当前行” set cursorline / hi cursorline guibg=#00ff00 / hi CursorColumn guibg=#00ff00\n“高亮显示普通 txt 文件（需要 txt.vim 脚本）” au BufRead,BufNewFile * setfiletype txt\n代码折叠功能 “激活折叠功能” set foldenable set nofen（这个是关闭折叠功能）”\n“设置按照语法方式折叠（可简写 set fdm=XX）” “有 6 种折叠方法： “manual 手工定义折叠” “indent 更多的缩进表示更高级别的折叠” “expr 用表达式来定义折叠” “syntax 用语法高亮来定义折叠” “diff 对没有更改的文本进行折叠” “marker 对文中的标志进行折叠” set foldmethod=manual “set fdl=0（这个是不选用任何折叠方法）”\n“设置折叠区域的宽度” “如果不为 0，则在屏幕左侧显示一个折叠标识列 “分别用“-”和“+”来表示打开和关闭的折叠 set foldcolumn=0\n“设置折叠层数为 3” setlocal foldlevel=3\n“设置为自动关闭折叠” set foldclose=all\n“用空格键来代替 zo 和 zc 快捷键实现开关折叠” “zo O-pen a fold (打开折叠) “zc C-lose a fold (关闭折叠) “zf F-old creation (创建折叠) “nnoremap @=((foldclosed(line(’.’)) \u003c 0) ? ‘zc’ : ‘zo’)\n文字处理 “使用空格来替换 Tab” set expandtab\n“设置所有的 Tab 和缩进为 4 个空格” set tabstop=4\n“设定«和»命令移动时的宽度为 4” set shiftwidth=4\n“使得按退格键时可以一次删除 4 个空格” set softtabstop=4 / set smarttab\n“缩进，自动缩进（继承前一行的缩进）” “set autoindent 命令打开自动缩进，是下面配置的缩写 “可使用 autoindent 命令的简写，即“:set ai”和“:set noai” “还可以使用“:set ai sw=4”在一个命令中打开缩进并设置缩进级别 set ai set cindent\n“智能缩进” set si\n“自动换行” set wrap\n“设置软宽度” set sw=4\n“行内替换” set gdefault\nVim 界面 “增强模式中的命令行自动完成操作” set wildmenu\n“显示标尺” set ruler\n“设置命令行的高度” set cmdheight=1\n“显示行数” set nu\n“不要图形按钮” set go=\n“在执行宏命令时，不进行显示重绘；在宏命令执行完成后，一次性重绘，以便提高性能” set lz\n“使回格键（backspace）正常处理 indent, eol, start 等” set backspace=eol,start,indent\n“允许空格键和光标键跨越行边界” set whichwrap+=\u003c,\u003e,h,l\n“设置魔术” set magic?\n“关闭遇到错误时的声音提示” “关闭错误信息响铃” set noerrorbells\n“关闭使用可视响铃代替呼叫” set novisualbell\n“高亮显示匹配的括号([{和}])” set showmatch\n“匹配括号高亮的时间（单位是十分之一秒）” set mat=2\n“光标移动到 buffer 的顶部和底部时保持 3 行距离” set scrolloff=3\n“搜索逐字符高亮” set hlsearch set incsearch\n“搜索时不区分大小写” “还可以使用简写（“:set ic”和“:set noic”）” set ignorecase\n“用浅色高亮显示当前行” autocmd InsertLeave _ se nocul / autocmd InsertEnter _ se cul\n“输入的命令显示出来，看的清楚” set showcmd\n编码设置 “设置编码” set encoding=utf-8 / set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936\n“设置文件编码” set fileencodings=utf-8\n“设置终端编码” set termencoding=utf-8\n“设置语言编码” set langmenu=zh_CN.UTF-8 set helplang=cn\n“显示中文帮助” “set helplang=cn\n其他设置 “开启新行时使用智能自动缩进” set smartindent set cin set showmatch\n“在处理未保存或只读文件的时候，弹出确认” set confirm\n“隐藏工具栏” set guioptions-=T\n“隐藏菜单栏” set guioptions-=m\n“置空错误铃声的终端代码” set vb t_vb=\n“显示状态栏（默认值为 1，表示无法显示状态栏）” set laststatus=2\n“状态行显示的内容” set statusline=%F%m%r%h%w\\ [FORMAT=%{\u0026ff}]\\ [TYPE=%Y]\\ [POS=%l,%v][%p%%]\\ %{strftime(\"%d/%m/%y\\ -\\ %H:%M\")}\n“粘贴不换行问题的解决方法” set pastetoggle=\n“设置背景颜色” set background=dark\n“文件类型自动检测，代码智能补全” set completeopt=longest,preview,menu\n“共享剪切板” set clipboard+=unnamed\n“从不备份” set nobackup / set noswapfile\n“自动保存” set autowrite\n“显示中文帮助” if version \u003e= 603 set helplang=cn set encoding=utf-8 endif\n“设置高亮相关项”\nhighlight Search ctermbg=black ctermfg=white guifg=white guibg=black\n“”\"=\u003e在 shell 脚本开头自动增加解释器以及作者等版权信息\u003c=””” “新建.py,.cc,.sh,.java 文件，自动插入文件头” autocmd BufNewFile .py,.cc,.sh,.java exec “:call SetTitle()” “定义函数 SetTitle，自动插入文件头” func SetTitle() if expand (”%:e”) == ‘sh’ call setline(1, “#!/bin/bash”) call setline(2, “#Author:bert”) call setline(3, “#Blog:https://blog.51cto.com/zpf666”) call setline(4, “#Time:\".strftime(\"%F %T”)) call setline(5, “#Name:\".expand(”%”)) call setline(6, “#Version:V1.0”) call setline(7, “#Description:This is a production script.”) endif endfunc\n“set whichwrap+=\u003c,\u003e,h,l “允许空格键和光标键跨越行边界\n“highlight CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE “highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE\n“cterm 表示为原生 vim 设置样式，设置为 NONE 表示可以自定义设置。 “ctermbg 设置终端 vim 的背景色 “ctermfg 设置终端 vim 的前景色 “guibg 和 guifg 分别是设置 gvim 的背景色和前景色\n",
+  "wordCount" : "604",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/ide+/vim+/vimrc/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">3 min&amp;nbsp;·&amp;nbsp;604 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/IDE&#43;/Vim&#43;/vimrc.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#leader">leader</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="vimvimrc">~/.vim/vimrc<a hidden class="anchor" aria-hidden="true" href="#vimvimrc">#</a></h1>
+<ul>
+<li>&quot; is comment</li>
+<li>:syntax on</li>
+</ul>
+<h1 id="map">map<a hidden class="anchor" aria-hidden="true" href="#map">#</a></h1>
+<p>&quot; Resize splits with arrow keys
+&ldquo;noremap <up> :res +5<CR>
+&ldquo;noremap <down> :res -5<CR>
+&ldquo;noremap <left> :vertical resize-5<CR>
+&ldquo;noremap <right> :vertical resize+5<CR></p>
+<p>&quot;&rdquo; Place the two screens up and down
+&ldquo;noremap sh <C-w>t<C-w>K
+&quot;&rdquo; Place the two screens side by side
+&ldquo;noremap sv <C-w>t<C-w>H</p>
+<p>&quot;&rdquo; Disable the default s key
+&ldquo;noremap s <nop></p>
+<ul>
+<li>map 递归映射（可自定义再定义），noremap 非递归(系统默认)</li>
+<li><c-u>: Ctrl+u <a-u>/<m-u>: Alt+u <s-u>: Shift+u</li>
+<li><cr><enter>表示回车 <space> <esc> <tab> bs 退格</li>
+<li><up> <down> <left> <right>箭头 <pageup> <pagedown> 上下翻页</li>
+<li><f1>&hellip;</li>
+<li><nop>无操作
+<blockquote>
+<p>:help index :map g</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>nore is no recursive, ps:</p>
+<blockquote>
+<p>noremap j gj &quot; it will use the original meaning of gj, rather than the meaning after changing.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>
+<p>nmap/nnoremap 正常模式</p>
+</li>
+<li>
+<p>vmap/vnoremap 可视，选择模式</p>
+</li>
+<li>
+<p>xmap/xnoremap 可视模式?</p>
+</li>
+<li>
+<p>smap/snoremap 选择模式</p>
+</li>
+<li>
+<p>omap/onoremap 操作待决模式?</p>
+</li>
+<li>
+<p>map!/noremap! 插入和命令行模式</p>
+</li>
+<li>
+<p>imap/inoremap 插入模式</p>
+</li>
+<li>
+<p>cmap/cnoremap 命令行模式</p>
+<pre><code>  inoremap &quot; &quot;&quot;&lt;esc&gt;i
+</code></pre>
+</li>
+</ul>
+<h2 id="leader">leader<a hidden class="anchor" aria-hidden="true" href="#leader">#</a></h2>
+<ul>
+<li>default: \</li>
+<li>let mapleader = &quot; &quot; or &ldquo;&lt;space&gt;&rdquo; 定义在前</li>
+</ul>
+<h1 id="全局配置">全局配置<a hidden class="anchor" aria-hidden="true" href="#全局配置">#</a></h1>
+<ul>
+<li>关闭 vi 兼容模式 set nocompatible (nocp)</li>
+<li>设置历史记录步数: set history=1000</li>
+</ul>
+<p>&ldquo;开启相关插件&rdquo;
+&ldquo;侦测文件类型&rdquo; filetype on
+&ldquo;载入文件类型插件&rdquo; filetype plugin on
+&ldquo;为特定文件类型载入相关缩进文件&rdquo; filetype indent on</p>
+<ul>
+<li>&ldquo;当文件在外部被修改时，自动更新该文件&rdquo; set autoread</li>
+</ul>
+<p>&ldquo;激活鼠标的使用&rdquo; set mouse=a / set selection=exclusive / set selectmode=mouse,key</p>
+<p>&ldquo;保存全局变量&rdquo; set viminfo+=!</p>
+<p>&ldquo;带有如下符号的单词不要被换行分割&rdquo; set iskeyword+=_,$,@,%,#,-</p>
+<p>&ldquo;通过使用: commands 命令，告诉我们文件的哪一行被改变过&rdquo; set report=0</p>
+<p>&ldquo;被分割的窗口间显示空白，便于阅读&rdquo; set fillchars=vert:\ ,stl:\ ,stlnc:\</p>
+<h1 id="字体和颜色">字体和颜色<a hidden class="anchor" aria-hidden="true" href="#字体和颜色">#</a></h1>
+<p>&quot; 高亮多余的空白字符及 Tab: highlight RedundantSpaces ctermbg=red guibg=red / match RedundantSpaces /\s+$| +\ze\t|\t/</p>
+<p>&ldquo;自动开启语法高亮&rdquo; syntax enable</p>
+<p>&ldquo;设置字体&rdquo; set guifont=dejaVu\ Sans\ MONO\ 10 / set guifont=Courier_New:h10:cANSI</p>
+<p>&ldquo;设置颜色&rdquo; &ldquo;colorscheme desert</p>
+<p>&ldquo;高亮显示当前行&rdquo; set cursorline / hi cursorline guibg=#00ff00 / hi CursorColumn guibg=#00ff00</p>
+<p>&ldquo;高亮显示普通 txt 文件（需要 txt.vim 脚本）&rdquo; au BufRead,BufNewFile * setfiletype txt</p>
+<h1 id="代码折叠功能">代码折叠功能<a hidden class="anchor" aria-hidden="true" href="#代码折叠功能">#</a></h1>
+<p>&ldquo;激活折叠功能&rdquo; set foldenable set nofen（这个是关闭折叠功能）&rdquo;</p>
+<p>&ldquo;设置按照语法方式折叠（可简写 set fdm=XX）&rdquo;
+&ldquo;有 6 种折叠方法：
+&ldquo;manual 手工定义折叠&rdquo;
+&ldquo;indent 更多的缩进表示更高级别的折叠&rdquo;
+&ldquo;expr 用表达式来定义折叠&rdquo;
+&ldquo;syntax 用语法高亮来定义折叠&rdquo;
+&ldquo;diff 对没有更改的文本进行折叠&rdquo;
+&ldquo;marker 对文中的标志进行折叠&rdquo;
+set foldmethod=manual
+&ldquo;set fdl=0（这个是不选用任何折叠方法）&rdquo;</p>
+<p>&ldquo;设置折叠区域的宽度&rdquo;
+&ldquo;如果不为 0，则在屏幕左侧显示一个折叠标识列
+&ldquo;分别用“-”和“+”来表示打开和关闭的折叠
+set foldcolumn=0</p>
+<p>&ldquo;设置折叠层数为 3&rdquo; setlocal foldlevel=3</p>
+<p>&ldquo;设置为自动关闭折叠&rdquo; set foldclose=all</p>
+<p>&ldquo;用空格键来代替 zo 和 zc 快捷键实现开关折叠&rdquo;
+&ldquo;zo O-pen a fold (打开折叠)
+&ldquo;zc C-lose a fold (关闭折叠)
+&ldquo;zf F-old creation (创建折叠)
+&ldquo;nnoremap <space> @=((foldclosed(line(&rsquo;.&rsquo;)) &lt; 0) ? &lsquo;zc&rsquo; : &lsquo;zo&rsquo;)<CR></p>
+<h1 id="文字处理">文字处理<a hidden class="anchor" aria-hidden="true" href="#文字处理">#</a></h1>
+<p>&ldquo;使用空格来替换 Tab&rdquo; set expandtab</p>
+<p>&ldquo;设置所有的 Tab 和缩进为 4 个空格&rdquo; set tabstop=4</p>
+<p>&ldquo;设定&laquo;和&raquo;命令移动时的宽度为 4&rdquo; set shiftwidth=4</p>
+<p>&ldquo;使得按退格键时可以一次删除 4 个空格&rdquo; set softtabstop=4 / set smarttab</p>
+<p>&ldquo;缩进，自动缩进（继承前一行的缩进）&rdquo;
+&ldquo;set autoindent 命令打开自动缩进，是下面配置的缩写
+&ldquo;可使用 autoindent 命令的简写，即“:set ai”和“:set noai”
+&ldquo;还可以使用“:set ai sw=4”在一个命令中打开缩进并设置缩进级别
+set ai
+set cindent</p>
+<p>&ldquo;智能缩进&rdquo; set si</p>
+<p>&ldquo;自动换行” set wrap</p>
+<p>&ldquo;设置软宽度&rdquo; set sw=4</p>
+<p>&ldquo;行内替换&rdquo; set gdefault</p>
+<h1 id="vim-界面">Vim 界面<a hidden class="anchor" aria-hidden="true" href="#vim-界面">#</a></h1>
+<p>&ldquo;增强模式中的命令行自动完成操作&rdquo; set wildmenu</p>
+<p>&ldquo;显示标尺&rdquo; set ruler</p>
+<p>&ldquo;设置命令行的高度&rdquo; set cmdheight=1</p>
+<p>&ldquo;显示行数&rdquo; set nu</p>
+<p>&ldquo;不要图形按钮&rdquo; set go=</p>
+<p>&ldquo;在执行宏命令时，不进行显示重绘；在宏命令执行完成后，一次性重绘，以便提高性能&rdquo; set lz</p>
+<p>&ldquo;使回格键（backspace）正常处理 indent, eol, start 等&rdquo; set backspace=eol,start,indent</p>
+<p>&ldquo;允许空格键和光标键跨越行边界&rdquo; set whichwrap+=&lt;,&gt;,h,l</p>
+<p>&ldquo;设置魔术&rdquo; set magic?</p>
+<p>&ldquo;关闭遇到错误时的声音提示&rdquo; &ldquo;关闭错误信息响铃&rdquo; set noerrorbells</p>
+<p>&ldquo;关闭使用可视响铃代替呼叫&rdquo; set novisualbell</p>
+<p>&ldquo;高亮显示匹配的括号([{和}])&rdquo; set showmatch</p>
+<p>&ldquo;匹配括号高亮的时间（单位是十分之一秒）&rdquo; set mat=2</p>
+<p>&ldquo;光标移动到 buffer 的顶部和底部时保持 3 行距离&rdquo; set scrolloff=3</p>
+<p>&ldquo;搜索逐字符高亮&rdquo; set hlsearch set incsearch</p>
+<p>&ldquo;搜索时不区分大小写&rdquo; &ldquo;还可以使用简写（“:set ic”和“:set noic”）&rdquo; set ignorecase</p>
+<p>&ldquo;用浅色高亮显示当前行&rdquo; autocmd InsertLeave _ se nocul / autocmd InsertEnter _ se cul</p>
+<p>&ldquo;输入的命令显示出来，看的清楚&rdquo; set showcmd</p>
+<h1 id="编码设置">编码设置<a hidden class="anchor" aria-hidden="true" href="#编码设置">#</a></h1>
+<p>&ldquo;设置编码&rdquo; set encoding=utf-8 / set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936</p>
+<p>&ldquo;设置文件编码&rdquo; set fileencodings=utf-8</p>
+<p>&ldquo;设置终端编码&rdquo; set termencoding=utf-8</p>
+<p>&ldquo;设置语言编码&rdquo; set langmenu=zh_CN.UTF-8 set helplang=cn</p>
+<p>&ldquo;显示中文帮助&rdquo; &ldquo;set helplang=cn</p>
+<h1 id="其他设置">其他设置<a hidden class="anchor" aria-hidden="true" href="#其他设置">#</a></h1>
+<p>&ldquo;开启新行时使用智能自动缩进&rdquo;
+set smartindent
+set cin
+set showmatch</p>
+<p>&ldquo;在处理未保存或只读文件的时候，弹出确认&rdquo; set confirm</p>
+<p>&ldquo;隐藏工具栏&rdquo; set guioptions-=T</p>
+<p>&ldquo;隐藏菜单栏&rdquo; set guioptions-=m</p>
+<p>&ldquo;置空错误铃声的终端代码&rdquo; set vb t_vb=</p>
+<p>&ldquo;显示状态栏（默认值为 1，表示无法显示状态栏）&rdquo; set laststatus=2</p>
+<p>&ldquo;状态行显示的内容&rdquo; set statusline=%F%m%r%h%w\ [FORMAT=%{&amp;ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(&quot;%d/%m/%y\ -\ %H:%M&quot;)}</p>
+<p>&ldquo;粘贴不换行问题的解决方法&rdquo; set pastetoggle=<F9></p>
+<p>&ldquo;设置背景颜色&rdquo; set background=dark</p>
+<p>&ldquo;文件类型自动检测，代码智能补全&rdquo; set completeopt=longest,preview,menu</p>
+<p>&ldquo;共享剪切板&rdquo; set clipboard+=unnamed</p>
+<p>&ldquo;从不备份&rdquo; set nobackup / set noswapfile</p>
+<p>&ldquo;自动保存&rdquo; set autowrite</p>
+<p>&ldquo;显示中文帮助&rdquo;
+if version &gt;= 603
+set helplang=cn
+set encoding=utf-8
+endif</p>
+<p>&ldquo;设置高亮相关项&rdquo;</p>
+<p>highlight Search ctermbg=black ctermfg=white guifg=white guibg=black</p>
+<p>&ldquo;&rdquo;&quot;=&gt;在 shell 脚本开头自动增加解释器以及作者等版权信息&lt;=&rdquo;&rdquo;&rdquo;
+&ldquo;新建.py,.cc,.sh,.java 文件，自动插入文件头&rdquo;
+autocmd BufNewFile <em>.py,</em>.cc,<em>.sh,</em>.java exec &ldquo;:call SetTitle()&rdquo;
+&ldquo;定义函数 SetTitle，自动插入文件头&rdquo;
+func SetTitle()
+if expand (&rdquo;%:e&rdquo;) == &lsquo;sh&rsquo;
+call setline(1, &ldquo;#!/bin/bash&rdquo;)
+call setline(2, &ldquo;#Author:bert&rdquo;)
+call setline(3, &ldquo;#Blog:https://blog.51cto.com/zpf666&rdquo;)
+call setline(4, &ldquo;#Time:&quot;.strftime(&quot;%F %T&rdquo;))
+call setline(5, &ldquo;#Name:&quot;.expand(&rdquo;%&rdquo;))
+call setline(6, &ldquo;#Version:V1.0&rdquo;)
+call setline(7, &ldquo;#Description:This is a production script.&rdquo;)
+endif
+endfunc</p>
+<p>&ldquo;set whichwrap+=&lt;,&gt;,h,l &ldquo;允许空格键和光标键跨越行边界</p>
+<p>&ldquo;highlight CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+&ldquo;highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE</p>
+<p>&ldquo;cterm 表示为原生 vim 设置样式，设置为 NONE 表示可以自定义设置。
+&ldquo;ctermbg 设置终端 vim 的背景色
+&ldquo;ctermfg 设置终端 vim 的前景色
+&ldquo;guibg 和 guifg 分别是设置 gvim 的背景色和前景色</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimium/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimscript/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

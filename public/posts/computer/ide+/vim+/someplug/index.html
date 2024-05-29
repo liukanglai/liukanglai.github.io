@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/someplug/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/someplug/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/ide+/vim+/someplug/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "YouCompleteMe nnoremap gl :YcmCompleter GoToDeclaration nnoremap gf :YcmCompleter GoToDefinition nnoremap gi :YcmCompleter GoToDefinitionElseDeclaration set completeopt=menu,menuone let g:ycm_add_preview_to_completeopt = 0 let g:ycm_show_diagnostics_ui = 0 let g:ycm_server_log_level = 'info' let g:ycm_min_num_identifier_candidate_chars = 2 let g:ycm_collect_identifiers_from_comments_and_strings = 1 let g:ycm_complete_in_strings=1 let g:ycm_key_invoke_completion = '' noremap https://zhuanlan.zhihu.com/p/33046090\nvim中输入:echo has('python') || has('python3') - if return 1,show right vim --version | grep python(shoule be +, if -, than compile vim) Install cmake python clang boost llvm-libs llvm Plug 'Valloric/YouCompleteMe', {'do': './install.py'} cd .vim/plugged/YouCompleteMe sudo python3 install.py --clangd-completer (all) let g:ycm_min_num_identifier_candidate_chars = 2 let g:ycm_semantic_triggers = { \\ 'c,cpp,python,java,go,erlang,perl': ['re!\\w{2}'], \\ 'cs,lua,javascript': ['re!\\w{2}'], \\ } 如果你和我一样想把它改成上面比较素雅的灰色的话，可以自己定义 highlight：https://jonasjacek.github.io/colors/(auto)\nhighlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black 我不喜欢 YCM 自动弹出函数原型预览窗口，它搞乱我的布局，我有其他方法查看函数的原型，如果你和我一样想关闭该功能的话，增加两行配置：\nset completeopt=menu,menuone let g:ycm_add_preview_to_completeopt = 0 YCM 默认会显示诊断信息，语言标注出来你代码问题, 屏蔽: 这样你可以用其他插件来完成自动/非自动代码静态检查\nlet g:ycm_show_diagnostics_ui = 0 最后建议设置一下：g:ycm_filetype_whitelist 这个白名单，避免编辑白名单外的文件类型时 YCM 也在那分析半天，比如你打开个 1MB 的 TXT 文件，YCM 还要再那里空跑半天就傻了：\nlet g:ycm_filetype_whitelist = { \\ \"c\":1, \\ \"cpp\":1, \\ \"objc\":1, \\ \"sh\":1, \\ \"zsh\":1, \\ \"zimbu\":1, \\ \"markdown\":1, \\ } coc.nvim nodejs(npm) neovim yarn?\nplug ‘…’\ncheckhealth/ CocInfo\nCocInstall\nCocUninstall\nCocList extensions //tab\nfile coc-settings.json\n:CocConfig\nale :ALEFixSuggest\n:lopen to open\n:ALEToggle to open and close\n:ALEGoToDefinition 跳转定义\n:ALEFindReferences 查找定义的引用\n\"let g:ale_linters = { \"\\ 'javascript': ['eslint'], \"\\ 'css': ['stylelint'], \"\\ 'cpp': ['clang'], \"\\ 'c': ['clang'], \"\\ 'python': ['pylint'], \"\\} \"let g:ale_fixers = { \\ '*': ['remove_trailing_lines', 'trim_whitespace'], \"\\ 'javascript': ['eslint'], \"\\ 'css': ['stylelint'], \"\\ 'c': ['clang-format'], \"\\} let g:ale_fix_on_save = 0 \"let g:ale_sign_column_always = 1 let g:ale_sign_error = '●' let g:ale_sign_warning = '▶' let g:ale_disable_lsp = 1 let g:airline#extensions#ale#enabled = 1 let g:ale_completion_enable = 1 let g:ale_set_loclist = 0 let g:ale_set_quickfix = 1 \"let g:ale_open_list = 1 \"let g:ale_keep_list_window_open = 1 \"let g:ale_list_window_size = 5 \" nmap (ale_previous_wrap) nmap tam (ale_previous_wrap) \" nmap (ale_next_wrap) nmap tan (ale_next_wrap) \" code\n\" gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 \" \" let g:gutentags_project_root = [’.root’, ‘.svn’, ‘.git’, ‘.project’] \" 所生成的数据文件的名称 \" \" let g:gutentags_ctags_tagfile = ‘.tags’ \" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 \" \" let s:vim_tags = expand(’~/.cache/tags’) \" let g:gutentags_cache_dir = s:vim_tags \" 检测 ~/.cache/tags 不存在就新建 \" \" if !isdirectory(s:vim_tags) \" silent! call mkdir(s:vim_tags, ‘p’) \" endif \" 配置 ctags 的参数 \" \" let g:gutentags_ctags_extra_args = [’–fields=+niazS’, ‘–extra=+q’] \" let g:gutentags_ctags_extra_args += [’–c++-kinds=+pxI’] \" let g:gutentags_ctags_extra_args += [’–c-kinds=+px’]\n",
+  "wordCount" : "369",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/ide+/vim+/someplug/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;369 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/IDE&#43;/Vim&#43;/somePlug.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents"></nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="youcompleteme">YouCompleteMe<a hidden class="anchor" aria-hidden="true" href="#youcompleteme">#</a></h1>
+<pre><code>    nnoremap &lt;leader&gt;gl :YcmCompleter GoToDeclaration&lt;CR&gt;
+    nnoremap &lt;leader&gt;gf :YcmCompleter GoToDefinition&lt;CR&gt;
+    nnoremap &lt;leader&gt;gi :YcmCompleter GoToDefinitionElseDeclaration&lt;CR&gt;
+
+    set completeopt=menu,menuone
+    let g:ycm_add_preview_to_completeopt = 0
+    let g:ycm_show_diagnostics_ui = 0
+    let g:ycm_server_log_level = 'info'
+    let g:ycm_min_num_identifier_candidate_chars = 2
+    let g:ycm_collect_identifiers_from_comments_and_strings = 1
+    let g:ycm_complete_in_strings=1
+    let g:ycm_key_invoke_completion = '&lt;c-z&gt;'
+    noremap &lt;c-z&gt; &lt;NOP&gt;
+</code></pre>
+<blockquote>
+<p><code>https://zhuanlan.zhihu.com/p/33046090</code></p>
+</blockquote>
+<pre><code>    vim中输入:echo has('python') || has('python3')   - if return 1,show right
+    vim --version | grep python(shoule be +, if -, than compile vim)
+    Install cmake python clang boost llvm-libs llvm
+    Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+    cd .vim/plugged/YouCompleteMe
+    sudo python3 install.py --clangd-completer (all)
+
+    let g:ycm_min_num_identifier_candidate_chars = 2
+    let g:ycm_semantic_triggers =  {
+		                          \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+		                          \ 'cs,lua,javascript': ['re!\w{2}'],
+		                          \ }
+</code></pre>
+<ul>
+<li>
+<p>如果你和我一样想把它改成上面比较素雅的灰色的话，可以自己定义 highlight：https://jonasjacek.github.io/colors/(auto)</p>
+<pre><code>  highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
+  highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
+</code></pre>
+</li>
+<li>
+<p>我不喜欢 YCM 自动弹出函数原型预览窗口，它搞乱我的布局，我有其他方法查看函数的原型，如果你和我一样想关闭该功能的话，增加两行配置：</p>
+<pre><code>  set completeopt=menu,menuone
+  let g:ycm_add_preview_to_completeopt = 0
+</code></pre>
+</li>
+<li>
+<p>YCM 默认会显示诊断信息，语言标注出来你代码问题, 屏蔽: 这样你可以用其他插件来完成自动/非自动代码静态检查</p>
+<pre><code>  let g:ycm_show_diagnostics_ui = 0
+</code></pre>
+</li>
+<li>
+<p>最后建议设置一下：g:ycm_filetype_whitelist 这个白名单，避免编辑白名单外的文件类型时 YCM 也在那分析半天，比如你打开个 1MB 的 TXT 文件，YCM 还要再那里空跑半天就傻了：</p>
+<pre><code>  let g:ycm_filetype_whitelist = {
+  			\ &quot;c&quot;:1,
+  			\ &quot;cpp&quot;:1,
+  			\ &quot;objc&quot;:1,
+  			\ &quot;sh&quot;:1,
+  			\ &quot;zsh&quot;:1,
+  			\ &quot;zimbu&quot;:1,
+  			\ &quot;markdown&quot;:1,
+  			\ }
+</code></pre>
+</li>
+</ul>
+<h1 id="cocnvim">coc.nvim<a hidden class="anchor" aria-hidden="true" href="#cocnvim">#</a></h1>
+<ul>
+<li>
+<p>nodejs(npm) neovim yarn?</p>
+</li>
+<li>
+<p>plug &lsquo;&hellip;&rsquo;</p>
+</li>
+<li>
+<p>checkhealth/ CocInfo</p>
+</li>
+<li>
+<p>CocInstall</p>
+</li>
+<li>
+<p>CocUninstall</p>
+</li>
+<li>
+<p>CocList extensions //tab</p>
+</li>
+<li>
+<p>file coc-settings.json</p>
+</li>
+<li>
+<p>:CocConfig</p>
+</li>
+</ul>
+<h1 id="ale">ale<a hidden class="anchor" aria-hidden="true" href="#ale">#</a></h1>
+<ul>
+<li>
+<p>:ALEFixSuggest</p>
+</li>
+<li>
+<p>:lopen to open</p>
+</li>
+<li>
+<p>:ALEToggle to open and close</p>
+</li>
+<li>
+<p>:ALEGoToDefinition 跳转定义</p>
+</li>
+<li>
+<p>:ALEFindReferences 查找定义的引用</p>
+<pre><code>  &quot;let g:ale_linters = {
+  &quot;\    'javascript': ['eslint'],
+  &quot;\    'css': ['stylelint'],
+  &quot;\ 'cpp': ['clang'],
+  &quot;\ 'c': ['clang'],
+  &quot;\ 'python': ['pylint'],
+  &quot;\}
+
+  &quot;let g:ale_fixers = {
+  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  &quot;\   'javascript': ['eslint'],
+  &quot;\   'css': ['stylelint'],
+  &quot;\   'c': ['clang-format'],
+  &quot;\}
+
+  let g:ale_fix_on_save = 0
+
+  &quot;let g:ale_sign_column_always = 1
+  let g:ale_sign_error = '●'
+  let g:ale_sign_warning = '▶'
+
+  let g:ale_disable_lsp = 1
+  let g:airline#extensions#ale#enabled = 1
+
+  let g:ale_completion_enable = 1
+
+  let g:ale_set_loclist = 0
+  let g:ale_set_quickfix = 1
+  &quot;let g:ale_open_list = 1
+  &quot;let g:ale_keep_list_window_open = 1
+  &quot;let g:ale_list_window_size = 5
+
+  &quot; nmap &lt;silent&gt; &lt;C-k&gt; &lt;Plug&gt;(ale_previous_wrap)
+  nmap &lt;silent&gt; tam &lt;Plug&gt;(ale_previous_wrap)
+  &quot; nmap &lt;silent&gt; &lt;C-j&gt; &lt;Plug&gt;(ale_next_wrap)
+  nmap &lt;silent&gt; tan &lt;Plug&gt;(ale_next_wrap)
+</code></pre>
+</li>
+</ul>
+<p>&quot; code</p>
+<p>&quot; gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 &quot;
+&quot; let g:gutentags_project_root = [&rsquo;.root&rsquo;, &lsquo;.svn&rsquo;, &lsquo;.git&rsquo;, &lsquo;.project&rsquo;]
+&quot; 所生成的数据文件的名称 &quot;
+&quot; let g:gutentags_ctags_tagfile = &lsquo;.tags&rsquo;
+&quot; 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 &quot;
+&quot; let s:vim_tags = expand(&rsquo;~/.cache/tags&rsquo;)
+&quot; let g:gutentags_cache_dir = s:vim_tags
+&quot; 检测 ~/.cache/tags 不存在就新建 &quot;
+&quot; if !isdirectory(s:vim_tags)
+&quot; silent! call mkdir(s:vim_tags, &lsquo;p&rsquo;)
+&quot; endif
+&quot; 配置 ctags 的参数 &quot;
+&quot; let g:gutentags_ctags_extra_args = [&rsquo;&ndash;fields=+niazS&rsquo;, &lsquo;&ndash;extra=+q&rsquo;]
+&quot; let g:gutentags_ctags_extra_args += [&rsquo;&ndash;c++-kinds=+pxI&rsquo;]
+&quot; let g:gutentags_ctags_extra_args += [&rsquo;&ndash;c-kinds=+px&rsquo;]</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/regex/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/start/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

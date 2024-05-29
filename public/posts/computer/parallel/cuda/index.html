@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/parallel/cuda/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/parallel/cuda/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/parallel/cuda/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "hardware max one block up to have 512(or 1024) threads max dimension size of block:(1024, 1024, 64), grid:(2^31-1, 2^16-1, 2^16-1) concurrent kernel execution: 32 max threads per multiprocessor: 2048 max threads per block: 1024 G80 have 16 SM assignment: Streaming Multiprocessors (SM) to run the threads, up to 8 blocks, and(not or) 768 threads. G80, scheduling: 32 threads - a warp, divide eack block to many warps, 8 cpus, each do 4 threads, each do a warp. Really parallel shared memory (16K) to a SM, 2 blocks, each can only use 8K. memory local memory shared memory per block(48M) global memory constant memory compile (nvcc) nvcc to PTX Code and CPU Code PTX to Target Compiler (G80, GPU…) grammar cudaMalloc(\u0026Md, size) cudaMalloc((void /**)\u0026Md, size) // 强转，普遍\ncudaMemcpy(Md, M, size, cudaMemcpyHostToDevice) // cudaMemcpyDeviceToHost, cudaMemcpyDeviceToDevice… cudaFree(Md)\n_device_ float DeviceFUnc (device to device) // can't use the address of function _global_ void KernelFunc (host to device) // kernel function _host_ float HostFunc (host to host) _host_ _device_ ... // variable type _shared_ _devide_ _constant_ 不写，默认host\non device function: no recursion; no static variable declaration inside; no 变参\nint tx = threadIdx.x; int ty = threadIdx.y; dimGrid(1, 1) (block in it)\ndimBlock(width,width) (have max. Thread in it)\nKernel kernelFunc\u003c\u003c\u003c nB, nT, nS, Sid\u003e\u003e\u003e(...) // nS, Sid are optional nB: grid size\nnT: block size\nnS: shared memory size (bytes)\nSid: stream ID, default is 0 (kernel trans)\n… 内must is device points\ndim3 (x, y, z)\nthreadIdx, blockIdx, blockDim, gridDim\n/__syncthreads()\nhost access it: global constant, can’t: register(automatic), shared, local\nGPU can only use pointers in global memory, no other pointers\n// Matrices are stored in row-major order: // M(row, col) = *(M.elements + row * M.width + col) typedef struct { int width; int height; float* elements; } Matrix; // Thread block size #define BLOCK_SIZE 16 // Forward declaration of the matrix multiplication kernel __global__ void MatMulKernel(const Matrix, const Matrix, Matrix); // Matrix multiplication - Host code // Matrix dimensions are assumed to be multiples of BLOCK_SIZE void MatMul(const Matrix A, const Matrix B, Matrix C) { // Load A and B to device memory Matrix d_A; d_A.width = A.width; d_A.height = A.height; size_t size = A.width * A.height * sizeof(float); cudaMalloc(\u0026d_A.elements, size); cudaMemcpy(d_A.elements, A.elements, size, cudaMemcpyHostToDevice); Matrix d_B; d_B.width = B.width; d_B.height = B.height; size = B.width * B.height * sizeof(float); cudaMalloc(\u0026d_B.elements, size); cudaMemcpy(d_B.elements, B.elements, size, cudaMemcpyHostToDevice); // Allocate C in device memory Matrix d_C; d_C.width = C.width; d_C.height = C.height; size = C.width * C.height * sizeof(float); cudaMalloc(\u0026d_C.elements, size); // Invoke kernel dim3 dimBlock(BLOCK_SIZE, BLOCK_SIZE); dim3 dimGrid(B.width / dimBlock.x, A.height / dimBlock.y); MatMulKernel\u003c\u003c\u003e\u003e(d_A, d_B, d_C); // Read C from device memory cudaMemcpy(C.elements, d_C.elements, size, cudaMemcpyDeviceToHost); // Free device memory cudaFree(d_A.elements); cudaFree(d_B.elements); cudaFree(d_C.elements); } // Matrix multiplication kernel called by MatMul() __global__ void MatMulKernel(Matrix A, Matrix B, Matrix C){ // Each thread computes one element of C // by accumulating results into Cvalue float Cvalue = 0; int row = blockIdx.y * blockDim.y + threadIdx.y; int col = blockIdx.x * blockDim.x + threadIdx.x; for (int e = 0; e \u003c A.width; ++e){ Cvalue += A.elements[row * A.width + e] * B.elements[e * B.width + col]; } C.elements[row * C.width + col] = Cvalue; } Shared Memory each thread block is responsible for computing one square sub-matrix Csub of C and each thread within the block is responsible for computing one element of Csub.\nthe sub-matrix of A of dimension (A.width, block_size) that has the same row indices as Csub, and the sub-matrix of B of dimension (block_size, A.width )that has the same column indices as Csub.\ntwo rectangular matrices are divided into as many square matrices of dimension block_size\nfirst loading the two corresponding square matrices from global memory to shared memory with one thread loading one element of each matrix,\neach thread compute one element of the product.\nEach thread accumulates the result of each of these products into a register and once done writes the result to global memory.\n// Matrices are stored in row-major order: // M(row, col) = *(M.elements + row * M.stride + col) typedef struct { int width; int height; int stride; float* elements; } Matrix; // Get a matrix element __device__ float GetElement(const Matrix A, int row, int col) { return A.elements[row * A.stride + col]; } // Set a matrix element __device__ void SetElement(Matrix A, int row, int col, float value) { A.elements[row * A.stride + col] = value; } // Get the BLOCK_SIZExBLOCK_SIZE sub-matrix Asub of A that is // located col sub-matrices to the right and row sub-matrices down // from the upper-left corner of A __device__ Matrix GetSubMatrix(Matrix A, int row, int col) { Matrix Asub; Asub.width = BLOCK_SIZE; Asub.height = BLOCK_SIZE; Asub.stride = A.stride; Asub.elements = \u0026A.elements[A.stride * BLOCK_SIZE * row + BLOCK_SIZE * col]; return Asub; } // Thread block size #define BLOCK_SIZE 16 // Forward declaration of the matrix multiplication kernel __global__ void MatMulKernel(const Matrix, const Matrix, Matrix); // Matrix multiplication - Host code // Matrix dimensions are assumed to be multiples of BLOCK_SIZE void MatMul(const Matrix A, const Matrix B, Matrix C) { // Load A and B to device memory Matrix d_A; d_A.width = d_A.stride = A.width; d_A.height = A.height; size_t size = A.width * A.height * sizeof(float); cudaMalloc(\u0026d_A.elements, size); cudaMemcpy(d_A.elements, A.elements, size, cudaMemcpyHostToDevice); Matrix d_B; d_B.width = d_B.stride = B.width; d_B.height = B.height; size = B.width * B.height * sizeof(float); cudaMalloc(\u0026d_B.elements, size); cudaMemcpy(d_B.elements, B.elements, size, cudaMemcpyHostToDevice); // Allocate C in device memory Matrix d_C; d_C.width = d_C.stride = C.width; d_C.height = C.height; size = C.width * C.height * sizeof(float); cudaMalloc(\u0026d_C.elements, size); // Invoke kernel dim3 dimBlock(BLOCK_SIZE, BLOCK_SIZE); dim3 dimGrid(B.width / dimBlock.x, A.height / dimBlock.y); MatMulKernel\u003c\u003c\u003e\u003e(d_A, d_B, d_C); // Read C from device memory cudaMemcpy(C.elements, d_C.elements, size, cudaMemcpyDeviceToHost); // Free device memory cudaFree(d_A.elements); cudaFree(d_B.elements); cudaFree(d_C.elements); } //Matrix multiplication kernel called by MatMul() _global_ void MatMulKernel(Matrix A, Matrix B, Matrix C){ // Block row and column int blockRow = blockIdx.y; int blockCol = blockIdx.x; // Each thread block computes one sub-matrix Csub of C Matrix Csub = GetSubMatrix(C, blockRow, blockCol); // Each thread computes one element of Csub // by accumulating results into Cvalue float Cvalue = 0; // Thread row and column within Csub int row = threadIdx.y; int col = threadIdx.x; // Loop over all the sub-matrices of A and B that are // required to compute Csub // Multiply each pair of sub-matrices together // and accumulate the results for (int m = 0; m \u003c (A.width / BLOCK_SIZE); ++m) { /Global, local, texture, constant, shared and register memory. / Get sub-matrix Asub of A Matrix Asub = GetSubMatrix(A, blockRow, m); // Get sub-matrix Bsub of B Matrix Bsub = GetSubMatrix(B, m, blockCol); // Shared memory used to store Asub and Bsub respectively __shared__ float As[BLOCK_SIZE][BLOCK_SIZE]; __shared__ float Bs[BLOCK_SIZE][BLOCK_SIZE]; // Load Asub and Bsub from device memory to shared memory // Each thread loads one element of each sub-matrix As[row][col] = GetElement(Asub, row, col); Bs[row][col] = GetElement(Bsub, row, col); // Synchronize to make sure the sub-matrices are loaded // before starting the computation __syncthreads(); // Multiply Asub and Bsub together for (int e = 0; e \u003c BLOCK_SIZE; ++e){ Cvalue += As[row][e] * Bs[e][col]; } // Synchronize to make sure that the preceding // computation is done before loading two new // sub-matrices of A and B in the next iteration __syncthreads(); } // Write Csub to device memory // Each thread writes one element SetElement(Csub, row, col, Cvalue); } API Math: sprt, sin… memory branch all do, to give up some. ",
+  "wordCount" : "1250",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/parallel/cuda/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">6 min&amp;nbsp;·&amp;nbsp;1250 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/Parallel/Cuda.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#memory">memory</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#kernel">Kernel</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#api">API</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="hardware">hardware<a hidden class="anchor" aria-hidden="true" href="#hardware">#</a></h1>
+<ol>
+<li>max</li>
+</ol>
+<ul>
+<li>one block up to have 512(or 1024) threads</li>
+<li>max dimension size of block:(1024, 1024, 64), grid:(2^31-1, 2^16-1, 2^16-1)</li>
+<li>concurrent kernel execution: 32</li>
+<li>max threads per multiprocessor: 2048</li>
+<li>max threads per block: 1024</li>
+</ul>
+<ol start="2">
+<li></li>
+</ol>
+<ul>
+<li>G80 have 16 SM assignment: Streaming Multiprocessors (SM) to run the threads, up to 8 blocks, and(not or) 768 threads.</li>
+<li>G80, scheduling: 32 threads - a warp, divide eack block to many warps, 8 cpus, each do 4 threads, each do a warp.  Really parallel</li>
+<li>shared memory (16K) to a SM, 2 blocks, each can only use 8K.</li>
+</ul>
+<h2 id="memory">memory<a hidden class="anchor" aria-hidden="true" href="#memory">#</a></h2>
+<ul>
+<li>local memory</li>
+<li>shared memory per block(48M)</li>
+<li>global memory</li>
+<li>constant memory</li>
+</ul>
+<h1 id="compile-nvcc">compile (nvcc)<a hidden class="anchor" aria-hidden="true" href="#compile-nvcc">#</a></h1>
+<ol>
+<li>nvcc to PTX Code and CPU Code</li>
+<li>PTX to Target Compiler (G80, GPU&hellip;)</li>
+</ol>
+<h1 id="grammar">grammar<a hidden class="anchor" aria-hidden="true" href="#grammar">#</a></h1>
+<p>cudaMalloc(&amp;Md, size)
+cudaMalloc((void /**)&amp;Md, size) // 强转，普遍</p>
+<p>cudaMemcpy(Md, M, size, cudaMemcpyHostToDevice) // cudaMemcpyDeviceToHost, cudaMemcpyDeviceToDevice&hellip;
+cudaFree(Md)</p>
+<pre><code>    _device_ float DeviceFUnc  (device to device) // can't use the address of function
+    _global_ void KernelFunc (host to device) // kernel function
+    _host_ float HostFunc (host to host)
+    _host_ _device_ ...
+
+    // variable type
+    _shared_  
+    _devide_ 
+    _constant_
+</code></pre>
+<ul>
+<li>
+<p>不写，默认host</p>
+</li>
+<li>
+<p>on device function: no recursion; no static variable declaration inside; no 变参</p>
+<pre><code>  int tx = threadIdx.x;
+  int ty = threadIdx.y;
+</code></pre>
+</li>
+<li>
+<p>dimGrid(1, 1) (block in it)</p>
+</li>
+<li>
+<p>dimBlock(width,width) (have max. Thread in it)</p>
+</li>
+</ul>
+<h2 id="kernel">Kernel<a hidden class="anchor" aria-hidden="true" href="#kernel">#</a></h2>
+<pre><code>kernelFunc&lt;&lt;&lt; nB, nT, nS, Sid&gt;&gt;&gt;(...) // nS, Sid are optional
+</code></pre>
+<ul>
+<li>
+<p>nB: grid size</p>
+</li>
+<li>
+<p>nT: block size</p>
+</li>
+<li>
+<p>nS: shared memory size (bytes)</p>
+</li>
+<li>
+<p>Sid: stream ID, default is 0 (kernel trans)</p>
+</li>
+<li>
+<p>&hellip; 内must is device points</p>
+</li>
+</ul>
+<h1 id="heading"><a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h1>
+<ul>
+<li>
+<p>dim3 (x, y, z)</p>
+</li>
+<li>
+<p>threadIdx, blockIdx, blockDim, gridDim</p>
+</li>
+<li>
+<p>/__syncthreads()</p>
+</li>
+<li>
+<p>host access it: global constant, can&rsquo;t: register(automatic), shared, local</p>
+</li>
+<li>
+<p>GPU can only use pointers in global memory, no other pointers</p>
+<pre><code>  // Matrices are stored in row-major order:
+  // M(row, col) = *(M.elements + row * M.width + col)
+  typedef struct {
+      int width;
+      int height;
+      float* elements;
+  } Matrix;
+
+  // Thread block size
+  #define BLOCK_SIZE 16
+  // Forward declaration of the matrix multiplication kernel
+
+  __global__ void MatMulKernel(const Matrix, const Matrix, Matrix);
+  // Matrix multiplication - Host code
+  // Matrix dimensions are assumed to be multiples of BLOCK_SIZE
+
+  void MatMul(const Matrix A, const Matrix B, Matrix C) {
+      // Load A and B to device memory
+      Matrix d_A;
+      d_A.width = A.width; d_A.height = A.height;
+      size_t size = A.width * A.height * sizeof(float);
+      cudaMalloc(&amp;d_A.elements, size);
+      cudaMemcpy(d_A.elements, A.elements, size,
+      cudaMemcpyHostToDevice);
+      Matrix d_B;
+      d_B.width = B.width; d_B.height = B.height;
+      size = B.width * B.height * sizeof(float);
+      cudaMalloc(&amp;d_B.elements, size);
+      cudaMemcpy(d_B.elements, B.elements, size,
+      cudaMemcpyHostToDevice);
+
+      // Allocate C in device memory
+      Matrix d_C;
+      d_C.width = C.width; d_C.height = C.height;
+      size = C.width * C.height * sizeof(float);
+      cudaMalloc(&amp;d_C.elements, size);
+
+      // Invoke kernel
+      dim3 dimBlock(BLOCK_SIZE, BLOCK_SIZE);
+      dim3 dimGrid(B.width / dimBlock.x, A.height / dimBlock.y);
+      MatMulKernel&lt;&lt;&lt;dimGrid, dimBlock&gt;&gt;&gt;(d_A, d_B, d_C);
+
+      // Read C from device memory
+      cudaMemcpy(C.elements, d_C.elements, size,
+      cudaMemcpyDeviceToHost);
+
+      // Free device memory
+      cudaFree(d_A.elements);
+      cudaFree(d_B.elements);
+      cudaFree(d_C.elements);
+  }
+  // Matrix multiplication kernel called by MatMul()
+  __global__ void MatMulKernel(Matrix A, Matrix B, Matrix C){
+      // Each thread computes one element of C
+      // by accumulating results into Cvalue
+
+      float Cvalue = 0;
+      int row = blockIdx.y * blockDim.y + threadIdx.y;
+      int col = blockIdx.x * blockDim.x + threadIdx.x;
+      for (int e = 0; e &lt; A.width; ++e){
+          Cvalue += A.elements[row * A.width + e] * B.elements[e * B.width + col];
+      }
+      C.elements[row * C.width + col] = Cvalue;
+  }
+</code></pre>
+</li>
+</ul>
+<h1 id="shared-memory">Shared Memory<a hidden class="anchor" aria-hidden="true" href="#shared-memory">#</a></h1>
+<ul>
+<li>
+<p>each thread block is responsible for computing one square sub-matrix Csub of C and each thread within the block is responsible for computing one element of Csub.</p>
+</li>
+<li>
+<p>the sub-matrix of A of dimension (A.width, block_size) that has the same row indices as Csub, and the sub-matrix of B of dimension (block_size, A.width )that has the same column indices as Csub.</p>
+</li>
+<li>
+<p>two rectangular matrices are divided into as many square matrices of dimension block_size</p>
+</li>
+<li>
+<p>first loading the two corresponding square matrices from global memory to shared memory with one thread loading one element of each matrix,</p>
+</li>
+<li>
+<p>each thread compute one element of the product.</p>
+</li>
+<li>
+<p>Each thread accumulates the result of each of these products into a register and once done writes the result to global memory.</p>
+<pre><code>  // Matrices are stored in row-major order:
+  // M(row, col) = *(M.elements + row * M.stride + col)
+  typedef struct {
+      int width;
+      int height;
+      int stride;
+      float* elements;
+  } Matrix;
+  // Get a matrix element
+  __device__ float GetElement(const Matrix A, int row, int col) {
+      return A.elements[row * A.stride + col];
+  }
+  // Set a matrix element
+  __device__ void SetElement(Matrix A, int row, int col, float value) {
+      A.elements[row * A.stride + col] = value;
+  }
+  // Get the BLOCK_SIZExBLOCK_SIZE sub-matrix Asub of A that is
+  // located col sub-matrices to the right and row sub-matrices down
+  // from the upper-left corner of A
+  __device__ Matrix GetSubMatrix(Matrix A, int row, int col) {
+      Matrix Asub;
+      Asub.width = BLOCK_SIZE;
+      Asub.height = BLOCK_SIZE;
+      Asub.stride = A.stride;
+      Asub.elements = &amp;A.elements[A.stride * BLOCK_SIZE * row + BLOCK_SIZE * col];
+      return Asub;
+  }
+  // Thread block size
+  #define BLOCK_SIZE 16
+
+  // Forward declaration of the matrix multiplication kernel
+  __global__ void MatMulKernel(const Matrix, const Matrix, Matrix);
+
+  // Matrix multiplication - Host code
+  // Matrix dimensions are assumed to be multiples of BLOCK_SIZE
+  void MatMul(const Matrix A, const Matrix B, Matrix C) {
+      // Load A and B to device memory
+      Matrix d_A;
+      d_A.width = d_A.stride = A.width; 
+      d_A.height = A.height;
+      size_t size = A.width * A.height * sizeof(float);
+      cudaMalloc(&amp;d_A.elements, size);
+      cudaMemcpy(d_A.elements, A.elements, size,
+      cudaMemcpyHostToDevice);
+      Matrix d_B;
+      d_B.width = d_B.stride = B.width; d_B.height = B.height;
+      size = B.width * B.height * sizeof(float);
+      cudaMalloc(&amp;d_B.elements, size);
+      cudaMemcpy(d_B.elements, B.elements, size,
+      cudaMemcpyHostToDevice);
+      // Allocate C in device memory
+      Matrix d_C;
+      d_C.width = d_C.stride = C.width; d_C.height = C.height;
+      size = C.width * C.height * sizeof(float);
+      cudaMalloc(&amp;d_C.elements, size);
+
+      // Invoke kernel
+      dim3 dimBlock(BLOCK_SIZE, BLOCK_SIZE);
+      dim3 dimGrid(B.width / dimBlock.x, A.height / dimBlock.y);
+      MatMulKernel&lt;&lt;&lt;dimGrid, dimBlock&gt;&gt;&gt;(d_A, d_B, d_C);
+
+      // Read C from device memory
+      cudaMemcpy(C.elements, d_C.elements, size, cudaMemcpyDeviceToHost);
+
+      // Free device memory
+      cudaFree(d_A.elements);
+      cudaFree(d_B.elements);
+      cudaFree(d_C.elements);
+  }
+
+  //Matrix multiplication kernel called by MatMul()
+  _global_ void MatMulKernel(Matrix A, Matrix B, Matrix C){
+      // Block row and column
+      int blockRow = blockIdx.y;
+      int blockCol = blockIdx.x;
+
+      // Each thread block computes one sub-matrix Csub of C
+      Matrix Csub = GetSubMatrix(C, blockRow, blockCol);
+
+      // Each thread computes one element of Csub
+      // by accumulating results into Cvalue
+      float Cvalue = 0;
+
+      // Thread row and column within Csub
+      int row = threadIdx.y;
+      int col = threadIdx.x;
+
+      // Loop over all the sub-matrices of A and B that are
+      // required to compute Csub
+      // Multiply each pair of sub-matrices together
+      // and accumulate the results
+      for (int m = 0; m &lt; (A.width / BLOCK_SIZE); ++m) {
+
+          /Global, local, texture, constant, shared and register memory. / Get sub-matrix Asub of A
+          Matrix Asub = GetSubMatrix(A, blockRow, m);
+
+          // Get sub-matrix Bsub of B
+          Matrix Bsub = GetSubMatrix(B, m, blockCol);
+
+          // Shared memory used to store Asub and Bsub respectively
+          __shared__ float As[BLOCK_SIZE][BLOCK_SIZE];
+          __shared__ float Bs[BLOCK_SIZE][BLOCK_SIZE];
+
+          // Load Asub and Bsub from device memory to shared memory
+          // Each thread loads one element of each sub-matrix
+          As[row][col] = GetElement(Asub, row, col);
+          Bs[row][col] = GetElement(Bsub, row, col);
+
+          // Synchronize to make sure the sub-matrices are loaded
+          // before starting the computation
+          __syncthreads();
+
+          // Multiply Asub and Bsub together
+          for (int e = 0; e &lt; BLOCK_SIZE; ++e){
+              Cvalue += As[row][e] * Bs[e][col];
+          }
+
+          // Synchronize to make sure that the preceding
+          // computation is done before loading two new
+          // sub-matrices of A and B in the next iteration
+          __syncthreads();
+      }
+      // Write Csub to device memory
+      // Each thread writes one element
+      SetElement(Csub, row, col, Cvalue);
+  }
+</code></pre>
+</li>
+</ul>
+<h2 id="api">API<a hidden class="anchor" aria-hidden="true" href="#api">#</a></h2>
+<ul>
+<li>Math: sprt, sin&hellip;</li>
+<li>memory</li>
+</ul>
+<h1 id="branch">branch<a hidden class="anchor" aria-hidden="true" href="#branch">#</a></h1>
+<ul>
+<li>all do, to give up some.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/parallel/1/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/parallel/mpi/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

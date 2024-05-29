@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/language/c-cpp/array-pointer/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/language/c-cpp/array-pointer/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/language/c-cpp/array-pointer/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": " 二维数组： int (*a)[4]; return *(*a+2); function(int a[][4]) 4 不能省； int a[2][2] = {1, 2, 3, 4}; *(a[0] + 1) vs **(a + 1) (is 2, 3)，类推更高维数组 p1 – p2 = ( 地址 p1 – 地址 p2 ) / sizeof( T) 所有指针变量,不论它是什么类型的,其占用的空间都是 4 个字节。 初始化 https://www.freesion.com/article/37471412731/\n直接赋值\nint[2][3] arr1 = { {5, 2, 4}, {10, 2, 1} }; 循环对每个元素赋值\nint[2][3] arr2; int i, j; for (i = 0; i \u003c 2; i++) { for (j = 0; j \u003c 3; j++) { arr2[i][j] = 2; /_ 本例为了简单都赋值成相同值 _/ } } 借用 MEMSET/MEMSET_S 初始化为 0 或-1，注意：memset/memset_s 只能将变量初始化为 0 或-1，\nint[10][10] arr3; memset(arr3, 0, sizeof(arr3); /_ 正常，arr3 中的每个元素都为 0 _/ memset(arr3, -1, sizeof(arr3); /_ 正常，arr3 中的每个元素都为-1 _/ memset(arr3, 2, sizeof(arr3); /_ 异常，arr3 中的每个元素都为异常值 33686018 _/ 4、数组所有元素初始化为相同值 只要值为相同的，特别是数组元素比较多的情况，推荐用此方法： { [0 … LENA-1][0 … lenb-1] = num }; 这种初始化方法比较少见，但特别省事，所以共享给大家。\n#define ARR_LEN 100 int arr4[ARR_LEN][ARR_LEN] = { [0 ... (ARR_LEN-1)][0 ... (ARR_LEN-1)] = 10 }; /* 100*100个元素都初始化为10 */ 函数指针 #include void PrintMin(int a, int b) { if( a",
+  "wordCount" : "203",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/language/c-cpp/array-pointer/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">1 min&amp;nbsp;·&amp;nbsp;203 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/Language/C-Cpp/array-pointer.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents"></nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="heading"><a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h1>
+<ul>
+<li>二维数组： int (*a)[4];</li>
+<li>return *(*a+2);</li>
+<li>function(int a[][4]) 4 不能省；</li>
+</ul>
+<h1 id="heading-1"><a hidden class="anchor" aria-hidden="true" href="#heading-1">#</a></h1>
+<pre><code>int a[2][2] = {1, 2, 3, 4};
+*(a[0] + 1) vs **(a + 1) (is 2, 3)，类推更高维数组
+</code></pre>
+<h1 id="heading-2"><a hidden class="anchor" aria-hidden="true" href="#heading-2">#</a></h1>
+<ul>
+<li>p1 – p2 = ( 地址 p1 – 地址 p2 ) / sizeof( T)</li>
+<li>所有指针变量,不论它是什么类型的,其占用的空间都是 4 个字节。</li>
+</ul>
+<h1 id="初始化">初始化<a hidden class="anchor" aria-hidden="true" href="#初始化">#</a></h1>
+<blockquote>
+<p><code>https://www.freesion.com/article/37471412731/</code></p>
+</blockquote>
+<ol>
+<li>
+<p>直接赋值</p>
+<pre><code>int[2][3] arr1 = { {5, 2, 4}, {10, 2, 1} };
+</code></pre>
+</li>
+<li>
+<p>循环对每个元素赋值</p>
+<pre><code>int[2][3] arr2;
+int i, j;
+for (i = 0; i &lt; 2; i++) {
+  for (j = 0; j &lt; 3; j++) {
+    arr2[i][j] = 2; /_ 本例为了简单都赋值成相同值 _/
+  }
+}
+</code></pre>
+</li>
+<li>
+<p>借用 MEMSET/MEMSET_S 初始化为 0 或-1，注意：memset/memset_s 只能将变量初始化为 0 或-1，</p>
+<pre><code>int[10][10] arr3;
+memset(arr3, 0, sizeof(arr3); /_ 正常，arr3 中的每个元素都为 0 _/
+memset(arr3, -1, sizeof(arr3); /_ 正常，arr3 中的每个元素都为-1 _/
+memset(arr3, 2, sizeof(arr3); /_ 异常，arr3 中的每个元素都为异常值 33686018 _/
+</code></pre>
+</li>
+</ol>
+<p>4、数组所有元素初始化为相同值
+只要值为相同的，特别是数组元素比较多的情况，推荐用此方法：
+{ [0 … LENA-1][0 … lenb-1] = num };
+这种初始化方法比较少见，但特别省事，所以共享给大家。</p>
+<pre><code>    #define ARR_LEN 100
+    int arr4[ARR_LEN][ARR_LEN] = { [0 ... (ARR_LEN-1)][0 ... (ARR_LEN-1)] = 10 }; /* 100*100个元素都初始化为10 */
+</code></pre>
+<h1 id="函数指针">函数指针<a hidden class="anchor" aria-hidden="true" href="#函数指针">#</a></h1>
+<pre><code>    #include &lt;stdio.h&gt;
+    void PrintMin(int a, int b) {
+        if( a&lt;b )
+            printf(&quot;%d&quot;, a);
+            else
+        printf(&quot;%d&quot;, b);
+    }
+    int main(){
+        void (* pf)(int , int);
+        //定义函数指针 pf
+        int x = 4, y = 5;
+        pf = PrintMin;
+        //用 PrintMin 函数对指针 pf 进行赋值
+        pf(x, y);
+        //调用 pf 指向的函数,即 PrintMin
+        return 0;
+    }
+</code></pre>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/ide&#43;/vscode/vscode/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/language/c-cpp/c-cpp/datastructures/list/doublepoint/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="">
+<meta name="description" content="从 C 到 Cpp 好处 兼容 c 语言 STL 库 string 好用 运行时间差一些 命名空间 命名空间，避免函数同名 using namespace std; cin/cout 速度要慢，可以改为 scanf，printf 头文件 &lt;string.h&gt; -&gt; &lt;cstring&gt; bool bool flag = true; 0 为 false，其他都是 true const #define MAX 150(in c) const int MAX = 150(in cpp) string string s = &ldquo;hello&rdquo;; s1&#43;s2 cin &raquo; s;(不能有空格，回车？) getline(cin, s); s.length(); s1 = s.substr(4,2); 结构体 可以省去 typedef 函数 传值时可不用加&amp;取地址，只要在函数形参中用 int &amp;a 即可 STL vector #include&lt;vector&gt; // 命名空间std vector&lt;int&gt; array; // 默认为0 array.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="从 C 到 Cpp 好处 兼容 c 语言 STL 库 string 好用 运行时间差一些 命名空间 命名空间，避免函数同名 using namespace std; cin/cout 速度要慢，可以改为 scanf，printf 头文件 &lt;string.h&gt; -&gt; &lt;cstring&gt; bool bool flag = true; 0 为 false，其他都是 true const #define MAX 150(in c) const int MAX = 150(in cpp) string string s = &ldquo;hello&rdquo;; s1&#43;s2 cin &raquo; s;(不能有空格，回车？) getline(cin, s); s.length(); s1 = s.substr(4,2); 结构体 可以省去 typedef 函数 传值时可不用加&amp;取地址，只要在函数形参中用 int &amp;a 即可 STL vector #include&lt;vector&gt; // 命名空间std vector&lt;int&gt; array; // 默认为0 array." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp0/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="从 C 到 Cpp 好处 兼容 c 语言 STL 库 string 好用 运行时间差一些 命名空间 命名空间，避免函数同名 using namespace std; cin/cout 速度要慢，可以改为 scanf，printf 头文件 &lt;string.h&gt; -&gt; &lt;cstring&gt; bool bool flag = true; 0 为 false，其他都是 true const #define MAX 150(in c) const int MAX = 150(in cpp) string string s = &ldquo;hello&rdquo;; s1&#43;s2 cin &raquo; s;(不能有空格，回车？) getline(cin, s); s.length(); s1 = s.substr(4,2); 结构体 可以省去 typedef 函数 传值时可不用加&amp;取地址，只要在函数形参中用 int &amp;a 即可 STL vector #include&lt;vector&gt; // 命名空间std vector&lt;int&gt; array; // 默认为0 array."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "从 C 到 Cpp 好处 兼容 c 语言 STL 库 string 好用 运行时间差一些 命名空间 命名空间，避免函数同名 using namespace std; cin/cout 速度要慢，可以改为 scanf，printf 头文件 \u0026lt;string.h\u0026gt; -\u0026gt; \u0026lt;cstring\u0026gt; bool bool flag = true; 0 为 false，其他都是 true const #define MAX 150(in c) const int MAX = 150(in cpp) string string s = \u0026ldquo;hello\u0026rdquo;; s1+s2 cin \u0026raquo; s;(不能有空格，回车？) getline(cin, s); s.length(); s1 = s.substr(4,2); 结构体 可以省去 typedef 函数 传值时可不用加\u0026amp;取地址，只要在函数形参中用 int \u0026amp;a 即可 STL vector #include\u0026lt;vector\u0026gt; // 命名空间std vector\u0026lt;int\u0026gt; array; // 默认为0 array.",
+  "keywords": [
+    
+  ],
+  "articleBody": "从 C 到 Cpp 好处 兼容 c 语言 STL 库 string 好用 运行时间差一些 命名空间 命名空间，避免函数同名 using namespace std; cin/cout 速度要慢，可以改为 scanf，printf 头文件 -\u003e bool bool flag = true; 0 为 false，其他都是 true const #define MAX 150(in c) const int MAX = 150(in cpp) string string s = “hello”; s1+s2 cin » s;(不能有空格，回车？) getline(cin, s); s.length(); s1 = s.substr(4,2); 结构体 可以省去 typedef 函数 传值时可不用加\u0026取地址，只要在函数形参中用 int \u0026a 即可 STL vector #include // 命名空间std vector\u003cint\u003e array; // 默认为0 array.resize(10); vector\u003cint\u003e array(10, 2); // 10个空间，里面是2 array.push_back(11); for (auto p = array.begin(); p != array.end(); p++) { std::cout \u003c\u003c *p \u003c\u003c \" \"; } set 集合，里面元素各不相同，而且元素会按照从小到大排序 #include // 命名空间std set\u003cint\u003e s; // 后面不可加内容 s.insert(0); s.find(0); //返回指针 s.erase(0); for (auto p = s.begin(); p != s.end(); p++) { std::cout \u003c\u003c *p \u003c\u003c \" \"; } map 键值对，从小到大排序 #include // 命名空间std map\u003cstring, int\u003e m; m[\"hello\"] = 2; for (auto p = s.begin(); p != s.end(); p++) { std::cout \u003c\u003c p-\u003efirst \u003c\u003c \" : \" \u003c\u003c p-\u003esecond \u003c\u003c endl; } m.size(); stack #include // 命名空间std stack\u003cint\u003e s; s.push(0); s.top(); s.pop(); s.size(); queue #include // 命名空间std queue\u003cint\u003e s; s.push(0); s.pop(); //返回指针 s.front(); s.back(); s.size(); for (auto p = s.begin(); p != s.end(); p++) { std::cout \u003c\u003c *p \u003c\u003c \" \"; } unordered_map/unordered_set 不排序 #include #include // 命名空间std unordered_set\u003cint\u003e s; s.insert(0); s.find(0); //返回指针 s.erase(0); for (auto p = s.begin(); p != s.end(); p++) { std::cout \u003c\u003c *p \u003c\u003c \" \"; } 位运算 bitset，字符数组，但逆序 #include // 命名空间std bitset\u003c5\u003e b(19); b.any(); b.none(); b.count(); b.size(); b.test(); for (auto p = s.begin(); p != s.end(); p++) { std::cout \u003c\u003c *p \u003c\u003c \" \"; } ",
+  "wordCount" : "262",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Language/C-Cpp/course%e6%89%ab%e5%9c%b0%e5%83%a7/cpp0.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e4%bb%8e-c-%e5%88%b0-cpp" aria-label="从 C 到 Cpp">从 C 到 Cpp</a><ul>
+                        
+                <li>
+                    <a href="#%e5%a5%bd%e5%a4%84" aria-label="好处">好处</a></li>
+                <li>
+                    <a href="#%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4" aria-label="命名空间">命名空间</a></li>
+                <li>
+                    <a href="#cincout" aria-label="cin/cout">cin/cout</a></li>
+                <li>
+                    <a href="#%e5%a4%b4%e6%96%87%e4%bb%b6" aria-label="头文件">头文件</a></li>
+                <li>
+                    <a href="#bool" aria-label="bool">bool</a></li>
+                <li>
+                    <a href="#const" aria-label="const">const</a></li>
+                <li>
+                    <a href="#string" aria-label="string">string</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e6%9e%84%e4%bd%93" aria-label="结构体">结构体</a></li>
+                <li>
+                    <a href="#%e5%87%bd%e6%95%b0" aria-label="函数">函数</a></li>
+                <li>
+                    <a href="#stl" aria-label="STL">STL</a></li>
+                <li>
+                    <a href="#%e4%bd%8d%e8%bf%90%e7%ae%97" aria-label="位运算">位运算</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="从-c-到-cpp">从 C 到 Cpp<a hidden class="anchor" aria-hidden="true" href="#从-c-到-cpp">#</a></h1>
+<h2 id="好处">好处<a hidden class="anchor" aria-hidden="true" href="#好处">#</a></h2>
+<ol>
+<li>兼容 c 语言</li>
+<li>STL 库</li>
+<li>string 好用</li>
+<li>运行时间差一些</li>
+</ol>
+<h2 id="命名空间">命名空间<a hidden class="anchor" aria-hidden="true" href="#命名空间">#</a></h2>
+<ul>
+<li>命名空间，避免函数同名</li>
+<li>using namespace std;</li>
+</ul>
+<h2 id="cincout">cin/cout<a hidden class="anchor" aria-hidden="true" href="#cincout">#</a></h2>
+<ul>
+<li>速度要慢，可以改为 scanf，printf</li>
+</ul>
+<h2 id="头文件">头文件<a hidden class="anchor" aria-hidden="true" href="#头文件">#</a></h2>
+<ul>
+<li><code>&lt;string.h&gt; -&gt; &lt;cstring&gt;</code></li>
+</ul>
+<h2 id="bool">bool<a hidden class="anchor" aria-hidden="true" href="#bool">#</a></h2>
+<ul>
+<li>bool flag = true;</li>
+<li>0 为 false，其他都是 true</li>
+</ul>
+<h2 id="const">const<a hidden class="anchor" aria-hidden="true" href="#const">#</a></h2>
+<ul>
+<li>#define MAX 150(in c)</li>
+<li>const int MAX = 150(in cpp)</li>
+</ul>
+<h2 id="string">string<a hidden class="anchor" aria-hidden="true" href="#string">#</a></h2>
+<ul>
+<li>string s = &ldquo;hello&rdquo;;</li>
+<li>s1+s2</li>
+<li>cin &raquo; s;(不能有空格，回车？)</li>
+<li>getline(cin, s);</li>
+<li>s.length();</li>
+<li>s1 = s.substr(4,2);</li>
+</ul>
+<h2 id="结构体">结构体<a hidden class="anchor" aria-hidden="true" href="#结构体">#</a></h2>
+<ul>
+<li>可以省去 typedef</li>
+</ul>
+<h2 id="函数">函数<a hidden class="anchor" aria-hidden="true" href="#函数">#</a></h2>
+<ul>
+<li>传值时可不用加&amp;取地址，只要在函数形参中用 int &amp;a 即可</li>
+</ul>
+<h2 id="stl">STL<a hidden class="anchor" aria-hidden="true" href="#stl">#</a></h2>
+<ol>
+<li>vector</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;vector&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// 命名空间std
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">;</span> <span class="c1">// 默认为0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">array</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>  <span class="c1">// 10个空间，里面是2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">array</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">array</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ol>
+<li>set</li>
+</ol>
+<ul>
+<li>集合，里面元素各不相同，而且元素会按照从小到大排序</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;set&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// 命名空间std
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span> <span class="c1">// 后面不可加内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">s</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//返回指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">s</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ol>
+<li>map</li>
+</ol>
+<ul>
+<li>键值对，从小到大排序</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;map&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// 命名空间std
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">m</span><span class="p">[</span><span class="s">&#34;hello&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; : &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">m</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span></code></pre></div><ol>
+<li>stack</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;stack&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// 命名空间std
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span></code></pre></div><ol>
+<li>queue</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;queue&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// 命名空间std
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span> <span class="c1">//返回指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">s</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ol>
+<li>unordered_map/unordered_set</li>
+</ol>
+<ul>
+<li>不排序</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;unordered_set&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include&lt;unordered_map&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// 命名空间std
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//返回指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">s</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="位运算">位运算<a hidden class="anchor" aria-hidden="true" href="#位运算">#</a></h2>
+<ul>
+<li>bitset，字符数组，但逆序</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bitset&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// 命名空间std
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">5</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">(</span><span class="mi">19</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">.</span><span class="n">any</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">.</span><span class="n">none</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">.</span><span class="n">test</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/c0/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp1/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

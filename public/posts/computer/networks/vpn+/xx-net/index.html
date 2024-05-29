@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/networks/vpn&#43;/xx-net/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/networks/vpn&#43;/xx-net/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/networks/vpn+/xx-net/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "install python2-notify python2-pyopenssl python-pyopenssl libffi pygtk nss - supervisor(no need) - miredo(ipv6) sudo ./start 127.0.0.1:8085 gae_proxy x-tunnel certificates setting-\u003esecurity,more-\u003emanage certificates-\u003eauthorities-\u003eimport\nxx-net/data/gae_proxy/CA.crt proxy xx_net.sh start/stop/restart 开机自启: - sudo vim /etc/rc.local : sudo /home/liukanglai/Downloads/XX-Net./xx_net.sh start\nipv6 代理隧道 yay -S miredo sudo systemctl enable miredo sudo systemctl start miredo sudo systemctl start miredo.service //起服务生成虚拟网卡，可能要重启系统 sudo systemctl enable miredo.service sudo systemctl status miredo.service sudo miredo\nifconfig: 有teredo\nadd dns\nvim /etc/resolv.conf //添加ip v6 的DNS\nnameserver 202.103.24.68 nameserver 218.104.111.122 nameserver 2001:470:20::2\nIPv6 连接测试网站 http://test-ipv6.com/\nTeredo python xx_net/code/default/gae_proxy/local/ipv6_tunnel/pteredor.py(Teredo服务器测试) code/default/gae_proxy/local/ipv6_tunnel/pteredor.py 打开在61行有 teredo_server_list =[XXXXXXX] 就是服务器选项了\nmiredo : /etc/miredo/miredo.conf/ServerAddress\nwindows\n管理员权限运行cmd\n#看当前状态 netsh int teredo show state\n#更换teredo服务器 netsh int ipv6 set teredo enterpriseclient [IP]\n#刷新dns缓存 ipconfig /flushdns\nmore Teredo 隧道 合格（已连接） (仍然连接不上？等一会儿，或者尝试降低连接缓冲数值)，但是ipv6的状态显示fail\n自动调整ip扫描线程数 思路： 在缺乏ip时，开大线程扫描ip数 加快扫描的速度 在有足够好ip之后，降低扫描的线程数，减少资源开销 足够多ip的定义： 对ip的ssl握手时间进行排序，前100个ip的握手耗时作为度量标准 根据经验，200ms是足够好，700ms最差 自动调整的规则： 200ms 停止扫描 300ms 启动10个线程 400ms 启动20个线程 … 700ms 启动50个线程 默认最多50个线程，如果调整这个数字，按比例调整规则。\n1、关闭“自动调整扫描线程数” 2、用服务器 IP地址而非用域名 3、提高“最大扫描线程数”\nping www.baidu.com(get ip)\n",
+  "wordCount" : "140",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/networks/vpn+/xx-net/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">1 min&amp;nbsp;·&amp;nbsp;140 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/Networks/VPN&#43;/xx-net.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#gae_proxy">gae_proxy</a></li>
+    <li><a href="#x-tunnel">x-tunnel</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#代理隧道">代理隧道</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#teredo">Teredo</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="install">install<a hidden class="anchor" aria-hidden="true" href="#install">#</a></h1>
+<pre tabindex="0"><code>python2-notify  python2-pyopenssl  python-pyopenssl libffi pygtk nss 
+
+- supervisor(no need)
+- miredo(ipv6)
+</code></pre><h1 id="sudo-start">sudo ./start<a hidden class="anchor" aria-hidden="true" href="#sudo-start">#</a></h1>
+<h1 id="1270018085">127.0.0.1:8085<a hidden class="anchor" aria-hidden="true" href="#1270018085">#</a></h1>
+<h2 id="gae_proxy">gae_proxy<a hidden class="anchor" aria-hidden="true" href="#gae_proxy">#</a></h2>
+<h2 id="x-tunnel">x-tunnel<a hidden class="anchor" aria-hidden="true" href="#x-tunnel">#</a></h2>
+<h1 id="certificates">certificates<a hidden class="anchor" aria-hidden="true" href="#certificates">#</a></h1>
+<p>setting-&gt;security,more-&gt;manage certificates-&gt;authorities-&gt;import</p>
+<ul>
+<li>xx-net/data/gae_proxy/CA.crt</li>
+</ul>
+<h1 id="proxy">proxy<a hidden class="anchor" aria-hidden="true" href="#proxy">#</a></h1>
+<h1 id="xx_netsh-startstoprestart">xx_net.sh start/stop/restart<a hidden class="anchor" aria-hidden="true" href="#xx_netsh-startstoprestart">#</a></h1>
+<p>开机自启: - sudo vim /etc/rc.local : <code>sudo  /home/liukanglai/Downloads/XX-Net./xx_net.sh start</code></p>
+<h1 id="ipv6">ipv6<a hidden class="anchor" aria-hidden="true" href="#ipv6">#</a></h1>
+<h2 id="代理隧道">代理隧道<a hidden class="anchor" aria-hidden="true" href="#代理隧道">#</a></h2>
+<ul>
+<li>yay -S miredo</li>
+<li>sudo systemctl enable miredo</li>
+<li>sudo systemctl start  miredo</li>
+</ul>
+<h1 id="sudo-systemctl-start--miredoservice----起服务生成虚拟网卡可能要重启系统">sudo systemctl start  miredo.service    //起服务生成虚拟网卡，可能要重启系统<a hidden class="anchor" aria-hidden="true" href="#sudo-systemctl-start--miredoservice----起服务生成虚拟网卡可能要重启系统">#</a></h1>
+<h1 id="sudo-systemctl-enable-miredoservice">sudo systemctl enable miredo.service<a hidden class="anchor" aria-hidden="true" href="#sudo-systemctl-enable-miredoservice">#</a></h1>
+<h1 id="sudo-systemctl-status-miredoservice">sudo systemctl status miredo.service<a hidden class="anchor" aria-hidden="true" href="#sudo-systemctl-status-miredoservice">#</a></h1>
+<ul>
+<li>
+<p>sudo miredo</p>
+</li>
+<li>
+<p>ifconfig: 有teredo</p>
+</li>
+<li>
+<p>add dns</p>
+</li>
+</ul>
+<p>vim  /etc/resolv.conf     //添加ip v6 的DNS<br>
+nameserver 202.103.24.68
+nameserver 218.104.111.122
+nameserver 2001:470:20::2</p>
+<p>IPv6 连接测试网站 <a href="http://test-ipv6.com/">http://test-ipv6.com/</a></p>
+<h2 id="teredo">Teredo<a hidden class="anchor" aria-hidden="true" href="#teredo">#</a></h2>
+<p>python xx_net/code/default/gae_proxy/local/ipv6_tunnel/pteredor.py(Teredo服务器测试)
+code/default/gae_proxy/local/ipv6_tunnel/pteredor.py
+打开在61行有 teredo_server_list =[XXXXXXX] 就是服务器选项了</p>
+<ul>
+<li>
+<p>miredo : /etc/miredo/miredo.conf/ServerAddress</p>
+</li>
+<li>
+<p>windows</p>
+</li>
+</ul>
+<p>管理员权限运行cmd</p>
+<p>#看当前状态
+netsh int teredo show state</p>
+<p>#更换teredo服务器
+netsh int ipv6 set teredo enterpriseclient [IP]</p>
+<p>#刷新dns缓存
+ipconfig /flushdns</p>
+<h1 id="more">more<a hidden class="anchor" aria-hidden="true" href="#more">#</a></h1>
+<p>Teredo 隧道 合格（已连接） (仍然连接不上？等一会儿，或者尝试降低连接缓冲数值)，但是ipv6的状态显示fail</p>
+<p>自动调整ip扫描线程数
+思路：
+在缺乏ip时，开大线程扫描ip数
+加快扫描的速度
+在有足够好ip之后，降低扫描的线程数，减少资源开销
+足够多ip的定义：
+对ip的ssl握手时间进行排序，前100个ip的握手耗时作为度量标准
+根据经验，200ms是足够好，700ms最差
+自动调整的规则：
+200ms 停止扫描
+300ms 启动10个线程
+400ms 启动20个线程
+&hellip;
+700ms 启动50个线程
+默认最多50个线程，如果调整这个数字，按比例调整规则。</p>
+<p>1、关闭“自动调整扫描线程数”
+2、用服务器 IP地址而非用域名
+3、提高“最大扫描线程数”</p>
+<p>ping <a href="https://www.baidu.com">www.baidu.com</a>(get ip)</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/networks/vpn&#43;/qv2ray/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/openwrt&#43;/compile/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

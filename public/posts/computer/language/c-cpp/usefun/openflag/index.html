@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/language/c-cpp/usefun/openflag/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/language/c-cpp/usefun/openflag/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/language/c-cpp/usefun/openflag/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "j open 函数的 flag 详解 1 3.1.4.1、\n读写权限：O_RDONLY O_WRONLY O_RDWR (1)linux 中文件有读写权限，我们在 open 打开文件时也可以附带一定的权限说明（譬如 O_RDONLY 就表示以只读方式打开，O_WRONLY 表示以只写方式打开，O_RDWR 表示以可读可写方式打开） (2)当我们附带了权限后，打开的文件就只能按照这种权限来操作。\n打开存在并有内容的文件时：O_APPEND、O_TRUNC (1)思考一个问题：当我们打开一个已经存在并且内部有内容的文件时会怎么样？ 可能结果 1：新内容会替代原来的内容（原来的内容就不见了，丢了） 可能结果 2：新内容添加在前面，原来的内容继续在后面 可能结果 3：新内容附加在后面，原来的内容还在前面 可能结果 4：不读不写的时候，原来的文件中的内容保持不变 (2)O_TRUNC 属性去打开文件时，如果这个文件中本来是有内容的，则原来的内容会被丢弃。这就对应上面的结果 1 (3)O_APPEND 属性去打开文件时，如果这个文件中本来是有内容的，则新写入的内容会接续到原来内容的后面，对应结果 3 (4)默认不使用 O_APPEND 和 O_TRUNC 属性时就是结果 4 (5)如果 O_APPEND 和 O_TRUNC 同时出现会怎么样？\n3.1.4.3、exit、_exit、_Exit 退出进程 (1)当我们程序在前面步骤操作失败导致后面的操作都没有可能进行下去时，应该在前面的错误监测中结束整个程序，不应该继续让程序运行下去了。 (2)我们如何退出程序？ 第一种；在 main 用 return，一般原则是程序正常终止 return 0，如果程序异常终止则 return -1。 第一种：正式终止进程（程序）应该使用 exit 或者_exit 或者_Exit 之一。\n3.1.5.open 函数的 flag 详解 2 3.1.5.1、打开不存在的文件时：O_CREAT、O_EXCL (1)思考：当我们去打开一个并不存在的文件时会怎样？当我们 open 打开一个文件时如果这个文件名不存在则会打开文件错误。 (2)vi 或者 windows 下的 notepad++，都可以直接打开一个尚未存在的文件。 (3)open 的 flag O_CREAT 就是为了应对这种打开一个并不存在的文件的。O_CREAT 就表示我们当前打开的文件并不存在，我们是要去创建并且打开它。 (4)思考：当我们 open 使用了 O_CREAT，但是文件已经存在的情况下会怎样？结果是报错吗？ (5)结论：open 中加入 O_CREAT 后，不管原来这个文件存在与否都能打开成功，如果原来这个文件不存在则创建一个空的新文件，如果原来这个文件存在则会重新创建这个文件，原来的内容会被消除掉（有点类似于先删除原来的文件再创建一个新的） (6)这样可能带来一个问题？我们本来是想去创建一个新文件的，但是把文件名搞错了弄成了一个老文件名，结果老文件就被意外修改了。我们希望的效果是：如果我 CREAT 要创建的是一个已经存在的名字的文件，则给我报错，不要去创建。 (7)这个效果就要靠 O_EXCL 标志和 O_CREAT 标志来结合使用。当这连个标志一起的时候，则没有文件时创建文件，有这个文件时会报错提醒我们。 (8)open 函数在使用 O_CREAT 标志去创建文件时，可以使用第三个参数 mode 来指定要创建的文件的权限。mode 使用 4 个数字来指定权限的，其中后面三个很重要，对应我们要创建的这个文件的权限标志。譬如一般创建一个可读可写不可执行的文件就用 0666\n3.1.5.2、O_NONBLOCK (1)阻塞与非阻塞。如果一个函数是阻塞式的，则我们调用这个函数时当前进程有可能被卡住（阻塞住，实质是这个函数内部要完成的事情条件不具备，当前没法做，要等待条件成熟），函数被阻塞住了就不能立刻返回；如果一个函数是非阻塞式的那么我们调用这个函数后一定会立即返回，但是函数有没有完成任务不一定。 (2)阻塞和非阻塞是两种不同的设计思路，并没有好坏。总的来说，阻塞式的结果有保障但是时间没保障；非阻塞式的时间有保障但是结果没保障。 (3)操作系统提供的 API 和由 API 封装而成的库函数，有很多本身就是被设计为阻塞式或者非阻塞式的，所以我们应用程度调用这些函数的时候心里得非常清楚。 (4)我们打开一个文件默认就是阻塞式的，如果你希望以非阻塞的方式打开文件，则 flag 中要加 O_NONBLOCK 标志。 (2)只用于设备文件，而不用于普通文件。比如说串口、IIC 等都是通过文件来访问的，就存在阻塞式和非阻塞式区别。\nO_SYNC (1)write 阻塞等待底层完成写入才返回到应用层。 (2)无 O_SYNC 时 write 只是将内容写入底层缓冲区即可返回，然后底层（操作系统中负责实现 open、write 这些操作的那些代码，也包含 OS 中读写硬盘等底层硬件的代码）在合适的时候会将 buf 中的内容一次性的同步到硬盘中。这种设计是为了提升硬件操作的性能和销量，提升硬件寿命；但是有时候我们希望硬件不要等待，直接将我们的内容写入硬盘中，这时候就可以用 O_SYNC 标志。 (2)无 O_SYNC 时 write 只是将内容写入底层缓冲区即可返回，然后底层（操作系统中负责实现 open、write 这些操作的那些代码，也包含 OS 中读写硬盘等底层硬件的代码）在合适的时候会将 buf 中的内容一次性的同步到硬盘中。这种设计是为了提升硬件操作的性能和销量，提升硬件寿命；但是有时候我们希望硬件不要等待，直接将我们的内容写入硬盘中，这时候就可以用 O_SYNC 标志。\n",
+  "wordCount" : "153",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/language/c-cpp/usefun/openflag/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">1 min&amp;nbsp;·&amp;nbsp;153 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/Language/C-Cpp/usefun/openFlag.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#open-函数的-flag-详解-1">open 函数的 flag 详解 1</a></li>
+    <li><a href="#读写权限o_rdonly-o_wronly-o_rdwr">读写权限：O_RDONLY O_WRONLY O_RDWR</a></li>
+    <li><a href="#打开存在并有内容的文件时o_appendo_trunc">打开存在并有内容的文件时：O_APPEND、O_TRUNC</a></li>
+    <li><a href="#o_sync">O_SYNC</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="j">j<a hidden class="anchor" aria-hidden="true" href="#j">#</a></h1>
+<h2 id="open-函数的-flag-详解-1">open 函数的 flag 详解 1<a hidden class="anchor" aria-hidden="true" href="#open-函数的-flag-详解-1">#</a></h2>
+<p>3.1.4.1、</p>
+<h2 id="读写权限o_rdonly-o_wronly-o_rdwr">读写权限：O_RDONLY O_WRONLY O_RDWR<a hidden class="anchor" aria-hidden="true" href="#读写权限o_rdonly-o_wronly-o_rdwr">#</a></h2>
+<p>(1)linux 中文件有读写权限，我们在 open 打开文件时也可以附带一定的权限说明（譬如 O_RDONLY 就表示以只读方式打开，O_WRONLY 表示以只写方式打开，O_RDWR 表示以可读可写方式打开）
+(2)当我们附带了权限后，打开的文件就只能按照这种权限来操作。</p>
+<h2 id="打开存在并有内容的文件时o_appendo_trunc">打开存在并有内容的文件时：O_APPEND、O_TRUNC<a hidden class="anchor" aria-hidden="true" href="#打开存在并有内容的文件时o_appendo_trunc">#</a></h2>
+<p>(1)思考一个问题：当我们打开一个已经存在并且内部有内容的文件时会怎么样？
+可能结果 1：新内容会替代原来的内容（原来的内容就不见了，丢了）
+可能结果 2：新内容添加在前面，原来的内容继续在后面
+可能结果 3：新内容附加在后面，原来的内容还在前面
+可能结果 4：不读不写的时候，原来的文件中的内容保持不变
+(2)O_TRUNC 属性去打开文件时，如果这个文件中本来是有内容的，则原来的内容会被丢弃。这就对应上面的结果 1
+(3)O_APPEND 属性去打开文件时，如果这个文件中本来是有内容的，则新写入的内容会接续到原来内容的后面，对应结果 3
+(4)默认不使用 O_APPEND 和 O_TRUNC 属性时就是结果 4
+(5)如果 O_APPEND 和 O_TRUNC 同时出现会怎么样？</p>
+<p>3.1.4.3、exit、_exit、_Exit 退出进程
+(1)当我们程序在前面步骤操作失败导致后面的操作都没有可能进行下去时，应该在前面的错误监测中结束整个程序，不应该继续让程序运行下去了。
+(2)我们如何退出程序？
+第一种；在 main 用 return，一般原则是程序正常终止 return 0，如果程序异常终止则 return -1。
+第一种：正式终止进程（程序）应该使用 exit 或者_exit 或者_Exit 之一。</p>
+<p>3.1.5.open 函数的 flag 详解 2
+3.1.5.1、打开不存在的文件时：O_CREAT、O_EXCL
+(1)思考：当我们去打开一个并不存在的文件时会怎样？当我们 open 打开一个文件时如果这个文件名不存在则会打开文件错误。
+(2)vi 或者 windows 下的 notepad++，都可以直接打开一个尚未存在的文件。
+(3)open 的 flag O_CREAT 就是为了应对这种打开一个并不存在的文件的。O_CREAT 就表示我们当前打开的文件并不存在，我们是要去创建并且打开它。
+(4)思考：当我们 open 使用了 O_CREAT，但是文件已经存在的情况下会怎样？结果是报错吗？
+(5)结论：open 中加入 O_CREAT 后，不管原来这个文件存在与否都能打开成功，如果原来这个文件不存在则创建一个空的新文件，如果原来这个文件存在则会重新创建这个文件，原来的内容会被消除掉（有点类似于先删除原来的文件再创建一个新的）
+(6)这样可能带来一个问题？我们本来是想去创建一个新文件的，但是把文件名搞错了弄成了一个老文件名，结果老文件就被意外修改了。我们希望的效果是：如果我 CREAT 要创建的是一个已经存在的名字的文件，则给我报错，不要去创建。
+(7)这个效果就要靠 O_EXCL 标志和 O_CREAT 标志来结合使用。当这连个标志一起的时候，则没有文件时创建文件，有这个文件时会报错提醒我们。
+(8)open 函数在使用 O_CREAT 标志去创建文件时，可以使用第三个参数 mode 来指定要创建的文件的权限。mode 使用 4 个数字来指定权限的，其中后面三个很重要，对应我们要创建的这个文件的权限标志。譬如一般创建一个可读可写不可执行的文件就用 0666</p>
+<p>3.1.5.2、O_NONBLOCK
+(1)阻塞与非阻塞。如果一个函数是阻塞式的，则我们调用这个函数时当前进程有可能被卡住（阻塞住，实质是这个函数内部要完成的事情条件不具备，当前没法做，要等待条件成熟），函数被阻塞住了就不能立刻返回；如果一个函数是非阻塞式的那么我们调用这个函数后一定会立即返回，但是函数有没有完成任务不一定。
+(2)阻塞和非阻塞是两种不同的设计思路，并没有好坏。总的来说，阻塞式的结果有保障但是时间没保障；非阻塞式的时间有保障但是结果没保障。
+(3)操作系统提供的 API 和由 API 封装而成的库函数，有很多本身就是被设计为阻塞式或者非阻塞式的，所以我们应用程度调用这些函数的时候心里得非常清楚。
+(4)我们打开一个文件默认就是阻塞式的，如果你希望以非阻塞的方式打开文件，则 flag 中要加 O_NONBLOCK 标志。
+(2)只用于设备文件，而不用于普通文件。比如说串口、IIC 等都是通过文件来访问的，就存在阻塞式和非阻塞式区别。</p>
+<h2 id="o_sync">O_SYNC<a hidden class="anchor" aria-hidden="true" href="#o_sync">#</a></h2>
+<p>(1)write 阻塞等待底层完成写入才返回到应用层。
+(2)无 O_SYNC 时 write 只是将内容写入底层缓冲区即可返回，然后底层（操作系统中负责实现 open、write 这些操作的那些代码，也包含 OS 中读写硬盘等底层硬件的代码）在合适的时候会将 buf 中的内容一次性的同步到硬盘中。这种设计是为了提升硬件操作的性能和销量，提升硬件寿命；但是有时候我们希望硬件不要等待，直接将我们的内容写入硬盘中，这时候就可以用 O_SYNC 标志。
+(2)无 O_SYNC 时 write 只是将内容写入底层缓冲区即可返回，然后底层（操作系统中负责实现 open、write 这些操作的那些代码，也包含 OS 中读写硬盘等底层硬件的代码）在合适的时候会将 buf 中的内容一次性的同步到硬盘中。这种设计是为了提升硬件操作的性能和销量，提升硬件寿命；但是有时候我们希望硬件不要等待，直接将我们的内容写入硬盘中，这时候就可以用 O_SYNC 标志。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/language/c-cpp/usefun/malloc/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/language/c-cpp/wrong/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

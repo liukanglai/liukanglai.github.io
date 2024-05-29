@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>ArchLinux Install | My Blog Site</title>
+<meta name="keywords" content="Arch">
+<meta name="description" content="ArchLinux基础安装">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/linux/arch/arch-install/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/linux/arch/arch-install/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="ArchLinux Install" />
+<meta property="og:description" content="ArchLinux基础安装" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/linux/arch/arch-install/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-27T19:05:02+08:00" />
+<meta property="article:modified_time" content="2023-03-27T19:05:02+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="ArchLinux Install"/>
+<meta name="twitter:description" content="ArchLinux基础安装"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "ArchLinux Install",
+      "item": "http://localhost:1313/posts/computer/linux/arch/arch-install/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ArchLinux Install",
+  "name": "ArchLinux Install",
+  "description": "ArchLinux基础安装",
+  "keywords": [
+    "Arch"
+  ],
+  "articleBody": "启动 镜像 u 盘 (MD5… PGP…) ventoy, Rufus, etcher 例:dd bs=4M if=/home/liukanglai/Downloads/archlinux-2020.04.01-x86_64.iso of=/dev/sda status=progress oflag=sync\n关闭主板设置中的 Secure Boot u 盘启动 UEFI root@archiso~# 查看指南:ls 验证启动模式:ls /sys/firmware/efi/efivars 有输出即为 UEFI 禁用 reflector reflector 会为你选择速度合适的镜像源，但其结果并不准确，同时会清空配置文件中的内容，对于新人来讲并不适用，我们首先对其进行禁用。\nsystemctl stop reflector.service\n联网 ip link –看网卡 enp开头有线网卡 wlp无线网卡\n看有无网: 命令 ping www.baidu.com 后显 ….ms 即有网\n(手机 usb 共享网,连接电脑)\n无线 ip link set .. up 如果随后看到类似 Operation not possible due to RF-kill 的报错，继续尝试 rfkill 命令来解锁无线网卡: rfkill unblock wifi wpa 扫描：iwlist .. scan | grep ESSID\n连接：\nwpa_passphrase 网络名 密码 \u003e internet.conf\nwpa_supplicant -c internet.conf -i 设备名 \u0026\niwt iwctl #执行iwctl命令，进入交互式命令行 device list #列出设备名，比如无线网卡看到叫 wlan0 station wlan0 scan #扫描网络 station wlan0 get-networks #列出网络 比如想连接YOUR-WIRELESS-NAME这个无线 station wlan0 connect YOUR-WIRELESS-NAME #进行连接 输入密码即可 exit #成功后exit退出 如需 web 登录(Captive Portal): elinks http…\n安盘 查看硬盘: lsblk 或 fdisk -l /dev/… nvme0n(高级)或 sda… (新盘不同) 首先将磁盘转换为 gpt 类型，这里假设比如你想安装的磁盘名称为 sdx。如果你使用 NVME 的固态硬盘，你看到的磁盘名称可能为 nvme0n1。 lsblk #显示分区情况 找到你想安装的磁盘名称 parted /dev/sdx #执行parted，进入交互式命令行，进行磁盘类型变更 (parted)mktable #输入mktable New disk label type? gpt #输入gpt 将磁盘类型转换为gpt 如磁盘有数据会警告，输入yes即可 quit #最后quit退出parted命令行交互 分盘: cfdisk 进 gpt 分后 yes 格式 大小 目录 格式 fat32 300M EFI EFI system ext4 / linux filesystem ext4 /home linux filesystem swap / linux swap 格式化: /：mkfs.ext4 /dev/.. EFI: mkfs.vfat(systemd-boot)或 mkfs.fat -F32 swap: mkswap -f /… 挂载: mount /dev/.. /mnt mkdir /mnt/boot mount /dev/.. /mnt/boot mkdir /mnt/home mount /dev/… /mnt/home 配置 关闭自动选择镜像：systemctl stop reflector.service\n时间\ntimedatectl set-ntp true #将系统时间与网络时间进行同步 timedatectl status #检查服务状态 手动: timectl set-time “year-month-date h-minute-s”\n镜像源 vim /etc/pacman.d/mirrorlist 把 China 移到最前 清华大学 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch ## 163 Server = http://mirrors.163.com/archlinux/$repo/os/$arch ## aliyun Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch 刷新: pacman -syy (-syu) 安装 pacstrap /mnt base base-devel linux linux-firmware linux-headers vim man dhcpcd iwd bash-completion linux 中包含 EFI 文件！！！\n进入 chroot 生成 fstab(定义磁盘分区) genfstab -U /mnt » /mnt/etc/fstab 检查:cat /mnt/etc/fstab\narch-chroot /mnt\n基本设置 时区: ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 进行硬件时间设置，将当前的正确 UTC 时间写入硬件时间: hwclock –-systohc 安装字体： noto-fonts, noto-fonts-cjk noto-fonts-emoji 本地化: vim /etc/locale.gen (去#号 en_US.UTF-8 UTF-8 zh_CN.UTF-8 UTF-8 zh_HK.UTF-8 UTF-8 zh_TW.UTF-8 UTF-8 ) locale-gen(生成) vim /etc/locale.conf 输入： LANG=en_US.UTF-8 主机 vim /etc/hostname 编辑主机名称 hostname vim /etc/hosts 文末加 127.0.0.1 localhost ::1 localhost 127.0.1.1 hostname 设 root 密码:passwd(passwd root) 安装启动加载器 pacman -S efibootmgr grub intel-ucode(or amd-ucode) os-prober grub grub-install –target=x86_64-efi -–efi-directory=/boot –-bootloader-id=grub grub-install –target=x86_64-efi –efi-directory=/efi –removable(?) 接下来编辑/etc/default/grub 文件，去掉 GRUB_CMDLINE_LINUX_DEFAULT 一行中最后的 quiet 参数，同时把 log level 的数值从 3 改成 5。这样是为了后续如果出现系统错误，方便排错。同时在同一行加入 nowatchdog 参数，这可以显著提高开关机速度 生成:grub-mkconfig -o /boot/grub/grub.cfg systemd-boot bootctl install(/boot) bootctl –path=/boot install vim /boot/loader/loader.conf: default archlinux timeout 1 vim /boot/loader/entries/arch.conf title archlinux linux /vmlinuz-linux initrd /initramfs-linux.img options root=PARTUUID=deba4ba7-0c8f-c64e-a60e-e34e5bb87ab3 rw \u003e :r !blkid to get partuuid swap swapon --show free -h swap file dd if=/dev/zero of=/swapfile bs=1M count=512(单位：M) status=progress chmod 600 /swapfile mkswap /swapfile swapon /swapfile vim /etc/fstab /swapfile none swap defaults 0 0 重启:exit killall wpa_supplicant dhcpcd umount -R /mnt reboot 联网 有线 systemctl start dhcpcd #立即启动 dhcp ping www.gnu.org 若为无线链接，则还需要启动 iwd 才可以使用 iwctl 连接网络 systemctl start iwd #立即启动 iwd iwctl #和之前的方式一样，连接无线网络 wifi-menu 即可 ",
+  "wordCount" : "449",
+  "inLanguage": "en",
+  "datePublished": "2023-03-27T19:05:02+08:00",
+  "dateModified": "2023-03-27T19:05:02+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/linux/arch/arch-install/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      ArchLinux Install
+    </h1>
+    <div class="post-description">
+      ArchLinux基础安装
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-03-27 19:05:02 &#43;0800 CST&#39;&gt;March 27, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;3 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Linux/arch/arch-install.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%90%af%e5%8a%a8" aria-label="启动">启动</a></li>
+                <li>
+                    <a href="#%e6%9f%a5%e7%9c%8b%e6%8c%87%e5%8d%97ls" aria-label="查看指南:ls">查看指南:ls</a></li>
+                <li>
+                    <a href="#%e7%a6%81%e7%94%a8-reflector" aria-label="禁用 reflector">禁用 reflector</a></li>
+                <li>
+                    <a href="#%e8%81%94%e7%bd%91" aria-label="联网">联网</a><ul>
+                        
+                <li>
+                    <a href="#%e6%97%a0%e7%ba%bf" aria-label="无线">无线</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%ae%89%e7%9b%98" aria-label="安盘">安盘</a></li>
+                <li>
+                    <a href="#%e9%85%8d%e7%bd%ae" aria-label="配置">配置</a></li>
+                <li>
+                    <a href="#%e9%95%9c%e5%83%8f%e6%ba%90" aria-label="镜像源">镜像源</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85" aria-label="安装">安装</a></li>
+                <li>
+                    <a href="#%e8%bf%9b%e5%85%a5-chroot" aria-label="进入 chroot">进入 chroot</a></li>
+                <li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e8%ae%be%e7%bd%ae" aria-label="基本设置">基本设置</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85%e5%90%af%e5%8a%a8%e5%8a%a0%e8%bd%bd%e5%99%a8" aria-label="安装启动加载器">安装启动加载器</a></li>
+                <li>
+                    <a href="#swap" aria-label="swap">swap</a></li>
+                <li>
+                    <a href="#%e9%87%8d%e5%90%afexit" aria-label="重启:exit">重启:exit</a></li>
+                <li>
+                    <a href="#%e8%81%94%e7%bd%91-1" aria-label="联网">联网</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="启动">启动<a hidden class="anchor" aria-hidden="true" href="#启动">#</a></h2>
+<ul>
+<li>镜像 u 盘 (MD5… PGP…)</li>
+<li>ventoy, Rufus, etcher</li>
+</ul>
+<blockquote>
+<p>例:dd bs=4M if=/home/liukanglai/Downloads/archlinux-2020.04.01-x86_64.iso of=/dev/sda status=progress oflag=sync</p>
+</blockquote>
+<ul>
+<li>关闭主板设置中的 Secure Boot</li>
+<li>u 盘启动 UEFI <code>root@archiso~#</code></li>
+</ul>
+<h2 id="查看指南ls">查看指南:ls<a hidden class="anchor" aria-hidden="true" href="#查看指南ls">#</a></h2>
+<ul>
+<li>验证启动模式:ls /sys/firmware/efi/efivars 有输出即为 UEFI</li>
+</ul>
+<h2 id="禁用-reflector">禁用 reflector<a hidden class="anchor" aria-hidden="true" href="#禁用-reflector">#</a></h2>
+<ul>
+<li>
+<p>reflector 会为你选择速度合适的镜像源，但其结果并不准确，同时会清空配置文件中的内容，对于新人来讲并不适用，我们首先对其进行禁用。</p>
+<p>systemctl stop reflector.service</p>
+</li>
+</ul>
+<h2 id="联网">联网<a hidden class="anchor" aria-hidden="true" href="#联网">#</a></h2>
+<ul>
+<li>
+<p>ip link –看网卡 <code>enp开头有线网卡 wlp无线网卡</code></p>
+<blockquote>
+<p>看有无网: 命令 ping <a href="https://www.baidu.com">www.baidu.com</a> 后显 ….ms 即有网</p>
+</blockquote>
+</li>
+</ul>
+<p>(手机 usb 共享网,连接电脑)</p>
+<h3 id="无线">无线<a hidden class="anchor" aria-hidden="true" href="#无线">#</a></h3>
+<ul>
+<li>ip link set .. up</li>
+<li>如果随后看到类似 Operation not possible due to RF-kill 的报错，继续尝试 rfkill 命令来解锁无线网卡:</li>
+<li>rfkill unblock wifi</li>
+</ul>
+<ol>
+<li>wpa</li>
+</ol>
+<ul>
+<li>
+<p>扫描：iwlist .. scan | grep ESSID</p>
+</li>
+<li>
+<p>连接：</p>
+<blockquote>
+<p>wpa_passphrase 网络名 密码 &gt; internet.conf</p>
+<p>wpa_supplicant -c internet.conf -i 设备名 &amp;</p>
+</blockquote>
+</li>
+</ul>
+<ol start="2">
+<li>iwt</li>
+</ol>
+<pre tabindex="0"><code>iwctl                           #执行iwctl命令，进入交互式命令行
+device list                     #列出设备名，比如无线网卡看到叫 wlan0
+station wlan0 scan              #扫描网络
+station wlan0 get-networks      #列出网络 比如想连接YOUR-WIRELESS-NAME这个无线
+station wlan0 connect YOUR-WIRELESS-NAME #进行连接 输入密码即可
+exit                            #成功后exit退出
+</code></pre><blockquote>
+<p>如需 web 登录(Captive Portal): elinks http…</p>
+</blockquote>
+<h2 id="安盘">安盘<a hidden class="anchor" aria-hidden="true" href="#安盘">#</a></h2>
+<ol>
+<li>查看硬盘: lsblk 或 fdisk -l</li>
+</ol>
+<ul>
+<li>/dev/… nvme0n(高级)或 sda… (新盘不同)</li>
+</ul>
+<ol start="2">
+<li>首先将磁盘转换为 gpt 类型，这里假设比如你想安装的磁盘名称为 sdx。如果你使用 NVME 的固态硬盘，你看到的磁盘名称可能为 nvme0n1。</li>
+</ol>
+<pre tabindex="0"><code>lsblk                       #显示分区情况 找到你想安装的磁盘名称
+parted /dev/sdx             #执行parted，进入交互式命令行，进行磁盘类型变更
+(parted)mktable             #输入mktable
+New disk label type? gpt    #输入gpt 将磁盘类型转换为gpt 如磁盘有数据会警告，输入yes即可
+quit                        #最后quit退出parted命令行交互
+</code></pre><ol start="3">
+<li>分盘: cfdisk 进 gpt 分后 yes</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>大小</th>
+<th>目录</th>
+<th>格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fat32</td>
+<td>300M</td>
+<td>EFI</td>
+<td>EFI system</td>
+</tr>
+<tr>
+<td>ext4</td>
+<td></td>
+<td>/</td>
+<td>linux filesystem</td>
+</tr>
+<tr>
+<td>ext4</td>
+<td></td>
+<td>/home</td>
+<td>linux filesystem</td>
+</tr>
+<tr>
+<td>swap</td>
+<td></td>
+<td>/</td>
+<td>linux swap</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>格式化:</li>
+</ol>
+<ul>
+<li>/：mkfs.ext4 /dev/..</li>
+<li>EFI: mkfs.vfat(systemd-boot)或 mkfs.fat -F32</li>
+<li>swap: mkswap -f /…</li>
+</ul>
+<ol start="5">
+<li>挂载:</li>
+</ol>
+<ul>
+<li>mount /dev/.. /mnt</li>
+<li>mkdir /mnt/boot</li>
+<li>mount /dev/.. /mnt/boot</li>
+<li>mkdir /mnt/home</li>
+<li>mount /dev/&hellip; /mnt/home</li>
+</ul>
+<h2 id="配置">配置<a hidden class="anchor" aria-hidden="true" href="#配置">#</a></h2>
+<ol>
+<li>
+<p>关闭自动选择镜像：systemctl stop reflector.service</p>
+</li>
+<li>
+<p>时间</p>
+</li>
+</ol>
+<ul>
+<li>timedatectl set-ntp true #将系统时间与网络时间进行同步</li>
+<li>timedatectl status #检查服务状态</li>
+</ul>
+<blockquote>
+<p>手动: timectl set-time “year-month-date h-minute-s”</p>
+</blockquote>
+<h2 id="镜像源">镜像源<a hidden class="anchor" aria-hidden="true" href="#镜像源">#</a></h2>
+<ul>
+<li>vim /etc/pacman.d/mirrorlist 把 China 移到最前</li>
+</ul>
+<pre tabindex="0"><code> 清华大学
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+## 163
+Server = http://mirrors.163.com/archlinux/$repo/os/$arch
+## aliyun
+Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
+</code></pre><ul>
+<li>刷新: pacman -syy (-syu)</li>
+</ul>
+<h2 id="安装">安装<a hidden class="anchor" aria-hidden="true" href="#安装">#</a></h2>
+<ul>
+<li>pacstrap /mnt base base-devel linux linux-firmware linux-headers vim man dhcpcd iwd bash-completion</li>
+</ul>
+<!--- pacman -S networkmanager iw wpa_supplicant dialog dhcpcd netctl-->
+<blockquote>
+<p>linux 中包含 EFI 文件！！！</p>
+</blockquote>
+<h2 id="进入-chroot">进入 chroot<a hidden class="anchor" aria-hidden="true" href="#进入-chroot">#</a></h2>
+<ol>
+<li>生成 fstab(定义磁盘分区)</li>
+</ol>
+<ul>
+<li>genfstab -U /mnt &raquo; /mnt/etc/fstab</li>
+</ul>
+<ol start="2">
+<li>
+<p>检查:cat /mnt/etc/fstab</p>
+</li>
+<li>
+<p>arch-chroot /mnt</p>
+</li>
+</ol>
+<h2 id="基本设置">基本设置<a hidden class="anchor" aria-hidden="true" href="#基本设置">#</a></h2>
+<ol>
+<li>时区: ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</li>
+<li>进行硬件时间设置，将当前的正确 UTC 时间写入硬件时间: hwclock –-systohc</li>
+<li>安装字体：</li>
+</ol>
+<ul>
+<li>noto-fonts, noto-fonts-cjk noto-fonts-emoji</li>
+</ul>
+<ol start="4">
+<li>本地化:</li>
+</ol>
+<ul>
+<li>vim /etc/locale.gen (去#号 en_US.UTF-8 UTF-8 zh_CN.UTF-8 UTF-8 zh_HK.UTF-8 UTF-8 zh_TW.UTF-8 UTF-8 )</li>
+<li>locale-gen(生成)</li>
+<li>vim /etc/locale.conf 输入： LANG=en_US.UTF-8</li>
+</ul>
+<ol start="5">
+<li>主机</li>
+</ol>
+<ul>
+<li>vim /etc/hostname 编辑主机名称 hostname</li>
+<li>vim /etc/hosts</li>
+<li>文末加</li>
+</ul>
+<pre tabindex="0"><code>127.0.0.1 localhost
+::1 localhost
+127.0.1.1 hostname
+</code></pre><ol start="6">
+<li>设 root 密码:passwd(passwd root)</li>
+</ol>
+<h2 id="安装启动加载器">安装启动加载器<a hidden class="anchor" aria-hidden="true" href="#安装启动加载器">#</a></h2>
+<ul>
+<li>pacman -S efibootmgr grub intel-ucode(or amd-ucode) os-prober</li>
+</ul>
+<ol>
+<li>grub</li>
+</ol>
+<ul>
+<li>grub-install &ndash;target=x86_64-efi -–efi-directory=/boot –-bootloader-id=grub</li>
+<li>grub-install &ndash;target=x86_64-efi &ndash;efi-directory=/efi &ndash;removable(?)</li>
+<li>接下来编辑/etc/default/grub 文件，去掉 GRUB_CMDLINE_LINUX_DEFAULT 一行中最后的 quiet 参数，同时把 log level 的数值从 3 改成 5。这样是为了后续如果出现系统错误，方便排错。同时在同一行加入 nowatchdog 参数，这可以显著提高开关机速度</li>
+<li>生成:grub-mkconfig -o /boot/grub/grub.cfg</li>
+</ul>
+<ol start="2">
+<li>systemd-boot</li>
+</ol>
+<ul>
+<li>bootctl install(/boot)</li>
+<li>bootctl &ndash;path=/boot install</li>
+<li>vim /boot/loader/loader.conf:</li>
+</ul>
+<pre tabindex="0"><code>default archlinux
+timeout 1
+</code></pre><ul>
+<li>vim /boot/loader/entries/arch.conf</li>
+</ul>
+<pre tabindex="0"><code>title archlinux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=PARTUUID=deba4ba7-0c8f-c64e-a60e-e34e5bb87ab3 rw
+&gt; :r !blkid to get partuuid
+</code></pre><h2 id="swap">swap<a hidden class="anchor" aria-hidden="true" href="#swap">#</a></h2>
+<pre tabindex="0"><code>swapon --show
+free -h
+</code></pre><ul>
+<li>swap file</li>
+</ul>
+<pre tabindex="0"><code>dd if=/dev/zero of=/swapfile bs=1M count=512(单位：M) status=progress
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+
+vim /etc/fstab
+/swapfile none swap defaults 0 0
+</code></pre><h2 id="重启exit">重启:exit<a hidden class="anchor" aria-hidden="true" href="#重启exit">#</a></h2>
+<ul>
+<li>killall wpa_supplicant dhcpcd</li>
+<li>umount -R /mnt</li>
+<li>reboot</li>
+</ul>
+<h2 id="联网-1">联网<a hidden class="anchor" aria-hidden="true" href="#联网-1">#</a></h2>
+<ol>
+<li>有线</li>
+</ol>
+<ul>
+<li>systemctl start dhcpcd #立即启动 dhcp</li>
+<li>ping <a href="https://www.gnu.org">www.gnu.org</a></li>
+</ul>
+<ol start="2">
+<li>若为无线链接，则还需要启动 iwd 才可以使用 iwctl 连接网络</li>
+</ol>
+<ul>
+<li>systemctl start iwd #立即启动 iwd</li>
+<li>iwctl #和之前的方式一样，连接无线网络</li>
+</ul>
+<ol start="3">
+<li>wifi-menu 即可</li>
+</ol>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/arch/">Arch</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/linux/arch/arch-config/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>ArchLinux Config</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-more/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Vim More</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

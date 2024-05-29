@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Arch individual config | My Blog Site</title>
+<meta name="keywords" content="Arch">
+<meta name="description" content=" ">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/linux/arch/arch-need/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/linux/arch/arch-need/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="Arch individual config" />
+<meta property="og:description" content=" " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/linux/arch/arch-need/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-27T19:10:38+08:00" />
+<meta property="article:modified_time" content="2023-03-27T19:10:38+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Arch individual config"/>
+<meta name="twitter:description" content=" "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Arch individual config",
+      "item": "http://localhost:1313/posts/computer/linux/arch/arch-need/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Arch individual config",
+  "name": "Arch individual config",
+  "description": " ",
+  "keywords": [
+    "Arch"
+  ],
+  "articleBody": "install 联网 systemctl start dhcpcd #立即启动 dhcp systemd-boot bootctl install(/boot) bootctl –path=/boot install vim /boot/loader/loader.conf: default archlinux timeout 1 vim /boot/loader/entries/arch.conf title archlinux linux /vmlinuz-linux initrd /initramfs-linux.img options root=PARTUUID=deba4ba7-0c8f-c64e-a60e-e34e5bb87ab3 rw \u003e :r !blkid to get partuuid config 字体 noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-Iosevka ttf-nerd-fonts-symbols fonts.conf install xorg xf86-input-libinput linux-headers man yakuake fzf ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip # 注意的是解压 windows 下的压缩包，可能会乱码，安装 ark 的可选依赖之一 unarchiver，使用 unar 可以避免这个问题 packagekit-qt5 packagekit appstream-qt appstream # 确保Discover(软件中心)可用, 需重启 gwenview deepin-screenshot flameshot cheese vlc net-tools(ifconfig) kdeconnect tlp okular neofetch Foliate (sudo systemctl start tlp.service) filelight git make libconfig wget curl npm exfat-utils cmake ctags nodejs pip python google-chrome aliyunpan-liupan1890 baidunetdisk-bin calibre vim neovim kate bind utools yay -S node-fanyi rime-ice 美化 layan widgets cpu, memory, network, ip yay -S plasma5-applets-netspeed ksysguard konsole: gruvbox yakuake(.config/yakuakerc) .locla/share/konsole have profile(勾选默认) git look Git+/git/ssh.md Code (c, c++, java) (python, javascript) (scheme, lua, vimscript) (markdown, latex)\nclion clion-jre openjdk-doc openjdk-src(include jre-openjdk jdk-openjdk) intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre fleet tmux git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # type this in terminal if tmux is already running tmux source ~/.tmux.conf # Add new plugin to ~/.tmux.conf with set -g @plugin '...' # Press prefix + I (capital i, as in Install) to fetch the plugin. vim lunarvim\ncargo: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\nyay -S lazygit ripgrep sqlite fd yarn lldb go unzip zoxide xclip\n(pip install pynvim)\ninstall: LV_BRANCH='release-1.2/neovim-0.8' bash \u003c(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)\ncomment: first v, then gb gcc, gcA, gco, gcO\nlsp: K, gd, gD, gr!!!, gI, gs, gl, leader+lr\nc/c++ java python make/cmake\njavascript vue css html yaml json\nscheme lua bash vim\nmarkdown latex\nMasonInstall cpplint markdownlint pylint vint codespell shellcheck luacheck cspell\nstylua prettier shfmt black codelldb\nproselint\nyay -S cppcheck luarocks eslint google-java-format checkstyle(难搞) checkmake stylelint\nscheme: https://github.com/ufo5260987423/scheme-langserver\n记得设置 npm 的 prefix 以设置可访问的全局安装路径: npm config set perfix ~/.local\nThe default html server has bug which does not support embeded javascript completion.\nnpm i -g vscode-html-languageserver-bin (will be started when you open html file)\ncheckHealth:\ndolphin https://wiki.archlinux.org/title/Dolphin#File_previews kdegraphics-thumbnailers dolphin-plugins poppler poppler-data(pdf) ",
+  "wordCount" : "335",
+  "inLanguage": "en",
+  "datePublished": "2023-03-27T19:10:38+08:00",
+  "dateModified": "2023-03-27T19:10:38+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/linux/arch/arch-need/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Arch individual config
+    </h1>
+    <div class="post-description">
+       
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-03-27 19:10:38 &#43;0800 CST&#39;&gt;March 27, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;2 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Linux/arch/arch-need.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#install" aria-label="install">install</a></li>
+                <li>
+                    <a href="#config" aria-label="config">config</a></li>
+                <li>
+                    <a href="#code" aria-label="Code">Code</a></li>
+                <li>
+                    <a href="#tmux" aria-label="tmux">tmux</a></li>
+                <li>
+                    <a href="#vim" aria-label="vim">vim</a></li>
+                <li>
+                    <a href="#dolphin" aria-label="dolphin">dolphin</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="install">install<a hidden class="anchor" aria-hidden="true" href="#install">#</a></h2>
+<ol>
+<li>联网</li>
+</ol>
+<ul>
+<li>systemctl start dhcpcd #立即启动 dhcp</li>
+</ul>
+<ol>
+<li>systemd-boot</li>
+</ol>
+<ul>
+<li>bootctl install(/boot)</li>
+<li>bootctl &ndash;path=/boot install</li>
+<li>vim /boot/loader/loader.conf:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">default archlinux
+</span></span><span class="line"><span class="cl">timeout 1
+</span></span></code></pre></div><ul>
+<li>vim /boot/loader/entries/arch.conf</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">title archlinux
+</span></span><span class="line"><span class="cl">linux /vmlinuz-linux
+</span></span><span class="line"><span class="cl">initrd /initramfs-linux.img
+</span></span><span class="line"><span class="cl">options root=PARTUUID=deba4ba7-0c8f-c64e-a60e-e34e5bb87ab3 rw
+</span></span><span class="line"><span class="cl">&gt; :r !blkid to get partuuid
+</span></span></code></pre></div><h2 id="config">config<a hidden class="anchor" aria-hidden="true" href="#config">#</a></h2>
+<ol>
+<li>字体</li>
+</ol>
+<ul>
+<li>noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-Iosevka ttf-nerd-fonts-symbols</li>
+<li>fonts.conf</li>
+</ul>
+<ol>
+<li>install</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">xorg xf86-input-libinput
+</span></span><span class="line"><span class="cl">linux-headers man
+</span></span><span class="line"><span class="cl">yakuake fzf ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip
+</span></span><span class="line"><span class="cl"># 注意的是解压 windows 下的压缩包，可能会乱码，安装 ark 的可选依赖之一 unarchiver，使用 unar 可以避免这个问题
+</span></span><span class="line"><span class="cl">packagekit-qt5 packagekit appstream-qt appstream # 确保Discover(软件中心)可用, 需重启
+</span></span><span class="line"><span class="cl">gwenview deepin-screenshot flameshot cheese vlc net-tools(ifconfig) kdeconnect
+</span></span><span class="line"><span class="cl">tlp okular neofetch Foliate (sudo systemctl start tlp.service) filelight
+</span></span><span class="line"><span class="cl">git make libconfig wget curl npm exfat-utils cmake ctags nodejs pip python
+</span></span><span class="line"><span class="cl">google-chrome aliyunpan-liupan1890 baidunetdisk-bin calibre
+</span></span><span class="line"><span class="cl">vim neovim kate bind
+</span></span><span class="line"><span class="cl">utools
+</span></span></code></pre></div><ul>
+<li>yay -S node-fanyi rime-ice</li>
+</ul>
+<ol>
+<li>美化</li>
+</ol>
+<ul>
+<li>layan</li>
+<li>widgets cpu, memory, network, ip yay -S plasma5-applets-netspeed ksysguard</li>
+<li>konsole: gruvbox yakuake(.config/yakuakerc) .locla/share/konsole have profile(勾选默认)</li>
+</ul>
+<ol>
+<li>git</li>
+</ol>
+<ul>
+<li>look Git+/git/ssh.md</li>
+</ul>
+<h2 id="code">Code<a hidden class="anchor" aria-hidden="true" href="#code">#</a></h2>
+<p>(c, c++, java)
+(python, javascript)
+(scheme, lua, vimscript)
+(markdown, latex)</p>
+<ul>
+<li>clion clion-jre</li>
+<li>openjdk-doc openjdk-src(include jre-openjdk jdk-openjdk)</li>
+<li>intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre</li>
+<li>fleet</li>
+</ul>
+<h2 id="tmux">tmux<a hidden class="anchor" aria-hidden="true" href="#tmux">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+</span></span><span class="line"><span class="cl"><span class="c1"># type this in terminal if tmux is already running</span>
+</span></span><span class="line"><span class="cl">tmux <span class="nb">source</span> ~/.tmux.conf
+</span></span><span class="line"><span class="cl"><span class="c1"># Add new plugin to ~/.tmux.conf with set -g @plugin &#39;...&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Press prefix + I (capital i, as in Install) to fetch the plugin.</span>
+</span></span></code></pre></div><h2 id="vim">vim<a hidden class="anchor" aria-hidden="true" href="#vim">#</a></h2>
+<p>lunarvim</p>
+<ul>
+<li>
+<p>cargo: <code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></p>
+</li>
+<li>
+<p>yay -S lazygit ripgrep sqlite fd yarn lldb go unzip zoxide xclip</p>
+</li>
+<li>
+<p>(pip install pynvim)</p>
+</li>
+<li>
+<p>install: <code>LV_BRANCH='release-1.2/neovim-0.8' bash &lt;(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)</code></p>
+</li>
+<li>
+<p>comment: first v, then gb gcc, gcA, gco, gcO</p>
+</li>
+<li>
+<p>lsp: K, gd, gD, gr!!!, gI, gs, gl, leader+lr</p>
+</li>
+<li>
+<p>c/c++ java python make/cmake</p>
+</li>
+<li>
+<p>javascript vue css html yaml json</p>
+</li>
+<li>
+<p>scheme lua bash vim</p>
+</li>
+<li>
+<p>markdown latex</p>
+</li>
+<li>
+<p>MasonInstall cpplint markdownlint pylint vint codespell shellcheck luacheck cspell</p>
+</li>
+<li>
+<p>stylua prettier shfmt black codelldb</p>
+</li>
+<li>
+<p>proselint</p>
+</li>
+<li>
+<p>yay -S cppcheck luarocks eslint google-java-format checkstyle(难搞) checkmake stylelint</p>
+</li>
+<li>
+<p>scheme: <code>https://github.com/ufo5260987423/scheme-langserver</code></p>
+</li>
+<li>
+<p>记得设置 npm 的 prefix 以设置可访问的全局安装路径: <code>npm config set perfix ~/.local</code></p>
+</li>
+<li>
+<p>The default html server has bug which does not support embeded javascript completion.</p>
+</li>
+<li>
+<p>npm i -g vscode-html-languageserver-bin (will be started when you open html file)</p>
+</li>
+</ul>
+<blockquote>
+<p>checkHealth:</p>
+</blockquote>
+<h2 id="dolphin">dolphin<a hidden class="anchor" aria-hidden="true" href="#dolphin">#</a></h2>
+<ul>
+<li><code>https://wiki.archlinux.org/title/Dolphin#File_previews</code></li>
+<li>kdegraphics-thumbnailers</li>
+<li>dolphin-plugins</li>
+<li>poppler poppler-data(pdf)</li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/arch/">Arch</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>图像识别</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/linux/arch/arch-more/">
+    <span class="title">Next »</span>
+    <br>
+    <span>ArchLinux 软件，问题</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

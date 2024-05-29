@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Hexo | My Blog Site</title>
+<meta name="keywords" content="blog">
+<meta name="description" content=" ">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/blog/hexo/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/blog/hexo/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="Hexo" />
+<meta property="og:description" content=" " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/blog/hexo/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-28T13:00:12+08:00" />
+<meta property="article:modified_time" content="2023-03-28T13:00:12+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Hexo"/>
+<meta name="twitter:description" content=" "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Hexo",
+      "item": "http://localhost:1313/posts/computer/blog/hexo/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hexo",
+  "name": "Hexo",
+  "description": " ",
+  "keywords": [
+    "blog"
+  ],
+  "articleBody": "install node.js npm (or cnpm..) npm install hexo, than PATH=\"$PATH:./node_modules/.bin\" in .zshrc npx hexo sudo npm -g uninstall npm install -g cnpm –registry=‘https://registry.npm.taobao.org’ npm config set registry ‘https://registry.npm.taobao.org’ 再次安装： cnpm install hexo-renderer-sass –save config mkdir blog\ncd\n初始化：hexo init\nnpm install\n生成页面：hexo g\nhexo s (server)\n增加文件：heso n “…”\ncd\ncd ../..\nhexo clean\nhexo g\nhexo d\npush github: liukanglai.github.io\nsudo npm install –save hexo-deployer-git\nvim _config.yml\n低部:deployment type: git repo: git@github.com:liukanglai/liukanglai.github.io.git or https://github.com/liukanglai/liukanglai.github.io.git branch: master\nssh-keygen -t rsa -C Email # Email 替换为 git 配置的用户邮箱\ncat ~/.ssh/id_rsa.pub # 查看 public key，复制内容到 github 账户设置页\nssh -T git@github.com # 测试 ssh 认证\nhexo g\nhexo d\n使用自己的域名，用Git pages 解析： 1. created a file CNAME, (防止在push时消失，建立在source文件夹中) 2. write your 域名(无前缀，ps：liukanglai.tk) in it 3. 域名解析，加记录，可ip地址（ping 原域名得到），可直接原域名 themes git clone … themes/… vim _config.yml theme: …(修改) use even\nwrite default_layout: … post, 文章, in source/posts, show in the website\nhexo n …\npage, 页面, 用于首页，归档等\nmenu: home: / || home about: /about/ || user - tags: /tags/ || tags - categories: /categories/ || th - archives: /archives/ || archive 其中，|| 之前的值表示菜单链接，之后的值表示所用的 FontAwesome 图标名称。 hexo new page … in http://localhost:4000/.../\nwill create a folder under source, in it the index.md can be eidted.\ndraft \u003e hexo new draft … \u003e \u003e hexo server –draft\nRSS look your using theme. ps: in themes/_config.yml\nurl: rss: atom.xml than your rss url is https://你的博客域名/atom.xml\ndiscuss look your using theme. 数据统计与分析 look your using theme. 搜索引擎优化（SEO） 前往 Google 搜索的控制台添加自己的博客地址 Bing 这一步就是告诉搜索引擎你的网站有哪些链接，提交后搜索引擎就会自动顺着站点地图中的链接爬取你的站点内容了，若是没有这一步，在搜索引擎当中直接搜索自己的博客地址是没有任何结果的。要完成这一步骤，需要在博客目录下输入以下指令安装 hexo-generator-sitemap 插件：\nnpm install hexo-generator-sitemap –save 这个插件默认站点地图生成路径为 https://你的博客域名/sitemap.xml，在使用 hexo g 重新生成网址内容后，将此网址提交到各个搜索引擎就可以了，以 Google 为例子，只需要发送 http://www.google.com/ping?sitemap=https://你的博客域名/sitemap.xml 这个网络请求即可，也可以在 Google 搜索控制台中的 sitemaps（站点地图）一栏提交自己的站点地图。而 Bing 则是需要在其 Web 面板中添加 sitemap。\nhttp://www.guxiaobei.com/submit-your-content-of-google.html \u003e https://viflythink.com/Use_GithubPages_and_Hexo_to_build_blog_advanced/ \u003e https://hoxis.github.io/Hexo+Next%20SEO%E4%BC%98%E5%8C%96.html\n打开’https://www.google.com/webmasters/tools'，转到网址检查，输入你的新页面的网址，这就可以及时提交新的网页了。 HTTPs https://tzhou2018.github.io/2018/04/%E4%B8%BAGitHub-Pages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%B9%B6%E6%B7%BB%E5%8A%A0SSL-%E5%BC%80%E5%90%AFHTTPS%E5%BC%BA%E5%88%B6/ ",
+  "wordCount" : "274",
+  "inLanguage": "en",
+  "datePublished": "2023-03-28T13:00:12+08:00",
+  "dateModified": "2023-03-28T13:00:12+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/blog/hexo/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Hexo
+    </h1>
+    <div class="post-description">
+       
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-03-28 13:00:12 &#43;0800 CST&#39;&gt;March 28, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;2 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Blog/hexo.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#install" aria-label="install">install</a><ul>
+                        
+                <li>
+                    <a href="#config" aria-label="config">config</a></li>
+                <li>
+                    <a href="#push" aria-label="push">push</a></li>
+                <li>
+                    <a href="#themes" aria-label="themes">themes</a></li>
+                <li>
+                    <a href="#write" aria-label="write">write</a></li>
+                <li>
+                    <a href="#rss" aria-label="RSS">RSS</a></li>
+                <li>
+                    <a href="#discuss" aria-label="discuss">discuss</a></li>
+                <li>
+                    <a href="#%e6%95%b0%e6%8d%ae%e7%bb%9f%e8%ae%a1%e4%b8%8e%e5%88%86%e6%9e%90" aria-label="数据统计与分析">数据统计与分析</a></li>
+                <li>
+                    <a href="#%e6%90%9c%e7%b4%a2%e5%bc%95%e6%93%8e%e4%bc%98%e5%8c%96seo" aria-label="搜索引擎优化（SEO）">搜索引擎优化（SEO）</a></li>
+                <li>
+                    <a href="#https" aria-label="HTTPs">HTTPs</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="install">install<a hidden class="anchor" aria-hidden="true" href="#install">#</a></h1>
+<ol>
+<li>node.js</li>
+<li>npm (or cnpm..)</li>
+<li>npm install hexo, than PATH=&quot;$PATH:./node_modules/.bin&quot; in .zshrc</li>
+<li>npx hexo</li>
+</ol>
+<ul>
+<li>sudo npm -g uninstall</li>
+<li>npm install -g cnpm &ndash;registry=&lsquo;<a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a>&rsquo;</li>
+<li>npm config set registry &lsquo;<a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a>&rsquo;</li>
+<li>再次安装： cnpm install hexo-renderer-sass &ndash;save</li>
+</ul>
+<h2 id="config">config<a hidden class="anchor" aria-hidden="true" href="#config">#</a></h2>
+<ul>
+<li>
+<p>mkdir blog</p>
+</li>
+<li>
+<p>cd</p>
+</li>
+<li>
+<p>初始化：hexo init</p>
+</li>
+<li>
+<p>npm install</p>
+</li>
+<li>
+<p>生成页面：hexo g</p>
+</li>
+<li>
+<p>hexo s (server)</p>
+</li>
+<li>
+<p>增加文件：heso n &ldquo;&hellip;&rdquo;</p>
+<blockquote>
+<p>cd</p>
+<p>cd ../..</p>
+</blockquote>
+</li>
+<li>
+<p>hexo clean</p>
+</li>
+<li>
+<p>hexo g</p>
+</li>
+<li>
+<p>hexo d</p>
+</li>
+</ul>
+<h2 id="push">push<a hidden class="anchor" aria-hidden="true" href="#push">#</a></h2>
+<ul>
+<li>
+<p>github: liukanglai.github.io</p>
+</li>
+<li>
+<p>sudo npm install &ndash;save hexo-deployer-git</p>
+</li>
+<li>
+<p>vim _config.yml</p>
+<p>低部:deployment
+type: git
+repo: <a href="mailto:git@github.com">git@github.com</a>:liukanglai/liukanglai.github.io.git or <a href="https://github.com/liukanglai/liukanglai.github.io.git">https://github.com/liukanglai/liukanglai.github.io.git</a>
+branch: master</p>
+</li>
+<li>
+<p>ssh-keygen -t rsa -C Email # Email 替换为 git 配置的用户邮箱</p>
+</li>
+<li>
+<p>cat ~/.ssh/id_rsa.pub # 查看 public key，复制内容到 github 账户设置页</p>
+</li>
+<li>
+<p>ssh -T <a href="mailto:git@github.com">git@github.com</a> # 测试 ssh 认证</p>
+</li>
+<li>
+<p>hexo g</p>
+</li>
+<li>
+<p>hexo d</p>
+<pre><code>  使用自己的域名，用Git pages 解析：
+  1. created a file CNAME, (防止在push时消失，建立在source文件夹中)
+  2. write your 域名(无前缀，ps：liukanglai.tk) in it
+  3. 域名解析，加记录，可ip地址（ping 原域名得到），可直接原域名
+</code></pre>
+</li>
+</ul>
+<h2 id="themes">themes<a hidden class="anchor" aria-hidden="true" href="#themes">#</a></h2>
+<ul>
+<li>git clone &hellip; themes/&hellip;</li>
+<li>vim _config.yml</li>
+<li>theme: &hellip;(修改)
+<blockquote>
+<p>use <a href="https://github.com/ahonn/hexo-theme-even">even</a></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="write">write<a hidden class="anchor" aria-hidden="true" href="#write">#</a></h2>
+<ul>
+<li>default_layout: &hellip;</li>
+</ul>
+<ol>
+<li>
+<p>post, 文章, in source/posts, show in the website</p>
+<ul>
+<li>
+<blockquote>
+<p>hexo n &hellip;</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>page, 页面, 用于首页，归档等</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">menu:
+</span></span><span class="line"><span class="cl">home: / || home
+</span></span><span class="line"><span class="cl">about: /about/ || user
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">-</span> tags: /tags/ || tags
+</span></span><span class="line"><span class="cl"><span class="k">-</span> categories: /categories/ || th
+</span></span><span class="line"><span class="cl"><span class="k">-</span> archives: /archives/ || archive
+</span></span><span class="line"><span class="cl">  其中，|| 之前的值表示菜单链接，之后的值表示所用的 FontAwesome 图标名称。
+</span></span></code></pre></div><ul>
+<li>
+<p>hexo new page &hellip; in <code>http://localhost:4000/.../</code></p>
+</li>
+<li>
+<p>will create a folder under source, in it the index.md can be eidted.</p>
+</li>
+<li>
+<p>draft &gt; hexo new draft &hellip; &gt; &gt; hexo server &ndash;draft</p>
+</li>
+</ul>
+<h2 id="rss">RSS<a hidden class="anchor" aria-hidden="true" href="#rss">#</a></h2>
+<ul>
+<li>
+<p>look your using theme.
+ps: in themes/_config.yml</p>
+<pre><code>	url:
+	rss: atom.xml
+</code></pre>
+</li>
+<li>
+<p>than your rss url is <code>https://你的博客域名/atom.xml</code></p>
+</li>
+</ul>
+<h2 id="discuss">discuss<a hidden class="anchor" aria-hidden="true" href="#discuss">#</a></h2>
+<ul>
+<li>look your using theme.</li>
+</ul>
+<h2 id="数据统计与分析">数据统计与分析<a hidden class="anchor" aria-hidden="true" href="#数据统计与分析">#</a></h2>
+<ul>
+<li>look your using theme.</li>
+</ul>
+<h2 id="搜索引擎优化seo">搜索引擎优化（SEO）<a hidden class="anchor" aria-hidden="true" href="#搜索引擎优化seo">#</a></h2>
+<ul>
+<li>前往 Google 搜索的<a href="https://search.google.com/search-console/not-verified?original_url=/search-console/ownership&original_resource_id">控制台</a>添加自己的博客地址</li>
+<li><a href="https://www.bing.com/toolbox/webmaster/">Bing</a></li>
+</ul>
+<p>这一步就是告诉搜索引擎你的网站有哪些链接，提交后搜索引擎就会自动顺着站点地图中的链接爬取你的站点内容了，若是没有这一步，在搜索引擎当中直接搜索自己的博客地址是没有任何结果的。要完成这一步骤，需要在博客目录下输入以下指令安装 hexo-generator-sitemap 插件：</p>
+<p>npm install hexo-generator-sitemap &ndash;save
+这个插件默认站点地图生成路径为 https://你的博客域名/sitemap.xml，在使用 hexo g 重新生成网址内容后，将此网址提交到各个搜索引擎就可以了，以 Google 为例子，只需要发送 <a href="http://www.google.com/ping?sitemap=https://">http://www.google.com/ping?sitemap=https://</a>你的博客域名/sitemap.xml 这个网络请求即可，也可以在 Google 搜索控制台中的 sitemaps（站点地图）一栏提交自己的站点地图。而 Bing 则是需要在其 Web 面板中添加 sitemap。</p>
+<blockquote>
+<p><code>http://www.guxiaobei.com/submit-your-content-of-google.html</code> &gt; <code>https://viflythink.com/Use_GithubPages_and_Hexo_to_build_blog_advanced/</code> &gt; <code>https://hoxis.github.io/Hexo+Next%20SEO%E4%BC%98%E5%8C%96.html</code></p>
+</blockquote>
+<ul>
+<li>打开&rsquo;<a href="https://www.google.com/webmasters/tools'">https://www.google.com/webmasters/tools'</a>，转到网址检查，输入你的新页面的网址，这就可以及时提交新的网页了。</li>
+</ul>
+<h2 id="https">HTTPs<a hidden class="anchor" aria-hidden="true" href="#https">#</a></h2>
+<ul>
+<li><code>https://tzhou2018.github.io/2018/04/%E4%B8%BAGitHub-Pages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%B9%B6%E6%B7%BB%E5%8A%A0SSL-%E5%BC%80%E5%90%AFHTTPS%E5%BC%BA%E5%88%B6/</code></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/blog/">Blog</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/blog/hugo/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Hugo</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/database/jdbc/">
+    <span class="title">Next »</span>
+    <br>
+    <span>java连接数据库</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

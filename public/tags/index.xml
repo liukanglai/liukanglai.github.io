@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on My Blog Site</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on My Blog Site</description>
+    <image>
+      <title>My Blog Site</title>
+      <url>http://localhost:1313/papermod-cover.png</url>
+      <link>http://localhost:1313/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 29 May 2024 10:35:06 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>规划</title>
+      <link>http://localhost:1313/tags/%E8%A7%84%E5%88%92/</link>
+      <pubDate>Wed, 29 May 2024 10:35:06 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E8%A7%84%E5%88%92/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>First</title>
+      <link>http://localhost:1313/tags/first/</link>
+      <pubDate>Fri, 19 May 2023 19:24:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/first/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Fri, 05 May 2023 10:30:53 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>http://localhost:1313/tags/code/</link>
+      <pubDate>Thu, 04 May 2023 22:12:58 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Thu, 04 May 2023 22:06:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Font</title>
+      <link>http://localhost:1313/tags/font/</link>
+      <pubDate>Thu, 04 May 2023 22:01:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/font/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Tue, 28 Mar 2023 13:01:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>http://localhost:1313/tags/blog/</link>
+      <pubDate>Tue, 28 Mar 2023 13:00:15 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>http://localhost:1313/tags/java/</link>
+      <pubDate>Tue, 28 Mar 2023 12:56:46 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sql</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Tue, 28 Mar 2023 12:55:47 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithm</title>
+      <link>http://localhost:1313/tags/algorithm/</link>
+      <pubDate>Tue, 28 Mar 2023 12:44:45 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Tue, 28 Mar 2023 12:31:03 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arch</title>
+      <link>http://localhost:1313/tags/arch/</link>
+      <pubDate>Mon, 27 Mar 2023 19:10:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/arch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>http://localhost:1313/tags/vim/</link>
+      <pubDate>Mon, 27 Mar 2023 19:02:31 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>物理</title>
+      <link>http://localhost:1313/tags/%E7%89%A9%E7%90%86/</link>
+      <pubDate>Sat, 25 Mar 2023 20:58:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E7%89%A9%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>En</title>
+      <link>http://localhost:1313/tags/en/</link>
+      <pubDate>Sat, 25 Mar 2023 20:54:19 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/en/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Health</title>
+      <link>http://localhost:1313/tags/health/</link>
+      <pubDate>Sat, 25 Mar 2023 20:50:43 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/health/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>西哲</title>
+      <link>http://localhost:1313/tags/%E8%A5%BF%E5%93%B2/</link>
+      <pubDate>Sat, 25 Mar 2023 20:38:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E8%A5%BF%E5%93%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>马毛</title>
+      <link>http://localhost:1313/tags/%E9%A9%AC%E6%AF%9B/</link>
+      <pubDate>Sat, 25 Mar 2023 20:32:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E9%A9%AC%E6%AF%9B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>哲学</title>
+      <link>http://localhost:1313/tags/%E5%93%B2%E5%AD%A6/</link>
+      <pubDate>Sat, 25 Mar 2023 20:14:07 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E5%93%B2%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>言论</title>
+      <link>http://localhost:1313/tags/%E8%A8%80%E8%AE%BA/</link>
+      <pubDate>Sat, 25 Mar 2023 20:10:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E8%A8%80%E8%AE%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>中哲</title>
+      <link>http://localhost:1313/tags/%E4%B8%AD%E5%93%B2/</link>
+      <pubDate>Sat, 25 Mar 2023 20:01:35 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E4%B8%AD%E5%93%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Books</title>
+      <link>http://localhost:1313/tags/books/</link>
+      <pubDate>Sat, 25 Mar 2023 19:52:53 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/books/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

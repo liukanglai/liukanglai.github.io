@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/architecture/organization/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/architecture/organization/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/architecture/organization/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "4 (1)冯诺依曼及哈佛体系结构、程序的简单运行原理 、系统层次结构、系统性能指标\n(2)数制和编码、定点数、浮点数、数据运算(算术运 算、逻辑运算)、定点运算器等。\n(3)存储器(SRAM,DRAM,EPROM,EEPROM, Flash Memory,高性能存储器,cache,硬盘),存储 器与 CPU 的连接。\n(4)指令、指令格式,指令的分析与设计,指令及数 据的寻址,AT\u0026T 与 Intel 格式;大小端模式。\n4.4 cpu 的组成和功能 如何实现的问题: 指令与 CPU 和内存、数据通路 程序如何执行 数据通路基本结构和工作原理 体系结构优化问题: 时空并行 流水线方式下指令的执行 cpu 的功能 指令控制(顺序控制)指令在内存中,指令的存放是静态的, 执行是动态的(顺序、跳转),这样 才形成了指令流。 操作控制(一条指令有若干操作信号实现)在时序信号的控制下,每条指令在每个机器周期的节拍信息中产生什么微操作控制信号,由指令周期流程图做了严格规定。 时间控制(各个操作实施时间的定时) 指令周期、机器周期、节拍信息等时序 信号必须由控制器产生。 数据加工(算术运算和逻辑运算) 取指令(取指、分析、识别、PC+1) (操作控制、时间控制) 执行指令\n操作码字段+地址码字段\n基本组成 (1)中央处理器 CPU = 运算器+控制器+cache (2)运算器 算逻单元 ALU,累加器(AC),暂存器(Latch),数据缓冲器(DR),通用寄存 器(GR),状态寄存器(Flags 或 PSW) 。 (3)控制器 程序计数器(PC 或 IP),指令寄存器(IR),指令译码器(ID), 地址寄存器 AR, 时序发生器 TG(Timing Generator), 操作控制器 OC。 (Operating Controller) (4) 总线(数据通路)\n寄存器 DR——缓冲寄存器(中转站、补偿速度差别) (MDR) IR——指令寄存器 PC——程序计数器(IP,EIP) SP——堆栈指针寄存器(ESP) AR——地址寄存器(MAR) Flags—标志寄存器(EFlags,PSW) GR——通用寄存器(多个)\n操作控制器和时序产生器 (1)数据通路:各寄存器之间传送数据的通路\n(2)操作控制器(控制器) 1 作用:为数据通路的建立提供各种操作信号 2 依据:指令操作码、条件状态和时序信号\n操作控制器(控制器)的三种类型: 1 存储类型:微程序控制器(时序存储逻辑) 2 组合类型:硬布线控制器(组合逻辑) 3 混合类型:前二者的结合 存储类型(时序类型):微程序控制器 微程序控制器是采用存储逻辑来实现的,也就是把微操作信号代码化,使每条机器指令转化成为一段微程序并存入一个专门的存储器(控制存储器)中,微操作控制信号由微指令产生。 优点: 微程序控制器的设计思想和组合逻辑设计思想截 然不同。它具有设计规整、调试、维修以及更改、扩充指令 方便的优点,易于实现自动化设计。 不足:由于增加了一级控制存储器,所以指令执行速度比组合逻辑控制器慢。 时序存储逻辑元件 (也称状态元件或存储元件:寄存器、存储器 特点：\n建立时间(Setup Time):触发边沿前,输入必须稳定的时间 保持时间(Hold Time ):触发边沿后,输入必须保持的时间 Clock-to-time:Clk触发后,到输出稳定的时间 数据通路中的状态元件有两种:寄存器(组) + 存储器 组合类型:硬布线控制器 采用组合逻辑技术来实现,其时序控制信号形成部件是由门电路组成的复杂树形网络。这种方法是分立元件时代的产物,以使用最少器件数和取得最高操作速度为设计目标。 优点:速度快。 不足:时序控制信号形成部件的结构不规整,设计、调试、维修较困难。 组合逻辑元件 (也称操作元件:如 ALU, MUX, Decoder, Adder 等)\n组合逻辑元件的特点: (1)其输出只取决于当前的输入。 (2)定时:所有输入到达后,经过 一定的逻辑门延时,输出端改变,并 保持到下次改变,不需要时钟信号来 定时。 混合类型:硬布线+微程序 即: 组合逻辑和存储逻辑结合型 这种控制器称为 PLA 控制器(Programmed Logic Array,可编程逻辑阵列),它是吸收前 两种的设计思想来实现的。设计时可以采用组 合逻辑的,实现时可以采用存储逻辑的。 指令周期 指令周期的基本概念 典型指令的指令周期 用方框图语言表示指令周期\n(1)指令周期:指取指令、分析指令到执行完该指令所需的全部时间。 (2)机器周期:也叫 CPU 周期 通常把一条指令周期划分为若干个机器周期,每个机器周期完成一 个基本操作。 主存的工作周期(存取周期)为基础来规定 CPU 周期,比如,可以用 CPU 读取一个指令字的最短时间来规定 CPU 周期。 不同的指令,可能包含不同数目的机器周期。例如,ADD R1, [200H], MOV R0,R1 等。 (3)一个机器周期包含若干个时钟周期(节拍脉冲或 T 脉冲)。 不同的计算机中关于 CPU 周期的规定不同。\n在一个机器周期内,要完成若干个微操作。这些微操作有的可以同时执行, 有的需要按先后次序串行执行。因而需要把一个机器周期分为若干个相等的时 间段,每一个时间段称为一个节拍。节拍常用具有一定宽度的电位信号表示, 称之为节拍电位或节拍脉冲。 节拍的宽度取决于 CPU 完成一次基本的微操作的时间,如:ALU 完成一次正 确的运算,寄存器间的一次数据传送等。\n典型指令的指令周期 mov R0, R1 第 1 个 CPU 周期:取指周期 程序的第一条指令的 地址 → PC (PC) →ABUS(I) (MEM) → IR (PC)+1 →PC IR(OP)被译码 CPU 识别 MOV 指令 取指周期结束 第 2 个 CPU 周期:执行周期 OC 信号 → 寄存器:R1 为源寄存器, R0 为目标寄存器,ALU 做传送操作, 打开 ALU 三态门,(ALU) →DBUS 上, (DBUS) →DR 上,(DR) →R0。 执行周期结束,该指令执行完成。 5 条指令的取指周期可以公用——公共操作。\n用方框图语言表示指令周期 应用领域:可用于指令系统设计 • 方框——按 CPU 周期 • 方框内内容——数据通路操作或控制操作 • 菱形符号——判别或测试 • ~——公操作 小结: • 一条指令包括一个取指令周期和一个或一个以上 的执行周期组成; • 在每个 CPU 周期中数据通路是明确的; • 数据通路的建立及操作受到操作控制器的控制, 当然来源于指令的功能。\n考虑 CPU 中的控存(CM) 继续:将左侧的单元格内的 例如 PC→ABUS(I)等 表示为二进制形式, 写进 CM 中,便构成 了控制器的微指令集。\n时序产生器和控制方式(了解) 时序产生器作用和体制 时序信号产生器 控制方式\n微程序控制器 仿照指令的设计方法,把操作控制信号编制成微 指令,存放到控制存储器(CM,μCM)里。运行时, 从 CM 或 μCM 中取出微指令,便产生指令运行所需 的操作控制信号。 或者说:微程序设计技术是用软件方法来设计硬件的技术。? (1)微命令:控制部件向执行部件发出的各种控制命 令,它是构成控制序列的最小单位。 例如:打开或关闭某个控制门的电位信号, 某个寄存器的打入脉冲等。 (2)微操作:是微命令的操作过程。 • 微命令和微操作是一 一对应的。 • 微命令是微操作的控制信号,微操作是微命令的执行过程。 • 微操作是执行部件中最基本的操作。\n(3)相容性微操作:指能够同时或在同一个节拍内并行执行的微操作。必须各占一位。 (4)互斥性微操作:指不能同时或不能在同一个节拍内并行执行的微操作。可以编码\n(5)微指令:在同一 CPU 周期内并行执行的微操作控制信息,存 储在控制存储器里,称为一条微指令(Microinstruction)。 微指令是微命令的组合,微指令存储在控制器中的控制存储器中。 • 一条微指令通常至少包含两大部分信息: 1 操作控制字段,又称微操作码字段,用以产生某一步操作所 需的各个微操作控制信号。某位为 1,表示发出微命令,微命令信 号还要引入时间控制。 2 顺序控制字段,又称微地址码字段,用以控制产生下一条要 执行的微指令地址。\n(6)微程序:一条机器指令的功能是由一系列微指令组 成的的序列构成的,这个微指令序列就是微程序。 1 一段微程序对应一条机器指令 2 执行当前微指令时,必须指出后继(下一条)微指令 的地址——微地址。 微地址是存放微指令的控制存储器(CM)的存储单元 地址。\n微程序控制原理 •控制存储器(CM 或者 μCM) 存放所有的微指令,是微程序控制器的核心部件。 •微指令寄存器(μIR) 用来存放从 CM 取出的正在执行的微指令,它的位数与 CM 单元字长相等。 •地址转移逻辑(微地址形成部件) 产生初始微地址和后继微地址,以保证微指令的有序执行。\n微指令基本格式: P+V 看下实例，特别是转移字段 CPU 周期和微指令周期的关系(一般从 T4 开始，用上升眼) 机器指令与微指令的关系 (1)空间角度:微观(微程序、微指 令、微地址)与宏观(程序、指令、地 址)的角度看,一个对应控存 CM,一 个对应存储器。一条机器指令对应一个微程序。 (2)时间角度:一条机器指令需要若 干个 CPU 周期,一条微指令对应一个 CPU 周期,\n微指令设计时追求的目标: • 有利于缩短微指令的长度 • 有利于减小 CM 的容量 • 有利于提高微程序的执行速度 • 有利于修改微指令 • 有利于提升微程序设计的灵活性\n1、微命令的编码方法 编码有三种方法:直接表示法/编码表示法/混合表示法 (1)直接表示法:操作控制字段中的各位分别可以直接控 制计算机,不需要进行译码。 这种方法结构简单,并行性强,操作速度快,但是微指令字太长,若微命令的总数为 N 个,则微指令字的操作控制字段就要有 N 位。 (2)编码表示法:将操作控制字段分为若干个小段,每段内采用最短编码法,段与段之间采用直接控制法。 特点:可以避免互斥,使指令字大大缩短,但增加了译码电路,使微程序的执行速度减慢\n编码注意几点:字段编码法中操作控制字段并非是任意的,必须要遵循如下的原则: 1 把互斥性的微命令分在同一段内,兼容性的微命令分在不同段内。 这样不仅有助于提高信息的利用率,缩短微指令字长,而且有助于充分利用硬件所具有的并行性,加快执行的速度。 2 每段中包含的信息位不能太多,否则将增加译码线路复杂性和译码时间。 3 一般每个小段还要留出一个状态,表示本字段不发出任何微命令。因 此当某字段的长度为三位时,最多只能表示七个互斥的微命令,通常用000表示不操作 (空操作) 。 4 应与数据通路结构相适应。 (3)混合编码法:将前两种结合在一起,兼顾两者特点。一个字段的某些编码不能独立地定义某些微命令,而需要与其他字段的编码来联合定义,如例 2:F1 与 RW\n2.4.7.2 微程序设计技术 微指令地址的形成 (1)入口地址:每条机器指令对应一段微程序,当公用的取指微指令(微程序)从主存中取出机器 指令之后,由机器指令的操作码字段指出各段 微程序的入口地址,这是一种多分支(或多 路转移)的情况。 如果机器指令操作码字段的位数和位置固定,可以直接使操作 码与微程序入口地址的部分位相对应。 (2)后继微地址形成方法 1计数器的方式(理解) 微程序顺序执行时,其后继微地址就是现行微地址加上一 个增量(通常为1);(μPC)+1 μPC 当微程序遇到转移或转子程序时,由微指令的转移地址段 来形成转移微地址。 注意:在微程序控制器中也有一个微程序计数器μPC,一般情况下可以将 μMAR作为μPC。 特点: • 优点:简单、易于掌握,编制微程序容易 • 缺点:这种方式不能实现两路以上的并行微程序转移, 因而不利于提高微程序的执行速度。\n微指令格式 分为两类:水平型微指令和垂直型微指令。 (1)水平型微指令 水平型微指令是指一次能定义并能并行执行多个 微命令的微指令。 格式如下: 硬布线控制器 1、实现方法 通过逻辑电路直接连线而产生的,又称为组合逻辑 控制方式。 2、设计目标 使用最少元件(复杂的树形网络),速度最高。\n逻辑网络的输入信号来源有三个: (1)来自指令操作码译码器的输出Im (2)来自执行部件的反馈信息Bj (3)来自时序产生器的时序信号:节 拍电位信号Mi和节拍脉冲信号Tk 逻辑网络N的输出信号C:就是微操作信号: C = f (Im ,Mi,Tk,Bj)\n3、微操作控制信号产生 ••在微程序控制器中,微操作控制信号由微指令 产生,可以重复使用。 在硬布线控制器中,某一微操作控制信号由布 尔代数表达式描述的输出函数产生。\n4、设计微操作控制信号的方法 (1)根据所有机器指令流程图,寻找出产生同一 个微操作信号的所有条件,并与适当的节拍电位和 节拍脉冲组合; (2)写出其布尔代数表达式并进行简化; (3)然后用门电路或可编程器件来实现\n5、设计步骤 (1)画出指令流程图 (2)列出微操作时间表 • 将指令流程图中的微操作合理地安排到各个机器周期的相应节拍和脉冲中去; • 微操作时间表形象地表明:什么时间、根据什么条件发出哪些微操作信号。 (3)进行微操作信号的分类组合(综合) 当列出所有指令的微操作时间表之后,需要对它们进行综合分析,把凡是要执行某一微操作的所有条件(哪条指令、哪个机器周期、哪个 节拍和脉冲等)都考虑在内,加以分类组合,列出各微操作产生的逻辑 表达式,然后加以简化,使逻辑表达式更为合理。 (4)电路实现 根据整理并化简的逻辑表达式组,可以用一系列组合逻辑电路加以实现,加根据逻辑表达式画出逻辑电路图,用逻辑门电路的组合来实现之,也可以直接根据逻辑表达式,用PLA或其他逻辑电路实现。 例:\n流水CPU 并行处理技术 流水CPU的结构 流水线中的主要问题\n并行性(Parrelism)概念 • 问题中具有可以同时进行运算或操作的特性 • 例:在相同时延的条件下,用n位运算器进行n位并行运算速度几乎是一位运算器进行n位串行运算的n倍(狭义) (广义)含义 • 只要在同一时刻(同时性)或在同一时间间隔内(并发性)完成两种或两种以上性质相同或不同的工作,他们在时间上相互重叠,都体现了并行性\n三种形式 • 时间并行(重叠):让多个处理过程在时间上相互错开,轮流使用同一套硬件设备的各个部件,以加快硬件周转而赢得速度,实现方式就是采用流水处理部件 • 空间并行(资源重复):以数量取胜 • 它能真正的体现同时性 • LSI和VLSI为其提供了技术保证 • 时间+空间并行 • Pentium中采用了超标量流水线技术\n流水线: 为了实现流水,首先必须把输入的任务分割为一系列的子任务,使各子任务能在流水线的各个阶段并发地执行。 将任务连续不断地输入流水线,从而实现了子任务的并行。 流水处理大幅度地改善了计算机的系统性能,是在计算机上实现时间并行性的一种非常经济的方法。\n假定作业 T 被分成 k 个子任务,可表达为: T={T1,T2,···,Tk} 若i",
+  "wordCount" : "1076",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/architecture/organization/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">6 min&amp;nbsp;·&amp;nbsp;1076 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/Architecture/organization.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#44-cpu-的组成和功能">4.4 cpu 的组成和功能</a>
+      <ul>
+        <li><a href="#cpu-的功能">cpu 的功能</a></li>
+      </ul>
+    </li>
+    <li><a href="#指令周期">指令周期</a></li>
+    <li><a href="#时序产生器和控制方式了解">时序产生器和控制方式(了解)</a></li>
+    <li><a href="#微程序控制器">微程序控制器</a>
+      <ul>
+        <li><a href="#硬布线控制器">硬布线控制器</a></li>
+      </ul>
+    </li>
+    <li><a href="#流水cpu">流水CPU</a></li>
+    <li><a href="#risc特征">RISC特征:</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#53-总线仲裁">5.3 总线仲裁</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="4">4<a hidden class="anchor" aria-hidden="true" href="#4">#</a></h1>
+<ul>
+<li>
+<p>(1)冯诺依曼及哈佛体系结构、程序的简单运行原理 、系统层次结构、系统性能指标</p>
+</li>
+<li>
+<p>(2)数制和编码、定点数、浮点数、数据运算(算术运 算、逻辑运算)、定点运算器等。</p>
+</li>
+<li>
+<p>(3)存储器(SRAM,DRAM,EPROM,EEPROM, Flash Memory,高性能存储器,cache,硬盘),存储 器与 CPU 的连接。</p>
+</li>
+<li>
+<p>(4)指令、指令格式,指令的分析与设计,指令及数 据的寻址,AT&amp;T 与 Intel 格式;大小端模式。</p>
+</li>
+</ul>
+<h2 id="44-cpu-的组成和功能">4.4 cpu 的组成和功能<a hidden class="anchor" aria-hidden="true" href="#44-cpu-的组成和功能">#</a></h2>
+<ol>
+<li>如何实现的问题: 指令与 CPU 和内存、数据通路</li>
+</ol>
+<ul>
+<li>程序如何执行</li>
+<li>数据通路基本结构和工作原理</li>
+</ul>
+<ol start="2">
+<li>体系结构优化问题: 时空并行</li>
+</ol>
+<ul>
+<li>流水线方式下指令的执行</li>
+</ul>
+<h3 id="cpu-的功能">cpu 的功能<a hidden class="anchor" aria-hidden="true" href="#cpu-的功能">#</a></h3>
+<ul>
+<li>指令控制(顺序控制)指令在内存中,指令的存放是静态的, 执行是动态的(顺序、跳转),这样 才形成了指令流。</li>
+<li>操作控制(一条指令有若干操作信号实现)在时序信号的控制下,每条指令在每个机器周期的节拍信息中产生什么微操作控制信号,由指令周期流程图做了严格规定。</li>
+<li>时间控制(各个操作实施时间的定时) 指令周期、机器周期、节拍信息等时序 信号必须由控制器产生。</li>
+<li>数据加工(算术运算和逻辑运算)</li>
+</ul>
+<p>取指令(取指、分析、识别、PC+1) (操作控制、时间控制) 执行指令</p>
+<ul>
+<li>
+<p>操作码字段+地址码字段</p>
+</li>
+<li>
+<p>基本组成
+(1)中央处理器 CPU = 运算器+控制器+cache
+(2)运算器 算逻单元 ALU,累加器(AC),暂存器(Latch),数据缓冲器(DR),通用寄存 器(GR),状态寄存器(Flags 或 PSW) 。
+(3)控制器 程序计数器(PC 或 IP),指令寄存器(IR),指令译码器(ID), 地址寄存器 AR, 时序发生器 TG(Timing Generator), 操作控制器 OC。 (Operating Controller)
+(4) 总线(数据通路)</p>
+</li>
+<li>
+<p>寄存器
+DR——缓冲寄存器(中转站、补偿速度差别) (MDR)
+IR——指令寄存器
+PC——程序计数器(IP,EIP)
+SP——堆栈指针寄存器(ESP)
+AR——地址寄存器(MAR)
+Flags—标志寄存器(EFlags,PSW)
+GR——通用寄存器(多个)</p>
+</li>
+</ul>
+<h4 id="操作控制器和时序产生器">操作控制器和时序产生器<a hidden class="anchor" aria-hidden="true" href="#操作控制器和时序产生器">#</a></h4>
+<p>(1)数据通路:各寄存器之间传送数据的通路</p>
+<p>(2)操作控制器(控制器)
+1 作用:为数据通路的建立提供各种操作信号
+2 依据:指令操作码、条件状态和时序信号</p>
+<ul>
+<li>操作控制器(控制器)的三种类型:
+1 存储类型:微程序控制器(时序存储逻辑)
+2 组合类型:硬布线控制器(组合逻辑)
+3 混合类型:前二者的结合</li>
+</ul>
+<ol>
+<li>存储类型(时序类型):微程序控制器
+微程序控制器是采用存储逻辑来实现的,也就是把微操作信号代码化,使每条机器指令转化成为一段微程序并存入一个专门的存储器(控制存储器)中,微操作控制信号由微指令产生。
+优点: 微程序控制器的设计思想和组合逻辑设计思想截 然不同。它具有设计规整、调试、维修以及更改、扩充指令 方便的优点,易于实现自动化设计。
+不足:由于增加了一级控制存储器,所以指令执行速度比组合逻辑控制器慢。</li>
+</ol>
+<blockquote>
+<p>时序存储逻辑元件 (也称状态元件或存储元件:寄存器、存储器 特点：</p>
+</blockquote>
+<pre><code>建立时间(Setup Time):触发边沿前,输入必须稳定的时间 保持时间(Hold Time ):触发边沿后,输入必须保持的时间 Clock-to-time:Clk触发后,到输出稳定的时间
+数据通路中的状态元件有两种:寄存器(组) + 存储器
+</code></pre>
+<ol start="2">
+<li>组合类型:硬布线控制器
+采用组合逻辑技术来实现,其时序控制信号形成部件是由门电路组成的复杂树形网络。这种方法是分立元件时代的产物,以使用最少器件数和取得最高操作速度为设计目标。
+优点:速度快。
+不足:时序控制信号形成部件的结构不规整,设计、调试、维修较困难。</li>
+</ol>
+<blockquote>
+<p>组合逻辑元件 (也称操作元件:如 ALU, MUX, Decoder, Adder 等)</p>
+</blockquote>
+<pre><code>组合逻辑元件的特点:
+(1)其输出只取决于当前的输入。
+(2)定时:所有输入到达后,经过 一定的逻辑门延时,输出端改变,并 保持到下次改变,不需要时钟信号来 定时。
+</code></pre>
+<ol start="3">
+<li>混合类型:硬布线+微程序
+即: 组合逻辑和存储逻辑结合型 这种控制器称为 PLA 控制器(Programmed Logic Array,可编程逻辑阵列),它是吸收前 两种的设计思想来实现的。设计时可以采用组 合逻辑的,实现时可以采用存储逻辑的。</li>
+</ol>
+<h2 id="指令周期">指令周期<a hidden class="anchor" aria-hidden="true" href="#指令周期">#</a></h2>
+<p>指令周期的基本概念
+典型指令的指令周期
+用方框图语言表示指令周期</p>
+<p>(1)指令周期:指取指令、分析指令到执行完该指令所需的全部时间。
+(2)机器周期:也叫 CPU 周期
+通常把一条指令周期划分为若干个机器周期,每个机器周期完成一 个基本操作。
+主存的工作周期(存取周期)为基础来规定 CPU 周期,比如,可以用 CPU 读取一个指令字的最短时间来规定 CPU 周期。 不同的指令,可能包含不同数目的机器周期。例如,ADD R1, [200H], MOV R0,R1 等。
+(3)一个机器周期包含若干个时钟周期(节拍脉冲或 T 脉冲)。 不同的计算机中关于 CPU 周期的规定不同。</p>
+<p>在一个机器周期内,要完成若干个微操作。这些微操作有的可以同时执行, 有的需要按先后次序串行执行。因而需要把一个机器周期分为若干个相等的时 间段,每一个时间段称为一个节拍。节拍常用具有一定宽度的电位信号表示, 称之为节拍电位或节拍脉冲。
+节拍的宽度取决于 CPU 完成一次基本的微操作的时间,如:ALU 完成一次正 确的运算,寄存器间的一次数据传送等。</p>
+<ul>
+<li>典型指令的指令周期
+mov R0, R1
+第 1 个 CPU 周期:取指周期</li>
+</ul>
+<ol>
+<li>程序的第一条指令的
+地址 → PC</li>
+<li>(PC) →ABUS(I)</li>
+<li>(MEM) → IR</li>
+<li>(PC)+1 →PC</li>
+<li>IR(OP)被译码</li>
+<li>CPU 识别 MOV 指令
+取指周期结束
+第 2 个 CPU 周期:执行周期
+OC 信号 → 寄存器:R1 为源寄存器,
+R0 为目标寄存器,ALU 做传送操作,
+打开 ALU 三态门,(ALU) →DBUS 上,
+(DBUS) →DR 上,(DR) →R0。
+执行周期结束,该指令执行完成。</li>
+</ol>
+<blockquote>
+<p>5 条指令的取指周期可以公用——公共操作。</p>
+</blockquote>
+<ul>
+<li>用方框图语言表示指令周期
+应用领域:可用于指令系统设计
+• 方框——按 CPU 周期
+• 方框内内容——数据通路操作或控制操作
+• 菱形符号——判别或测试
+• ~——公操作</li>
+</ul>
+<p>小结:
+• 一条指令包括一个取指令周期和一个或一个以上
+的执行周期组成;
+• 在每个 CPU 周期中数据通路是明确的;
+• 数据通路的建立及操作受到操作控制器的控制,
+当然来源于指令的功能。</p>
+<blockquote>
+<p>考虑 CPU 中的控存(CM)
+继续:将左侧的单元格内的
+例如 PC→ABUS(I)等
+表示为二进制形式,
+写进 CM 中,便构成
+了控制器的微指令集。</p>
+</blockquote>
+<h2 id="时序产生器和控制方式了解">时序产生器和控制方式(了解)<a hidden class="anchor" aria-hidden="true" href="#时序产生器和控制方式了解">#</a></h2>
+<p>时序产生器作用和体制
+时序信号产生器
+控制方式</p>
+<h2 id="微程序控制器">微程序控制器<a hidden class="anchor" aria-hidden="true" href="#微程序控制器">#</a></h2>
+<ul>
+<li>仿照指令的设计方法,把操作控制信号编制成微 指令,存放到控制存储器(CM,μCM)里。运行时, 从 CM 或 μCM 中取出微指令,便产生指令运行所需 的操作控制信号。</li>
+<li>或者说:微程序设计技术是用软件方法来设计硬件的技术。?</li>
+</ul>
+<p>(1)微命令:控制部件向执行部件发出的各种控制命 令,它是构成控制序列的最小单位。
+例如:打开或关闭某个控制门的电位信号, 某个寄存器的打入脉冲等。
+(2)微操作:是微命令的操作过程。
+• 微命令和微操作是一 一对应的。
+• 微命令是微操作的控制信号,微操作是微命令的执行过程。
+• 微操作是执行部件中最基本的操作。</p>
+<p>(3)相容性微操作:指能够同时或在同一个节拍内并行执行的微操作。必须各占一位。
+(4)互斥性微操作:指不能同时或不能在同一个节拍内并行执行的微操作。可以编码</p>
+<p>(5)微指令:在同一 CPU 周期内并行执行的微操作控制信息,存 储在控制存储器里,称为一条微指令(Microinstruction)。 微指令是微命令的组合,微指令存储在控制器中的控制存储器中。
+• 一条微指令通常至少包含两大部分信息:
+1 操作控制字段,又称微操作码字段,用以产生某一步操作所 需的各个微操作控制信号。某位为 1,表示发出微命令,微命令信 号还要引入时间控制。
+2 顺序控制字段,又称微地址码字段,用以控制产生下一条要 执行的微指令地址。</p>
+<p>(6)微程序:一条机器指令的功能是由一系列微指令组 成的的序列构成的,这个微指令序列就是微程序。
+1 一段微程序对应一条机器指令
+2 执行当前微指令时,必须指出后继(下一条)微指令 的地址——微地址。
+微地址是存放微指令的控制存储器(CM)的存储单元 地址。</p>
+<ol start="2">
+<li>微程序控制原理</li>
+</ol>
+<p>•控制存储器(CM 或者 μCM) 存放所有的微指令,是微程序控制器的核心部件。
+•微指令寄存器(μIR) 用来存放从 CM 取出的正在执行的微指令,它的位数与 CM 单元字长相等。
+•地址转移逻辑(微地址形成部件) 产生初始微地址和后继微地址,以保证微指令的有序执行。</p>
+<ul>
+<li>微指令基本格式: P+V</li>
+</ul>
+<ol start="3">
+<li>看下实例，特别是转移字段</li>
+</ol>
+<ul>
+<li>CPU 周期和微指令周期的关系(一般从 T4 开始，用上升眼)</li>
+</ul>
+<ol start="4">
+<li>
+<p>机器指令与微指令的关系
+(1)空间角度:微观(微程序、微指 令、微地址)与宏观(程序、指令、地 址)的角度看,一个对应控存 CM,一 个对应存储器。一条机器指令对应一个微程序。
+(2)时间角度:一条机器指令需要若 干个 CPU 周期,一条微指令对应一个 CPU 周期,</p>
+</li>
+<li>
+<p>微指令设计时追求的目标:
+• 有利于缩短微指令的长度
+• 有利于减小 CM 的容量
+• 有利于提高微程序的执行速度
+• 有利于修改微指令
+• 有利于提升微程序设计的灵活性</p>
+</li>
+</ol>
+<p>1、微命令的编码方法
+编码有三种方法:直接表示法/编码表示法/混合表示法
+(1)直接表示法:操作控制字段中的各位分别可以直接控 制计算机,不需要进行译码。
+这种方法结构简单,并行性强,操作速度快,但是微指令字太长,若微命令的总数为 N 个,则微指令字的操作控制字段就要有 N 位。
+(2)编码表示法:将操作控制字段分为若干个小段,每段内采用最短编码法,段与段之间采用直接控制法。
+特点:可以避免互斥,使指令字大大缩短,但增加了译码电路,使微程序的执行速度减慢</p>
+<pre><code>编码注意几点:字段编码法中操作控制字段并非是任意的,必须要遵循如下的原则:
+1 把互斥性的微命令分在同一段内,兼容性的微命令分在不同段内。 这样不仅有助于提高信息的利用率,缩短微指令字长,而且有助于充分利用硬件所具有的并行性,加快执行的速度。
+2 每段中包含的信息位不能太多,否则将增加译码线路复杂性和译码时间。
+3 一般每个小段还要留出一个状态,表示本字段不发出任何微命令。因 此当某字段的长度为三位时,最多只能表示七个互斥的微命令,通常用000表示不操作 (空操作) 。
+4 应与数据通路结构相适应。
+</code></pre>
+<p>(3)混合编码法:将前两种结合在一起,兼顾两者特点。一个字段的某些编码不能独立地定义某些微命令,而需要与其他字段的编码来联合定义,如例 2:F1 与 RW</p>
+<p>2.4.7.2 微程序设计技术
+微指令地址的形成
+(1)入口地址:每条机器指令对应一段微程序,当公用的取指微指令(微程序)从主存中取出机器 指令之后,由机器指令的操作码字段指出各段 微程序的入口地址,这是一种多分支(或多 路转移)的情况。
+如果机器指令操作码字段的位数和位置固定,可以直接使操作 码与微程序入口地址的部分位相对应。
+(2)后继微地址形成方法
+1计数器的方式(理解) 微程序顺序执行时,其后继微地址就是现行微地址加上一 个增量(通常为1);(μPC)+1 μPC
+当微程序遇到转移或转子程序时,由微指令的转移地址段 来形成转移微地址。
+注意:在微程序控制器中也有一个微程序计数器μPC,一般情况下可以将 μMAR作为μPC。 特点:
+• 优点:简单、易于掌握,编制微程序容易
+• 缺点:这种方式不能实现两路以上的并行微程序转移, 因而不利于提高微程序的执行速度。</p>
+<ol start="3">
+<li>微指令格式
+分为两类:水平型微指令和垂直型微指令。
+(1)水平型微指令
+水平型微指令是指一次能定义并能并行执行多个
+微命令的微指令。
+格式如下:</li>
+</ol>
+<h3 id="硬布线控制器">硬布线控制器<a hidden class="anchor" aria-hidden="true" href="#硬布线控制器">#</a></h3>
+<p>1、实现方法
+通过逻辑电路直接连线而产生的,又称为组合逻辑 控制方式。
+2、设计目标
+使用最少元件(复杂的树形网络),速度最高。</p>
+<p>逻辑网络的输入信号来源有三个:
+(1)来自指令操作码译码器的输出Im
+(2)来自执行部件的反馈信息Bj
+(3)来自时序产生器的时序信号:节 拍电位信号Mi和节拍脉冲信号Tk
+逻辑网络N的输出信号C:就是微操作信号: C = f (Im ,Mi,Tk,Bj)</p>
+<p>3、微操作控制信号产生
+••在微程序控制器中,微操作控制信号由微指令 产生,可以重复使用。
+在硬布线控制器中,某一微操作控制信号由布 尔代数表达式描述的输出函数产生。</p>
+<p>4、设计微操作控制信号的方法
+(1)根据所有机器指令流程图,寻找出产生同一 个微操作信号的所有条件,并与适当的节拍电位和 节拍脉冲组合;
+(2)写出其布尔代数表达式并进行简化;
+(3)然后用门电路或可编程器件来实现</p>
+<p>5、设计步骤
+(1)画出指令流程图
+(2)列出微操作时间表
+• 将指令流程图中的微操作合理地安排到各个机器周期的相应节拍和脉冲中去;
+• 微操作时间表形象地表明:什么时间、根据什么条件发出哪些微操作信号。
+(3)进行微操作信号的分类组合(综合)
+当列出所有指令的微操作时间表之后,需要对它们进行综合分析,把凡是要执行某一微操作的所有条件(哪条指令、哪个机器周期、哪个
+节拍和脉冲等)都考虑在内,加以分类组合,列出各微操作产生的逻辑 表达式,然后加以简化,使逻辑表达式更为合理。
+(4)电路实现
+根据整理并化简的逻辑表达式组,可以用一系列组合逻辑电路加以实现,加根据逻辑表达式画出逻辑电路图,用逻辑门电路的组合来实现之,也可以直接根据逻辑表达式,用PLA或其他逻辑电路实现。
+例:</p>
+<h2 id="流水cpu">流水CPU<a hidden class="anchor" aria-hidden="true" href="#流水cpu">#</a></h2>
+<p>并行处理技术
+流水CPU的结构
+流水线中的主要问题</p>
+<p>并行性(Parrelism)概念
+• 问题中具有可以同时进行运算或操作的特性
+• 例:在相同时延的条件下,用n位运算器进行n位并行运算速度几乎是一位运算器进行n位串行运算的n倍(狭义)
+(广义)含义
+• 只要在同一时刻(同时性)或在同一时间间隔内(并发性)完成两种或两种以上性质相同或不同的工作,他们在时间上相互重叠,都体现了并行性</p>
+<p>三种形式
+• 时间并行(重叠):让多个处理过程在时间上相互错开,轮流使用同一套硬件设备的各个部件,以加快硬件周转而赢得速度,实现方式就是采用流水处理部件
+• 空间并行(资源重复):以数量取胜
+• 它能真正的体现同时性
+• LSI和VLSI为其提供了技术保证
+• 时间+空间并行
+• Pentium中采用了超标量流水线技术</p>
+<p>流水线:
+为了实现流水,首先必须把输入的任务分割为一系列的子任务,使各子任务能在流水线的各个阶段并发地执行。
+将任务连续不断地输入流水线,从而实现了子任务的并行。
+流水处理大幅度地改善了计算机的系统性能,是在计算机上实现时间并行性的一种非常经济的方法。</p>
+<p>假定作业 T 被分成 k 个子任务,可表达为:
+T={T1,T2,···,Tk}
+若i&lt;j, 则必须在 Ti 完成以后, Tj才能开始工作。具有这种线性优先关系的流水线称为线性流水线( Linear Pipeline )。
+处理一个子任务的过程为过程段(Si )。线性流水线由一系列串联的过程段组成, 各个过程之间设有高速的缓冲寄存器(L),
+以暂时保存上一过程子任务处理的结果。在一个统一的时钟(C) 控制下,数据从一个过程段流向相邻的过程段。</p>
+<p>设过程段 Si所需的时间为τi, 缓冲寄存器的延时为τL ,
+线性流水线的时钟周期定义为:
+T=max{τi}+τL =τm+τL</p>
+<p>理论上, 一个具有 k 级过程段的流水线处理 n 个任务需要的时钟周期数为:
+Tk=k+(n-1)
+如果用非流水线的硬件来处理这n个任务, 时间上只能串行进行, 则所需时钟周期数为:
+TL=n·k</p>
+<p>我们将TL和Tk的比值定义为k级线性流水线的加速比:
+Ck= TL/Tk = n·k / k+(n-1)
+当: n&raquo;k 时, Ck-&gt;k
+理论上,k级线性流水线处理几乎可以提高k倍速度。但实际上由于存储器冲突、数据相关,这个理想的加速比不能完全达到。</p>
+<p>瓶颈问题(流水线中有速度慢的段)
+• 再分成几个段
+• 用资源重复的方法也可以解决
+(1)资源相关:多条指令进入流水线后在同一时
+钟周期内争用同一功能部件。
+• 解决办法:后边指令拖一拍再推进;增设一个功能部件(指存
+、数存分开)</p>
+<p>(2)数据相关
+• RAW(Read After Write)
+• 后面指令用到前面指令所写的数据
+• WAW(Write After Write)
+• 两条指令写同一个单元
+• 在简单流水线中没有此类相关,因为不会乱序执行
+• WAR(Write After Read)
+• 后面指令覆盖前面指令所读的单元
+• 在简单流水线中没有此类相关
+解决方法:
+• 可以推迟后继指令对相关单元的读操作
+• 设置相关的直接通路(Forwarding)</p>
+<p>(3)控制相关
+• 引起原因: 转移指令
+• 解决办法:
+1 延迟转移法
+2 转移预测法</p>
+<h2 id="risc特征">RISC特征:<a hidden class="anchor" aria-hidden="true" href="#risc特征">#</a></h2>
+<p>(1) 简化的指令系统
+指令少 / 寻址方式少 / 指令格式少 / 指令长度一致
+(2) 以RR方式工作
+除Load/Store指令可访存外,其余指令都只访问寄存器
+(3) 指令周期短
+以流水线方式工作, 因而除Load/Store指令外,其他简单指
+令都只需一个或一个不到的时钟周期就可完成
+(4) 采用大量通用寄存器,以减少访存次数
+(5) 采用硬连线路控制器,不用或少用微程序控制
+(6) 采用优化的编译系统,力求有效地支持高级语言程序
+MIPS是典型的RISC处理器,82年以来新的指令集大多采用RISC体系结构
+x86因为“兼容”的需要,保留了CISC的风格,同时也借鉴了RISC思想</p>
+<p>(1)CPU结构框图
+• 12个执行功能部件
+• 3个Cache(指令,数据和目标指令)
+• 2个寄存器堆(通用寄存器堆、扩展寄存器堆)
+• 6条80位宽的内部总线</p>
+<p>(2)MC88110的指令流水线
+• 超标量流水线CPU
+• F&amp;D:取指和译码段需要一个时钟周期
+• EX: 执行段,大都只需要一个时钟周期,
+• WB: 写回段,只需要时钟周期的一半
+• 采用了直接通路(Forwarding)的前向技术</p>
+<p>(3)指令动态调度策略(即:按序发射、按序完成策略)
+(1)取两条指令,成对发送(简单指令、无冲突)
+(2)两条指令由于资源相关或数据相关, 则这两条指令都不发射;
+若第1条指令能发射, 第2条不能发射, 则只发射第1条指令到EX段, 第2条指
+令等待,并新取一条指令与之配对发射。</p>
+<h1 id="第5部分-总线系统">第5部分 总线系统<a hidden class="anchor" aria-hidden="true" href="#第5部分-总线系统">#</a></h1>
+<p>•重点:
+1.总线的概念和结构形态
+2.信息传送方式
+3.总线的仲裁、定时
+•难点:
+总线的仲裁、定时</p>
+<p>5.1 总线的概念和结构形态
+总线的基本概念
+总线的连接方式
+总线的内部结构
+总线结构实例</p>
+<ol>
+<li>
+<p>总线
+计算机的各个功能部件之间的通信需要有公共的信息通道—
+—即总线。
+或者说:总线是构成计算机系统的互联机构,是多个系统
+功能部件之间进行数据传送的公共通路。
+借助于总线连接,计算机在各系统功能部件之间实现地址、
+数据和控制信息的交换,并在争用资源的基础上进行工作。</p>
+</li>
+<li>
+<p>总线分类
+(1)内部总线
+CPU内部连接各寄存器及运算器部件之间的总线。
+(2)系统总线(外部总线)
+CPU和计算机系统中其他高速功能部件(如内存)互连
+的总线。
+(3)I/O总线
+中低速I/O设备互连的总线。</p>
+</li>
+<li>
+<p>总线的特性
+•物理特性:总线的物理连接方式(根数、插头、插座、形状,
+引脚排列方式)。
+•功能特性:每根线的功能。
+•电气特性:每根线上信号的传递方向及有效电平范围。
+•时间特性:规定了每根总线在什么时间有效。</p>
+</li>
+<li>
+<p>总线的标准化
+不同厂家生产的相同功能部件可以互换使用,就需要进行系统总线
+的标准化工作。例如:ISA、EISA、VESA、PCI等。 采用标准总线的优点: 简化系统设计,简化系统结构,提高系统可靠性,便于系统的扩充和更新
+• ISA总线: (Industry Standard Architecture:工业标准体系结构)是IBM公司为PC/AT电脑而制定的总线标准,为16位体系结构,只能支持16位的I/O设备,数据传输率大约是16MB/S 。也称为AT标准 。
+• PCI总线(Peripheral Component Interconnect(外设部件互连标准)),从1992年创立规范
+到如今,PCI总线已成为了计算机的一种标准总线。PCI总线取代了早先的ISA总线。在PCI总线后面出现专门用于显卡的AGP总线,以及PCI Express总线(PCI-E)。但是PCI能从1992用到
+现在,说明他有许多优点,比如即插即用(Plug and Play)、中断共享等。
+从数据宽度上看,PCI总线有32bit、64bit之分;从总线速度上分,有33MHz、66MHz两种,例如,PCI总线以33MHz的时钟频率操作,采用32位数据总线,数据传输速率可达
+132MB/s,PCI-X(64位)可以达到133MHz,1GB/s。PCIE3.0/4.0等&mdash;4GB/s, 8GB/s 。</p>
+</li>
+<li>
+<p>总线性能的性能指标
+(1)总线带宽:总线本身所能达到的最高传输速率(MB/S)。
+(2)总线宽度:一次操作可以传输的数据位数,如
+ISA为16位,EISA为32位,PCI为64位。总线宽度不会超过微处理器外部数据总线的宽度。</p>
+</li>
+</ol>
+<p>适配器(接口):实现高速CPU与低速外设之间工作速度上的匹配和
+同步,并完成计算机和外设之间的所有数据传送和控制。
+单机系统中总线结构的两种基本类型:
+(1) 单总线:使用一条单一的系统总线来连接CPU、内存和I/O设备。
+单总线结构特点:
+高速运行
+容易扩充为多CPU系统
+取指令,执行指令,统一编址
+例如:MOV R1, [200H]
+(2) 多总线:在CPU、主存、I/O之间互联采用多条总线。</p>
+<p>早期总线结构的优点(略)
+早期总线结构的不足:
+(1) CPU是总线上惟一的主控者。即使后来增加了具有简单仲裁逻辑的DMA控制器以支持DMA传送,但仍不能满足多CPU环境的要求。
+(2)总线信号是CPU引脚信号的延伸,故总线结 构紧密与CPU相关,通用性较差。</p>
+<p>•数据传送总线:由地址线、数据线、控制线组成。
+•仲裁总线:包括总线请求线和总线授权线。
+•中断和同步总线:用于处理带优先级的中断操作,
+包括中断请求线和中断认可线。
+•公用线:包括时钟信号线、电源线、地线、系统 复位线以及加电或断电的时序信号线等。</p>
+<p>计算机系统中,传输信息基本有三种方式:
+• 串行传送
+• 并行传送
+• 分时传送
+注意:出于速度和效率上的考虑,系统总线上传送的信息必须采用并行传送方式。</p>
+<ol>
+<li>串行传送
+只需要一条传输线,且采用脉冲传送。顺序传送数码的各位,
+低位在前,高位在后。每一位的占用总线的时间叫位时间。
+发送部件进行并—串变换, 称为拆卸;
+接收部件进行串—并变换, 称为装配。
+优点:一条传输线,适合长距离传输,成本低。
+不足:效率低。</li>
+</ol>
+<blockquote>
+<p>先传低位，再传高位</p>
+</blockquote>
+<ol start="2">
+<li>并行传送
+每一数据位需要一条传输线,一般采用电位传送。信息
+有多少二进制位组成,就需要多少条传输线。并行传送一
+般采用电位传送。由于所有的位同时被传送,所以速度快。</li>
+<li>分时传送
+(1)共享总线的部件分时使用总线。
+(2) 总线复用方式,某个传输线上既传送地址信息,
+又传送数据信息。</li>
+</ol>
+<p>接 口 是 CPU 和主存、外设之间通过总线进行连接的逻辑部件。
+•接口的典型功能:控制、缓冲、状态识别、转换、整理、程序中断。
+•一个适配器的两个接口:
+(1)一个同系统总线相连,采用并行方式
+(2)另一个同设备相连,可能采用并行方式或串行方式。</p>
+<h2 id="53-总线仲裁">5.3 总线仲裁<a hidden class="anchor" aria-hidden="true" href="#53-总线仲裁">#</a></h2>
+<p>••••主方和从方:连接到总线上的功能模块有主动和被动两种形
+态,其中主方可以启动一个总线周期,而从方只能响应主方请
+求。每次总线操作,只能有一个主方,但是可以有多个从方。
+总线仲裁部件:为了解决多个功能模块争用总线的问题,必
+须设置。
+总线占用期:主方持续控制总线的时间。
+仲裁方式:按照总线仲裁电路的位置不同,仲裁方式分为集
+中式、分布式两种。</p>
+<p>5.3.1 集中式仲裁
+(1)链式查询方式
+离中央仲裁器最近的设备具有最高优先权,离总线控制器越远,优先权越低。
+优点:用很少几根线就能按一定优先次序实现总线控制,这种链式结构很容易扩充设备。
+缺点:是对询问链的电路故障很敏感,优先级固定。
+(2)计数器定时查询方式
+总线上的任一设备要求使用总线时,通过BR线发出总线请求。
+•BR→BS线=“0”开始计数→各设备→与某个设备一致→置BS线=“1”
+•计数器的初值也可用程序来设置,这可以方便地改变优先次序,但这种灵活性是以增加线数为代价的。可方便的改变优先级。
+(3)独立请求方式
+每一个共享总线的设备均有一对总线请求线BRi和总线授权线BGi。
+当设备要求使用总线时,便发出该设备的请求信号。总线仲裁器中有一个排队电路,它根据一定的优先次序决定首先响应哪个设备的请求,给设备以授权信号 BGi。
+优点: (1) 响应时间快,(2) 对优先次序的控制相当灵活——可以预先固定,例如BR0优先级最高,BR1次之&hellip;BRn最低 / 也可以通过程序来改变优先次序 / 还可以用屏蔽(禁止)某个请求。 因此,当代总线标准普遍采用独立请求方式。</p>
+<p>某 CPU 采用集中式仲裁方式,使用独立请求与链式查询相结合的二维总线控制结构。每一对请求线 BRi 和授权线 BGi 组成一对菊花链查询电路。每一根请求线可以被若
+干个传输速率接近的设备共享。当这些设备要求传送时通过BRi 线向仲裁器发出请求,对应的 BGi 线则串行查询每个设备,从而确定哪个设备享有总线控制权。请分析说明图中所示的总线仲裁时序图。</p>
+<p>5.4.1 总线的定时</p>
+<p>5.4.2 总线数据传输模式
+总线的一次信息传送过程:
+( 1 )请求总线;( 2 )总线仲裁;( 3 )寻址; ( 4 )信息传送;( 5 )状态返回 。
+• 定时:事件出现在总线上的时序关系。
+( 1 )同步定时
+( 2 )异步定时</p>
+<p>同步定时(事件出现在总线上的时刻由总线时钟信号来确定)
+异步定时(后一事件出现在总线上的时刻取决于前一事件的出现)</p>
+<p>:从时序图看出,该总线采用异步定时协议。
+• 当某个设备请求使用总线时,在该设备所属的请求线上发出申请信号 BRi ( 1 )。
+• CPU 按 优 先 原 则 同 意 后 给 出 授 权 信 号 BGi 作 为 回 答
+( 2 )。
+• BGi 链式查询各设备,并上升从设备回答 SACK 信号证实已收到 BGi 信号( 3 )。
+• CPU 接到 SACK 信号后下降 BG 作为回答( 4 )。
+• 在总线“忙”标志 BBSY 为“ 0” 情况该设备上升 BBSY ,表示该设备获得了总线控制权,成为控制总线的主设备
+( 5 )。
+• 在设备用完总线后,下降 BBSY 和 SACK ( 6 )
+• 释放总线。
+• 在上述选择主设备过程中,可能现行的主从设备正在进行传送。此时需等待现行传送结束,即现行主设备下降BBSY 信号后( 7 ),新的主设备才能上升 BBSY ,获得总线控制权。</p>
+<ol>
+<li>
+<p>读、写操作
+( 1 )读操作是由从方到主方的数据传送;
+( 2 )写操作是由主方到从方的数据传送。
+例如,主方先以一个总线周期发出命令和从方地址, 经过一定的延时再开始数据传送总线周期。
+为了提高总线利用率,减少延时损失,主方完成寻址总线周期后可让出总线控制权,以使其他主方完成更紧迫的操作。
+然后再重新竞争总线,完成数据传送总线周期。</p>
+</li>
+<li>
+<p>块传送操作
+只需给出块的起始地址,然后对固定块长度的
+数据一个接一个地读出或写入。对于 CPU (主方)和存储器(从方)而言的块传送,常称为猝发式传送,
+其块长一般固定为数据线宽度(存储器字长)的 4 倍。
+例如一个 64 位数据线的总线,一次猝发式传送可达 256 位。这在超标量流水中十分有用。</p>
+</li>
+<li>
+<p>写后读、读修改写操作
+这是两种组合操作:
+( 1 )先写后读操作,目的是为了校验;
+( 2 )先读后写操作,用于多道程序系统中对共享存储资源的保护。
+说明:这两种操作和猝发式操作一样,主方掌管总线直到整个操作完成。</p>
+</li>
+<li>
+<p>广播、广集操作
+数据传送只在一个主方和一个从方之间进行。但有的总线允许一个主方对多个从方进行写操作,这种操作称为广播。
+与广播相反的操作称为广集。
+它将选定的多个从方数据在总线上完成 AND 或 OR 操作,用以检测多个中断源。</p>
+</li>
+</ol>
+<p>5.5 HOST 总线和 PCI 总线
+5.5.1 多总线结构
+5.5.2 PCI 总线信号
+5.5.3 总线周期类型
+5.5.4 总线周期操作
+5.5.5 总线仲裁</p>
+<p>HOST 总线:有 CPU 总线、系统总线、主存总线、前端总线等多种名称,各自反映了总线功能的一个
+方面。也叫“宿主”总线,因为 HOST 总线不仅连接主存,还可以连接多个 CPU 。
+HOST 总线:连接“ HOST 桥”芯片与 CPU ( cache )之间的信息通路,它是一个 32~64 位数据
+线和 32 位地址线的同步总线。 CPU 拥有 HOST 总线的控制权,但在必要情况下可放弃总线控制权。</p>
+<p>•PCI 总线:连接各种高速的 PCI 设备。 PCI 是一个与处理器无关的高速外
+围总线,又是至关重要的层间总线。它采用同步时序协议和集中式仲裁策略,
+并具有自动配置能力。 PCI 设备可以是主设备,也可以是从设备,或兼而
+有之。在 PCI 设备中不存在 DMA (直接存储器传送)的概念,这是因为
+PCI 总线支持无限的猝发式传送。这样,传统总线上用 DMA 方式工作的设
+备移植到 PCI 总线上时,采用主设备工作方式即可。系统中允许有多条 PCI
+总线,它们可以使用 HOST 桥与 HOST 总线相连,也可使用 PCI/PCI 桥与
+已和 HOST 总线相连的 PCI 总线相连,从而得以扩充 PCI 总线负载能力。
+•LEGACY 总线:可以是 ISA , EISA , MCA 等这类性能较低的传统总线,
+以便充分利用市场上丰富的适配器卡,支持中、低速 I/O 设备。</p>
+<p>在 PCI 总线体系结构中有三种桥( HOST 桥、 PCI/PCI 桥、
+PCI/LEGACY 桥)。其中, HOST 桥又是 PCI 总线控制器,
+含有中央仲裁器。桥起着重要的作用,它连接两条总线,使
+彼此间相互通信。桥又是一个总线转换部件,可以把一条总
+线的地址空间映射到另一条总线的地址空间上,从而使系统
+中任意一个总线主设备都能看到同样的一份地址表。
+• 桥本身的结构可以简单:如只有信号缓冲能力和信号电平转换逻辑;也可以复杂:如有规程转换、数据快存、装拆数据等。
+PCI 总线的基本传输机制是猝发式传送,利用桥可
+以实现总线间的猝发式传送。
+写操作时,桥把上层总线的写周期先缓存起来,以
+后的时间再在下层总线上生成写周期,即延迟写。
+读操作时,桥可早于上层总线,直接在下层总线上进
+行预读。无论延迟写和预读,桥的作用可使所有的存取
+都按 CPU 的需要出现在总线上。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/architecture/note/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/digitalcircuits/verilog/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

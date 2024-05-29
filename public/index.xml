@@ -1,0 +1,3584 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My Blog Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on My Blog Site</description>
+    <image>
+      <title>My Blog Site</title>
+      <url>http://localhost:1313/papermod-cover.png</url>
+      <link>http://localhost:1313/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 29 May 2024 10:35:06 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>工作及生活安排</title>
+      <link>http://localhost:1313/posts/life/</link>
+      <pubDate>Wed, 29 May 2024 10:35:06 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/life/</guid>
+      <description>安排</description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>http://localhost:1313/posts/computer/web/vue/</link>
+      <pubDate>Fri, 19 May 2023 19:24:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/web/vue/</guid>
+      <description>vue知识</description>
+    </item>
+    
+    <item>
+      <title>Solve</title>
+      <link>http://localhost:1313/posts/computer/language/solve/</link>
+      <pubDate>Fri, 19 May 2023 09:10:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/solve/</guid>
+      <description>求解编程题的步骤</description>
+    </item>
+    
+    <item>
+      <title>Web基础</title>
+      <link>http://localhost:1313/posts/computer/web/web/</link>
+      <pubDate>Fri, 05 May 2023 10:30:53 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/web/web/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>一些编程注意点</title>
+      <link>http://localhost:1313/posts/computer/code-tips/</link>
+      <pubDate>Thu, 04 May 2023 22:12:58 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/code-tips/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Windows配置</title>
+      <link>http://localhost:1313/posts/computer/windows/</link>
+      <pubDate>Thu, 04 May 2023 22:06:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/windows/</guid>
+      <description>一些 windows 配置</description>
+    </item>
+    
+    <item>
+      <title>Fonts</title>
+      <link>http://localhost:1313/posts/computer/linux/fonts/</link>
+      <pubDate>Thu, 04 May 2023 22:01:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/fonts/</guid>
+      <description>字体设置</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/posts/computer/git&#43;/git/</link>
+      <pubDate>Tue, 28 Mar 2023 13:01:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/git&#43;/git/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/posts/computer/blog/hugo/</link>
+      <pubDate>Tue, 28 Mar 2023 13:00:15 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/blog/hugo/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>http://localhost:1313/posts/computer/blog/hexo/</link>
+      <pubDate>Tue, 28 Mar 2023 13:00:12 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/blog/hexo/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>java连接数据库</title>
+      <link>http://localhost:1313/posts/computer/database/jdbc/</link>
+      <pubDate>Tue, 28 Mar 2023 12:56:46 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/database/jdbc/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>大数据导</title>
+      <link>http://localhost:1313/posts/computer/database/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AF%BC/</link>
+      <pubDate>Tue, 28 Mar 2023 12:55:47 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/database/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AF%BC/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Codd论文阅读</title>
+      <link>http://localhost:1313/posts/computer/database/codd%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Tue, 28 Mar 2023 12:53:35 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/database/codd%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Sql</title>
+      <link>http://localhost:1313/posts/computer/database/sql/</link>
+      <pubDate>Tue, 28 Mar 2023 12:49:43 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/database/sql/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>IntroductionToAlgorithm小记</title>
+      <link>http://localhost:1313/posts/computer/algorithm/introductiontoalgorithm/</link>
+      <pubDate>Tue, 28 Mar 2023 12:44:45 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/algorithm/introductiontoalgorithm/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Algorithm基础</title>
+      <link>http://localhost:1313/posts/computer/algorithm/algorithm/</link>
+      <pubDate>Tue, 28 Mar 2023 12:41:16 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/algorithm/algorithm/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>图像识别</title>
+      <link>http://localhost:1313/posts/computer/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</link>
+      <pubDate>Tue, 28 Mar 2023 12:31:03 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/</guid>
+      <description>使用python-pytorch 实现图像识别</description>
+    </item>
+    
+    <item>
+      <title>Arch individual config</title>
+      <link>http://localhost:1313/posts/computer/linux/arch/arch-need/</link>
+      <pubDate>Mon, 27 Mar 2023 19:10:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/arch/arch-need/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>ArchLinux 软件，问题</title>
+      <link>http://localhost:1313/posts/computer/linux/arch/arch-more/</link>
+      <pubDate>Mon, 27 Mar 2023 19:10:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/arch/arch-more/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>ArchLinux Config</title>
+      <link>http://localhost:1313/posts/computer/linux/arch/arch-config/</link>
+      <pubDate>Mon, 27 Mar 2023 19:10:29 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/arch/arch-config/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>ArchLinux Install</title>
+      <link>http://localhost:1313/posts/computer/linux/arch/arch-install/</link>
+      <pubDate>Mon, 27 Mar 2023 19:05:02 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/arch/arch-install/</guid>
+      <description>ArchLinux基础安装</description>
+    </item>
+    
+    <item>
+      <title>Vim More</title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-more/</link>
+      <pubDate>Mon, 27 Mar 2023 19:02:31 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-more/</guid>
+      <description>vim面板？</description>
+    </item>
+    
+    <item>
+      <title>Vim Base</title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-base/</link>
+      <pubDate>Mon, 27 Mar 2023 18:48:46 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-base/</guid>
+      <description>一些基础的vim操作</description>
+    </item>
+    
+    <item>
+      <title>学习之路</title>
+      <link>http://localhost:1313/posts/way/</link>
+      <pubDate>Sat, 25 Mar 2023 21:22:50 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/way/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Physics</title>
+      <link>http://localhost:1313/posts/physics/</link>
+      <pubDate>Sat, 25 Mar 2023 20:58:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/physics/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>词根词汇</title>
+      <link>http://localhost:1313/posts/en/vocabulary/</link>
+      <pubDate>Sat, 25 Mar 2023 20:54:19 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/en/vocabulary/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>英语语法</title>
+      <link>http://localhost:1313/posts/en/grammar/</link>
+      <pubDate>Sat, 25 Mar 2023 20:53:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/en/grammar/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>http://localhost:1313/posts/tips/</link>
+      <pubDate>Sat, 25 Mar 2023 20:50:43 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/tips/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>理想国</title>
+      <link>http://localhost:1313/posts/article/%E7%90%86%E6%83%B3%E5%9B%BD/</link>
+      <pubDate>Sat, 25 Mar 2023 20:38:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/article/%E7%90%86%E6%83%B3%E5%9B%BD/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>柏拉图思想</title>
+      <link>http://localhost:1313/posts/article/plato/</link>
+      <pubDate>Sat, 25 Mar 2023 20:37:47 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/article/plato/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>形政2</title>
+      <link>http://localhost:1313/posts/article/%E5%BD%A2%E6%94%BF2/</link>
+      <pubDate>Sat, 25 Mar 2023 20:32:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/article/%E5%BD%A2%E6%94%BF2/</guid>
+      <description>学习报告</description>
+    </item>
+    
+    <item>
+      <title>形政1</title>
+      <link>http://localhost:1313/posts/article/%E5%BD%A2%E6%94%BF1/</link>
+      <pubDate>Sat, 25 Mar 2023 20:29:10 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/article/%E5%BD%A2%E6%94%BF1/</guid>
+      <description>形势与政策编写</description>
+    </item>
+    
+    <item>
+      <title>一些哲学思考</title>
+      <link>http://localhost:1313/posts/art/philosophy/</link>
+      <pubDate>Sat, 25 Mar 2023 20:14:07 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/art/philosophy/</guid>
+      <description>记录想到的问题以及有趣的东西</description>
+    </item>
+    
+    <item>
+      <title>言论</title>
+      <link>http://localhost:1313/posts/art/saying/</link>
+      <pubDate>Sat, 25 Mar 2023 20:10:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/art/saying/</guid>
+      <description>记录一些言论</description>
+    </item>
+    
+    <item>
+      <title>西游启示录</title>
+      <link>http://localhost:1313/posts/art/3%E8%A5%BF%E6%B8%B8%E5%90%AF%E7%A4%BA%E5%BD%95/</link>
+      <pubDate>Sat, 25 Mar 2023 20:01:35 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/art/3%E8%A5%BF%E6%B8%B8%E5%90%AF%E7%A4%BA%E5%BD%95/</guid>
+      <description>百家讲坛上的节目</description>
+    </item>
+    
+    <item>
+      <title>一些书去阅读</title>
+      <link>http://localhost:1313/posts/art/books/</link>
+      <pubDate>Sat, 25 Mar 2023 19:52:53 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/art/books/</guid>
+      <description>西哲课老师给的一些书单，自己又加了些</description>
+    </item>
+    
+    <item>
+      <title>易经视频小记</title>
+      <link>http://localhost:1313/posts/art/1%E6%98%93%E7%BB%8F/</link>
+      <pubDate>Sat, 25 Mar 2023 18:51:45 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/art/1%E6%98%93%E7%BB%8F/</guid>
+      <description>看曾仕强先生视频的一点笔记</description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>http://localhost:1313/posts/hello/</link>
+      <pubDate>Sat, 25 Mar 2023 11:39:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/hello/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/config/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/config/readme/</guid>
+      <description>config 一些需要的配置文件，备份</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/algorithm/great-idea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/algorithm/great-idea/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/architecture/note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/architecture/note/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/architecture/organization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/architecture/organization/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/digitalcircuits/verilog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/digitalcircuits/verilog/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/git&#43;/gitbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/git&#43;/gitbook/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/git&#43;/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/git&#43;/github/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/cmake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/cmake/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/gcc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/gcc/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/gdb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/gdb/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/idea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/idea/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/make/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/spacevim/spacevim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/spacevim/spacevim/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ale/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ale/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ccls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ccls/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/code/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/git/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/neovim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/neovim/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/plugins/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/regex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/regex/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/someplug/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/someplug/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/start/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ui/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimium/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimium/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimrc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimrc/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimscript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimscript/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vscode/vscode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vscode/vscode/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/array-pointer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/array-pointer/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/c-cpp/datastructures/list/doublepoint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/c-cpp/datastructures/list/doublepoint/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/c-cpp/datastructures/matrix/matrix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/c-cpp/datastructures/matrix/matrix/</guid>
+      <description>稀疏矩阵 三对角矩阵 元素aij： 总位置k = 1 + (3 * (i - 1) - 1)(前面i-1行的元素) + (j - i + 1)(第i行第j列前面的元素) = 2i + j - 3 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/c-cpp/datastructures/sort/sorting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/c-cpp/datastructures/sort/sorting/</guid>
+      <description>Shell 定N，比较相隔N的数，N逐渐减小，直到1
+for(int k = n/2;k &amp;gt; 0;k /= 2){ for(int i = k;i &amp;lt;= n;i++){ for(int j = i-k;j &amp;gt;= 0 &amp;amp;&amp;amp; a[j] &amp;gt; a[j+k];j -= k){ swap(a[j],a[j+k]); } } } </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/c-cpp/datastructures/tree/tree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/c-cpp/datastructures/tree/tree/</guid>
+      <description>BinaryTree sort 平衡二叉树 调整 LL：右单旋转 RR：左单旋转 LR：先左后右双旋转调整，先用调整子不平衡树，再调整整树 RL 得需调整的中间节点（三个），中序排列，中间的三节点之一做root，两边的三节点之二做左右节点，其它容易调整 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/c/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/c/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/controlflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/controlflow/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/1%E6%8E%A5%E5%8F%A3%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/1%E6%8E%A5%E5%8F%A3%E6%A8%A1%E5%9D%97/</guid>
+      <description>note first 模型 BS 模型：浏览网页，应用层协议 CS 模型：客户服务机，TCP/UPD in/out in：主调函数分配内存 out：函数分配内存 接口化，模块化 主要是输入输出分析 DDL 动态库 lib 文件加入 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/c0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/c0/</guid>
+      <description>变量 vs 常量 变量用来找内存空间(&amp;amp;a: 地址)，它自己存在代码区 a=10 同 ((int)1000000) =10;
+int a = 10; a is 10, *a is wrong? &amp;amp;a is address.
+int *a; a is address, *a is 10, &amp;amp;a is address of pointer?
+typedef: 数据结构（cpp 可不用），对数据类型起别名，那对内存空间取别名？
+函数也是数据类型？可 typedef
+内存四区 代码区：二进制文件， 全局区(static)：OS 释放，全局和静态变量，字符串常量在这， 堆：自动分配释放，函数参数值，局部变量， 栈：动态内存申请，程序员释放，程序结束 OS 也释放 数组 把数组看成指针，解决所有问题 数组是什么数据类型 数据类型的本质是空间的大小 数组是复杂的数据类型，由元素类型和空间大小共同决定 定义数组类型：typedef int (MYINT5)[5]; MYINT5 array; // = int array[5]; 数组名代表什么意思 int a[10]; a is &amp;amp;a[0], *a is 10, &amp;amp;a is ?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp0/</guid>
+      <description>从 C 到 Cpp 好处 兼容 c 语言 STL 库 string 好用 运行时间差一些 命名空间 命名空间，避免函数同名 using namespace std; cin/cout 速度要慢，可以改为 scanf，printf 头文件 &amp;lt;string.h&amp;gt; -&amp;gt; &amp;lt;cstring&amp;gt; bool bool flag = true; 0 为 false，其他都是 true const #define MAX 150(in c) const int MAX = 150(in cpp) string string s = &amp;ldquo;hello&amp;rdquo;; s1+s2 cin &amp;raquo; s;(不能有空格，回车？) getline(cin, s); s.length(); s1 = s.substr(4,2); 结构体 可以省去 typedef 函数 传值时可不用加&amp;amp;取地址，只要在函数形参中用 int &amp;amp;a 即可 STL vector #include&amp;lt;vector&amp;gt; // 命名空间std vector&amp;lt;int&amp;gt; array; // 默认为0 array.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/course%E6%89%AB%E5%9C%B0%E5%83%A7/cpp1/</guid>
+      <description>day01 c++ 基础 对 C 拓展 头文件
+using namespace std; 命名空间 cout &amp;laquo; &amp;ldquo;jj&amp;rdquo;; (&amp;laquo; 运算符重载)
+register
+bool
+c 表达式返回的是一个值 c++表达式返回的是一个变量(*(a&amp;lt;b? &amp;amp;a:&amp;amp;b) = 30)
+const: const int *a; int * const a; const int * const a;
+但 c 中的 const 还可更加指针修改，并不是真正的常量，cpp 才是，把常量放入符号表里面，不会变，取地址的话会另外为 a 赋空间。
+const 有作用域，#define 无
+引用(Type&amp;amp; name = var;) 由来：int a = 1; 就可以用 a 操作其地址，那可不可以给这个地址空间取另外的名字 b 吗？
+和指针一样占 4 个字节，给内存取别名
+应用：做函数形参，不用传地址！
+引用做函数返回值，接的是什么就给什么，可以是值，可以是指针
+引用做左值，函数返回值是一个引用，那么函数中要用 static 变量
+指针引用： int * &amp;amp;p1 = p;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1001/</guid>
+      <description>加节点-尾加 若*p=head,改变p,不改变head；同样，*p=p-&amp;gt;head,要想改变p-&amp;gt;head&amp;hellip; 若使用*p=node以求改，注意p是否存在 struct link *AppendNode(struct link *head) //在链尾依次加node{struct link *p=head,*node=(struct link*)malloc(sizeof(struct link)),*end; //node做为输入节点，p用来使节点插入，end：往下看。scanf(&amp;#34; %d&amp;#34;,&amp;amp;node-&amp;gt;data);if(p==NULL){head=node;}; //第一次加节点，如何来使head改变？ ------------for(int i=0;p!=NULL;i++){end=p;p=p-&amp;gt;next;}; //寻找最后的节点if(head!=node){end-&amp;gt;next=node;}; //end 用来改变原有的尾节点的next ------------/* 错误。。。Try 1: 改for中p!=为p-&amp;gt;next, head-&amp;gt;next!!!Try 2: 将p-&amp;gt;next=node放入循环中，显然x，中间的next全都是。。。*/node-&amp;gt;next=NULL;return head;}; </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1002/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1002/</guid>
+      <description>删除节点 注意释放内存的问题！
+本身是一个空节点
+第一个
+先找到节点，并标记其前节点，再考虑是否为head，不同处理 先讨论是否为head 最后一个(同普通)
+没有
+现在才知道这个 } 后不能加; !!! if(){} else
+下面一个是错的？？？
+for(;p!=NULL&amp;amp;&amp;amp;p-&amp;gt;data!=nodeData;)for(;p-&amp;gt;data!=nodeData&amp;amp;&amp;amp;p!=NULL;)如果p==NULL，则p-&amp;gt;。。。无意义！！！</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1003/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1003/</guid>
+      <description>删除特定值点（多个） 多个删除点是否连续
+若head改变，则需重新开始
+可以先找一个值做为head,则十分简单。
+struct link *DeleteNode(struct link *head, int nodeData){struct link *p=head,*end;int i=0;//judge whether nodeData exists. ------------if(p==NULL){printf(&amp;#34;Linked Table is empty!&amp;#34;);return head;};if(p-&amp;gt;data==nodeData){for(;p!=NULL&amp;amp;&amp;amp;p-&amp;gt;data==nodeData;){head=p-&amp;gt;next;p=p-&amp;gt;next;};i=1;};//find a new head. ------------end=p;for(;p!=NULL;){p=p-&amp;gt;next;// head has done.if(p!=NULL)//p-&amp;gt; needs.{if(p-&amp;gt;data==nodeData) {end-&amp;gt;next=p-&amp;gt;next;i=1;}else end=p;// if delete a node,end can&amp;#39;t change.if else,end++. ----------------};};if(i==0){printf(&amp;#34;This Node has not been found!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1004/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1004/</guid>
+      <description>据特定位置删除 先考虑位置是否为负？？？
+for(int i=1;p!=NULL&amp;amp;&amp;amp;i&amp;lt;location;i++) 则即可用p的值来定location，p与i始终同步，p所在的位置即i所在的位置。
+若p为NULL,location的位置&amp;gt;=NULL的位置（假如有的话）
+else : i==location,则p所在即location所在
+已用p来标记location所在，那么需表记p之前的node，即可进行删除。
+更简洁的：while(p) 来判断p是否为NULL=0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1005/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1005/</guid>
+      <description>插入node按位置 需对node进行定义并赋值（动态内存需free） 讨论位置是否有意义（先讨论是否&amp;lt;=0） 接着找出所在位置节点又可将head拿出单独分析 找出节点后又需判断是否超出范围 struct link *InsertLocNode(struct link *head,int location,int nodeData){struct link *p=head,*end,*node=(struct link*)malloc(sizeof(struct link));node-&amp;gt;data=nodeData; // define node; ----------------------if(location&amp;lt;=0){printf(&amp;#34;Insert failure.\n&amp;#34;);free(node);return head;}; // judge whether location makes sense.if(location==1){printf(&amp;#34;Insert success.\n&amp;#34;);head=node;node-&amp;gt;next=p;return head;};//first solve the problem of head; -------------------int i=1; // put it outside the &amp;#34;for&amp;#34;,use it all round -------------for(;i&amp;lt;location&amp;amp;&amp;amp;p!=NULL;i++) {end=p;p=p-&amp;gt;next;};//find the node in front of location and if it doesn&amp;#39;t exist,thenif(i!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1006/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1006/</guid>
+      <description>按值大小插入 可将空链表与插入头节点放在一起讨论，简化 按值大小插入较简单，只需找到前一节点即可，无需看后面的量 struct link *InsertOrderNode(struct link *head,int nodeData) { struct link *p=head,*end,node=(struct link)malloc(sizeof(struct link)); node-&amp;gt;data=nodeData; // define node; if(p==NULL||nodeData&amp;lt;=p-&amp;gt;data) //注意先后 { head=node; node-&amp;gt;next=p; return head; };//first solve the problem of head,and if the struct is none. for(;p!=NULL&amp;amp;&amp;amp;p-&amp;gt;data&amp;lt;nodeData;) { end=p; p=p-&amp;gt;next; };//find the node in front of nodeData. end-&amp;gt;next=node; node-&amp;gt;next=p; return head; };</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1007/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1007/</guid>
+      <description>飞花令 总是没有写函数的习惯，这点在这特别提出，以后一定要。。。
+先将三个输入量存入。
+数字位数太多,不能存放。。。 可以用数组
+注意要输入的是字符串!!!
+scanf(&amp;quot;%s&amp;quot;,str);
+记住 字符串中 %d 会变化 需-48
+接着可将成员输入，这里可以链表将之形成环，一个答完之后就可下一个，退出删除也很简单，而且因为是环，不用考虑head与NULL，十分方便。
+接着对两个量进行比较，同则下，异则除
+注意一个比较值可能延续
+输出唯一剩下值即可
+#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;stdlib.h&amp;gt;#include&amp;lt;string.h&amp;gt;int main(void){int membersum;char process[205],pi[205]; //remember there is a &amp;#39;#&amp;#39;n in scanf and the wei is too much!!!scanf(&amp;#34;%d&amp;#34;,&amp;amp;membersum);scanf(&amp;#34; %s&amp;#34;,pi);for(int i=1;i&amp;lt;=strlen(pi);i++){pi[i]=pi[i+1];};scanf(&amp;#34; %s&amp;#34;,process);struct member{int name;struct member *next;};struct member *name[membersum+10],*head; // 使成员之间形成链表，删除即退出比赛;注意分配动态内存，那么 释放。for (int i = 0; i &amp;lt;membersum; i++){name[i]=(struct member*)malloc(sizeof(struct member));name[i]-&amp;gt;name=&amp;#39;A&amp;#39;+i;if(i&amp;gt;0) name[i-1]-&amp;gt;next=name[i]; // you must know whether the next exists.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/2-date/1001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/2-date/1001/</guid>
+      <description>高斯日记 可以减少天数来做,循环月份++，依次减少天数，判断year
+注意：
+闰年 输出里有03。。 多了0 #include&amp;lt;stdio.h&amp;gt;int judge(int year){if((year%4==0&amp;amp;&amp;amp;year%100!=0)||year%400==0) return 1;else return 0;}; //判断闰年void put(int n){if(n&amp;gt;9) printf(&amp;#34;-%d&amp;#34;,n);else printf(&amp;#34;-0%d&amp;#34;,n);}; //输出‘0’int main (void){int year=1777,month=4,day=30;int n=8113+day; //来定义天数，以便month计算。int monthday[]={31,28,31,30,31,30,31,31,30,31,30,31};for(;n&amp;gt;monthday[month-1];) // 到n不足以使month增加时退出，每次循环month++，n相应减少,判断year的变化。????????????????????????????????????????????????????????? (month-1)%12.{ if(month&amp;gt;12) {month=1;year++;};n-=monthday[month-1];month++;if(month==2&amp;amp;&amp;amp;judge(year)) monthday[month-1]=29;else if(month==2&amp;amp;&amp;amp;judge(year)==0) monthday[month-1]=28; // 改monthday，改了后还需改回。因为判断句中有monthday，所以month++必须在前，否则month可能出错。};printf(&amp;#34;%d&amp;#34;,year);put(month);put(n-1); // 注意这里不再是day！！！！！！！！！！！return 0;}; </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/2-date/1002/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/2-date/1002/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt; #include&amp;lt;math.h&amp;gt; int judge(int y) { if((y%4==0&amp;amp;&amp;amp;y%100!=0)||y%400==0) return 1; else return 0; }; //判断闰年
+int main(void) { char a[20]; scanf(&amp;quot;%s&amp;quot;,a); int y,m,d; int n=0; // 计算天数 y=(a[0]-48)*1000+(a[1]-48)*100+(a[2]-48)*10+a[3]-48; m=(a[5]-48)*10+a[6]-48; d=(a[8]-48)*10+a[9]-48; //将输入转换为日期 for(;2014-y&amp;gt;1;y++) { if(judge(y)) n+=366; else n+=365; }; //用年数乘以365，但要判断闰年 int b[]={31,28,31,30,31,30,31,31,30,31,30,31}; for(;m&amp;lt;=12;m++) n+=b[m-1]; n=n+153-d+1; //先到2013年，再计算2013-2014，进而计算06/02。还有1天。 printf(&amp;quot;%d\n&amp;quot;,n); if(n&amp;gt;=6575) printf(&amp;quot;%d\n&amp;quot;,7-((n-6575)%7)); //与题目所给值对比。 else { if((6575-n)%7==0) printf(&amp;ldquo;7\n&amp;rdquo;); else printf(&amp;quot;%d\n&amp;quot;,(6575-n)%7); };return 0; };</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/2-date/1003/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/2-date/1003/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt;
+int judge(int y) { if((y%4==0&amp;amp;&amp;amp;y%100!=0)||y%400==0) return 1; else return 0; };
+int main(void) { int y,m,d,n; while(scanf(&amp;quot;%d %d %d %d&amp;quot;,&amp;amp;y,&amp;amp;m,&amp;amp;d,&amp;amp;n)!=EOF) { int a[]={31,28,31,30,31,30,31,31,30,31,30,31}; int N=n+d; for(;N&amp;gt;a[m-1];) {
+N-=a[m-1]; m++; if(m==2&amp;amp;&amp;amp;judge(y)) a[m-1]=29; else if(m==2&amp;amp;&amp;amp;judge(y)==0) a[m-1]=28; if(m&amp;gt;12) { m=1; y++; }; }; printf(&amp;quot;%d.%d.%d\n&amp;quot;,y,m,N); }; return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/2-date/1004/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/2-date/1004/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt;
+int judge(int y) { if((y%4==0&amp;amp;&amp;amp;y%100!=0)||y%400==0) return 1; else return 0; };
+void answer(int sum,int s) { ((s+(sum%7)))++; };
+int main(void) { int y=1900,m=0,d=1,n,sum=0,s[]={0,0,0,0,0,0,0}; int a[]={31,28,31,30,31,30,31,31,30,31,30,31}; scanf(&amp;quot;%d&amp;quot;,&amp;amp;n); for(;;) { if(m==13) { m=1; y++; }; if(y==1900&amp;amp;&amp;amp;m==0) sum=12; else sum+=a[m-1]; answer(sum,s); m++; if(m==2&amp;amp;&amp;amp;judge(y)) a[m-1]=29; else if(m==2&amp;amp;&amp;amp;judge(y)==0) a[m-1]=28; if(y==(n+1900-1)&amp;amp;&amp;amp;m==12) break; }; printf(&amp;quot;%d %d %d %d %d %d %d&amp;quot;,s[5],s[6],s[0],s[1],s[2],s[3],s[4]); return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/3-enum/1001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/3-enum/1001/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt;
+int no(int a,int b) { int s[]={0,1,2,3,4,5,6,7,8,9}; int n=0; for(int i=0;i&amp;lt;=9;i++) { if((s[i]==a/10000)||(s[i]==(a/1000)%10)||(s[i]==(a/100)%10)||(s[i]==(a/10)%10)||(s[i]==a%10)||(s[i]==b/10000)||(s[i]==(b/1000)%10)||(s[i]==(b/100)%10)||(s[i]==(b/10)%10)||(s[i]==b%10)) s[i]=-1; }; for(int i=0;i&amp;lt;=9;i++) { if(s[i]!=-1) n=1; } if(n==0) return 1; else return 0; };
+int main(void) { int a=0,b=0; int n=0; for(a=1234;a&amp;lt;=48765;a++) { for(int i=2;b&amp;lt;=98765;i++) { b=a*i; if(no(a,b)) n++; }; b=0; // 特别注意b还原。。。 }; printf(&amp;quot;%d&amp;quot;,n); return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/3-enum/1002/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/3-enum/1002/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt; int main(void) { int T,A,a=1,b=1; int n=0; scanf(&amp;quot;%d&amp;quot;,&amp;amp;T); int s[50000]; for(int i=1;i&amp;lt;=49999;i++) { s[i]=i*i;
+}; //存储平方，简化计算. for(int i=0;i&amp;lt;T;i++) { scanf(&amp;quot;%d&amp;quot;,&amp;amp;A); for(int a=1;a&amp;lt;=A/3;a++) { for(int b=a;b&amp;lt;A/2;b++) { if((A-a-b&amp;lt;a+b)&amp;amp;&amp;amp;(s[A-a-b]==s[a]+s[b])) { n++; }; }; }; printf(&amp;quot;%d\n&amp;quot;,n); n=0; }; return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/3-enum/1003/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/3-enum/1003/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt; #include&amp;lt;math.h&amp;gt; void divide(int n) { int i=0,a=0; for(;n&amp;gt;1;) { if(n%2==1) { n-=1; a+=pow(2,i); }; n/=2; if(n&amp;gt;0) i++; }; if(i==0) printf(&amp;ldquo;2(0)&amp;rdquo;); if(i==1) printf(&amp;ldquo;2&amp;rdquo;); if(i==2) printf(&amp;ldquo;2(2)&amp;rdquo;); if(i&amp;gt;2) { printf(&amp;ldquo;2(&amp;rdquo;); divide(i); printf(&amp;quot;)&amp;quot;); }; if(a&amp;gt;=1) { printf(&amp;quot;+&amp;quot;); divide(a); }; };
+int main(void) { int n; scanf(&amp;quot;%d&amp;quot;,&amp;amp;n); divide(n); return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/4-prime/1003/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/4-prime/1003/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt;
+int isprime(int n) { if(n&amp;lt;=1) return 0; for(int i=2;i*i&amp;lt;=n;i++) { if(n%i==0) return 0; }; return 1; };
+int main(void) { int n,d=0; scanf(&amp;quot;%d&amp;quot;,&amp;amp;n); for(int i=2;i&amp;lt;=n-1;i++) { if(i==n-1&amp;amp;&amp;amp;isprime(i)) if(isprime(i+1)) d++; if(i!=n-1&amp;amp;&amp;amp;isprime(i)) if(isprime(i+1)||isprime(i+2)) d++; }; printf(&amp;quot;%d&amp;quot;,d); return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/4-prime/1004/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/4-prime/1004/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt;
+int isprime(int n) { if(n&amp;lt;=1) return 0; for(int i=2;i*i&amp;lt;=n;i++) { if(n%i==0) return 0; }; return 1; };
+int main(void) { int n=0,i=2; for(;n&amp;lt;100002;i++) { if(isprime(i)) n++; } printf(&amp;quot;%d&amp;quot;,i-1); return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/4-prime/1005/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/4-prime/1005/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt; int isprime(int n) { if(n&amp;lt;=1) return 0; for(int i=2;i*i&amp;lt;=n;i++) { if(n%i==0) return 0; }; return 1; };
+int main(void) { int n,d=0; scanf(&amp;quot;%d&amp;quot;,&amp;amp;n); for(int i=2;i*i&amp;lt;=n;i++) { if(n%i==0&amp;amp;&amp;amp;isprime(i)&amp;amp;&amp;amp;isprime(n/i)) { printf(&amp;ldquo;It&amp;rsquo;s a Tongtong number.&amp;rdquo;); return 0; }; }; printf(&amp;ldquo;It&amp;rsquo;s not a Tongtong number.&amp;rdquo;); return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/4-prime/1006/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/4-prime/1006/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt; #include&amp;lt;math.h&amp;gt;
+int main() { long int n,i; double k; scanf(&amp;quot;%d&amp;quot;,&amp;amp;n); k = sqrt(n); for (i = 2; i &amp;lt;= k;i++) { if (n%i == 0) break; } if (n &amp;lt;=1 ) printf(&amp;ldquo;No\n&amp;rdquo;); else if (i &amp;lt;= k) printf(&amp;ldquo;No\n&amp;rdquo;); else printf(&amp;ldquo;Yes\n&amp;rdquo;); return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/5-%E8%BF%9B%E5%88%B6/1001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/5-%E8%BF%9B%E5%88%B6/1001/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt; #include&amp;lt;string.h&amp;gt;
+int turn(char a[]) { long int n=0; //long &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; char b[]=&amp;ldquo;0123456789ABCDEF&amp;rdquo;; for(int i=0;i&amp;lt;strlen(a);i++) { for(int j=0;j&amp;lt;16;j++) { if(a[i]==b[j]) { a[i]=j; break; }; }; n=(n*16)+a[i]; }; return n; };
+int main(void) { char a[9]; scanf(&amp;quot;%s&amp;quot;,a); printf(&amp;quot;%ld&amp;quot;,turn(a)); return 0; };</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/5-%E8%BF%9B%E5%88%B6/1003/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/5-%E8%BF%9B%E5%88%B6/1003/</guid>
+      <description>#include&amp;lt;stdio.h&amp;gt; #include&amp;lt;string.h&amp;gt; #include&amp;lt;math.h&amp;gt;
+int turn(int n,char *a) { int i=0; char b[]=&amp;ldquo;0123456789ABCDEF&amp;rdquo;; for(;n!=0;i++) { *(a+i)=b[n%16]; n=n/16; }; return i; };
+int main(void) { int n; char a[100]; scanf(&amp;quot;%d&amp;quot;,&amp;amp;n); if(n==0){ printf(&amp;ldquo;0&amp;rdquo;);return 0;}; // 哇哇哇！！！！！！！！！！！！！ int s=turn(n,a)-1; //计算数组的长度，strlen老出错？？？？？？？？ for(;s&amp;gt;=0;s&amp;ndash;) printf(&amp;quot;%c&amp;quot;,a[s]); return 0; };</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/6-recursion/1001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/6-recursion/1001/</guid>
+      <description>递归 先找到基本量 再找到一般量与基本量之间的关系。 #include&amp;lt;stdio.h&amp;gt;int way(int n){if(n==1) return 1;if(n==2) return 2;return way(n-1)+way(n-2);};int main(void){int n;scanf(&amp;#34;%d&amp;#34;,&amp;amp;n);printf(&amp;#34;%d&amp;#34;,way(n));return 0;} </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/6-recursion/1004/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/6-recursion/1004/</guid>
+      <description> 先切去一个正方形，再继续划分。 可找出基本量是长或宽为1，还有0的情况要考虑。
+#include&amp;lt;stdio.h&amp;gt;int sum(int l,int w){if(l==0||w==0) return 0;if(l==1) return w;if(w==1) return l;if(l&amp;gt;=w) return 1+sum(l-w,w);return 1+sum(l,w-l);};int main(void){int l,w;scanf(&amp;#34;%d %d&amp;#34;,&amp;amp;l,&amp;amp;w);printf(&amp;#34;%d&amp;#34;,sum(l,m));return 0;} </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/6-recursion/1010/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/6-recursion/1010/</guid>
+      <description>N个苹果放M个盘（N，M），允许有空。种类 思路：
+N&amp;lt;M，则一定有空盘，相当于（N，N），返回第二种情况即可。
+N&amp;gt;=M，用递归的思想，分成放满M与不放满M
+放满M等同于返回（N-M，M），即先保证放满 不放满就是返回（N，M-1），因为M-1的情况，又可分为放满与不放满，所以所有情况都讨论到了。 注意两种结束条件，返回N-M时，可能为0，return 1；当M=1时，return 1.
+#include&amp;lt;stdio.h&amp;gt;int way(int n,int m){if(n==0||m==1) return 1;if(n&amp;lt;m) return way(n,n);return way(n,m-1)+way(n-m,m);};int main(void){int t,n,m;scanf(&amp;#34;%d&amp;#34;,&amp;amp;t);while(t){scanf(&amp;#34;%d %d&amp;#34;,&amp;amp;n,&amp;amp;m);printf(&amp;#34;%d\n&amp;#34;,way(n,m));t--;};return 0;} </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/7-string/1001/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/7-string/1001/</guid>
+      <description>回文子串 先找出子串，再判断回文。
+#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;string.h&amp;gt;int judge(char *a,int i,int j){for(;i&amp;lt;=j;i++,j--){if(*(a+i)!=*(a+j)) return 0; //首+，尾减，回文首尾相等。};return 1;};int main(void){char a[5001],n=0;while(scanf(&amp;#34;%s&amp;#34;,a)!=EOF){for(int i=0;i&amp;lt;strlen(a);i++){for(int j=i;j&amp;lt;strlen(a);j++){if(judge(a,i,j)) n++;}; //子串可以从第n个数开始一直到尾。。};printf(&amp;#34;%d\n&amp;#34;,n);n=0;};return 0;} </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/7-string/1002/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/7-string/1002/</guid>
+      <description>看题目，找到//开始，到：或/结束。 #include&amp;lt;stdio.h&amp;gt;
+void domain(char a) { for(int i=0;;i++) { if((a+i)==&amp;rsquo;/&amp;rsquo;&amp;amp;&amp;amp;(a+i-1)==&amp;rsquo;/&amp;rsquo;) { for(;;i++) { if((a+i+1)==&amp;rsquo;/&amp;rsquo;||(a+i+1)==&amp;rsquo;:&amp;rsquo;) goto v; // : 是什么鬼，还是要看题目！ printf(&amp;quot;%c&amp;quot;,(a+i+1)); }; }; }; v: ; };
+int main(void) { char a[1000]; while(scanf(&amp;quot;%s&amp;quot;,a)!=EOF) { domain(a); printf(&amp;quot;\n&amp;quot;); }; return 0; }</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/7-string/1009/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/7-string/1009/</guid>
+      <description> 找出规律，前一输出+字母+前一输出。 #include&amp;lt;stdio.h&amp;gt;void print(int n){if(n==1) printf(&amp;#34;A&amp;#34;);else{print(n-1);printf(&amp;#34;%c&amp;#34;,&amp;#39;A&amp;#39;+n-1);print(n-1);};};int main(void){int n;scanf(&amp;#34;%d&amp;#34;,&amp;amp;n);print(n);printf(&amp;#34;\n&amp;#34;);return 0;} </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/error/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/file/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/fuction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/fuction/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/input/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/input/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/output/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/output/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/structures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/structures/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/style/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/style/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/time/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/time/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/type-operation-expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/type-operation-expressions/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/unix-system-interface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/unix-system-interface/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/usefun/malloc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/usefun/malloc/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/usefun/openflag/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/usefun/openflag/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/wrong/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/wrong/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/class/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/class/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/collection/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/file/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/garbage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/garbage/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/graphics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/graphics/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/internet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/internet/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/interview/out/production/interview/4-1%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/interview/out/production/interview/4-1%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
+      <description> 数据测试过不去 如果一个数据都过不去，看看输出格式！输出要求，如：保留一位小数，四舍五入。。。
+基本：考虑边界值
+大概率：精度不过，开空间，能用 long 不用 int，能用 double 不用 float
+输入字符 scanner.next()：下一个字符字符串，不包括空格等 排序 使用 Arrays.sort() 对数组进行排序： java.util.Arrays 类提供了一个静态方法 sort()，它可以对各种类型的数组进行排序（例如整数、浮点数、字符串等） sort = Arrays.stream(num).sorted().toArray(); 使用 Collections.sort() 对列表进行排序： java.util.Collections 类提供了一个静态方法 sort()，它可以对各种类型的列表进行排序 数学 绝对值
+Math.abs() 中间值
+Amazing int mid = a + b + c - Math.min(a, Math.min(b, c)) - Math.max(a, Math.max(b, c)); 动态规划 最开始要分析如何解，暴力 注意重复计算 分析推导关系 dp 数组解即可 关于类的写法（数据结构） </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/interview/out/production/interview/4-8%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/interview/out/production/interview/4-8%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
+      <description>这次算是一个警钟吧 基础不牢 是要沉下心来看些基础书籍了，慢点来 关于面试啥的，看看面经，上网上搜搜答案吧 Java 基础稀烂 类怎么使用，特别是函数和 C 极大不同，递归写法需要好好研究 leetcode 上用 java 刷刷吧 数据结构的问题 一道树的题目，被自己搞的绕来绕去，还是没有把理论用到实处
+一定要清楚树的基础理论，用到题目中，不要想太多（还想了环，树里哪来环？）
+树的存储，一般不会直接给数据结构，要根据输入怎么使用
+直接用 ta 的数据，仔细想解决办法 用数据结构把树定义出来： class Node { int value; Node[] children; public Node(int value, int numChildren) { this.value = value; this.children = new Node[numChildren]; } } class LinkedListNode { Node node; LinkedListNode parent; LinkedListNode firstChild; LinkedListNode nextSibling; public LinkedListNode(Node node) { this.node = node; this.parent = null; this.firstChild = null; this.nextSibling = null; } } class Tree { LinkedListNode root; public Tree() { this.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/interview/src/4-1%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/interview/src/4-1%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
+      <description> 数据测试过不去 如果一个数据都过不去，看看输出格式！输出要求，如：保留一位小数，四舍五入。。。
+基本：考虑边界值
+大概率：精度不过，开空间，能用 long 不用 int，能用 double 不用 float
+输入字符 scanner.next()：下一个字符字符串，不包括空格等 排序 使用 Arrays.sort() 对数组进行排序： java.util.Arrays 类提供了一个静态方法 sort()，它可以对各种类型的数组进行排序（例如整数、浮点数、字符串等） sort = Arrays.stream(num).sorted().toArray(); 使用 Collections.sort() 对列表进行排序： java.util.Collections 类提供了一个静态方法 sort()，它可以对各种类型的列表进行排序 数学 绝对值
+Math.abs() 中间值
+Amazing int mid = a + b + c - Math.min(a, Math.min(b, c)) - Math.max(a, Math.max(b, c)); 动态规划 最开始要分析如何解，暴力 注意重复计算 分析推导关系 dp 数组解即可 关于类的写法（数据结构） </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/interview/src/4-8%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/interview/src/4-8%E7%AC%94%E8%AF%95%E6%80%BB%E7%BB%93/</guid>
+      <description>这次算是一个警钟吧 基础不牢 是要沉下心来看些基础书籍了，慢点来 关于面试啥的，看看面经，上网上搜搜答案吧 Java 基础稀烂 类怎么使用，特别是函数和 C 极大不同，递归写法需要好好研究 leetcode 上用 java 刷刷吧 数据结构的问题 一道树的题目，被自己搞的绕来绕去，还是没有把理论用到实处
+一定要清楚树的基础理论，用到题目中，不要想太多（还想了环，树里哪来环？）
+树的存储，一般不会直接给数据结构，要根据输入怎么使用
+直接用 ta 的数据，仔细想解决办法 用数据结构把树定义出来： class Node { int value; Node[] children; public Node(int value, int numChildren) { this.value = value; this.children = new Node[numChildren]; } } class LinkedListNode { Node node; LinkedListNode parent; LinkedListNode firstChild; LinkedListNode nextSibling; public LinkedListNode(Node node) { this.node = node; this.parent = null; this.firstChild = null; this.nextSibling = null; } } class Tree { LinkedListNode root; public Tree() { this.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/io/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/java/idea/out/production/demo/me/t1/test1_2_liukanglai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/java/idea/out/production/demo/me/t1/test1_2_liukanglai/</guid>
+      <description> The Hello, World Applet </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/java/idea/src/me/t1/test1_2_liukanglai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/java/idea/src/me/t1/test1_2_liukanglai/</guid>
+      <description> The Hello, World Applet </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/oop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/oop/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/spring-boot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/spring-boot/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/threads/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/threads/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/controlflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/controlflow/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/file/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/fuctions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/fuctions/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/grammar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/grammar/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/object_oriented_programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/object_oriented_programming/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/python/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/python/a-simple-web/templates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/python/a-simple-web/templates/</guid>
+      <description>&lt;!DOCTYPE html&gt; Title 输入框 密码框 立即提交 重置 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/python/flask/templates/form/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/python/flask/templates/form/</guid>
+      <description>Please Sign In {% if message %} {{ message }}
+{% endif %} Please sign in: Sign In</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/python/flask/templates/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/python/flask/templates/home/</guid>
+      <description> Home Home </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/python/flask/templates/signin-ok/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/python/flask/templates/signin-ok/</guid>
+      <description>Welcome, {{ username }} Welcome, {{ username }}!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/python/pycharmprojects/flaskproject/templates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/python/pycharmprojects/flaskproject/templates/</guid>
+      <description>&lt;!DOCTYPE html&gt; Title 输入框 密码框 辅助文字 选择框 北京 上海 广州 深圳 杭州 复选框 开关 单选框 文本域 立即提交 重置 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/python/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/python/python/</guid>
+      <description>virtualenv pip 安装包在 python3 的 site-packages pip3 install virtualenv mkdir pyproject cd pyproject virtualenv --no-site-packages venv source venv/bin/activate (在这个环境目录下可安装第三方包) deactivate </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/type_operators_expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/type_operators_expressions/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/arch/pacman/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/arch/pacman/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/arch/vmwareinstall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/arch/vmwareinstall/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/autostart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/autostart/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/boot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/boot/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/link-file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/link-file/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/linux/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/mount/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/mount/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/privilege/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/privilege/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/proxy/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/ranger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/ranger/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/swap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/swap/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/tmux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/tmux/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/zsh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/zsh/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/note/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/test/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/clash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/clash/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/gfw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/gfw/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/node/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/qv2ray/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/qv2ray/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/xx-net/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/xx-net/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/compile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/compile/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/configure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/configure/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/install/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/ont/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/ont/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/use/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/use/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/os/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/os/list/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/os/module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/os/module/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/os/process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/os/process/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/parallel/1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/parallel/1/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/parallel/cuda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/parallel/cuda/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/parallel/mpi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/parallel/mpi/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/parallel/nvidia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/parallel/nvidia/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/install/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/latex/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/layout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/layout/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/more/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/more/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/typing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/typing/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/markdown/equation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/markdown/equation/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/markdown/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/markdown/markdown/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/web/maven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/web/maven/</guid>
+      <description>https://how2j.cn/k/maven/maven-introduction/1328.html
+maven: 专门用于构建和管理 java 项目的工具， Maven 是意第绪语，依地语（犹太人使用的国际语），表示专家的意思 use 使用 Maven 管理的 Java 项目都有着相同的项目结构 有一个 pom.xml 用于维护当前项目都用了哪些 jar 包 所有的 java 代码都放在 src/main/java 下面 所有的测试代码都放在 src/test/java 下面 比如说有 3 个 Java 项目，这些项目都不是 maven 风格。那么这 3 个项目，就会各自维护一套 jar 包。 而其中有些 jar 包是相同的。
+而 maven 风格的项目，首先把所有的 jar 包都放在&amp;quot;仓库“ 里， 然后哪个项目需要用到这个 jar 包，只需要给出 jar 包的名称和版本号就行了。 这样 jar 包就实现了共享
+如图所示，在 pom.xml 里，表示用到了 mysql 的 jar 包，版本号是 5.1.30。
+j 当浏览器向服务器发送请求获取 HTML 文件时，HTML 文件通常包含 &amp;lt;link&amp;gt; 和 &amp;lt;script&amp;gt; 元素， 这些元素分别指向了外部的 CSS 样式表文件和 JavaScript 脚本文件。 了解这些文件被浏览器解析的顺序是很重要的： 浏览器首先解析 HTML 文件，并从中识别出所有的 &amp;lt;link&amp;gt; 和 &amp;lt;script&amp;gt; 元素，获取它们指向的外部文件的链接。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/web/springbootvue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/web/springbootvue/</guid>
+      <description>简单的项目 https://www.cnblogs.com/three-fighter/p/14332288.html
+前后端分离，通过 ajax 调用后端的 restuful api 进行数据交互 前端：
+vue， ElementPlus: a UI of VUE 后端：
+spring-boot: java 后端框架 maven mybatis mysql 后端 h 环境 java idea mysql idea New Project-Spring Intializr 依赖: web, mysql, lombok application.yml:
+server: port:9090 spring: application: name: ${APP_NAME:unnamed} datasource: url: jdbc:mysql://localhost:3306/ username: sa password: driver-class-name: org.mysql.jdbc.Driver hikari: auto-commit: false connection-timeout: 3000 validation-timeout: 3000 max-lifetime: 60000 maximum-pool-size: 20 minimum-idle: 1 mybatis-plus 不用自己写增删改查！！！ &amp;lt;!--mybatis-plus依赖--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.baomidou&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mybatis-plus-boot-starter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/web/web-projects/liukanglai.github.io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/web/web-projects/liukanglai.github.io/</guid>
+      <description>&lt;!DOCTYPE html&gt; My test page liu Mozilla 是一个全球社区，这里聚集着来自五湖四海的
+技术人员 思考者 建造者 Mozilla 宣言 我们致力于……
+拯救苍生 众生平等 切换用户 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/web/web-projects/test-site/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/web/web-projects/test-site/</guid>
+      <description>&lt;!DOCTYPE html&gt; 二次元俱乐部 聆听电子天籁之音 主页 stydy html study css 国王喝得酩酊大醉，在凌晨 1 点时才回到自己的房间，踉跄地走过门口。[编辑批注：此刻舞台灯光应变暗]. Fallback link for browsers that don&#39;t support iframes 购物车 银耳环：$99.95.
+... 售价：$237.89
+相关链接 这是一个超链接 © 2050 某某保留所有权利</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/06/2020.06.01.monday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/06/2020.06.01.monday/</guid>
+      <description>en hydrogen squash molecule insulate sweatbox infrared paddy field methane gush remarkably virtually bold underway veritable successive discruption turnaround virtual horizontal hydraulic fracture thereby surge restructure bankruptcy considerable appreciable deficit revival energy-intensive petrochemical impressive kowtow gulf diminish erode </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/06/2020.06.02.tuesday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/06/2020.06.02.tuesday/</guid>
+      <description>en social society evolved assume kilocalorie megajoules gram illuminate caves primitive agricultural domestication crops cultivate impetus harvest renaissance mills transportation usher in steam engine hay bulky awkward vehicles pipelines tanks internal combustion scale wagon motor crescent circa </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/06/2020.06.03.wednesday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/06/2020.06.03.wednesday/</guid>
+      <description>en charcoal entrepreneur strip in tandem livelihood critical inclusion vulnerable adopted agenda poverty gender prosperity signaling integrated confront myriad expectancy deliver mitigation linkages implications ventilation enclosed premature immense chimney burden synergy initiatives facilities refrigerators clinics vaccines interventions supersede stack intersection dedicate borne rural porvisions champion routinely strategies take ... into account multinational regional bilateral donors take steps to mainstream methodologies emerge institutions employment ministerial </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/06/2020.06.04.thursday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/06/2020.06.04.thursday/</guid>
+      <description>en prerequisite conservation stringent haze utility purchase externalities extraction stages carbon dioxide pontentially irreversible approximately liquids sulfur formation exacerbate respiratory ailments asthma nasal congestion pulmonary inflammation nitrogen ozone smog tissue susceptible bronchitis chronic oxygen precipitation acidic acidity aquatic organisms damage aggravated elevated attacks mercury airborne settle onto accumulate chain infants laden assess valatile mortality scope assumptions demonstrate impose significant degradation typical megawatt gallons initially withdrawn reintroduction ecosystems fertility negative expenditures military budgets fragile wetlands evaluate pollutant occurrence originate neurological neurobehavioral quantify compound </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/06/2020.06.06.saturday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/06/2020.06.06.saturday/</guid>
+      <description>en dedicate unrelenting discourse concerted foremost constitute correlated inclination accurate staggering inevitably hasten margins ameliorate negligible embrace devolve into postulates capture strategies petroleum priority devise profligate activist </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/06/2020.06.07.sunday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/06/2020.06.07.sunday/</guid>
+      <description>i</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/06/2020.06.24.wednesday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/06/2020.06.24.wednesday/</guid>
+      <description>它竟然分成两个包裹，实在让人恶心。。。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/06/2020.06.29.monday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/06/2020.06.29.monday/</guid>
+      <description> 对于学习c语言,我真的认识到,于我而言,还是要按自己的节奏走.那老师安排的任务,至少现在的我而言,还无法融入,也没有绝对的姿态去完成.这种现象是否应该彻底改变了呢?要知道这可是什么样的学习,好吧,言尽于此&amp;hellip;&amp;hellip;. 循序渐进,持续工作让人受不了,不论是浸入还是浅层,都还是慢慢来吧,总之,是我能否真正hold it! </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/07/03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/07/03/</guid>
+      <description>Friday 今年真的很特别,我想,再也几乎很少有哪一代有我们这一代般有如此 幸运 吧.比较看来,网上的体育课程无论从教学,作业,考核来说,对我们都有莫名的莫大的难度. 体育锻炼对每个人来讲都是必要的,身体是革命的本钱,古人诚不欺我.而对于我这样一名计算机专业的学生,更是显的尤为重要.但我深知,我的体魄是无论如何也是不够的.记得小时从来没有体育锻炼很重要的意识,身体一直以来就不是很好吧.讲真,如今的时代背景下,层层作用之下,我的精力又有多少真的在这之上.态度一定要端正,做任何事情都是这样,总之,要想逃避,任何道理都是会有的. 这一学期,我并没有做很多.也在闲来无事之时,出去跑一跑.对我来讲,没有什么运动比跑步更好了.在夜晚的时候,跑步带来的感觉真的让人愉悦.每天睡觉前,坚持做10个俯卧撑,好像也能勉强的撑下来.做的时候,一定要慢,我真的很菜,每次下来总是难以坚持住,身体也总是很难受.但这也正是我必须去做的原因.不知是谁发明了这项如此简单,又如此实用的运动,真该好好的谢谢他. 太极拳,真的太难了.中华民族,在任何方面来看,都是如此的优秀.简单的姿势,看起来没多大点事,可真正一上手,那感觉&amp;hellip;也是,我并找不出什么时间来时常进行这项伟大的工程了,几个月之内,想想还是放弃吧. 体育,是一门奇妙的学科,任重而道远啊!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/07/18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/07/18/</guid>
+      <description>Saturday 泸州二奶！！！</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/07/20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/07/20/</guid>
+      <description>Monday usenet
+永恒九月。。。
+usenix</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/07/30/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/07/30/</guid>
+      <description>Thursday 终于找到一个反驳理由了，（由平常parents的过度尽力来）：跟本没用心吧，只是人类的惰性。 寻求一种安慰感。 说话还是要过过脑子，逻辑思考呢？ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/07/31/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/07/31/</guid>
+      <description>Sunday 或是价值观的强制，道德捆绑？ 不香吗，你品细品，不会吧不会吧，就这， 是谁把这些词变了味。。。 不要搞事情啊 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/08/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/08/01/</guid>
+      <description>八一建军节！ 今天门口荆江大堤上的防汛部门高举旗帜 坚持每天早上的运动吧，晚上的俯卧撑已经取消了！（还记得why？） 早，泡面。。。 找一种英语学习方法太难了吧（好像是我太懒了。） 该决定了，找一个，就是干！ 想每天找一个en网站看看（还是先看完那本书吧，建一个vps，白嫖党誓不区服！！！） 听了LON的我的一个道姑朋友，还是原唱大法好。 果然，还是没从前一段折腾中晃过来（先看一下午小说（凡人）缓一波。。。） 看了tiktok或被微软收购，不管最后怎样，说实话，有点心凉了。 终于看了一节Linux啊，感觉还不错，13页看了近两小时。慢看永远是我的态度。 坚持下去吧 晚餐吃的太多，一定不能再吃东西了（或许晚上本不该消化。。） 还有，这花生奶真太浓了。。。（他们送的） </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/08/02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/08/02/</guid>
+      <description>Sunday 颓废的一天，看上瘾了．．． </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/08/03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/08/03/</guid>
+      <description>Monday 继续颓废 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/08/04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/08/04/</guid>
+      <description>Tuesday 早上就不想起来， １０：００终于起来，没吃早餐 唉，提前吃午餐，何必呢．我还是真的易怒！ 看了半佛的TikTok，他的观点一如既往的＂科学＂，也行真是建国的大选进攻硅谷吧，这波兵法６６６ 终于厌倦了凡人，以后真要专注了．．． </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/08/05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/08/05/</guid>
+      <description>Firday 还是太懒了啊，就先刷一波词汇吧／ ＃　今天防汛的人走了，看看是否日子更舒服吧．．． 留下来的物资还是有点，瓶装水很给力，额，泡面 一波真是太累了，下午睡了两小时多． 开始了离散数学，啊啊啊 刷了一波冰箱，还是管不住，为之奈何，ｗｈｏ　ｗｒｏｎｇ，ｗｈｏ　ｒｉｇｈｔ／ 今天看的linux太少了，节奏不能断，时间来挺 ＃
+思考一波花钱的困难 如何，比如买TV时，为何首鼠两端，直接Ｓｏｎｙ大法．．还有那老花镜！ 何如？ 或许，这就是一个好的＂道理＂了吧 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/08/06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/08/06/</guid>
+      <description>Saturday 找了又一本小说＜我真没想．．．＞，别说看了还有点启发 好吧，我承认又在堕落了． 惊喜！竟然还看了一集离散数学． 这不是个办法啊 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/08/07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/08/07/</guid>
+      <description>Sunday 上午十点才起床．．． 下午终于来了社会实践任务，两个多小时写了一下，这实地记录太难写了，果然我只适合理论上吗 感觉要写一篇文章还是简单多了，当然，我总是会往黑暗面去想 这一天真是啥都没做啊，linux真不知啥时能看完． 完成一项伟大，在github上密了Myday！ 应该还有２０ｄａｙｓ，linux是一定要看完的，I really don&amp;rsquo;t know what to say&amp;hellip; </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/08/08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/08/08/</guid>
+      <description>Monday It&amp;rsquo;s hard to do something while have&amp;rsquo;t breakfast The C programming language is needed to be done!!! 这几天吃的比较多．．．以后要少吃，肚子受不了啊 离散数学还是有许多冷门啊，＂集簇＂？？？ linux has arrived 39 以后中午休息一会儿吧，反正睡觉是不可能了，来杯咖啡（计划１：３０） 晚饭后休息会，再洗澡吧，洗完看书．．． 以后生活真要正式正轨了，闲余还有逆天，墟，和尚，（飞天）．．．慢慢来吧 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/08/09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/08/09/</guid>
+      <description>Tuesday 早上的英语，真是一波又一波，以后老老实实学youzack 一天又没干啥．．． </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/05/</guid>
+      <description>Saturday 我还是回来了．．． 放心，无论什么情况，这个伟大的项目是一定一定会持续下去的． 非魔非劫
+先缓冲一下吧，让我好好想一想 PS：想：空了２０多天了！！！？？？　then：the next to do,will it fail?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/06/</guid>
+      <description>Sunday 5.5+15+12.5=33 今天总算确定了学习路线，算是了却了一件大事吧。 一个阶段一个任务，单静或许会很好？ 二手书还是有很便宜的，我该买一批书回来，算了，用图书馆的书更好吧。。。 找教材也不用太琢磨了,切不可因小失大!!!
+午饭和薛镇东去禾苑,这儿挺不错的,以前咋没觉得呢 现在步入大二了,可以说很自由了吧,你还会一直赖在宿舍吗,懒得去餐厅吃饭吗&amp;hellip; 路上又讨论了考研的事项,真该决一下定了. 下午看了源代码,物质决定意识,意识反作用于物质&amp;hellip; work up !!!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/07/</guid>
+      <description>Monday 6.7+11+5.5+1 今天上午的任务没完成，用心吧。 抓紧 上课的学习，慢慢的探索吧，先预习是一定的，很好的学习方法 在图书馆借书，上课，课后学习，跑步，俯卧撑，洗澡，洗衣服，日记，仰卧起坐，节奏把握的很好。 今天真是一个很好的开始了 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/08/</guid>
+      <description>Tuesday 4+8.5+8.5+1.5=22.5
+今天毛泽东思想与中国特色社会主义理论体系概论老师讲的真的是一种全新的方式，老师曹培强真的很用心，一位好老师
+立志 人生观 我到底该做什么，就这样下去吗？
+上数据结构课，老师讲的真实，我们的未来还有很远，很远，很远
+所以，我还是这样一个人，就学c++吧</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/09/</guid>
+      <description>Wednesday 3.5+5+8.5+1.5=18.5
+今天物理课做了两道题，那真是惨不忍睹，还是一些基础性的问题，虽说没必要彻底弄清楚。
+上离散数学时发现，以自己看书为主，间或听课，效果挺不错的，但要注意离老师远点。以后多试试吧
+以后中午都12：30睡，挺舒服的，30分钟就行
+体育课老师讲了怀孕的事，竖线，碱性，多吃。
+国际法主要讲了朝鲜的事，看了2013年的大阅兵，人民生活等，就写这些吧，其他以后看到这，好好回想吧
+趁早解决学习之道吧，或者并行任务挺不错的，实在是不能拖了。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/10/</guid>
+      <description>Thursday 5.5+6.8+8.5+1.5=22 毛中特又讲了一些中国的建设历史，一些不一样的东西。。。还有全国思政课的进化 2020-2035-2050-2070 命运真是特别奇特，让我碰到了这一位老师，或许多来几个，我真要换个方向了。 终于打了乙肝第三针 3：30今天去了体育房申请兼职，也许真是命中注定，下午5：54又来了一批工作， 晚上和丛昊祥，刘轩赫，去了图书馆，真没发现，人竟然这么少 开始了计算机导论的看书，还看了大量的学习之道，今天真挺不错的。 跑步时总注意女生，是好或是坏，更重要的是心中总想去，还有一总极度的占有欲，又是啥玩意在作祟。 晚上刷牙！ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/11/</guid>
+      <description>Friday 9+8.5+1=18.5
+早上7：30才起，早上没课就这样。。。 介于半睡半睡间，还会发出一种奇怪的声音，什么时候能去医院看一下呢？
+吃泡面，加杯牛奶还是不错的，但还是要少吃吧，一星期要小于一次吧
+上午任务没有完成。。。 物理还是要花很多时间啊
+中午睡觉一定不能超过30分钟，，，真难受。。。
+事实证明，计算机课程一定要自学！
+计算机导论落了一课，明天就解决学习书吧，再该看浪潮了，一天一小时吧
+晚上和父亲通话总是不赖烦，这个什么时候会好转呢？
+要解决对老师腼腆的问题，有什么说什么
+晚上放松吧</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/12/</guid>
+      <description>Saturday 4.5+12+7+1.5=25
+物理学习还是需要很多的时间，也要深度的思考，多花点时间吧，上课或找一个空闲
+事实证明，放下任务，放松后，进入发散思维，任务迎难而解
+上厕所时少玩手机吧，对身体挺不好的
+在电脑上视频效果真是差，特别是在宿舍里。。。以后就当放松吧
+终于看完一本书了，但导论落下了两章了，而以后的安排终于步入正轨了
+引体向上啊啊啊！！！
+有什么不要拖延吧，买了刘轩赫推荐的v-nest内裤，看看效果怎样。。。 字帖也买了
+每天晚刷牙坚持中</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/13/</guid>
+      <description>Sunday 4.7+10.5+13+1.5=29.7 周末早上起的比较晚，有啥好办法吗？ 二餐的那炸土豆包蛋挺不错的，特别是外层的炸层。。 图书馆没座，你可记住了，三教1楼还好，但不是很安静 我一定要在禾苑吃一次葱爆牛肉！！！ 今天下午玩植物大战僵尸上瘾了。。。 记得住frank的电脑教程吗，世上还是有很多好人的 油苑的饭，垃圾挺浪费的，而二楼半还不让我丢。 浪潮之巅！！！ 半小时是不是太少了，但我真没时间啊 导论也还落了一节，c语言还行吧，毕竟是复习，是该找出更多时间了。 先引体向上，再跑步。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/14/</guid>
+      <description>Monday 5.5+14+8.5+1.5=29.5
+今天早上算是看一波电脑吧，但效率是真的低，确定具体的东西吧
+另外，英语学习真应该开始了，这应该作为一种习惯，而不是一种任务。。
+吃饱了，还要不要继续吃呢，一些真舍不得啊。但身体一定是最重要的
+一些应用，程序啥的，看官方文档是绝对的，其他的都是扯，英文啊啊啊
+中午迷迷糊糊的睡了一会儿，下午就TM撑不住啊
+今日国际法，从与台湾的叛徒说起， 引渡与庇护
+浪潮之巅，大话IT强中强
+尝试引体向上，还是那么弱。。。 要多练啊，是绝对有作用的
+发现我刷牙是真的差，很多地方没到。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/15/</guid>
+      <description>Tuesday 4+11.5+8.5=24
+早上十分钟练字，挺好
+安排早上就到润杰吃，good
+中午睡觉大脑就不挺，下午真难受，怎么回事。。。 还是要精心啊
+关于教材的学习，是简单的仔细看再记忆就能解决的吗，多做习题会。。 还是要时间啊 循序渐进！！！
+晚上间隔了一天吧，以后也总会有的，但数量一定要严格控制（这可是多么少有的看书时间啊）
+2小时的建党伟业，看得中等吧，但实在有点假。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/16/</guid>
+      <description>Wednesday 4+8.5+11.5+1.5=25.5
+看图书馆的书，离散数学书白买了。。。
+中午睡觉还是有问题，脑子就挺不下来吗？
+体育课：梳子，穴位，痔疮，八景段
+老师讲的真不错，下学期学游泳课吧（或围棋）
+下午看了YouTube上的视频，出国爱国。。。
+学习language，注重语法，语言规则，，，其他都是浮云
+对国际法考试有点忧虑。
+一天又没看计算机书了，要赶快了
+以后跑步速度起来，时间降下，早点睡，记得锻炼</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/17/</guid>
+      <description>Tuesday 5.5+12+9+1.5=28
+吃完早餐想上厕所，我还想拖一拖，以后一定要令行禁止！
+毛中特，真是认真看，要学习专业用语，写文章，多看伟人书籍。
+下午先睡了一小觉，当时挺好，过了一会就很累，又睡了一觉，真舒服。
+下午玩三国杀，有点无聊。
+晚上及早睡觉。。。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/18/</guid>
+      <description>Friday 补于9.19
+4+8.5+9+1.5=23
+早上吃的这泡面真难吃，汤达人韩式风味，什么东西》？
+牛奶热的喝，good
+学了一下数据结构，还是觉得现代计算机体系是真的乱，还有许多教材的乱来，是我太执着了吗？
+四级该考了吧，制定学习计划吧。
+今天晚上真累，在忙碌中休息下来，真能看到很多东西
+老男孩，我原以为我真不会有啥的，到头来我还是个凡人啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/19/</guid>
+      <description>Saturday 6.5+13+10.5+1.5=31.5
+早上做作业，发现了很多的问题，关于物离代数的学习也该加强了。
+先是物理，星期一的课后时间，再找一个时间段吧
+离散就要特别注意，以教材为主是重点，我真的很想逃课，但这是很不现实的，上课多看教材吧，星期五课后也有一点时间。而视频看不看真是一个问题，还是先看机工吧，视频有缘再看吧。
+线性代数看教材还有习题集，编的真挺好
+数据结构尽快看完c
+以后中午可能睡20分钟就自动醒了
+在图书馆睡了十分钟，真爽
+看书一定要循序渐进，我真是太向前了，规定一下长期计划吧，压制一下。
+锻炼又停了一天吧，操场关门，可能是天定。。。 为啥我脚一直这么痛，是太赶了吗？
+要常打电话回去吧。。。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/20/</guid>
+      <description>Sunday 5+15+10.5=30.5
+今天去和苑吃了葱爆牛肉，有点失望，那几块牛肉不错，但真就全是葱啊。 还吃不饱，也让王霖和刘轩赫没吃饱。。。
+午睡要趁早，不能一老拖啊
+嗮了被子，换新买的床单，，， 终于能正常一点了
+咋就喜欢在图书馆睡一会了呢？
+最大的失败： 洗澡带错水卡了，我还不找别人借一下，真TM难受，可能我真就这样过一生吧</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/21/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/21/</guid>
+      <description>Monday 4+8.5+6.5+1.5=20.5
+毛泽东传（诗词） 邓小平传 习近平的七年青春岁月
+对于英语的学习，总是不想去，该想个好办法
+看了张雪峰的视频，恨之晚矣
+物理课自学的还行，就是太慢了，注意力有待提高
+这脚痛放松吧，看什么时候好，也该做点。。。
+洗澡人真多，去哪呢？</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/22/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/22/</guid>
+      <description>Tuesday 4.5+10+12+1=27.5
+代数上课不听讲，虽说有点不舒服，但效果还是good
+中午就好好睡吧，多给点时间，看它睡不睡的着
+数据结构一周后应该可以开始了吧
+累的时候小睡一会，那可是真的舒服
+c语言的学习很慢，但就应该这样，仔细分析代码，这不就是我的强项吗
+腿还慢慢养吧
+在厕所洗澡，还好。。。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/23/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/23/</guid>
+      <description>Wednesday 4+10.5+5.5=20
+物理的一些基础概念，总是有问题，但也不需太懂吧，
+离散数学写一些记录，very good
+今天下雨，没回宿舍睡午觉，去图书馆也无位置，但还是就坐了铁凳上，看了一会邓小平传 1904-1974 。。。 还有毛毛写的
+体育课学了很多，写一个md 总记一下
+回宿舍又没完成规定任务，上厕所，还睡了一觉
+晚上什么也没有啊，早上宿舍真失去了目标，还是定计划的好
+什么东西都不能拖。。。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/24/</guid>
+      <description>Thursday 4.5+14+8+1.5=28
+第一节课线性代数，少看了很多内容，薛镇东做我旁边，他在玩王者荣耀，我有时也凑过去看，咋就控制不住呢。。。 其实，要是我一个人，也会不断走神的， 您可知道，您拖了多少时间啊
+毛中特老师又讲了很多，先是由玩游戏转到了以后的理想，工作，举了三个人的例子， 后面看习近平就职演说提到了语言的魅力。
+下午收拾了一下课桌，发现原来的才是最好的， 为啥我这么喜欢折腾呢？？？
+去图书馆找座，真要脸皮厚一点，我也太脆弱了
+吃了热腾腾的拉面，我流了很多汗，这让我想到了很多，以后少吃凉的吧，还有营养的搭配：奶 肉 蔬，果 五谷 对于我就是奶和果吧，其实蔬菜吃的挺多的
+运动后就应该休息一段时间，今天晚上就没怎么好好学
+老师的电话：勤工助学
+长期规划，是该开始了， 这周后，一定要步入正轨！！！
+操场上看到的事：一群人在那，怎么想一个组织呢，，，还有一个女的
+想到的贫困认定：，。。。。。；。。。。。
+看英语小说
+弗吉尼亚·伍尔芙</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/25/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/25/</guid>
+      <description>Friday 7+10+9=26
+写了data，学了英语，
+今天上机实验，不会c++，以后。。。
+discrete mathematics 写代码，看到了c语言指针严重的不足！！！
+晚上又堕落了，这辣条把我吃的怀疑人生了
+很好，今天又理性了，多看看人性吧，要保持思维啊，能一直迷迷糊糊，不思考吗？</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/26/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/26/</guid>
+      <description>Saturday 3.5+7.5+7.5+1.5=20
+起来上大物实验，这老师真强，我最后都听累了，他还与一开始一样，，， 但真学了很多吧，能不能记住呢？？？
+中午拒绝了帮刘轩赫带饭，怎么说呢，其实就是这样
+下午定了很多事，
+晚上外文书库开了，真是天注定吗
+以后就看英语教材了，一定要坚持
+借书时还真害怕，那老师说的限量版，，，
+这新跑鞋就大了一点，其他真好。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/27/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/27/</guid>
+      <description>Sunday 0+10.5+10+1.5=22
+早上5：30上了个厕所，顺便把加湿器关了，效果真好
+起来比较晚，没吃早餐。。。
+今早报了四级，开始吧
+又被物理给耽误了时间，以后，
+下午学了en，边做笔记的感觉很不好，但那网课是真的多，以后要多花点时间了
+尽快完成第一阶段任务吧，国庆后一个新的开始，那时能做很多事
+辣条：都吃了吧，从昊祥真强！ 可能，这辣条买的也没错</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/28/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/28/</guid>
+      <description>Monday 6+12+10.5+1.5=30
+起床又比较晚吧，吃完早餐后回来过八点了，没能去图书馆了，，
+一玩电脑就喜欢到处乱看，又看了很多花里胡哨的东西，英语以后就别弄了，按规矩来
+看了1个半小时多的书，c语言有点多啊
+中午帮沈浪和刘轩赫带了饭，其实也没那么难嘛，油苑的饭还真是香
+中午睡了好久都没睡着，是不能听歌吗，但也不对啊，还是要买耳罩。
+起来学了英语，还看了会书，good
+物理上课有点慢啊，是太累了，没激情啊？？？
+今天洗澡去来，淋了雨，真爽，多久没这感觉了</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/29/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/29/</guid>
+      <description>Tuesday 4.5+10.5+15.6=30.6
+毛中特要为考试做打算了，就看老师发的PPT吧
+老师让我们写对未来的想法，我是平平常常的过完一生吗？计算机的技术真这么难以精进吗？我能做出什么来呢？
+中午睡觉还可以吧，晚上的睡眠一定要保障啊，或许我该买点装备
+和连远锋老师聊了一路，最后，还是老老实实吧，多花点时间&amp;amp;用点心什么都能解决
+下午洗了床单，一直放着总是不好，又累了，睡了会。。。
+晚上吃了麻辣香锅，四楼的感觉比三楼的要贵点，没麻辣汤了。
+c语言看的很慢啊，总是疲倦，健康生活啊，还有心态很重要
+小四幺打来电话，帮我买双鞋，这真不是我想要的啊，。
+没有去运动，
+我该认真感觉到我自己啊，为啥总是很迷糊呢？？？？？？？？？？</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/09/30/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/09/30/</guid>
+      <description>Wednesday 8+10.5+1.5=20
+早上6：07起来上了厕所，又上床睡了，
+一直到7：10才起来，吃了一个月饼（桂花枸杞。），不过感觉精神很好
+中午终于睡了个好觉，30分钟吧
+身上的筋脉要好好拉拉。。。
+下午毛中特又只看了一点
+今天休息会吧，4天假</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/01/</guid>
+      <description>Thursday 4+14+15=33
+昨晚和刘翔聊了很久，是啊，好久了
+早上吃了泡面，学了en，做了一下作业。
+中午吃石锅饭，那小炒肉辣椒。。。 感觉挺贵的
+午觉+玩手机，，，不过下午看了一会书
+今天月亮真圆，去操场待了很久，其实想不了什么了，现在的大脑思考太难了，是碎片花化了吗，深度思考在哪？
+晚上看了大国崛起，还有灵笼，，， 停不下来啊，
+这国庆就这样过了啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/02/</guid>
+      <description>Friday 5+8.8+12+1.5=27.3
+一早起来看了网罗灯下黑的推荐，这pt挺牛的，折腾了好久。。。
+后来想起，这玩意作用根本就不大，而且很小众，感觉很破烂的，主要是一些电影很多，以后真是别折腾这之类的东西了，市场资源都没有统一的规定，实在令人难受。
+躺床上看了会小说，果然，在阶段的休息中感觉是最快乐的，但一定要压制下来，浅尝辄止才是最好</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/03/</guid>
+      <description>Saturday 15+10=25
+下午看了川普的演讲，YouTube的翻译功能还是很好的。还是要学好英语啊
+在宿舍学习真累的，特别是还有电脑，但书一定要看完。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/04/</guid>
+      <description>Sunday 11.5+20.5=32
+早上又不愿起来，假期就这样过去了吧
+那种书该有那种看法。。。 就c语言而论，学习很是要深入
+下午看了爱因斯坦的网课，原来一个月后就结课了啊
+晚上和王霖他们又扯白，就没干啥，他姐真的是？？？ 感叹到，我话真多</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/05/</guid>
+      <description>Monday 4.5+12+9.5=27
+今早起来吃完后到图书馆8点多了
+找了老土推荐的书，借白漂
+物理实验书应该尽早买的，我还是喜欢什么事都拖到最后啊， 该怎样决定一件事的趁早与不急呢？
+晚上老师发了综测排名,我还是不能看淡啊，或许这才是正常罢，而我也无法自如，又怎能评判他人表现呢，这可以说是我最讨厌的事之一吧</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/06/</guid>
+      <description>Tuesday 4.5+7.5+9=21
+真该想办法逃课了，上课我在干啥呢？
+我有创新意识吗？
+第一次上物理实验课，记：老师讲解+黑板要点+书本； 实验操作一定要精确，向德国人学习！！！
+这刀削面真咸啊，而且要等十多分钟
+衣服挂着或许会好？ 但这要多少衣架啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/07/</guid>
+      <description>Wednesday 4+7.5+8.5=20 逃了一上午的课，感觉不是很好，实践是检验真理的唯一标准，以后老老实实的吧 体育课老师讲了阴阳学说，对我触动真的很大，这个世界到底是什么样的啊 写离散的实验写了好久。 浪潮之巅看完了硅谷的一章，回想起了吗？？？ 逆 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/08/</guid>
+      <description>Thursday 5.5+12.3=17.8
+代数课有课堂测验，好吧，我当时很紧张，是我一直的自我中心论吧（自恋？），总是不在乎那些，却总还是很在意， 豪放啊，什么时候，难道已经定型了吗？
+毛中特王霖做我后边，说了很多，，，找到一点讨论的感受了吗
+上完体育课真的累，晚上还和沈浪一起点了外卖，那麻辣烫是真的贵，算是对我懒惰的惩罚吧
+那离散和数据结构的作业真耗时间，是我太磨了啊，放开啊，去干吧，
+练习 练习 练习 练习 练习 练习 练习 练习 练习 练习</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/09/</guid>
+      <description>Friday 12+10.5=22.5
+尽早起的真晚，吃了粥后，上了厕所
+研究了银行卡的事情，走错方向了，，， 其实就找一银行申请一张就行了吧，看看学姿势的文章吧
+数据结构课没买书，还坐前面。。。老师。。。还是挺那个的。。
+上离散实验走的时候就很犹豫，我胆子就是那么小吗，性格还能锻炼吗
+去外文书库看书挺难的，以后少去吧，真不想和那老师交流
+晚上在图书馆找到了一个好地方，以后就very good
+一气呵成，看了c语言很多，果然还是学习需要状态啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/10/</guid>
+      <description>Saturday 5+15+26=46
+早上帮同学带饭有点不好，我很不喜欢做这事的，但也只能减少吧，或许我该逐渐步入这些琐事，我终归还是进入了吗？ 是掌握平衡啊，恕！
+一上午决定了买东西的事，一涉及到这类事，我就变的举棋不定（好像有很多这类事。。。），是金钱问题还是习惯问题？ 是习惯吧，我何时能_雷厉风行_呢
+睡了一下午，这是高中留下来的后遗症吗
+晚上去吃了汉堡王，有王霖的姐远程点餐，生活中就一直有特权阶级吧，还是说本就是社会的属性，我太大惊小怪了，不就是类VIP吗，好吧，我一直仇视这类，可能只是嫉妒吧，我还是我自以为的兼爱平生 呵呵 我自己都觉得恶心
+晚上终于研究完了card的事，果然，还是先研究基础才能明白一切，不过查找的工作也不一定是无用功吧，这又涉及到一个大问题了</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/11/</guid>
+      <description>Sunday 19+16=35
+上午起的晚，没吃早餐
+做作业果然要很多时间，以后要重新定时间了。
+下午又继续做，我感觉有很多时间在玩啊。。。
+晚上又看他们玩游戏，还看电视剧，那电视剧还是不错的。
+多去图书馆吧</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/12/</guid>
+      <description>Monday 4+9.5+6.5=20
+学校的早餐有点匮乏啊，就那几种。
+去图书馆就只1楼有座了，去的也不是挺晚啊，
+物理实验的数据处理真是麻烦，不过过程挺爽的。。。。。
+中午洗了一下衣服，冬天的衣服也该清洗一下了
+离散数学的网课要开始了，爱因斯坦也快要结束了
+国际法：保卫钓鱼岛！
+不久就要体测了，准备吧</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/13/</guid>
+      <description>Tuesday 5.5+10.5+15.3+1.5=32.8 早上上课很累，是缺少睡眠吗 毛中特看的太少了，那时间不该让啊，还有好多啊 大物实验做的真累（打电位点），还要画图。。。 看来离散数学还是的等一个月，先看视频凑合吧 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/14/</guid>
+      <description>Wednesday 4+10+8.5=22.5
+中午和薛镇东在和苑吃了饭，回来路上聊了。。。 是自由言论还是动摇军心，抑或封建封锁
+下午有睡了一会，怎么睡觉这么难呢
+今天复习了导论，效果还不错，这模式可行，就是还是时间的问题啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/15/</guid>
+      <description>Thursday 4+12.5+9.8+4.5=30.8
+老师上课说要交读书笔记，，该来的它总会来。看一下少的吧，就七年了
+今天睡午觉戴了眼罩，还是不错，就是差了耳塞，还有以后一定要定时间，最多半小时
+有时候你牺牲的只是很少，而给别人带来了很多
+晚上一口气看了“银带”，感觉，嗯，不知咋说，老套，新颖？
+睡的比较晚，我话病又犯了，堵不如疏啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/16/</guid>
+      <description>Friday 8+12+1.5=21.5
+早八点多起床，做了离散数学
+中午又完善，还没睡午觉..，动手还是会不断冒出问题的。
+实验课啊
+傍晚开了一个安全教育会，张导首现。。果然，大一后就放羊了吗
+晚上看了多个视频，但还是感觉不放松，是忙碌的原因吗？
+思想解放， 不忘初心 侠义</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/17/</guid>
+      <description>Saturday 15+9+15=39
+早上起的有点晚，一没课就不能起来啊，生物钟还是没形成，身体也不是很好。。。 主要是晚上睡觉与午睡的缘故吗？
+做了一天的作业，不过任务完成的不错，就是物理测试用的时间比较多，c的书还没看完，拖了好久了。
+买了一点水果，枣+石榴。 later 。
+Photoshop也，，，好吧其实手机自带的就够了，看能不能贴吧，我可真行动了，推广啊
+以后两三天一首歌，挺舒服的，算是兴趣吧</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/18/</guid>
+      <description>Sunday 8.5+35+12=55.5
+早上做数据结构，应该把代码上传到GitHub吧，
+去川渝吃了点菜，那菜还是挺贵的。
+办的卡到了，不过快递员打电话都没接，，， 以后改振动吧
+下午看网课还没看完，时间还是没把控好。
+晚上图书馆又没位置，不过也算看完了该看的吧，以后一定要找个座。
+又和沈浪看了电视剧，，，一看看好久，还是自制力不够啊，安排好后事才好义无反顾</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/19/</guid>
+      <description>Monday 17+4+11.5+1.5=34
+上午解决了很多事情，还用了洗衣机，挺方便的，就是有点贵啊
+要减少很多东西了，一直留着就感觉脑袋不够用，还有事一定要尽早完成，不能拖
+信用卡还要去网点激活，，，
+毛中特啊，还要时间来看
+看英文一定不能找翻译啊，这也太耗时了，一定要坚持看下去，多了应该就懂了吧。，，</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/20/</guid>
+      <description>Tuesday 4+10.5+10.5=25
+今天真是诸事不顺。
+早上起的晚，很赶
+线性代数课也没好好上，和薛在。。。 （象棋还有。）
+中午用了洗衣机，睡觉睡的挺舒服，以后12：50就可起了，睡20多分钟吧。
+要考虑学c++了
+晚上去图书馆又没坐，去了三教，还找了好久。。。505
+尝试回了宿舍，效果太不好了，什么事都没干
+又说起了阴阳之论，我咋就这么执呢。
+一说话就要说好久啊，怎么保证早点上床睡觉啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/21/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/21/</guid>
+      <description>Wednesday 10.5+10.5=21
+早上一直睡没起，错过了物理课，还吃了泡面当早餐，也没干什么事。
+不过上离散的时候精神就很好，果然晚上的睡眠是最重要的。
+中午的那个辣椒真不好吃，是甜的，好不习惯，
+明天要测引体了。。
+激活银行卡时，并没有我想的那么不适，实践是检验真理的唯一标准，什么事一定要大胆的去做，为何畏缩呢？
+一口气完成一项任务的感觉很好，今日事今日毕太对了
+感觉看书的时间还是不够，尝试集中吧，会好点吧</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/22/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/22/</guid>
+      <description>Thursday 4+9+10.5=23.5
+要逐渐养起早起的习惯：先晚上早点睡，再早上坚持起来，做到一醒来就起来。。。
+邓小平的贡献，看出伟人为何是伟人。
+引体3个，还算过吧，明年6个！
+下午用了xx-net，大学的网果然nb啊，不过用Googlecloud还是要等还久啊，缺技术啊
+又看了一下git
+图书馆还是有位置的，没有的就看一下别的书吧，坚持去吧，没有别的地了
+发现还是东西太多了，我这强迫症真难受，少想多做啊，路线规划不要一直纠结。
+习近平的七年知青岁月，一天看20，差不多吧。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/23/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/23/</guid>
+      <description>Friday 5+12.5+213+1.5=232-70=132
+早上做作业，代数
+离散实验，二部图的着色，留数据结构吧
+萨丽雅的晚餐，还是很不习惯西餐，而且还点多了
+吃完后逛了一波，</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/24/</guid>
+      <description>Saturday 早起和沈浪一起去自习，带了电脑，其实没那么好，总体来说，缺点大 国际法的写，有网这让人纠结。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/25/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/25/</guid>
+      <description>Sunday 去香山公园，红叶没怎么看到，就是赶时间，特难受 找范老师谈话，老师还送了书。 做完国际法作业，感觉还是很多都没学到的，写作能力感觉基本没有了。。。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/26/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/26/</guid>
+      <description>Monday 3.5+10+7.5+4.5=25.5
+点了四个饺子，1.5？应该是1块钱3个吧，好久没吃学校的饺子了
+今天终于去校医院了，检查了中耳炎，还问了晚上怪叫的毛病，说是大脑的高级中枢无法控制低级中枢，晚上它没睡了，持续兴奋。。。 换个姿势应该可解决吧，不得不说，这还是很难受的，睡觉要有仪式感，享受睡觉啊，那感觉多久没有了
+开了药，真报销90%啊，真感到进入“体制”的好处
+以后看书需要带电脑了
+毛中特的复习
+物理也上习题课了
+国际法结束了啊
+晚上英语，Albert，push up</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/27/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/27/</guid>
+      <description>Tuesday 4+9+13=26
+早上练字的时间感觉没有了，，早起吗
+数据结构的作业
+找图书馆的位置</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/28/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/28/</guid>
+      <description>Wednesday 4+12+15=31
+体测跑步，真难受，长跑还好，最后冲了一把，真值得奖励，不过那短跑，是我起步太慢了吗，还是不要抢跑啊。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/29/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/29/</guid>
+      <description>Thursday 4+15+10.8=29.8
+今早终于稍微起早了一点，其实那时间就够了，主要是就想要早点去，感觉去晚了不行，可那又不算晚。每次都这样，就是心中的“执”像吗？部分原因是去晚带来的结果，没位置？ 主要是心理原因吧。
+毛中特最后一节课了，老师首先讲了大题的思路，又讲了很多现实的东西（题目中有联系实际），再后又讲了会教材。就这样结束了
+和苑那个点菜真的贵，大鸡腿也贵。吃起来肚子也很不舒服
+下午的自习算是一个巨大的失败，图书馆没坐，又去了教室，睡觉还是在宿舍吧，那感觉真的很不好，后来去图书馆，真是累的回了宿舍，直接在床上躺着
+不知是什么原因，就很不舒服，肚子也很疼，或许是昨天的跑步？有或是作息的问题？还是下午在教室睡的觉？
+玩了会手机，还是就睡觉了，一睡就在也没起来。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/30/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/30/</guid>
+      <description>Friday 10.5+16=26.5
+昨天的后遗症还是没好，早上简单吃了点（麻花），又喝了杯牛奶，再上了波厕所，还是很不舒服
+上午就什么也没干，也不能全怪状态的问题吧，一直就玩着手机啊
+先是要买点东西，那网上的活动真是令人禁锢，一定不能被其所支配，后来又换了浏览器，是隐私的问题啊，那几个书签真不好放，到头来问题也只是那样啊，还有书论坛的链接
+数据结构的作业问题终于很好解决了，但书一定要尽快看
+让我感悟到了很多，也许是老天的决定，
+和苑的炒菜
+晚上终于决定了买的毛衣，买衣服真花时间啊
+一个心腹大患终于解决了：剃头</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/10/31/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/10/31/</guid>
+      <description>Saturday 5.5+7+10+1.5=24
+今早没设闹钟，但也起来了，7：30到图书馆，就只二楼，一楼有座了。。。 我还没看清楚，总是沉迷自我想象，还找错了位置，心理作用这么强吗？
+那二餐的肉夹馍是真的香，特别是那个肉，4.5也真便宜。
+看书的速度还是很慢，学了人月神话，是不是该好好规划一下！别还以为能解决了
+下个星期任务就较重了，那两本书该多看点了
+下午就干的事少，我一直就不能自律了，这样下去可不行啊
+吃了包辣条，真不舒服，晚上还有考试
+毛中特的考试整体来讲还是不错的，学了很多之后，其实就能写很多了虽然我感觉不到什么，但其实很多都在心里了，所以，学习不一定效果很好，但它已经刻在心中了，
+就是写课程感悟的时候联系实际比较少，就说的很平常的那种，我却一直自以为的能指出现实问题，深度思考，可一到该说的时候，就总出问题，是一直一来的思维习惯将我束缚住了吗，可又怎样解决这问题？难搞啊
+洗澡要勤快点了，不然是真的难受。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/01/</guid>
+      <description>Sunday 5.5+10.5+8.3= 24.3
+换了个枕头，睡觉好多了，果然是睡觉质量的问题，要保证环境好，心态也要好，在枕头旁放大东西，限制。洗澡也不要拖。
+早上图书馆人还比较少，果然还是要碰点
+时间有没有把握好，找不到以前那种感觉了，还是现在看的不适合
+下午就看了Albert，天道好轮回啊，还有好多没看啊，这就是一个信号，我已接收到了，可它应起的作用呢
+还是有点不放心，过了一遍离散
+是饭吃的多吗，最近就一直不舒服，还是要进行锻炼啊
+离散做的速度还是很慢，就还是我那个性格，
+考完后和丛昊祥就在门口讨论，还很大声，真是一个重大问题，何时才能达到那种心如止水，始终归一的境界
+晚上就一直在和沈浪玩英雄联盟手机版，过线了啊，
+一定要重新调整了</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/02/</guid>
+      <description>Monday 5.5+11+9=25.5
+早上起晚了点，几乎没座了，可能今天是星期一的缘故
+看到了有人选了座，确一直没来，就这样空着，将近一上午，我真有种想弄死这种人的冲动，可这本来就是这样的，人就是用规则来约束的吧，记住一点吧，永远做最坏的打算，特别是人心
+做线性代数遇到了很大的问题，一是规则没有记住，而更重要的是没有彻底弄懂，又和高数一样吗，最后还是要找个时间彻底学一下啊
+中午一餐又出现了鱼，还不是鱼头，真香，果然要吃鱼啊，大伯说的真对，以后若有机会，每两三天就要吃鱼啊
+中午又是洗衣服的问题，耽误了好长时间，到沈浪那看了会风犬少年，刘闻钦的死：须知少年凌云志，曾许人间第一流、、、、、、、
+Albert啊，要耽误好多时间了
+计划真是个好东西，一定要写好，就是一个实时备忘录了
+那个物理实验真难写，到6：00多才写完，到和苑简单吃了下，应该吃那个面的，看着真香
+图书馆没座，但那个小凳也很好，起码能让我有精神一点，书也看的还好，就是人月太难看了，生词太多啊，
+坚持锻炼，好像可以晚点去，关门时间像推迟了。。。
+晚上没听英语，就看Albert，，， 涉及到时空，黑洞，真像一个神的世界：时间的始终，信息（熵）的减，
+总的来说，这个开始还算可以</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/03/</guid>
+      <description>Tuesday 7.5+10.5+12=30
+早上起的晚，还是设个闹钟吧
+早餐有烧麦，真不错，听说还有肉夹膜，尝尝
+继续赶视频
+中午上了个厕所后，就睡不着了，可能和午餐也有点关系，以后点餐都慎重点
+数据结构和老师讨论了学习基础的问题，冲突还是很明显的
+物理实验老师真不错。。。 可惜没她的课啊
+上完后是直接吃饭还是做会呢，还是和人一起去吃饭吧，不得不说和人一起吃的感觉真爽，这机会很少了
+运气真好，有个座位，实验有点难写，拖后了
+太累了，睡了会，但还是不舒服，中午的睡眠，，，
+以后去操场真可以晚点。
+大爆炸模型，虫洞？
+洗了头，泡了脚，真不错，泡脚的习惯</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/04/</guid>
+      <description>Wednesday 7+8.5+13+1.5=30
+早起还好，二餐没肉夹馍了，不过那手抓饼good
+物理课又没上好，还玩了会手机。apkpure的问题，还是有很多啊，果然需要技术啊
+上完课后，也找了教室，手机果然不能玩啊，还有做作业到宿舍吧，方便多了
+中午睡觉前就不能玩手机啊，最多只能听会歌！
+体育下周就要结课了，还有网上考试。。
+下午又再图书馆无所事事，那bt，p2p，还又啥的真难看，其实就是国内环境的问题，算是初步了解了吧，百度，迅雷为主，还有夸克网盘，那功能也是没谁了，最后考虑aria2吧
+晚上早收功，太累了，这状态不行啊。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/05/</guid>
+      <description>Thursday 6.5+11.3+12=29.8
+原来那个馅饼2块钱一个，有点贵啊，初高中可是8角，。
+物理实验需要大量的时间了，认真一点吧
+睡前又玩了手机，找个时间要彻底解决一下
+一下午，终于解决了网课
+要带电脑去图书馆了
+apple软件真是封锁啊
+泡脚好的开始
+买了点吃的。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/06/</guid>
+      <description>Friday 5+9.3=14.3
+数据结构课讲了debug，还是很有用的，基本在看c++。
+下午回宿舍就是个错误，吃了包辣条，口腔溃疡，，，
+和沈浪打英雄联盟手游，学习啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/07/</guid>
+      <description>Saturday 5.5+14+10+1.5=31
+夸克，uc， 迅雷，又研究了好久。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/08/</guid>
+      <description>Sunday 5+9.5+4.5+13=21
+基本定了早起的习惯，
+但手机瘾挺不下来了啊，该死的聚bt</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/09/</guid>
+      <description>Monday 24+12=36
+想开，要放松点了
+不要赶，静
+作业时长加长，一直时间不够啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/10/</guid>
+      <description>#Tuesday
+3+7.5+12=22.5
+早起看书还好，也有一个多小时。
+实验完成，电路怎会难到我
+咖喱面。。。真难吃
+c++快点了</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/11/</guid>
+      <description>Wednesday 4.5+9.04+14+10
+去和物理老师请假，就nice，该做什么，还是要清楚的
+去了医院，牙的事可真麻烦，爱护第一啊
+事还是留到以后解决，这能给我多大的教训。
+下午算是看了视频吧，just so so，
+研究了手机桌面的问题，还是要刷机啊
+激励
+不要将就，万事一定要尽力，不要嫌麻烦，一时的方便带来的是多大的痛苦
+走路时的状态，东张西望，要定住了</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/12/</guid>
+      <description>Thursday 5+19+14=38
+线代课上又有考试，很差，就。。。还是基础掌握不牢啊，考试要好好复习了
+和孙致运去要补贴，就很麻烦，2，3月一起发的，我的没问题。。。
+出门身份证真重要啊
+中午吃了麻辣烫，总是点多，一般15就够了
+进入了魂站，一个新的世界打开了
+找到了一个very good 的tool！！！ clash！！！
+晚上又去了一个清真面馆，那地真不错，便宜又好吃。
+手机没电，去三教，充电器就不会带的，主要是还要开会，我也没带耳机。。
+连老师还是很负责的。开会也什么都说，但能不能解决，，就
+终于过了一遍c++，不过很多都不行，果然要么看视频，要么看经典书。。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/13/</guid>
+      <description>Friday 11.5+10=21.5
+感冒睡觉真不舒服，还睡的有点晚，起来又上床了。
+看了一下数据结构的书，主要还是要完成题目与代码啊，时间啊
+考试还是考书上的啊，c++其实可以不学的。最开始的决定是对的。
+又陷入了考试时的急切心态，这么解决这个问题啊，闭眼，冥思？？？
+和老师谈话，老师真说了很多，一个大一的新生猝死，消息果然还是封闭的
+最后我又嘴贱，说了科研，教育的问题，我在怕什么呢？还是我要现实一点，什么道路呢？
+晚上直接睡吧，还是玩了很久的手机
+计划后来起来的，但，证明这一段时间真的没休息好啊。
+讨论也逛够了吧，可以停了，以后规律看吧。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/14/</guid>
+      <description>Saturday 13+9+2=24
+早又没去图书馆，整理了一下浏览器的书签，算是告一个段落了吧
+中午吃那个板面，12真不错
+又看了一些推荐的小说，优秀作品还是有的啊，什么都是适量的好啊
+下午作业做的就有点少啊
+晚上去了图书馆，还是有很多位置的，也不是考研那么紧张吧
+物理考试，主要是很多东西没记住啊
+洗澡啊，又拖了</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/15/</guid>
+      <description>Sunday 13+11=24
+早上9点多才起
+宿舍看人月神话, 而一边闲聊。。。
+原来俯卧撑一直做的不标准， 什么都要学习啊
+提到了路由器，在说吧</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/16/</guid>
+      <description>Monday 5.5+10.5+11.5=27.5
+早上有点懒了，幸好只停留了几分钟，是缺少睡眠啊，还是习惯、
+图书馆早上还是那样啊，没变了的吧，等考研完吧12.26
+英语单词就很难背啊，虽说我只是简单看一下，但就是无法集中啊
+在一汤的公众号发现了好多好东西，尤其anki！ 不过还是合理使用吧，不然又是花里胡哨。 主要是记忆。每日一题？
+clash的规则也有缺点啊，目前只发现play store的下载APP问题，用全局代理吧。
+看书要多找时间啊
+中午睡觉就刚刚好，还是要控制啊
+电脑文件要整理一下了，特别是chromium的tab
+听力的锻炼很艰难。
+物理课还是听比较好，主要是那书写的真不咋地，我还坚持看了那么久。。。
+做作业不能赶，就是时间安排充裕一点
+晚上又站着看，不过又和刘翔聊了会天，可以发挥一下，，，我啊，哎
+晚上又没控制好时间，不过vpn那本书决定了
+回宿舍一堆吃的，真好啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/17/</guid>
+      <description>Tuesday 9.2+10.5+16=35.7
+早上还是要固定起床啊，不过以后可以稍微晚点了
+润杰的早餐，还帮别人刷了一下， 放
+中午睡的还不错
+数据结构作业又麻烦了，别让我知道是谁干的，不过也有好处吧
+物理实验等厚干涉，真难受，最后一个数据错了，也懒的改了。
+二餐的那饭真贵，16，一个荷包蛋还2块。
+晚上直接回宿舍了，没过回就睡了，怎么这么困。9：30才醒
+英语听力要赶了，感觉没效果啊</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/18/</guid>
+      <description>Wednesday 发觉日记写的太散了，集中吧，小事就略了。 物理课讲了一个可逆过程，用了弹簧的引子，mgx = 1/2kx^2, but: mg = kx, !!! 为什么我以前就没注意到呢，我也不是那一类人啊，差距真大 物理实验的求不确定度，把我给整蒙了，，就是沉不下心来啊，最后发现挺简单的，真是。。。又浪费 应该一回宿舍就睡的，手机充电啥的都可缓，导致最后睡到5：00多才起。 真累 那二楼半的红烧肉真难吃。 晚上就什么也没干，手机真是原罪，我又规划了一下解决方案，还是现代的东西太多了，还是我太执着了，想掌控全部吗 明天就完善一下，生活的全部都要记下。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/19/</guid>
+      <description>Thursday 一口气解决了大物实验，果然还是高质量学习最好。 买一个耳塞还是别的啥的，感觉很有必要啊，有钱就好了，直接xm3. 算是整理完了吧，以后code + books LeetCode开了一题，人月上的真对，debug了好久。。。 gdb啊 晚上就直接在宿舍解决了，还好吧，，，以后在宿舍的时间会增多啊。 买耳机的事缓吧，先用tide顶着吧。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/20/</guid>
+      <description>Friday 看书的定调，坚持英语书不动摇，慢看，不要好高骛远。 就一本专业书2weeks+ 。 连老师又发表了一番谈话，怎么说呢，感觉自身还是有很多缺点的，有些东西，还改的掉吗，对于“社会规矩”的问题，你能做到何种程度呢，还有学习的道路，理念。。。 我的道路就是这样！！！ 是否要做好在宿舍的长期打算？ 耳机总是决不下心来买啊，先把干粮准备好吧。还是为身体着想吧，也不过是多走点路去吃饭，差这点时间吗 晚上又吃多了，不该点那的，点菜还是门学问啊 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/21/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/21/</guid>
+      <description>Saturday 2 question vim course ttf leetcode no </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/22/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/22/</guid>
+      <description>Sunday 上午看了c，主要 下午终编完，但那系统真令人失望 吃的多 秦时明月 clash，，， linux openwrt 忘了打电话 真累 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/23/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/23/</guid>
+      <description>Monday leetcode homework c++ wangke memory down, thing too much </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/24/</guid>
+      <description> ke&amp;hellip; vim en book lang datastruct, sit behind shiyanke, physics, push dizhu&amp;hellip;, why malatang, -&amp;gt; tired in night, or computer? </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/27/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/27/</guid>
+      <description>Friday 牙刷坏了，真麻烦啊，是进水的问题，还是 早上在宿舍看了线代， </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/28/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/28/</guid>
+      <description>Saturday 上午又弄了crossover，主要是设置一个文件开机自动启动，Linux还学的很不够啊，系统的学习多需要啊 直接在必应上找了客服，说了一下情况，发了照片，问有无碰撞就有点尴尬，不得不说，客服的态度都是很好的，寄过去看即可，不要运费就很给力，希望到厂后也能快速解决吧。 中午又吃多了 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/29/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/29/</guid>
+      <description>Sunday 又是颓废的一天，好吧，不能这样说，大约打了一下午的代码，从11：00到5：00 早上先研究了一下破解的crossover，哎，都是苹果的，linux啊，果然是大佬的事， 也不应该玩这些东西的，该学的都没学好，怎么探究这表面的呢？ 要静下心来，学点真东西啊 写代码时，就感觉人月神话白看了，debug的时间要占3/4之久啊（对现在的我）。。。 感觉到了自己的基础很不扎实，有多少东西没学啊，学的稀狗屎烂。 晚上和刘轩赫去了东校吃饭，那个水煮牛肉还好吧，不过那味不是特好 晚上想看会书的，但中午没睡觉的后遗症立马出来了， 先调整吧，不该折腾了，从vim到wine类的 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/11/30/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/11/30/</guid>
+      <description>Monday 早上丛昊祥起了，我醒也7：20了，又没有早起 解决早餐后，开始看书，效果还算不错吧，控制力我一向挺不错的。。。 感觉线代要花很多时间了，vim还有别的都延后了。英语也不能落下啊 中午又去了东教，那的饭真挺香 买东西真难受啊，先是无法决定要不要买，又是优惠啥的，，，还是放不开 中午睡的还好吧，一个人挺舒服的，就是网上啥的浪费时间 下午还看线代，又试了一波darling，gitee也试了，还是别了 晚上去麻辣汤，又多了， 关于浙江农业大学的事，现在社会真太乱了，不过也侧面说明了国家正处于最关键的阶段吧，未来需要强有力的声音啊 晚上就一直，，，没怎么学好，不过听力总算还不错。 晚上早点睡吧。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/01/</guid>
+      <description>Friday 早起了，但肚子真不舒服，没吃早餐，，， 又是线代的， 数据结构树，knuth 回睡 spotify 当兵的问题 润杰自习室真不怎么样 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/02/</guid>
+      <description>Wednesday 上午上数据结构实验，连老师是真的不错，还来看我们情况，一待待一上午 那个老师就没那么，，，先是迟到，感觉就那样吧 论文也就这样写的啊，学习了，毕业时整个玩玩（说不定得个图灵奖啥的。。。）， 事实证明，有些东西是硬看不了的，还是要很多基础+实践的 下午整了音乐的事，还是太花里胡哨了啊，，，这 线代进程慢了好多啊，还有英语听力，也不能急，慢慢来吧 必要上买的卫生纸到了，话说我也看不出来这么样吧，还好用吧。。。 要多下点壁纸了 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/03/</guid>
+      <description>Thursday 一上午的程序课，编题慢慢来吧 中午遇到一个有趣的事 线代看的我都要吐了，哎，真不能赶 洗澡， </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/04/</guid>
+      <description>#Friday
+图书馆果然没位置啊，还是放弃吧 三教也还不错吧， 牙刷送回来了 中午还算睡的好吧 下午又是线代，不过没时间了，过一下吧 晚上薛镇东谈论 看了实验，解决way，这玩意就该早解决吧。。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/05/</guid>
+      <description>Saturday 台灯 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/06/</guid>
+      <description>Sunday 早起复习， 考试好吧，不过有些基础不行，余子式，二次型 中午的饭真是。。。 下午买东西， 睡觉，ikuuu 思考，，，， 计划 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/07/</guid>
+      <description>Monday 早上的英语。。。 中午游戏 英雄联盟。。。 圣墟。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/08/</guid>
+      <description>Tuesday 晚起 打。。。 数据结构课，累 实验 英语，刘 steam，，，其他，ak 硬核翻墙。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/09/</guid>
+      <description>Thursday 早上起的较晚，还要上课，昨晚吃的多，不想吃早饭啊 上课时就上厕所比较多，但一定不能憋 还打了一个小时的游戏，，，也算做了两个半题吧，尽早做完吧，还有科研文章呢。 卖了一些泡面，还有吃的，这东西少吃吧，主要是这段时间都不想出去啊 下午又在床上折腾了一波浏览器，并没有我想要的，这个事实是一定要确定的，少折腾吧，Chrome+夸克挺好了，kiwi？？？其实插件的需求不大吧，以后再看看吧 图书馆 四级的复习，大物的复习，还是要抓紧了 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/10/</guid>
+      <description>Thursday 早餐，范江波老师。 后面的题，gcc其他 英语看完，单词听力 blog 物理 龙王 不要迷信教材，目的，理性 b站视频 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/11/</guid>
+      <description>Friday 又没早起，还是要闹钟啊 过了一遍物理吧 中午又没睡好。。。 又难以学习啊，这周过后要好好调整了。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/12/</guid>
+      <description>Satruday 早上厕所 不赶四级 题目，作文bad，听力一般，其他还好，翻译有点赶了，整体简单吧，是十四五规划吗 睡了一个多小时。。 下午英语 又clash。。。还是花钱吧 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/13/</guid>
+      <description>sunday 对餐厅的价格（贴纸？？？），别人买贵，食堂买。。。 物理的一题，想到了问老师，还是算了，也就那样 现在的问题：学习：急进，太求好 生活：激进，换位 神： 考试终于完了 机场very good 玩游戏，，， 新的开始 vim </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/14/</guid>
+      <description>Monday 早上不吃早餐真难受 上午还算好的开始吧，就是效率有点低啊，过于放松了，以后加强吧 书还是快借吧 帖纸，下午晚上都没好。 没想到2月中才过年，看来要在学校待好久了，也许是注定 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/15/</guid>
+      <description>Tuesday 书还没到，效率总是上不去，该规划一下啦，就电子版吧。 又整了一波订阅，turing labs很不错，就是节点太多了啊，转换规则。。。 晚上和薛一起去了三餐，那香锅还是不错的啊，虽说没麻辣烫好 感觉状态就不是很好，心累啊，还是好好干吧，激情呢 多穿点 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/16/</guid>
+      <description>Wednesday 对一些炫耀？？？ 和墨林跟了那么就，就没学到他的一些优点，像谦虚，还有他那个智商，也十分低调，就一点没有大谈的想法，真都不知他怎么做到的 中午吃了酱爆鸡丁，还行吧，就是真不想吃那些东西，是有点小洁癖啊 中午睡的太久了，以后一定要定闹钟！ 就没去到那个会，张导也没太检查，我还是觉得那个破会没一点意义，但重要的是，以后会因为太放纵会造成什么呢？。。。 看了knuth的一些东西，视频英文听不懂，字幕也， 好想看那些大作啊，是我太好高骛远了啊，也不很勤奋，拿什么来鞭策我呢 学习还是不很到味啊，规矩啊 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/17/</guid>
+      <description>Thursday 发现好多作业都没做，有的忙了，还有好多事啊 中午睡的过久了，咋那么想睡呢？时间调一下看看。。。 果然还是要学习一些经典的代码啊，自己写的真水。。。 在宿舍学习还是很不现实啊，俗事真多啊 还是要买点东西吃啊， 其他事都快停吧，别瞎折腾了 坚持锻炼 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/18/</guid>
+      <description>Friday 研究了RAID的题目，知道自己的不堪了吧，你学的个啥玩意啊，虽说那体系有点偏，但一些基础知识是核心的，特别是c语言的一些核心函数。关于输入出，编译的问题是没学到的缘故吗。。。 终于去图书馆把书给借来了，但终归没有料想的结果啊 晚上又吃多了，真难受，what i have do &amp;hellip; 游戏真不能玩了啊 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/19/</guid>
+      <description>Saturday 没有早起。 肚子还是要饿的，吃了一点薯片更饿了，生活规律啊 中午又偷懒了，不过睡的还不错， 下午又玩了RPG游戏，好还删了，真乱啊 又感觉心累啊，还是没放开啊，这问题或许会伴随我一生，习惯真难改变，以前忙碌没有思考，就感觉不到真实，一思考，就陷入了汪洋大海，再也出不去了啊 晚上折腾了一波stackoverflow，不能再拖了 又看了一些励志视频，央视的节目一向很好啊，这次的一堂好课，金一南先生太到味了。 警醒：平淡的生活磨平热烈的心</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/20/</guid>
+      <description>Sunday git上资源真多，找必到啊 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/21/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/21/</guid>
+      <description># monday
+又没早起，看小说真是个错误啊，还当转移注意力来着，这也太转了 冬至，还吃了顿饺子 看书还是注意力不到啊，诸事可退，早起是唯一的净土了，可以学一上午，吃个饭再睡会，下午能看会把，晚上就，，，坚持吧，就一星期了 实事求是，伟大之所以伟大 人都喜欢做梦，特别是我，但梦总会醒，是啊，梦醒了 #
+# Wednesday
+调试代码啊，一段漫长的时间 小感冒啊 小说，，，回归 # Thursday
+早上起来真难受啊，肚子还有点痛，感冒有点好转，应该也不算感冒吧 上午比昨天好多了，做了好几道题，不过该放一放了，先做论文吧 去和沈浪吃了驴肉火烧，感觉一般般，还不是很饱 那个形势与政策课真让人难受，一帮研究生在那主持，一个人网络全程讲课，不算设备的问题，还行吧，（这种方式，不会是曹培强老师的想法吧），能打70分吧，错误真多，记得举的一个例子，什么美国的铁锈带的没落是全球化导致的，主要是科技时代进步吧。。。讲的主要内容要全球化，还有一带一路的的事。 上完课后就没地方去了，应该回宿舍的，瞎转又去图书馆玩手机，浪费了 是晚上吃多了的关系吗，脑袋好痛，proxypool真不该啊，上床休息吧 # Friday
+打算早起看论文的，也没起太早，搜了一些相关文献看了，发现我的这篇写的真简洁，不过也好，让我在网上查了很多资料，算是为以后写文章做铺垫吧 下午去连老师那谈话，听了很多 和薛镇东 圣诞节，经老师这一说，那个挥之不去的问题又来了，该如何处理一些这样的事了，是啊，终归只是个放松啊 晚上下了久违的时空召唤，还打到快一点。。。 # Saturday
+又晚起了， 那个论文真难弄 时空召唤的改变真多，不过现在小孩这么多吗 -
+# Sunday
+上了课，还没好好听 # Monday
+考试忘了 不应该熬夜的，也没弄出来个啥 # Tuesday
+查论文 狗日的 # Wednesday
+早上还是不愿起来，还看了小说，直到吃中饭 午睡是不能少的，和蹭了会综艺看，直到两点多才睡，不过没玩手机，好的仪式感 下午却折腾了一波shellclash，不过是值得的，什么时候我自己也能写一个呢， 发觉我好多天不在正常轨道上了，那论文把我整的，以后有什么东西，一定要有充裕的时间去完成，人的惰性啊，乌合之众啊，还有独立的思考，那些狗屁论文真。。。 就没有学的欲望啊，感觉元气大伤啊，洗了个澡，还是要勤快点，真让人难受，明天早起，调整状态吧 Thursday 早起了吧，8点，，， 上课，视频b树，平衡二叉树 躺了一下午，罪恶啊， 晚上买了鸡鸭， 小四叔发来了祝福，bilibili跨年晚会 给连老师发个消息吧。。。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/22/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/22/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/23/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/23/</guid>
+      <description>Wednesday 调试代码啊，一段漫长的时间 小感冒啊 小说，，，回归 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/24/</guid>
+      <description>Thursday 早上起来真难受啊，肚子还有点痛，感冒有点好转，应该也不算感冒吧 上午比昨天好多了，做了好几道题，不过该放一放了，先做论文吧 去和沈浪吃了驴肉火烧，感觉一般般，还不是很饱 那个形势与政策课真让人难受，一帮研究生在那主持，一个人网络全程讲课，不算设备的问题，还行吧，（这种方式，不会是曹培强老师的想法吧），能打70分吧，错误真多，记得举的一个例子，什么美国的铁锈带的没落是全球化导致的，主要是科技时代进步吧。。。讲的主要内容要全球化，还有一带一路的的事。 上完课后就没地方去了，应该回宿舍的，瞎转又去图书馆玩手机，浪费了 是晚上吃多了的关系吗，脑袋好痛，proxypool真不该啊，上床休息吧 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/25/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/25/</guid>
+      <description>Friday 打算早起看论文的，也没起太早，搜了一些相关文献看了，发现我的这篇写的真简洁，不过也好，让我在网上查了很多资料，算是为以后写文章做铺垫吧 下午去连老师那谈话，听了很多 和薛镇东 圣诞节，经老师这一说，那个挥之不去的问题又来了，该如何处理一些这样的事了，是啊，终归只是个放松啊 晚上下了久违的时空召唤，还打到快一点。。。 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/26/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/26/</guid>
+      <description>Saturday 又晚起了， 那个论文真难弄 时空召唤的改变真多，不过现在小孩这么多吗 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/27/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/27/</guid>
+      <description>Sunday 上了课，还没好好听 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/28/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/28/</guid>
+      <description>Monday 考试忘了 不应该熬夜的，也没弄出来个啥 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/29/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/29/</guid>
+      <description>Tuesday 查论文 狗日的 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/12/30/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/12/30/</guid>
+      <description>Wednesday 早上还是不愿起来，还看了小说，直到吃中饭 午睡是不能少的，和蹭了会综艺看，直到两点多才睡，不过没玩手机，好的仪式感 下午却折腾了一波shellclash，不过是值得的，什么时候我自己也能写一个呢， 发觉我好多天不在正常轨道上了，那论文把我整的，以后有什么东西，一定要有充裕的时间去完成，人的惰性啊，乌合之众啊，还有独立的思考，那些狗屁论文真。。。 就没有学的欲望啊，感觉元气大伤啊，洗了个澡，还是要勤快点，真让人难受，明天早起，调整状态吧 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2020/2020.05.18.monday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2020/2020.05.18.monday/</guid>
+      <description># en 18
+phrasebook phrase
+suddenly
+pleasantly
+Germany&amp;ndash;adj German&amp;ndash;n
+pocket
+tourist
+a pair of
+a grass of
+toothache
+nurse
+dentist
+appointment
+urgent
+be afraid that
+list
+grocer greengrocer vegetables potatoes tomatoes sugar jam
+butcher meat roast beef
+whisky
+cigarette
+either
+upstairs
+# 芯片???
+# en 19
+pack
+suitcases
+cinema
+eh?
+brought
+garage
+crash
+mechanics
+repair
+lamp-post
+retired
+country
+penny
+have the last word
+sell/sold
+neighbour next-door
+regards
+fly/flew
+pilot
+# en 20</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2021/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2021/01/01/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2021/01/02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2021/01/02/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2021/01/03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2021/01/03/</guid>
+      <description>Sunday 三国杀 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2021/01/04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2021/01/04/</guid>
+      <description>Monday 下午人走了以后，就剩我一个了 吧宿舍收拾了一下，看着真舒服 中午遇到连老师了，我一直来就喜欢瞎想啊， 看阿里到头了，这情节还是很让人难受的， 妈打电话来问衣服的事，我还是控制不住啊，又吵了起来，静，恕啊。 看到2点多啊，最后了 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2021/01/05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2021/01/05/</guid>
+      <description>Tuesday 下午本来打算写图论的，发现个好东西，Chrome OS，嗯，有必要研究 去吃饭太玩了，都没吃的了，最晚6点去吧 晚上又没心情写，但马马虎虎吧，凑完了，以后的日子，真有点难熬啊 真冷啊 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/diary/2021/6-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/diary/2021/6-3/</guid>
+      <description>Assembly class 老师 活跃 紧张表达 百家讲坛 易经，密码 阴阳 </description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>

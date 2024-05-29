@@ -1,0 +1,71 @@
+let mapleader = ' '
+
+" 可视模式下系统粘贴
+vnoremap Y "+y
+
+inoremap <C-a> <ESC>A
+ 
+noremap Q :q!<CR>
+noremap <LEADER>w :w<CR>
+map <LEADER>o :noh<CR> 
+map <LEADER>0  $
+" map dl  d$
+
+"" Opening a terminal window
+" noremap <LEADER>t :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
+
+set number
+set relativenumber
+
+"用浅色高亮显示当前行"
+set nocursorcolumn "竖
+set cursorline "横
+autocmd InsertLeave * se cul
+autocmd InsertEnter * se nocul
+
+set hidden
+set smarttab
+set shiftwidth=2
+"set softtabstop=2
+set tabstop=2
+
+set viewoptions=cursor,folds,slash,unix
+set wrap "自动换行”
+set tw=0 "光标超过0列折行
+set indentexpr=
+set showmatch " 括号匹配
+set sm "显示括号配对情况。打开这个选项后，当输入后括号(包括小括号、中括号、大括号) 的时候，光标会跳回前括号片刻，然后跳回来，以此显示括号的配对情况。
+
+set formatoptions-=tc
+set noshowmode
+set showcmd " last command
+set wildmenu "增强模式中的命令行自动完成操作"
+set ignorecase
+set smartcase
+syntax on
+set autoread
+set report=0 "通过使用: commands命令，告诉我们文件的哪一行被改变过"
+"被分割的窗口间显示空白，便于阅读"
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+set spell " 拼写检查 (c-x, than s)
+set ruler "显示标尺"
+
+set backspace=eol,start,indent "使回格键（backspace）正常处理indent, eol, start等"
+highlight Search ctermbg=black ctermfg=white guifg=white guibg=black
+set hlsearch
+set incsearch
+set wildignorecase
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+"set inccommand=split
+
+"文件类型自动检测，代码智能补全"
+set completeopt=longest,noinsert,menuone,noselect,preview
+set ttyfast "should make scrolling faster
+set lazyredraw "same as above
+set visualbell
+
+set virtualedit=block
+
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif

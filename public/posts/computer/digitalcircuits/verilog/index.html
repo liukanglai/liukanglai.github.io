@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/digitalcircuits/verilog/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/digitalcircuits/verilog/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/digitalcircuits/verilog/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": " 行为级模型：主要用于test bench，着重系统行为和算法，不在于电路实现，不可综合（initial，fork/join，task，function，repeat，wait，event，while等）。\nRTL级模型：主要用于ASIC和FPGA设计，重点在于电路实现，在于如何在timing，area和power中做出平衡。可综合出门级电路。（module，always，case，assign等）。\n门级模型：主要用于后端的物理实现，它是实际电路的逻辑实现，通常由RTL级模型综合出来的，（逻辑门，UDP，线网等），门级模型还用于开发小规模的元件。\nmodule add ( input a; input b; output c; ); assign c = a\u0026b; endmodule module module – endmodule\nmodule layer high use low, only a top module\nparallel run\ntestbench\nmodule G(A, B, C); // 参数assignment , 端口: input/output/inout input A, B; output C; // data type, : register, memory, net reg R; write W; // logical, can use function, task, include initial, always... and G1(C, A, B); assign C = A \u0026 B; endmodule 三位二进制加法器\nmodule adder(cout, sum, a, b, cin); // declaration intput[2:0] a, b; // three bits input cin; output cout; output[2:0] sum; assign{cout, sum} = a + b + cin; mytri tri_inst(cout, a, b) endmodule module mytri(cout, a, b); intput[2:0] a, b; // three bits output cin; endmodule grammar/syntax ; end // or /../ identifier: letter+number+$+_, the first one must be letter or _, have capital and small letter parameter(define): parameter a = 100; variables constant 在整型或实数型常量的任何位置可以随意插入下划线符号“_”(但不能作为首字符)，它们就数的本身来说没有意义，但当数很长时，使用下划线更易读 基数格式，通常是无符号数，这种形式的格式为 位宽, ‘进制, 数字, 4’b1001(定长), ‘b1(不定长) float: 10e2 string: \"\" variables(net and register) net (无符号数) …\nwrite tri register reg(无符号数) integer(int) time(无符号数) real/realtime operation ~\n/, *,\n? :\n^~ ~^ (同或)\n{}, 连接与复制\n归约: \u0026, ~\u0026, |, ~|, ^, ^~(~^)\n\u0026(归约与)——如果存在位值为0，那么结果为0；如果存在位值为x或z，则结果为x；否则结果为1 ~\u0026(归约与非)——与归约操作符\u0026相反。 | (归约或)——如果存在位值为1，那么结果为1；如果存在位值为x或z，则结果为x；否则结果为0。 ~| (归约或非)——与归约操作符 | 相反。 ^ (归约异或)——如果存在位值为x或z，那么结果为x；如果操作数中有偶数个1，则结果为0；否则结果为1。 ~^ (归约异或非)——与归约操作符 ^ 相反。 选择a[3:0]: use a[2], use a[1:0]\nmemory[], 不可选择\ncall function: $(for system)monitor(…) (1) 只有寄存器类型的信号才可以在always和initial 语句中进行赋值，类型定义通过reg语句实现； (2) 采用行为级描述方式，即直接采用“+”来描述加法，{Cout，Sum}表示对位数的扩展，因为两个1 bit相加，产生的和有两位，低位放在Sum变量中，进位放在Cout 中； (3) always语句一直重复执行，由敏感列表(always语句括号内的变量)中的变量触发； (4) always语句从0时刻开始； (5) 在begin和end之间的语句是顺序执行的，属于串行语句。\nalways@(A or B or Cin) begin {Cout, Sum} = A + B + Cin; #10 //延时 end 每个过程块是由过程语句(initial或always)和语句块组成的，过程块中有下列部件：过程赋值语句——赋值语句和过程连续赋值语句；时序控制——控制块的执行及块中的语句时序；高级结构(循环，条件语句等)——描述块的功能。 Verilog HDL中的多数过程模块都从属于以下两种过程语句： initial说明语句，只执行一次； always说明语句；@:\nbegin/end fork-join(parallel)：延时相对与开始，disable to break 顺序语句块和并行语句块属于不同的过程块(initial或always过程块)时，顺序语句块和并行语句块是并行执行的。 当顺序语句块和并行语句块嵌套在同一条过程块内时，内层语句块可以看做外层语句块中的一条普通语句，内层语句块在什么时候得到执行是由外层语句块的规则所决定的；内层语句块开始执行后，其内部各条语句的执行要遵守内层语句块的规则。\n电平敏感事件控制方式下启动语句执行的触发条件是指定的条件表达式为真(1)。电平敏感事件控制用关键词“wait”来表示，有以下3种所示： wait (条件表达式) 语句块； wait (条件表达式) 行为语句； wait (条件表达式)； 边沿敏感事件触发：@(a)-a变化 assign Z = a \u0026 b ; //连续赋值语句，给Z赋值 连续赋值语句执行时，只要等号右端的操作数上有事件发生(操作数值的变化)，右端表达式即被计算，如果结果值有变化，新结果就赋给等号左端的线网型变量。\nb\u003c=a阻塞过程赋值只能用于寄存器赋值。非阻塞赋值在所在块结束之后才能真正完成赋值操作，如例4.15中，b的值并不是立刻改变的。 flow begin/end if-else\ncase\ncasez和casex。其中casez语句忽略比较表达式两边的z部分，casex语句忽略比较表达式两边的x部分和z部分，即在表达式进行比较时，不将该位的状态考虑在内。这样，在case语句表达式进行比较时，就可以灵活地设置对信号的某些位进行比较\ncasez(a) casex(a) forever: loop forever\nrepeat(10)\nwhile\nfor\n结构级建模方法 一个输出：and U1(out, a, b, c) // nand, or, nor, xor, xnor, 一个输入: not U(a, b, c, in) // buf 三态门 ",
+  "wordCount" : "317",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/digitalcircuits/verilog/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;317 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/DigitalCircuits/verilog.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constant">constant</a></li>
+    <li><a href="#variablesnet-and-register">variables(net and register)</a>
+      <ul>
+        <li><a href="#net-无符号数">net (无符号数)</a></li>
+        <li><a href="#register">register</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#heading-3"></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#flow">flow</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="heading"><a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h1>
+<ul>
+<li>
+<p>行为级模型：主要用于test bench，着重系统行为和算法，不在于电路实现，不可综合（initial，fork/join，task，function，repeat，wait，event，while等）。</p>
+</li>
+<li>
+<p>RTL级模型：主要用于ASIC和FPGA设计，重点在于电路实现，在于如何在timing，area和power中做出平衡。可综合出门级电路。（module，always，case，assign等）。</p>
+</li>
+<li>
+<p>门级模型：主要用于后端的物理实现，它是实际电路的逻辑实现，通常由RTL级模型综合出来的，（逻辑门，UDP，线网等），门级模型还用于开发小规模的元件。</p>
+<pre><code>  module add
+  (
+    input  a;
+    input  b;
+    output c;
+  );
+    assign c = a&amp;b;
+  endmodule
+</code></pre>
+</li>
+</ul>
+<h1 id="module">module<a hidden class="anchor" aria-hidden="true" href="#module">#</a></h1>
+<ul>
+<li>
+<p>module &ndash; endmodule</p>
+</li>
+<li>
+<p>module layer high use low, only a top module</p>
+</li>
+<li>
+<p>parallel run</p>
+</li>
+<li>
+<p>testbench</p>
+<pre><code>  module G(A, B, C);
+
+      // 参数assignment , 端口: input/output/inout
+      input A, B;
+      output C;
+
+      // data type, : register, memory, net
+      reg R;
+      write W;
+
+      // logical, can use function, task, include initial, always...
+      and G1(C, A, B);
+      assign C = A &amp; B;
+  endmodule
+</code></pre>
+</li>
+</ul>
+<blockquote>
+<p>三位二进制加法器</p>
+</blockquote>
+<pre><code>    module adder(cout, sum, a, b, cin);
+    // declaration
+        intput[2:0] a, b; // three bits
+        input cin;
+        output cout;
+        output[2:0] sum;
+
+        assign{cout, sum} = a + b + cin;
+        mytri tri_inst(cout, a, b)
+    endmodule
+
+    module mytri(cout, a, b);
+        intput[2:0] a, b; // three bits
+        output cin;
+    endmodule
+</code></pre>
+<h1 id="grammarsyntax">grammar/syntax<a hidden class="anchor" aria-hidden="true" href="#grammarsyntax">#</a></h1>
+<ul>
+<li>; end</li>
+<li>// or /<em>..</em>/</li>
+<li>identifier: letter+number+$+_, the first one must be letter or _, have capital and small letter</li>
+<li>parameter(define): parameter a = 100;</li>
+</ul>
+<h1 id="variables">variables<a hidden class="anchor" aria-hidden="true" href="#variables">#</a></h1>
+<h2 id="constant">constant<a hidden class="anchor" aria-hidden="true" href="#constant">#</a></h2>
+<ul>
+<li>在整型或实数型常量的任何位置可以随意插入下划线符号“_”(但不能作为首字符)，它们就数的本身来说没有意义，但当数很长时，使用下划线更易读</li>
+<li>基数格式，通常是无符号数，这种形式的格式为 位宽, &lsquo;进制, 数字, 4&rsquo;b1001(定长), &lsquo;b1(不定长)</li>
+<li>float: 10e2</li>
+<li>string: &quot;&quot;</li>
+</ul>
+<h2 id="variablesnet-and-register">variables(net and register)<a hidden class="anchor" aria-hidden="true" href="#variablesnet-and-register">#</a></h2>
+<h3 id="net-无符号数">net (无符号数)<a hidden class="anchor" aria-hidden="true" href="#net-无符号数">#</a></h3>
+<p>&hellip;</p>
+<ul>
+<li>write</li>
+<li>tri</li>
+</ul>
+<h3 id="register">register<a hidden class="anchor" aria-hidden="true" href="#register">#</a></h3>
+<ul>
+<li>reg(无符号数)</li>
+<li>integer(int)</li>
+<li>time(无符号数)</li>
+<li>real/realtime</li>
+</ul>
+<h1 id="operation">operation<a hidden class="anchor" aria-hidden="true" href="#operation">#</a></h1>
+<ul>
+<li>
+<p>~</p>
+</li>
+<li>
+<p>/, *,</p>
+</li>
+<li>
+<p>? :</p>
+</li>
+<li>
+<p>^~ ~^ (同或)</p>
+</li>
+<li>
+<p>{}, 连接与复制</p>
+</li>
+<li>
+<p>归约: &amp;, ~&amp;, |, ~|, ^, ^~(~^)</p>
+<pre><code>  &amp;(归约与)——如果存在位值为0，那么结果为0；如果存在位值为x或z，则结果为x；否则结果为1
+  ~&amp;(归约与非)——与归约操作符&amp;相反。
+  | (归约或)——如果存在位值为1，那么结果为1；如果存在位值为x或z，则结果为x；否则结果为0。
+  ~| (归约或非)——与归约操作符 | 相反。
+  ^ (归约异或)——如果存在位值为x或z，那么结果为x；如果操作数中有偶数个1，则结果为0；否则结果为1。
+  ~^ (归约异或非)——与归约操作符 ^ 相反。
+</code></pre>
+</li>
+<li>
+<p>选择a[3:0]: use a[2], use a[1:0]</p>
+</li>
+<li>
+<p>memory[], 不可选择</p>
+</li>
+</ul>
+<h1 id="heading-1"><a hidden class="anchor" aria-hidden="true" href="#heading-1">#</a></h1>
+<ul>
+<li>call function: $(for system)monitor(&hellip;)</li>
+</ul>
+<h1 id="heading-2"><a hidden class="anchor" aria-hidden="true" href="#heading-2">#</a></h1>
+<p>(1) 只有寄存器类型的信号才可以在always和initial 语句中进行赋值，类型定义通过reg语句实现；
+(2) 采用行为级描述方式，即直接采用“+”来描述加法，{Cout，Sum}表示对位数的扩展，因为两个1 bit相加，产生的和有两位，低位放在Sum变量中，进位放在Cout 中；
+(3)  always语句一直重复执行，由敏感列表(always语句括号内的变量)中的变量触发；
+(4)  always语句从0时刻开始；
+(5) 在begin和end之间的语句是顺序执行的，属于串行语句。</p>
+<pre><code>    always@(A or B or Cin)
+        begin
+            {Cout, Sum} = A + B + Cin;
+            #10 //延时
+        end
+</code></pre>
+<h2 id="heading-3"><a hidden class="anchor" aria-hidden="true" href="#heading-3">#</a></h2>
+<p>每个过程块是由过程语句(initial或always)和语句块组成的，过程块中有下列部件：过程赋值语句——赋值语句和过程连续赋值语句；时序控制——控制块的执行及块中的语句时序；高级结构(循环，条件语句等)——描述块的功能。
+　　Verilog HDL中的多数过程模块都从属于以下两种过程语句：
+　　initial说明语句，只执行一次；
+　　always说明语句；@:</p>
+<ul>
+<li>begin/end</li>
+<li>fork-join(parallel)：延时相对与开始，disable to break</li>
+</ul>
+<p>顺序语句块和并行语句块属于不同的过程块(initial或always过程块)时，顺序语句块和并行语句块是并行执行的。
+当顺序语句块和并行语句块嵌套在同一条过程块内时，内层语句块可以看做外层语句块中的一条普通语句，内层语句块在什么时候得到执行是由外层语句块的规则所决定的；内层语句块开始执行后，其内部各条语句的执行要遵守内层语句块的规则。</p>
+<ul>
+<li>
+<h1 id="heading-4"><a hidden class="anchor" aria-hidden="true" href="#heading-4">#</a></h1>
+</li>
+<li>电平敏感事件控制方式下启动语句执行的触发条件是指定的条件表达式为真(1)。电平敏感事件控制用关键词“wait”来表示，有以下3种所示：
+　　　wait (条件表达式) 语句块；
+　　　wait (条件表达式) 行为语句；
+　　　wait (条件表达式)；</li>
+<li>边沿敏感事件触发：@(a)-a变化</li>
+</ul>
+<p>assign  Z = a &amp; b ; 		//连续赋值语句，给Z赋值 连续赋值语句执行时，只要等号右端的操作数上有事件发生(操作数值的变化)，右端表达式即被计算，如果结果值有变化，新结果就赋给等号左端的线网型变量。</p>
+<pre><code>    b&lt;=a阻塞过程赋值只能用于寄存器赋值。非阻塞赋值在所在块结束之后才能真正完成赋值操作，如例4.15中，b的值并不是立刻改变的。
+</code></pre>
+<h2 id="flow">flow<a hidden class="anchor" aria-hidden="true" href="#flow">#</a></h2>
+<blockquote>
+<ul>
+<li>begin/end</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>if-else</p>
+</li>
+<li>
+<p>case</p>
+</li>
+<li>
+<p>casez和casex。其中casez语句忽略比较表达式两边的z部分，casex语句忽略比较表达式两边的x部分和z部分，即在表达式进行比较时，不将该位的状态考虑在内。这样，在case语句表达式进行比较时，就可以灵活地设置对信号的某些位进行比较</p>
+<pre><code>  casez(a)
+  casex(a)
+</code></pre>
+</li>
+<li>
+<p>forever: loop forever</p>
+</li>
+<li>
+<p>repeat(10)</p>
+</li>
+<li>
+<p>while</p>
+</li>
+<li>
+<p>for</p>
+</li>
+</ul>
+<h1 id="结构级建模方法">结构级建模方法<a hidden class="anchor" aria-hidden="true" href="#结构级建模方法">#</a></h1>
+<ul>
+<li>一个输出：and U1(out, a, b, c) // nand, or, nor, xor, xnor,</li>
+<li>一个输入: not U(a, b, c, in) // buf</li>
+<li>三态门</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/architecture/organization/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/git&#43;/gitbook/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>ArchLinux Config | My Blog Site</title>
+<meta name="keywords" content="Arch">
+<meta name="description" content=" ">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/linux/arch/arch-config/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/linux/arch/arch-config/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="ArchLinux Config" />
+<meta property="og:description" content=" " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/linux/arch/arch-config/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-27T19:10:29+08:00" />
+<meta property="article:modified_time" content="2023-03-27T19:10:29+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="ArchLinux Config"/>
+<meta name="twitter:description" content=" "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "ArchLinux Config",
+      "item": "http://localhost:1313/posts/computer/linux/arch/arch-config/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ArchLinux Config",
+  "name": "ArchLinux Config",
+  "description": " ",
+  "keywords": [
+    "Arch"
+  ],
+  "articleBody": "用户 pacman -S sudo useradd -m -G wheel -s /bin/bash … (wheel 附加组可 sudo，以 root 用户执行命令 -m 同时创建用户家目录) passwd ..(name) 修改 sudo 权限: vim /etc/sudoers Uncomment to allow members of group wheel to execute any command 去%wheel前#\n源 vim /etc/pacman.conf 文末： [multilib]去# (32 bits support) archlinuxcn [archlinuxcn] # The Chinese Arch Linux communities packages. # SigLevel = Optional TrustAll #SigLevel = Optional TrustedOnly Include = /etc/pacman.d/archlinuxcn(need created) - vim /etc/pacman.d/archlinuxcn: # 官方源 Server = http://repo.archlinuxcn.org/$arch # 163 源 Server = http://mirrors.163.com/archlinux-cn/$arch # 清华大学 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch 安装 archlinuxcn-keyring pacman -Syyu 桌面 sudo pacman -S plasma-meta konsole yakuake dolphin\nfor wayland: plasma-wayland-session egl-wayland(nvidia)\n可选：kde-applications\nsystemctl enable sddm\nsystemctl start sddm\nnetwork systemctl disable iwd systemctl stop iwd sudo systemctl enable –now NetworkManager (确保先启动 NetworkManager，并进行网络连接 若 iwd 已经与 NetworkManager 冲突 则执行完上一步重启一下电脑即可。) base software yay compiler git clone https://aur.archlinux.org/yay.git cd yay makepkg -si pacman -S yay 源：yay –aururl “https://aur.tuna.tsinghua.edu.cn” –save (https://aur.archlinux.org) 查看：yay -P -g(位于 ~/.config/yay/config.json) yay -Syu\nyay -S google-chrome ntfs-3g #识别NTFS格式的硬盘 fzf peazip ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip #安装ark可选依赖 需要注意的是解压 windows 下的压缩包，可能会乱码，安装 ark 的可选依赖之一 unarchiver，使用 unar 可以避免这个问题 sudo pacman -S unarchiver then: unar xxx.zip packagekit-qt5 packagekit appstream-qt appstream #确保Discover(软件中心)可用, 需重启 gwenview deepin-screenshot flameshot cheese vlc tlp okular(/calibre) neofetch Foliate (sudo systemctl start tlp.service) vim neovim kate bind git libconfig wget curl npm exfat-utils cmake ctags nodejs net-tools(ifconfig) kdeconnect DNS vim 编辑/etc/resolv.conf，删除已有条目，并将如下内容加入其中 nameserver 8.8.8.8 nameserver 2001:4860:4860::8888 nameserver 8.8.4.4 nameserver 2001:4860:4860::8844 如果你的路由器可以自动处理 DNS,resolvconf 会在每次网络连接时用路由器的设置覆盖本机/etc/resolv.conf 中的设置，执行如下命令加入不可变标志，使其不能覆盖如上加入的配置 sudo chattr +i /etc/resolv.conf\ninput fcitx+fcitx-im+fcitx-sunpinyin(fcitx-qt5 fcitx-configtool) kcm-fcitx fcitx-qt4+fcitx-sogoupinyin(yay)\nfictx5-im (fictx5+fictx5-gtk/qt+fcitx5-configtool)\nfcitx5-im #基础包组 fcitx5-chinese-addons #官方中文输入引擎 fcitx5-anthy #日文输入引擎 fcitx5-pinyin-moegirl #萌娘百科词库 二刺猿必备(ArchLinuxCn) fcitx5-pinyin-zhwiki #中文维基百科词库 fcitx5-material-color #主题 fcitx5-nord(Setting -\u003e Location -\u003e input method -\u003e Configure addons -\u003e Classic user interface -\u003e Theme.) fcitx5-rime 设置添加输入法，云拼音，颜色\nEdit /etc/environment and add the following lines:\nGTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS=@im=fcitx SDL_IM_MODULE=fcitx For vim: vim-fcitx (set ttimeoutlen=100) terminal vim /etc/profile: export EDITOR=‘vim’ copy zshrc, tmux.conf, nvim, .tmux(fold)\nzsh yay -S zsh sudo chsh -s /bin/zsh username yay -S oh-my-zsh-git cp /usr/share/oh-my-zsh/zshrc ~/.zshrc powerlevel10k git clone –depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k or: git clone –depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k yakuake –get theme gruvbox look ../zsh.md\ntranslation\nyay -S node-fanyi or sudo npm install fanyi -g https://github.com/afc163/fanyi\ntmux\n(https://wiki.archlinux.org/title/Tmux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%94%A8systemd%E5%90%8E%E5%8F%B0%E8%87%AA%E5%90%AFtmux) start with tmux@username.service truecolor: look vim/UI, tmux https://github.com/starship/starship\nbluetooth b sudo pacman -S bluez bluez-utils sudo systemctl enable --now bluetooth 如果要连接蓝牙音频设备，需要安装 pulseaudio-bluetooth 并重启 pulseaudio。 sudo pacman -S pulseaudio-bluetooth pulseaudio -k 声卡 别动(有问题，可安装：alsa-utils alsa-plugins pulseaudio-alsa pavucontrol-qt)(在 pavucontrol-qt 中调节) 显卡 查看：lspci | grep VGA\n英特尔： sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel\namd: https://archlinuxstudio.github.io/ArchLinuxTutorial/#/rookie/graphic_driver\nnvidia: sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils\nfor new?: yay -S nvidia-beta nvidia-utils-beta nvidia-dkms\nchange: yay -S optimus-manager optimus-manager-qt\n安装完成后重启即可使用。optimus-manager 安装完成后会默认 enable optimus-manager 的服务，你可在重启前检查其状态，若没有 enable 则手动将其 enable。重启后在菜单栏搜索 optimus-manager 点击即可使用。可在其设置中设置开机自动启动。\nsudo systemctl enable optimus-manager\n动态切换：\nsudo pacman -S nvidia-prime\nprime-run some_program #使用 prime-run 前缀来用独显运行某些程序\n美化 proxy sudo pacman -S proxychains-ng sudo vim /etc/proxychains.conf 把配置文件中最后一行改为本地代理的 ip 和端口，如 socks5 127.0.0.1 1089 proxychains systemsettings5 #通过代理打开系统设置 壁纸 在桌面右键，选择配置桌面。在新出现的窗口中右下角选择添加图片可以选择你想要的图片。其中位置一项选择’缩放，保持比例’，背景一项选择’模糊’。这样你就可以拥有一个成比例，且边缘带有高斯模糊的漂亮的桌面壁纸。 收集的 全局 https://github.com/vinceliuice/Tela-icon-theme https://github.com/vinceliuice/Layan-kde 设置外观 layan color: gruvbox SDDM 欢迎屏幕(splashscreen) widgets cpu, memory, network, ip yay -S plasma5-applets-netspeed sudo pacman -S ksysguard konsole gruvbox konsole, yakuake(.config/yakuakerc) .locla/share/konsole have profile fonts 无衬线：西文 Noto Sans，中文 Noto Sans CJK\n衬线：西文 Noto Serif，中文 Noto Serif CJK\n等宽：西文 Iosevka，中文 Noto Sans Mono CJK\nttf-twemoji\nttf-nerd-fonts-symbols\nttf-Iosevka\nthan use .config/fontconfig/font.conf yes!\nttf-ibm-plex + nerd\nttf-jetbrains-mono + nerd\nttf-liberation ttf-wps-fonts ?\nhttps://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#fontconfig_%E8%AE%BE%E7%BD%AE\nhttps://wiki.archlinux.org/title/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)\n~/.config/fontconfig /etc/fonts/font.conf\nno:\nwqy-zenhei #安装几个开源中文字体 一般装上文泉驿就能解决大多 wine 应用中文方块的问题 adobe-source-han-sans-cn-fonts - 无衬线体(使用) adobe-source-han-sans-tw-fonts - 思源黑体繁体中文部分 adobe-source-han-serif-cn-fonts - 衬线体(打印) 思源宋体简体中文部分 adobe-source-han-serif-tw-fonts - 思源宋体繁体中文部分 lattw-dock truecolor:\nprintf “\\x1b[38;2;255;100;0mTRUECOLOR\\x1b[0m\\n” printf “\\x1b[${bg};2;${red};${green};${blue}m\\n” git look Git+/git/ssh.md professional sudo pacman -S libreoffice-still #稳定版\nsudo pacman -S libreoffice-fresh #尝鲜版\nyay -S onlyoffice-bin\nsudo pacman -S wps-office ttf-wps-fonts\n如果你下载了国际版本缺失中文：\nsudo pacman -S wps-office-mui-zh-cn\nvim (c, c++, java) (python, javascript) (scheme, lua, vimscript) (markdown, latex)\nnvim python-pynvim(pip install pynvim)(npm -i -g neovim)\nneoformart: prettier eslint lua-format(aur) yapf(python)\nc/cpp: lspinstall clang, sudo pacman -S clangd, cppchek(lint), python-cpplint(lint)\npython: lspinstall pylsp, sudo pacman -S python-pylint(lint)\njava: checkstyle(lint)\nlua: lspinstall sumneko_lua,\njavascript: lspinstall quick_lint_js, pacman -S eslint(lint)\nhtml: lspinstall html, pacman -S tidy(lint)\ncss: lspinstall cssls, stylelint(lint)\nvim: lspinstall vimls, sudo pacman -S vint(lint)\nmarkdown: lspinstall prosemd_lsp, nodejs-markdownlintcli(aur)(lint)\nlatex: lspinstall\nhttps://wiki.archlinux.org/title/Neovim install lsp\ncheckHealth:\nruby python3 go python python-pip openjdk-doc openjdk-src(include jre-openjdk jdk-openjdk) dolphin https://wiki.archlinux.org/title/Dolphin#File_previews kdegraphics-thumbnailers dolphin-plug pdf poppler poppler-data ",
+  "wordCount" : "677",
+  "inLanguage": "en",
+  "datePublished": "2023-03-27T19:10:29+08:00",
+  "dateModified": "2023-03-27T19:10:29+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/linux/arch/arch-config/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      ArchLinux Config
+    </h1>
+    <div class="post-description">
+       
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-03-27 19:10:29 &#43;0800 CST&#39;&gt;March 27, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;4 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Linux/arch/arch-config.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#%e7%94%a8%e6%88%b7" aria-label="用户">用户</a></li>
+                <li>
+                    <a href="#%e6%ba%90" aria-label="源">源</a></li>
+                <li>
+                    <a href="#%e6%a1%8c%e9%9d%a2" aria-label="桌面">桌面</a></li>
+                <li>
+                    <a href="#network" aria-label="network">network</a></li>
+                <li>
+                    <a href="#base-software" aria-label="base software">base software</a><ul>
+                        
+                <li>
+                    <a href="#yay" aria-label="yay">yay</a></li></ul>
+                </li>
+                <li>
+                    <a href="#dns" aria-label="DNS">DNS</a></li>
+                <li>
+                    <a href="#input" aria-label="input">input</a></li>
+                <li>
+                    <a href="#terminal" aria-label="terminal">terminal</a></li>
+                <li>
+                    <a href="#bluetooth" aria-label="bluetooth">bluetooth</a></li>
+                <li>
+                    <a href="#%e5%a3%b0%e5%8d%a1" aria-label="声卡">声卡</a></li>
+                <li>
+                    <a href="#%e6%98%be%e5%8d%a1" aria-label="显卡">显卡</a></li>
+                <li>
+                    <a href="#%e7%be%8e%e5%8c%96" aria-label="美化">美化</a></li></ul>
+                    
+                <li>
+                    <a href="#git" aria-label="git">git</a></li>
+                <li>
+                    <a href="#professional" aria-label="professional">professional</a></li>
+                <li>
+                    <a href="#vim" aria-label="vim">vim</a></li>
+                <li>
+                    <a href="#dolphin" aria-label="dolphin">dolphin</a></li>
+                <li>
+                    <a href="#pdf" aria-label="pdf">pdf</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="用户">用户<a hidden class="anchor" aria-hidden="true" href="#用户">#</a></h2>
+<ul>
+<li>pacman -S sudo</li>
+<li>useradd -m -G wheel -s /bin/bash &hellip; (wheel 附加组可 sudo，以 root 用户执行命令 -m 同时创建用户家目录)</li>
+<li>passwd ..(name)</li>
+<li>修改 sudo 权限: vim /etc/sudoers</li>
+</ul>
+<p><code>Uncomment to allow members of group wheel to execute any command 去%wheel前#</code></p>
+<h2 id="源">源<a hidden class="anchor" aria-hidden="true" href="#源">#</a></h2>
+<ol>
+<li>vim /etc/pacman.conf 文末：</li>
+</ol>
+<ul>
+<li>[multilib]去# (32 bits support)</li>
+</ul>
+<ol start="2">
+<li>archlinuxcn</li>
+</ol>
+<pre tabindex="0"><code>[archlinuxcn]
+# The Chinese Arch Linux communities packages.
+# SigLevel = Optional TrustAll
+#SigLevel = Optional TrustedOnly
+Include = /etc/pacman.d/archlinuxcn(need created)
+
+- vim /etc/pacman.d/archlinuxcn:
+# 官方源
+Server = http://repo.archlinuxcn.org/$arch
+# 163 源
+Server = http://mirrors.163.com/archlinux-cn/$arch
+# 清华大学
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+</code></pre><ul>
+<li>安装 archlinuxcn-keyring</li>
+<li>pacman -Syyu</li>
+</ul>
+<h2 id="桌面">桌面<a hidden class="anchor" aria-hidden="true" href="#桌面">#</a></h2>
+<ul>
+<li>
+<p>sudo pacman -S plasma-meta konsole yakuake dolphin</p>
+</li>
+<li>
+<p>for wayland: plasma-wayland-session egl-wayland(nvidia)</p>
+</li>
+<li>
+<p>可选：kde-applications</p>
+</li>
+<li>
+<p>systemctl enable sddm</p>
+</li>
+<li>
+<p>systemctl start sddm</p>
+</li>
+</ul>
+<h2 id="network">network<a hidden class="anchor" aria-hidden="true" href="#network">#</a></h2>
+<ul>
+<li>systemctl disable iwd</li>
+<li>systemctl stop iwd</li>
+<li>sudo systemctl enable &ndash;now NetworkManager (确保先启动 NetworkManager，并进行网络连接 若 iwd 已经与 NetworkManager 冲突 则执行完上一步重启一下电脑即可。)</li>
+</ul>
+<h2 id="base-software">base software<a hidden class="anchor" aria-hidden="true" href="#base-software">#</a></h2>
+<h3 id="yay">yay<a hidden class="anchor" aria-hidden="true" href="#yay">#</a></h3>
+<ol>
+<li>compiler</li>
+</ol>
+<pre tabindex="0"><code>git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+</code></pre><ol start="2">
+<li>pacman -S yay</li>
+</ol>
+<ul>
+<li>源：yay &ndash;aururl &ldquo;<a href="https://aur.tuna.tsinghua.edu.cn">https://aur.tuna.tsinghua.edu.cn</a>&rdquo; &ndash;save (<a href="https://aur.archlinux.org">https://aur.archlinux.org</a>)</li>
+<li>查看：yay -P -g(位于 ~/.config/yay/config.json)</li>
+</ul>
+<blockquote>
+<p>yay -Syu</p>
+</blockquote>
+<pre tabindex="0"><code>yay -S google-chrome
+ntfs-3g #识别NTFS格式的硬盘
+fzf peazip ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip #安装ark可选依赖
+需要注意的是解压 windows 下的压缩包，可能会乱码，安装 ark 的可选依赖之一 unarchiver，使用 unar 可以避免这个问题
+sudo pacman -S unarchiver then: unar xxx.zip
+packagekit-qt5 packagekit appstream-qt appstream #确保Discover(软件中心)可用, 需重启
+gwenview deepin-screenshot flameshot cheese vlc
+tlp okular(/calibre) neofetch Foliate (sudo systemctl start tlp.service)
+vim neovim kate bind
+git libconfig wget curl npm exfat-utils cmake ctags nodejs
+net-tools(ifconfig) kdeconnect
+</code></pre><h2 id="dns">DNS<a hidden class="anchor" aria-hidden="true" href="#dns">#</a></h2>
+<ul>
+<li>vim 编辑/etc/resolv.conf，删除已有条目，并将如下内容加入其中</li>
+</ul>
+<pre tabindex="0"><code>nameserver 8.8.8.8
+nameserver 2001:4860:4860::8888
+nameserver 8.8.4.4
+nameserver 2001:4860:4860::8844
+</code></pre><ul>
+<li>如果你的路由器可以自动处理 DNS,resolvconf 会在每次网络连接时用路由器的设置覆盖本机/etc/resolv.conf 中的设置，执行如下命令加入不可变标志，使其不能覆盖如上加入的配置</li>
+</ul>
+<p><code>sudo chattr +i /etc/resolv.conf</code></p>
+<h2 id="input">input<a hidden class="anchor" aria-hidden="true" href="#input">#</a></h2>
+<ol>
+<li>
+<p>fcitx+fcitx-im+fcitx-sunpinyin(fcitx-qt5 fcitx-configtool) kcm-fcitx fcitx-qt4+fcitx-sogoupinyin(yay)</p>
+</li>
+<li>
+<p>fictx5-im (fictx5+fictx5-gtk/qt+fcitx5-configtool)</p>
+</li>
+</ol>
+<pre tabindex="0"><code>fcitx5-im #基础包组
+fcitx5-chinese-addons #官方中文输入引擎
+fcitx5-anthy #日文输入引擎
+fcitx5-pinyin-moegirl #萌娘百科词库 二刺猿必备(ArchLinuxCn)
+fcitx5-pinyin-zhwiki #中文维基百科词库
+fcitx5-material-color #主题
+fcitx5-nord(Setting -&gt; Location -&gt; input method -&gt; Configure addons -&gt; Classic user interface -&gt; Theme.)
+fcitx5-rime
+</code></pre><blockquote>
+<p>设置添加输入法，云拼音，颜色</p>
+</blockquote>
+<blockquote>
+<p>Edit /etc/environment and add the following lines:</p>
+</blockquote>
+<pre tabindex="0"><code>GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+</code></pre><ul>
+<li>For vim: vim-fcitx (set ttimeoutlen=100)</li>
+</ul>
+<h2 id="terminal">terminal<a hidden class="anchor" aria-hidden="true" href="#terminal">#</a></h2>
+<ul>
+<li>vim /etc/profile: export EDITOR=&lsquo;vim&rsquo;</li>
+</ul>
+<blockquote>
+<p>copy zshrc, tmux.conf, nvim, .tmux(fold)</p>
+</blockquote>
+<ol start="2">
+<li>zsh</li>
+</ol>
+<ul>
+<li>yay -S zsh</li>
+<li>sudo chsh -s /bin/zsh username</li>
+<li>yay -S oh-my-zsh-git</li>
+<li>cp /usr/share/oh-my-zsh/zshrc ~/.zshrc</li>
+<li>powerlevel10k</li>
+<li>git clone &ndash;depth=1 <a href="https://github.com/romkatv/powerlevel10k.git">https://github.com/romkatv/powerlevel10k.git</a> ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k</li>
+<li>or: git clone &ndash;depth=1 <a href="https://gitee.com/romkatv/powerlevel10k.git">https://gitee.com/romkatv/powerlevel10k.git</a> ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k</li>
+<li>yakuake &ndash;get theme gruvbox</li>
+</ul>
+<blockquote>
+<p>look <code>../zsh.md</code></p>
+</blockquote>
+<ol start="3">
+<li>
+<p>translation</p>
+<ul>
+<li>yay -S node-fanyi or sudo npm install fanyi -g
+<blockquote>
+<p><a href="https://github.com/afc163/fanyi">https://github.com/afc163/fanyi</a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>tmux</p>
+</li>
+</ol>
+<ul>
+<li>(<a href="https://wiki.archlinux.org/title/Tmux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%94%A8systemd%E5%90%8E%E5%8F%B0%E8%87%AA%E5%90%AFtmux">https://wiki.archlinux.org/title/Tmux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%94%A8systemd%E5%90%8E%E5%8F%B0%E8%87%AA%E5%90%AFtmux</a>)</li>
+<li>start with <a href="mailto:tmux@username.service">tmux@username.service</a></li>
+</ul>
+<ol start="5">
+<li>truecolor:</li>
+</ol>
+<ul>
+<li>look vim/UI, tmux</li>
+</ul>
+<blockquote>
+<p><code>https://github.com/starship/starship</code></p>
+</blockquote>
+<h2 id="bluetooth">bluetooth<a hidden class="anchor" aria-hidden="true" href="#bluetooth">#</a></h2>
+<ol>
+<li>b</li>
+</ol>
+<pre tabindex="0"><code>sudo pacman -S bluez bluez-utils
+sudo systemctl enable --now bluetooth
+</code></pre><ol start="2">
+<li>如果要连接蓝牙音频设备，需要安装 pulseaudio-bluetooth 并重启 pulseaudio。</li>
+</ol>
+<pre tabindex="0"><code>sudo pacman -S pulseaudio-bluetooth
+pulseaudio -k
+</code></pre><h2 id="声卡">声卡<a hidden class="anchor" aria-hidden="true" href="#声卡">#</a></h2>
+<ul>
+<li>别动(有问题，可安装：alsa-utils alsa-plugins pulseaudio-alsa pavucontrol-qt)(在 pavucontrol-qt 中调节)</li>
+</ul>
+<h2 id="显卡">显卡<a hidden class="anchor" aria-hidden="true" href="#显卡">#</a></h2>
+<ul>
+<li>
+<p>查看：lspci | grep VGA</p>
+</li>
+<li>
+<p>英特尔： sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel</p>
+</li>
+<li>
+<p>amd: <code>https://archlinuxstudio.github.io/ArchLinuxTutorial/#/rookie/graphic_driver</code></p>
+</li>
+<li>
+<p>nvidia: sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils</p>
+</li>
+<li>
+<p>for new?: yay -S nvidia-beta nvidia-utils-beta nvidia-dkms</p>
+</li>
+<li>
+<p>change: yay -S optimus-manager optimus-manager-qt</p>
+</li>
+<li>
+<p>安装完成后重启即可使用。optimus-manager 安装完成后会默认 enable optimus-manager 的服务，你可在重启前检查其状态，若没有 enable 则手动将其 enable。重启后在菜单栏搜索 optimus-manager 点击即可使用。可在其设置中设置开机自动启动。</p>
+</li>
+<li>
+<p>sudo systemctl enable optimus-manager</p>
+</li>
+<li>
+<p>动态切换：</p>
+</li>
+<li>
+<p>sudo pacman -S nvidia-prime</p>
+</li>
+<li>
+<p>prime-run some_program #使用 prime-run 前缀来用独显运行某些程序</p>
+</li>
+</ul>
+<h2 id="美化">美化<a hidden class="anchor" aria-hidden="true" href="#美化">#</a></h2>
+<ol>
+<li>proxy</li>
+</ol>
+<ul>
+<li>sudo pacman -S proxychains-ng</li>
+<li>sudo vim /etc/proxychains.conf</li>
+<li>把配置文件中最后一行改为本地代理的 ip 和端口，如 socks5 127.0.0.1 1089</li>
+<li>proxychains systemsettings5 #通过代理打开系统设置</li>
+</ul>
+<ol start="2">
+<li>壁纸</li>
+</ol>
+<ul>
+<li>在桌面右键，选择配置桌面。在新出现的窗口中右下角选择添加图片可以选择你想要的图片。其中位置一项选择&rsquo;缩放，保持比例&rsquo;，背景一项选择&rsquo;模糊&rsquo;。这样你就可以拥有一个成比例，且边缘带有高斯模糊的漂亮的桌面壁纸。</li>
+<li>收集的</li>
+</ul>
+<ol start="3">
+<li>全局</li>
+</ol>
+<ul>
+<li><code>https://github.com/vinceliuice/Tela-icon-theme</code></li>
+<li><code>https://github.com/vinceliuice/Layan-kde</code></li>
+<li>设置外观 layan</li>
+<li>color: gruvbox</li>
+<li>SDDM</li>
+<li>欢迎屏幕(splashscreen)</li>
+</ul>
+<ol start="4">
+<li>widgets</li>
+</ol>
+<ul>
+<li>cpu, memory, network, ip</li>
+<li>yay -S plasma5-applets-netspeed</li>
+<li>sudo pacman -S ksysguard</li>
+</ul>
+<ol start="5">
+<li>konsole</li>
+</ol>
+<ul>
+<li>gruvbox konsole, yakuake(.config/yakuakerc)</li>
+<li>.locla/share/konsole have profile</li>
+</ul>
+<ol start="6">
+<li>fonts</li>
+</ol>
+<ul>
+<li>
+<p>无衬线：西文 Noto Sans，中文 Noto Sans CJK</p>
+</li>
+<li>
+<p>衬线：西文 Noto Serif，中文 Noto Serif CJK</p>
+</li>
+<li>
+<p>等宽：西文 Iosevka，中文 Noto Sans Mono CJK</p>
+</li>
+<li>
+<p>ttf-twemoji</p>
+</li>
+<li>
+<p>ttf-nerd-fonts-symbols</p>
+</li>
+<li>
+<p>ttf-Iosevka</p>
+</li>
+<li>
+<p>than use .config/fontconfig/font.conf yes!</p>
+</li>
+<li>
+<p>ttf-ibm-plex + nerd</p>
+</li>
+<li>
+<p>ttf-jetbrains-mono + nerd</p>
+</li>
+<li>
+<p>ttf-liberation ttf-wps-fonts ?</p>
+</li>
+<li>
+<p><code>https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#fontconfig_%E8%AE%BE%E7%BD%AE</code></p>
+</li>
+<li>
+<p><code>https://wiki.archlinux.org/title/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</code></p>
+</li>
+</ul>
+<blockquote>
+<p>~/.config/fontconfig /etc/fonts/font.conf</p>
+</blockquote>
+<p>no:</p>
+<ul>
+<li>wqy-zenhei #安装几个开源中文字体 一般装上文泉驿就能解决大多 wine 应用中文方块的问题</li>
+<li>adobe-source-han-sans-cn-fonts - 无衬线体(使用) adobe-source-han-sans-tw-fonts - 思源黑体繁体中文部分</li>
+<li>adobe-source-han-serif-cn-fonts - 衬线体(打印) 思源宋体简体中文部分 adobe-source-han-serif-tw-fonts - 思源宋体繁体中文部分</li>
+</ul>
+<ol start="7">
+<li>lattw-dock</li>
+</ol>
+<p>truecolor:</p>
+<ul>
+<li>printf &ldquo;\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n&rdquo;</li>
+<li>printf &ldquo;\x1b[${bg};2;${red};${green};${blue}m\n&rdquo;</li>
+</ul>
+<h1 id="git">git<a hidden class="anchor" aria-hidden="true" href="#git">#</a></h1>
+<ul>
+<li>look Git+/git/ssh.md</li>
+</ul>
+<h1 id="professional">professional<a hidden class="anchor" aria-hidden="true" href="#professional">#</a></h1>
+<ul>
+<li>
+<p>sudo pacman -S libreoffice-still #稳定版</p>
+</li>
+<li>
+<p>sudo pacman -S libreoffice-fresh #尝鲜版</p>
+</li>
+<li>
+<p>yay -S onlyoffice-bin</p>
+</li>
+<li>
+<p>sudo pacman -S wps-office ttf-wps-fonts</p>
+</li>
+<li>
+<p>如果你下载了国际版本缺失中文：</p>
+</li>
+<li>
+<p>sudo pacman -S wps-office-mui-zh-cn</p>
+</li>
+</ul>
+<h1 id="vim">vim<a hidden class="anchor" aria-hidden="true" href="#vim">#</a></h1>
+<p>(c, c++, java)
+(python, javascript)
+(scheme, lua, vimscript)
+(markdown, latex)</p>
+<ul>
+<li>
+<p>nvim python-pynvim(pip install pynvim)(npm -i -g neovim)</p>
+</li>
+<li>
+<p>neoformart: prettier eslint lua-format(aur) yapf(python)</p>
+</li>
+<li>
+<p>c/cpp: lspinstall clang, sudo pacman -S clangd, cppchek(lint), python-cpplint(lint)</p>
+</li>
+<li>
+<p>python: lspinstall pylsp, sudo pacman -S python-pylint(lint)</p>
+</li>
+<li>
+<p>java: checkstyle(lint)</p>
+</li>
+<li>
+<p>lua: lspinstall sumneko_lua,</p>
+</li>
+<li>
+<p>javascript: lspinstall quick_lint_js, pacman -S eslint(lint)</p>
+</li>
+<li>
+<p>html: lspinstall html, pacman -S tidy(lint)</p>
+</li>
+<li>
+<p>css: lspinstall cssls, stylelint(lint)</p>
+</li>
+<li>
+<p>vim: lspinstall vimls, sudo pacman -S vint(lint)</p>
+</li>
+<li>
+<p>markdown: lspinstall prosemd_lsp, nodejs-markdownlintcli(aur)(lint)</p>
+</li>
+<li>
+<p>latex: lspinstall</p>
+</li>
+<li>
+<p><code>https://wiki.archlinux.org/title/Neovim</code> install lsp</p>
+</li>
+</ul>
+<blockquote>
+<p>checkHealth:</p>
+</blockquote>
+<ul>
+<li>ruby python3 go</li>
+<li>python python-pip</li>
+<li>openjdk-doc openjdk-src(include jre-openjdk jdk-openjdk)</li>
+</ul>
+<h1 id="dolphin">dolphin<a hidden class="anchor" aria-hidden="true" href="#dolphin">#</a></h1>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/Dolphin#File_previews">https://wiki.archlinux.org/title/Dolphin#File_previews</a></li>
+<li>kdegraphics-thumbnailers</li>
+<li>dolphin-plug</li>
+</ul>
+<h1 id="pdf">pdf<a hidden class="anchor" aria-hidden="true" href="#pdf">#</a></h1>
+<ul>
+<li>poppler</li>
+<li>poppler-data</li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/arch/">Arch</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/linux/arch/arch-more/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>ArchLinux 软件，问题</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/linux/arch/arch-install/">
+    <span class="title">Next »</span>
+    <br>
+    <span>ArchLinux Install</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

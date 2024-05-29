@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/ide&#43;/gdb/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/ide&#43;/gdb/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/ide+/gdb/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "gdb 相关 插桩。。。\nfile bin 加载名为 bin 的二进制文件\nCTRL-C 中断程序\nrun/r 运行\nnext/n 执行当前行，停在下一行 （step over）\nstep/s 执行当前行，进入下一层函数 （step in）\nfinish 执行直至离开当前函数\ncontinue/c 继续执行\nbreak/b N 在第 N 行加断点\nbreak/b f 在函数 f 处加断点\ndelete 删除所有断点\nwhere 显示在哪\ncreate file gcc -g -o hello hello.c run gdb hello cat file list l breakpoints info breakpoints b line or b test.c line b function disable enable auto display: display name Start b run(now you can input) n 2(do 2) s 2(enter function) u 行号 set args 8000 ../HTML 起源 最近在编写代码时遇到一个很诡异的问题，简单的多线程，但是却 core 在了“printf”语句和 atomic 语句，这个明显是不合理的。所以试图用 gdb 进行多线程调试，找出问题所在。\n简单介绍 先介绍一下 GDB 多线程调试的基本命令。\ninfo threads 显示当前可调试的所有线程，每个线程会有一个 GDB 为其分配的 ID，后面操作线程的时候会用到这个 ID。 前面有*的是当前调试的线程。\nthread ID 切换当前调试的线程为指定 ID 的线程。 注意：切换到不同的线程 id，使用 bt 可以打印该 id 的堆栈信息。\nbreak thread_test.c:123 thread all 在所有线程中相应的行上设置断点\nthread apply ID1 ID2 command 让一个或者多个线程执行 GDB 命令 command。\nthread apply all command 让所有被调试线程执行 GDB 命令 command。 如：thread apply all bt 打印所有线程的堆栈信息。\nset scheduler-locking off|on|step：估计是实际使用过多线程调试的人都可以发现，在使用 step 或者 continue -命令调试当前被调试线程的时候，其他线程也是同时执行的，怎么只让被调试程序执行呢？通过这个命令就可以实现这个需求。off\n不锁定任何线程，也就是所有线程都执行，这是默认值。 on\n只有当前被调试程序会执行。 step 在单步的时候，除了 next\n过一个函数的情况(熟悉情况的人可能知道，这其实是一个设置断点然后 continue\n的行为)以外，只有当前线程会执行。\n使用 gdb 运行带参数的二进制：例如一个程序名为 prog 参数为 -l a -C abc，使用 gdb prog 之后，在 gdb 界面输入 set args -l a -C abc，后面就可以 r 了。\n查看汇编指令 disassemble，往往需要配合查看寄存器信息 info register 和栈信息 info frame 0\n修改输出 core 的位置： /proc/sys/kernel/core_pattern，可以修改为 echo “/corefile/core-%e-%p-%t” \u003e /proc/sys/kernel/core_pattern https://startheap.com/2019/03/02/GDB-debugging-multi-threaded-core-summary/\nhttps://zhuanlan.zhihu.com/p/61352887 cat variable p name examine(简写为 x)可以用来查看内存地址中的值。语法如下： auto display: display name x/[n][f][u] addr 其中：\nn 表示要显示的内存单元数，默认值为 1 f 表示要打印的格式，前面已经提到了格式控制字符 u 要打印的单元长度 addr 内存地址 单元类型常见有如下：\nb 字节 h 半字，即双字节 w 字，即四字节 g 八字节\n",
+  "wordCount" : "232",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/ide+/gdb/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;232 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/IDE&#43;/gdb.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-file">create file</a></li>
+    <li><a href="#run">run</a></li>
+    <li><a href="#cat-file">cat file</a></li>
+    <li><a href="#breakpoints">breakpoints</a></li>
+    <li><a href="#start">Start</a></li>
+    <li><a href="#set-args">set args</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="gdb-相关">gdb 相关<a hidden class="anchor" aria-hidden="true" href="#gdb-相关">#</a></h1>
+<blockquote>
+<p>插桩。。。</p>
+</blockquote>
+<ul>
+<li>
+<p>file bin 加载名为 bin 的二进制文件</p>
+</li>
+<li>
+<p>CTRL-C 中断程序</p>
+</li>
+<li>
+<p>run/r 运行</p>
+</li>
+<li>
+<p>next/n 执行当前行，停在下一行 （step over）</p>
+</li>
+<li>
+<p>step/s 执行当前行，进入下一层函数 （step in）</p>
+</li>
+<li>
+<p>finish 执行直至离开当前函数</p>
+</li>
+<li>
+<p>continue/c 继续执行</p>
+</li>
+<li>
+<p>break/b N 在第 N 行加断点</p>
+</li>
+<li>
+<p>break/b f 在函数 f 处加断点</p>
+</li>
+<li>
+<p>delete 删除所有断点</p>
+</li>
+<li>
+<p>where 显示在哪</p>
+</li>
+</ul>
+<h2 id="create-file">create file<a hidden class="anchor" aria-hidden="true" href="#create-file">#</a></h2>
+<ul>
+<li>gcc -g -o hello hello.c</li>
+</ul>
+<h2 id="run">run<a hidden class="anchor" aria-hidden="true" href="#run">#</a></h2>
+<ul>
+<li>gdb hello</li>
+</ul>
+<h2 id="cat-file">cat file<a hidden class="anchor" aria-hidden="true" href="#cat-file">#</a></h2>
+<ul>
+<li>list</li>
+<li>l</li>
+</ul>
+<h2 id="breakpoints">breakpoints<a hidden class="anchor" aria-hidden="true" href="#breakpoints">#</a></h2>
+<ul>
+<li>info breakpoints</li>
+<li>b line or b test.c line</li>
+<li>b function</li>
+<li>disable</li>
+<li>enable</li>
+<li>auto display: display name</li>
+</ul>
+<h2 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h2>
+<ul>
+<li>b</li>
+<li>run(now you can input)</li>
+<li>n 2(do 2)</li>
+<li>s 2(enter function)</li>
+<li>u 行号</li>
+</ul>
+<h2 id="set-args">set args<a hidden class="anchor" aria-hidden="true" href="#set-args">#</a></h2>
+<ul>
+<li>8000 ../HTML</li>
+</ul>
+<p>起源
+最近在编写代码时遇到一个很诡异的问题，简单的多线程，但是却 core 在了“printf”语句和 atomic 语句，这个明显是不合理的。所以试图用 gdb 进行多线程调试，找出问题所在。</p>
+<p>简单介绍
+先介绍一下 GDB 多线程调试的基本命令。</p>
+<p>info threads 显示当前可调试的所有线程，每个线程会有一个 GDB 为其分配的 ID，后面操作线程的时候会用到这个 ID。 前面有*的是当前调试的线程。</p>
+<p>thread ID 切换当前调试的线程为指定 ID 的线程。
+注意：切换到不同的线程 id，使用 bt 可以打印该 id 的堆栈信息。</p>
+<p>break thread_test.c:123 thread all 在所有线程中相应的行上设置断点</p>
+<p>thread apply ID1 ID2 command 让一个或者多个线程执行 GDB 命令 command。</p>
+<p>thread apply all command 让所有被调试线程执行 GDB 命令 command。
+如：thread apply all bt 打印所有线程的堆栈信息。</p>
+<ul>
+<li>set scheduler-locking</li>
+<li>off|on|step：估计是实际使用过多线程调试的人都可以发现，在使用 step 或者 continue</li>
+</ul>
+<p>-命令调试当前被调试线程的时候，其他线程也是同时执行的，怎么只让被调试程序执行呢？通过这个命令就可以实现这个需求。off</p>
+<ul>
+<li>
+<p>不锁定任何线程，也就是所有线程都执行，这是默认值。 on</p>
+</li>
+<li>
+<p>只有当前被调试程序会执行。 step 在单步的时候，除了 next</p>
+</li>
+<li>
+<p>过一个函数的情况(熟悉情况的人可能知道，这其实是一个设置断点然后 continue</p>
+</li>
+<li>
+<p>的行为)以外，只有当前线程会执行。</p>
+</li>
+</ul>
+<p>使用 gdb 运行带参数的二进制：例如一个程序名为 prog 参数为 -l a -C abc，使用 gdb prog 之后，在 gdb 界面输入 set args -l a -C abc，后面就可以 r 了。</p>
+<p>查看汇编指令 disassemble，往往需要配合查看寄存器信息 info register 和栈信息 info frame 0</p>
+<p>修改输出 core 的位置：
+/proc/sys/kernel/core_pattern，可以修改为 echo &ldquo;/corefile/core-%e-%p-%t&rdquo; &gt; /proc/sys/kernel/core_pattern
+<code>https://startheap.com/2019/03/02/GDB-debugging-multi-threaded-core-summary/</code></p>
+<ul>
+<li><code>https://zhuanlan.zhihu.com/p/61352887</code></li>
+</ul>
+<h1 id="cat-variable">cat variable<a hidden class="anchor" aria-hidden="true" href="#cat-variable">#</a></h1>
+<ul>
+<li>p name</li>
+<li>examine(简写为 x)可以用来查看内存地址中的值。语法如下：</li>
+<li>auto display: display name</li>
+</ul>
+<p>x/[n][f][u] addr
+其中：</p>
+<p>n 表示要显示的内存单元数，默认值为 1
+f 表示要打印的格式，前面已经提到了格式控制字符
+u 要打印的单元长度
+addr 内存地址
+单元类型常见有如下：</p>
+<p>b 字节
+h 半字，即双字节
+w 字，即四字节
+g 八字节</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/ide&#43;/gcc/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/ide&#43;/idea/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

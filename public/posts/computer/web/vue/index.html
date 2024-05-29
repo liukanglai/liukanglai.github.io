@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Vue | My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="vue知识">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/web/vue/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/web/vue/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="Vue" />
+<meta property="og:description" content="vue知识" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/web/vue/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-19T19:24:38+08:00" />
+<meta property="article:modified_time" content="2023-05-19T19:24:38+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Vue"/>
+<meta name="twitter:description" content="vue知识"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Vue",
+      "item": "http://localhost:1313/posts/computer/web/vue/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Vue",
+  "name": "Vue",
+  "description": "vue知识",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": " 前端框架，构建用户界面的渐进式框架\ninstall npm install -g @vue/cli vue –version start vue create vue-demo\nselect config\nnpm run serve\nvue init webpack demo\nvue-router\n语法 文本\n{{message}}; data(){return{message: “h”}} 表示动态变量 v-html v-bind:id=\"…\" (v-bind 可省略不写) 列表\n{{item.name}} v-if v-show 事件\nv-on :click=“handleClick” (用 @ 更方便) 表单\nv-model=“message” .lazy 回车再加载 .trim 去首尾空格 组件 单文件(.vue)\ntemplate\nscript\nstyle\nimport my… from “./…”\ncomponents:{my…}\nscoped: style 不作用与其它引用组件\nprops 在组件间传递数据\n插件 swiper：滚动图 ElementPlus Axios\n封装：utils 文件夹 拦截器基本配置 跨域：后台 cors 解决，前台 proxy(vue.config.js 中加入相关代码，重启 serve) 全局引入: this.$axios\n路由 npm install vue-router\nrouter 文件夹，index.js 文件中注册\nviews 文件夹，页面\n嵌套路由：children\n页面传递数据：index.js : path/:id，传递时加参数即可； 使用 $route.params.name\nVue 状态管理 Vuex 组件的数据交互 store 文件夹，index.js 文件中注册 Getter, mutation, Action Vue3 ref reactive 组合式 api：setup(){} 不再需要 data(), methods() (没有 this) provide() inject() 目录 buile：webpack 的初始化配置 static：静态资源目录 package.json 项目依赖配置 node_modules：项目依赖包 src index.html 所谓单页面应用，就是整个项目只有这一个 html 文件，当我们打开这个应用，表面上可以有很多页面，实际上它们都是动态地加载在一个 div 中。\nsrc assets\ncomponents\nApp.vue: 根组件\n",
+  "wordCount" : "241",
+  "inLanguage": "en",
+  "datePublished": "2023-05-19T19:24:38+08:00",
+  "dateModified": "2023-05-19T19:24:38+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/web/vue/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Vue
+    </h1>
+    <div class="post-description">
+      vue知识
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-05-19 19:24:38 &#43;0800 CST&#39;&gt;May 19, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;2 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Web/Vue.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#install" aria-label="install">install</a></li>
+                <li>
+                    <a href="#start" aria-label="start">start</a></li>
+                <li>
+                    <a href="#%e8%af%ad%e6%b3%95" aria-label="语法">语法</a></li>
+                <li>
+                    <a href="#%e7%bb%84%e4%bb%b6" aria-label="组件">组件</a></li>
+                <li>
+                    <a href="#%e6%8f%92%e4%bb%b6" aria-label="插件">插件</a></li>
+                <li>
+                    <a href="#%e8%b7%af%e7%94%b1" aria-label="路由">路由</a></li>
+                <li>
+                    <a href="#vue-%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86" aria-label="Vue 状态管理">Vue 状态管理</a></li>
+                <li>
+                    <a href="#vue3" aria-label="Vue3">Vue3</a></li>
+                <li>
+                    <a href="#%e7%9b%ae%e5%bd%95" aria-label="目录">目录</a></li>
+                <li>
+                    <a href="#src" aria-label="src">src</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><blockquote>
+<p>前端框架，构建用户界面的渐进式框架</p>
+</blockquote>
+<h2 id="install">install<a hidden class="anchor" aria-hidden="true" href="#install">#</a></h2>
+<ul>
+<li>npm install -g @vue/cli</li>
+<li>vue &ndash;version</li>
+</ul>
+<h2 id="start">start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h2>
+<ul>
+<li>
+<p>vue create vue-demo</p>
+</li>
+<li>
+<p>select config</p>
+</li>
+<li>
+<p>npm run serve</p>
+</li>
+<li>
+<p>vue init webpack demo</p>
+</li>
+<li>
+<p>vue-router</p>
+</li>
+</ul>
+<h2 id="语法">语法<a hidden class="anchor" aria-hidden="true" href="#语法">#</a></h2>
+<ol>
+<li>
+<p>文本</p>
+<ul>
+<li>{{message}}; data(){return{message: &ldquo;h&rdquo;}} 表示动态变量</li>
+<li>v-html</li>
+<li>v-bind:id=&quot;&hellip;&quot; (v-bind 可省略不写)</li>
+</ul>
+</li>
+<li>
+<p>列表</p>
+<ul>
+<li>&lt;li v-for=&ldquo;item in items&rdquo; :key = &ldquo;item.id&rdquo;&gt; {{item.name}}</li>
+<li>v-if</li>
+<li>v-show</li>
+</ul>
+</li>
+<li>
+<p>事件</p>
+<ul>
+<li>v-on :click=&ldquo;handleClick&rdquo; (用 @ 更方便)</li>
+</ul>
+</li>
+<li>
+<p>表单</p>
+<ul>
+<li>v-model=&ldquo;message&rdquo;</li>
+<li>.lazy 回车再加载</li>
+<li>.trim 去首尾空格</li>
+</ul>
+</li>
+</ol>
+<h2 id="组件">组件<a hidden class="anchor" aria-hidden="true" href="#组件">#</a></h2>
+<ul>
+<li>
+<p>单文件(.vue)</p>
+</li>
+<li>
+<p>template</p>
+</li>
+<li>
+<p>script</p>
+</li>
+<li>
+<p>style</p>
+</li>
+<li>
+<p>import my&hellip; from &ldquo;./&hellip;&rdquo;</p>
+</li>
+<li>
+<p>components:{my&hellip;}</p>
+</li>
+<li>
+<p>&lt;my&hellip; /&gt;</p>
+</li>
+<li>
+<p>scoped: style 不作用与其它引用组件</p>
+</li>
+<li>
+<p>props 在组件间传递数据</p>
+</li>
+</ul>
+<h2 id="插件">插件<a hidden class="anchor" aria-hidden="true" href="#插件">#</a></h2>
+<ul>
+<li>swiper：滚动图</li>
+<li>ElementPlus</li>
+</ul>
+<ol>
+<li>
+<p>Axios</p>
+<ul>
+<li>封装：utils 文件夹 拦截器基本配置</li>
+<li>跨域：后台 cors 解决，前台 proxy(vue.config.js 中加入相关代码，重启 serve)</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>全局引入: this.$axios</p>
+</blockquote>
+<h2 id="路由">路由<a hidden class="anchor" aria-hidden="true" href="#路由">#</a></h2>
+<ul>
+<li>
+<p>npm install vue-router</p>
+</li>
+<li>
+<p>router 文件夹，index.js 文件中注册</p>
+</li>
+<li>
+<p>views 文件夹，页面</p>
+</li>
+<li>
+<p>嵌套路由：children</p>
+</li>
+<li>
+<p>页面传递数据：index.js : path/:id，传递时加参数即可； 使用 $route.params.name</p>
+</li>
+</ul>
+<h2 id="vue-状态管理">Vue 状态管理<a hidden class="anchor" aria-hidden="true" href="#vue-状态管理">#</a></h2>
+<ul>
+<li>Vuex 组件的数据交互</li>
+<li>store 文件夹，index.js 文件中注册</li>
+<li>Getter, mutation, Action</li>
+</ul>
+<h2 id="vue3">Vue3<a hidden class="anchor" aria-hidden="true" href="#vue3">#</a></h2>
+<ul>
+<li>ref reactive</li>
+<li>组合式 api：setup(){} 不再需要 data(), methods() (没有 this)</li>
+<li>provide() inject()</li>
+</ul>
+<h2 id="目录">目录<a hidden class="anchor" aria-hidden="true" href="#目录">#</a></h2>
+<ul>
+<li>buile：webpack 的初始化配置</li>
+<li>static：静态资源目录</li>
+<li>package.json 项目依赖配置</li>
+<li>node_modules：项目依赖包</li>
+<li>src</li>
+<li>index.html</li>
+</ul>
+<blockquote>
+<p>所谓单页面应用，就是整个项目只有这一个 html 文件，当我们打开这个应用，表面上可以有很多页面，实际上它们都是动态地加载在一个 div 中。</p>
+</blockquote>
+<h2 id="src">src<a hidden class="anchor" aria-hidden="true" href="#src">#</a></h2>
+<ol>
+<li>
+<p>assets</p>
+</li>
+<li>
+<p>components</p>
+</li>
+<li>
+<p>App.vue: 根组件</p>
+<ul>
+<li>
+<p><code>&lt;script&gt;</code>标签里的内容即该组件的脚本，也就是 js 代码，export default 是 ES6 的语法</p>
+</li>
+<li>
+<p>意思是将这个组件整体导出，之后就可以使用 import 导入组件了。大括号里的内容是这个组件的相关属性。</p>
+</li>
+<li>
+<p><code>&lt;router-view/&gt;</code>，是一个容器，名字叫“路由视图”，</p>
+</li>
+<li>
+<p>意思是当前路由（ URL）指向的内容将显示在这个容器中。</p>
+</li>
+<li>
+<p>也就是说，其它的组件即使拥有自己的路由（URL，需要在 router 文件夹的 index.js 文件里定义）</p>
+</li>
+<li>
+<p>也只不过表面上是一个单独的页面，实际上只是在根组件 App.vue 中</p>
+</li>
+</ul>
+</li>
+<li>
+<p>main.js: App.vue 和 index.html 联系</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// vue 模块在 node_modules 中，App 即 App.vue 里定义的组件，router 即 router 文件夹里定义的路由
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s2">&#34;vue&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s2">&#34;./App&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">router</span> <span class="nx">from</span> <span class="s2">&#34;./router&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">productionTip</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/* eslint-disable no-new */</span>
+</span></span><span class="line"><span class="cl"><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span> <span class="nx">el</span><span class="o">:</span> <span class="s2">&#34;#app&#34;</span><span class="p">,</span> <span class="nx">router</span><span class="p">,</span> <span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">App</span> <span class="p">},</span> <span class="nx">template</span><span class="o">:</span> <span class="s2">&#34; &lt;App /&gt; &#34;</span> <span class="p">});</span>
+</span></span></code></pre></div><ul>
+<li>在这个 js 文件中，我们创建了一个 Vue 对象（实例），</li>
+<li>el 属性提供一个在页面上已存在的 DOM 元素作为 Vue 对象的挂载目标，</li>
+<li>router 代表该对象包含 Vue Router，并使用项目中定义的路由。</li>
+<li>components 表示该对象包含的 Vue 组件，</li>
+<li>template 是用一个字符串模板作为 Vue 实例的标识使用，类似于定义一个 html 标签。</li>
+</ul>
+</li>
+<li>
+<p>router</p>
+</li>
+</ol>
+<ul>
+<li>index.js:</li>
+<li>
+<hr>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/life/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>工作及生活安排</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/language/solve/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Solve</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

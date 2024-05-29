@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>First on My Blog Site</title>
+    <link>http://localhost:1313/tags/first/</link>
+    <description>Recent content in First on My Blog Site</description>
+    <image>
+      <title>My Blog Site</title>
+      <url>http://localhost:1313/papermod-cover.png</url>
+      <link>http://localhost:1313/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 May 2023 19:24:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/first/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue</title>
+      <link>http://localhost:1313/posts/computer/web/vue/</link>
+      <pubDate>Fri, 19 May 2023 19:24:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/web/vue/</guid>
+      <description>vue知识</description>
+    </item>
+    
+    <item>
+      <title>Solve</title>
+      <link>http://localhost:1313/posts/computer/language/solve/</link>
+      <pubDate>Fri, 19 May 2023 09:10:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/solve/</guid>
+      <description>求解编程题的步骤</description>
+    </item>
+    
+    <item>
+      <title>Codd论文阅读</title>
+      <link>http://localhost:1313/posts/computer/database/codd%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Tue, 28 Mar 2023 12:53:35 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/database/codd%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>http://localhost:1313/posts/hello/</link>
+      <pubDate>Sat, 25 Mar 2023 11:39:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/hello/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/algorithm/great-idea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/algorithm/great-idea/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/architecture/note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/architecture/note/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/architecture/organization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/architecture/organization/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/digitalcircuits/verilog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/digitalcircuits/verilog/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/git&#43;/gitbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/git&#43;/gitbook/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/git&#43;/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/git&#43;/github/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/cmake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/cmake/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/gcc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/gcc/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/gdb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/gdb/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/idea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/idea/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/make/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/spacevim/spacevim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/spacevim/spacevim/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ale/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ale/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ccls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ccls/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/code/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/git/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/neovim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/neovim/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/plugins/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/regex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/regex/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/someplug/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/someplug/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/start/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ui/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimium/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimium/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimrc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimrc/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimscript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimscript/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/ide&#43;/vscode/vscode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/ide&#43;/vscode/vscode/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/array-pointer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/array-pointer/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/c/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/c/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/controlflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/controlflow/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/error/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/file/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/fuction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/fuction/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/input/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/input/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/output/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/output/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/structures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/structures/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/style/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/style/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/time/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/time/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/type-operation-expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/type-operation-expressions/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/unix-system-interface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/unix-system-interface/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/usefun/malloc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/usefun/malloc/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/usefun/openflag/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/usefun/openflag/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/c-cpp/wrong/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/c-cpp/wrong/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/class/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/class/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/collection/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/file/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/garbage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/garbage/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/graphics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/graphics/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/internet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/internet/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/io/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/oop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/oop/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/spring-boot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/spring-boot/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/java/threads/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/java/threads/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/controlflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/controlflow/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/file/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/fuctions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/fuctions/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/grammar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/grammar/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/object_oriented_programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/object_oriented_programming/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/python/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/language/python/type_operators_expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/language/python/type_operators_expressions/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/arch/pacman/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/arch/pacman/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/arch/vmwareinstall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/arch/vmwareinstall/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/autostart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/autostart/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/boot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/boot/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/link-file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/link-file/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/linux/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/mount/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/mount/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/privilege/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/privilege/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/proxy/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/ranger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/ranger/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/swap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/swap/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/tmux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/tmux/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/linux/zsh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/linux/zsh/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/note/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/test/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/clash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/clash/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/gfw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/gfw/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/node/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/node/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/qv2ray/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/qv2ray/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/networks/vpn&#43;/xx-net/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/networks/vpn&#43;/xx-net/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/compile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/compile/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/configure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/configure/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/install/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/ont/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/ont/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/openwrt&#43;/use/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/openwrt&#43;/use/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/os/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/os/list/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/os/module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/os/module/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/os/process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/os/process/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/parallel/1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/parallel/1/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/parallel/cuda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/parallel/cuda/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/parallel/mpi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/parallel/mpi/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/parallel/nvidia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/parallel/nvidia/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/install/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/latex/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/layout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/layout/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/more/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/more/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/latex/typing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/latex/typing/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/markdown/equation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/markdown/equation/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/computer/typesetting/markdown/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/computer/typesetting/markdown/markdown/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
+  </channel>
+</rss>

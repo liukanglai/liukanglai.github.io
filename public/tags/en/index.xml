@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>En on My Blog Site</title>
+    <link>http://localhost:1313/tags/en/</link>
+    <description>Recent content in En on My Blog Site</description>
+    <image>
+      <title>My Blog Site</title>
+      <url>http://localhost:1313/papermod-cover.png</url>
+      <link>http://localhost:1313/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 25 Mar 2023 20:54:19 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>词根词汇</title>
+      <link>http://localhost:1313/posts/en/vocabulary/</link>
+      <pubDate>Sat, 25 Mar 2023 20:54:19 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/en/vocabulary/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>英语语法</title>
+      <link>http://localhost:1313/posts/en/grammar/</link>
+      <pubDate>Sat, 25 Mar 2023 20:53:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/en/grammar/</guid>
+      <description> </description>
+    </item>
+    
+  </channel>
+</rss>

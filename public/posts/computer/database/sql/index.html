@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Sql | My Blog Site</title>
+<meta name="keywords" content="sql">
+<meta name="description" content=" ">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/database/sql/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/database/sql/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="Sql" />
+<meta property="og:description" content=" " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/database/sql/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-28T12:49:43+08:00" />
+<meta property="article:modified_time" content="2023-03-28T12:49:43+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Sql"/>
+<meta name="twitter:description" content=" "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Sql",
+      "item": "http://localhost:1313/posts/computer/database/sql/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Sql",
+  "name": "Sql",
+  "description": " ",
+  "keywords": [
+    "sql"
+  ],
+  "articleBody": "mysql install mariadb mariadb-install-db –user=mysql –basedir=/usr –datadir=/var/lib/mysql systemctl start mariadb.service etc/my.cnf.d/mysql-clients.cnf, and add auto-rehash under mysql\nrun sudo mysql -u root -p Note: The default password is empty. Press Enter to log in.\nMariaDB\u003e CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass'; MariaDB\u003e GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost'; MariaDB\u003e quit FLUSH PRIVILEGES; quit constraint # change/delete constraint: alter primary key not null unique foreign key name references auto_increment create user 'name'@'localhost' identified by 'password'; drop user 'name'@'localhost' host：指定在哪个主机上登陆，本地用户可用localhost，让该用户可以从任意远程主机登陆，% password：密码可以为空，可以不需要密码登陆 grant all on mydb.* (*.*) to 'monty'@'localhost'; grant privileges on databasename.tablename to 'username'@'host' with grant option; all, select, update, delete set password for 'username'@'localhost' = password('...'); set password = password('...'); -- current user revoke privileges on database.table from 'username'@'localhost' 假如你在给用户’pig’@’%‘授权的时候是这样的（或类似的）： GRANT SELECT ON test.user TO ‘pig’@’%’，REVOKE SELECT ON . FROM ‘pig’@’%’; 命令并不能撤销该用户对 test 数据库中 user 表的 SELECT 操作 如果授权使用的是 GRANT SELECT ON . TO ‘pig’@’%’; 则 REVOKE SELECT ON test.user FROM ‘pig’@’%’; 命令也不能撤销该用户对 test 数据库中 user 表的 Select 权限。 具体信息可以用命令 SHOW GRANTS FOR ‘pig’@’%’; 查看。 sql DDL DML DQL DCL\n用 ; 表示一句结束 ingore case comment: – #; /* */ DDL(Data Definition Language) basic types char(n)\ncreate database Student; create database if not exists Student; create database Student character set utf-8; show databases; show create database Student; alter database Student character set utf-8; drop database Student; drop database if exists Student; select database(); use Student; DML(Data Manipulation Language) Except number, all other types need to use ’’ or \"\" to include.\ncreate table Sc( name varchar(20), age int, score double (3, 7), birthday data, birthday datatime, insert_time timestamp, ); # copy: create table Sc like some; show tables; desc Sc; select * from Sc; select name, age from Sc; select 字段列表, from 表名列表, where 条件列表, group by 分组字段, having 分组之后的条件, order by 排序, limit 分页限定 alter table Sc rename to Sc1; alter table Sc add height int; alter table Sc change height height1 int; alter table Sc modify height double; alter table Sc drop height; insert into Sc(name, age) values('j', 12); update Sc set name = 'j' where age = 11; drop table Sc; drop table if exists Sc; distinct # eliminate repetition delete from Sc where age \u003c 10; delete from 表名；-- 不推荐使用。有多少条记录就会执行多少次删除操作。 TRUNCATE TABLE 表名； -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。 if null(name, Name); as; 逻辑符 \u003e,\u003c,\u003e=,\u003c=,=,\u003c\u003e BETWEEN...AND IN(集合) LIKE IS NULL and or \u0026\u0026 or or || not or ! 函数 order by name (asc); order by name desc; count(*) max min sum avg group by name; limit 1; ",
+  "wordCount" : "408",
+  "inLanguage": "en",
+  "datePublished": "2023-03-28T12:49:43+08:00",
+  "dateModified": "2023-03-28T12:49:43+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/database/sql/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Sql
+    </h1>
+    <div class="post-description">
+       
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-03-28 12:49:43 &#43;0800 CST&#39;&gt;March 28, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;2 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/DataBase/sql.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#mysql" aria-label="mysql">mysql</a><ul>
+                        
+                <li>
+                    <a href="#install" aria-label="install">install</a></li>
+                <li>
+                    <a href="#run" aria-label="run">run</a></li>
+                <li>
+                    <a href="#constraint" aria-label="constraint">constraint</a></li>
+                <li>
+                    <a href="#sql" aria-label="sql">sql</a></li>
+                <li>
+                    <a href="#ddldata-definition-language" aria-label="DDL(Data Definition Language)">DDL(Data Definition Language)</a></li>
+                <li>
+                    <a href="#dmldata-manipulation-language" aria-label="DML(Data Manipulation Language)">DML(Data Manipulation Language)</a></li>
+                <li>
+                    <a href="#%e9%80%bb%e8%be%91%e7%ac%a6" aria-label="逻辑符">逻辑符</a></li>
+                <li>
+                    <a href="#%e5%87%bd%e6%95%b0" aria-label="函数">函数</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="mysql">mysql<a hidden class="anchor" aria-hidden="true" href="#mysql">#</a></h1>
+<h2 id="install">install<a hidden class="anchor" aria-hidden="true" href="#install">#</a></h2>
+<ol>
+<li>mariadb</li>
+</ol>
+<ul>
+<li>mariadb-install-db &ndash;user=mysql &ndash;basedir=/usr &ndash;datadir=/var/lib/mysql</li>
+<li>systemctl start mariadb.service</li>
+</ul>
+<blockquote>
+<p>etc/my.cnf.d/mysql-clients.cnf, and add auto-rehash under mysql</p>
+</blockquote>
+<h2 id="run">run<a hidden class="anchor" aria-hidden="true" href="#run">#</a></h2>
+<ul>
+<li>sudo mysql -u root -p
+<blockquote>
+<p>Note: The default password is empty. Press Enter to log in.</p>
+</blockquote>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">MariaDB</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;monty&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;some_pass&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">MariaDB</span><span class="o">&gt;</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">mydb</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;monty&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">MariaDB</span><span class="o">&gt;</span><span class="w"> </span><span class="n">quit</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>FLUSH PRIVILEGES; quit</li>
+</ul>
+<h2 id="constraint">constraint<a hidden class="anchor" aria-hidden="true" href="#constraint">#</a></h2>
+<pre><code>    # change/delete constraint: alter
+    primary key
+    not null
+    unique
+    foreign key name references
+    auto_increment
+
+    create user 'name'@'localhost' identified by 'password';
+    drop user 'name'@'localhost'
+
+    host：指定在哪个主机上登陆，本地用户可用localhost，让该用户可以从任意远程主机登陆，%
+    password：密码可以为空，可以不需要密码登陆
+
+    grant all on mydb.* (*.*) to 'monty'@'localhost';
+    grant privileges on databasename.tablename to 'username'@'host' with grant option;
+
+    all, select, update, delete
+
+    set password for 'username'@'localhost' = password('...');
+    set password = password('...'); -- current user
+
+    revoke privileges on database.table from 'username'@'localhost'
+</code></pre>
+<ul>
+<li>假如你在给用户&rsquo;pig&rsquo;@&rsquo;%&lsquo;授权的时候是这样的（或类似的）：</li>
+<li>GRANT SELECT ON test.user TO &lsquo;pig&rsquo;@&rsquo;%&rsquo;，REVOKE SELECT ON <em>.</em> FROM &lsquo;pig&rsquo;@&rsquo;%&rsquo;;</li>
+<li>命令并不能撤销该用户对 test 数据库中 user 表的 SELECT 操作</li>
+<li>如果授权使用的是 GRANT SELECT ON <em>.</em> TO &lsquo;pig&rsquo;@&rsquo;%&rsquo;;</li>
+<li>则 REVOKE SELECT ON test.user FROM &lsquo;pig&rsquo;@&rsquo;%&rsquo;;</li>
+<li>命令也不能撤销该用户对 test 数据库中 user 表的 Select 权限。</li>
+<li>具体信息可以用命令 SHOW GRANTS FOR &lsquo;pig&rsquo;@&rsquo;%&rsquo;; 查看。</li>
+</ul>
+<h2 id="sql">sql<a hidden class="anchor" aria-hidden="true" href="#sql">#</a></h2>
+<blockquote>
+<p>DDL DML DQL DCL</p>
+</blockquote>
+<ul>
+<li>用 ; 表示一句结束</li>
+<li>ingore case</li>
+<li>comment: &ndash; #; <code>/* */</code></li>
+</ul>
+<h2 id="ddldata-definition-language">DDL(Data Definition Language)<a hidden class="anchor" aria-hidden="true" href="#ddldata-definition-language">#</a></h2>
+<ol>
+<li>basic types</li>
+</ol>
+<ul>
+<li>
+<p>char(n)</p>
+<pre><code>create database Student;
+create database if not exists Student;
+create database Student character set utf-8;
+
+show databases;
+show create database Student;
+
+alter database Student character set utf-8;
+
+drop database Student;
+drop database if exists Student;
+
+select database();
+use Student;
+</code></pre>
+</li>
+</ul>
+<h2 id="dmldata-manipulation-language">DML(Data Manipulation Language)<a hidden class="anchor" aria-hidden="true" href="#dmldata-manipulation-language">#</a></h2>
+<blockquote>
+<p>Except number, all other types need to use &rsquo;&rsquo; or &quot;&quot; to include.</p>
+</blockquote>
+<pre><code>    create table Sc(
+        name varchar(20),
+        age int,
+        score double (3, 7),
+        birthday data,
+        birthday datatime,
+        insert_time timestamp,
+        );
+    # copy:
+    create table Sc like some;
+
+    show tables;
+    desc Sc;
+
+    select * from Sc;
+    select name, age from Sc;
+    select 字段列表, from 表名列表, where 条件列表, group by 分组字段, having 分组之后的条件, order by 排序, limit 分页限定
+
+    alter table Sc rename to Sc1;
+    alter table Sc add height int;
+    alter table Sc change height height1 int;
+    alter table Sc modify height double;
+    alter table Sc drop height;
+
+    insert into Sc(name, age) values('j', 12);
+
+    update Sc set name = 'j' where age = 11;
+
+    drop table Sc;
+    drop table if exists Sc;
+
+    distinct # eliminate repetition
+
+    delete from Sc where age &lt; 10;
+    delete from 表名；-- 不推荐使用。有多少条记录就会执行多少次删除操作。
+    TRUNCATE TABLE 表名； -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。
+
+    if null(name, Name);
+    as;
+</code></pre>
+<h2 id="逻辑符">逻辑符<a hidden class="anchor" aria-hidden="true" href="#逻辑符">#</a></h2>
+<pre><code>    &gt;,&lt;,&gt;=,&lt;=,=,&lt;&gt;
+    BETWEEN...AND
+    IN(集合)
+    LIKE
+    IS NULL
+    and or &amp;&amp;
+    or or ||
+    not or !
+</code></pre>
+<h2 id="函数">函数<a hidden class="anchor" aria-hidden="true" href="#函数">#</a></h2>
+<pre><code>    order by name (asc);
+    order by name desc;
+
+    count(*)
+    max
+    min
+    sum
+    avg
+
+    group by name;
+
+    limit 1;
+</code></pre>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/sql/">Sql</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/database/codd%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Codd论文阅读</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/algorithm/introductiontoalgorithm/">
+    <span class="title">Next »</span>
+    <br>
+    <span>IntroductionToAlgorithm小记</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

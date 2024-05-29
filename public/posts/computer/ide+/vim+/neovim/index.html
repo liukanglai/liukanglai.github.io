@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/neovim/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/neovim/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/ide+/vim+/neovim/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "install sudo pacman -S neovim sudo pacman -S python-pynvim Python 2 and Ruby modules (currently only supported in neovim-git) are available from the AUR as python2-neovim and ruby-neovim respectively. nvim .config/nvim\n.config/nvim/init.vim -\u003e ~/.vimrc\n.config/nvim -\u003e ~/.vim\nmkdir -p $HOME/.config ln -s $HOME/.vim $HOME/.config/nvim ln -s $HOME/.vim/.vimrc $HOME/.config/nvim/init.vim windows: mklink /D %USERPROFILE%\\AppData\\Local\\nvim %USERPROFILE%\\vimfiles mklink %USERPROFILE%\\AppData\\Local\\nvim\\init.vim %USERPROFILE%\\_vimrc check :checkhealth\npip install neovim \" for python2\npython3 -m pip install neovim \" for python3\nconfig :help nvim-defaults\nif !has('nvim') set nocompatible \" not compatible with Vi filetype plugin indent on \" mandatory for modern plugins syntax on \" enable syntax highlighting set autoindent \" copy indent from the previous line set autoread \" reload from disk set backspace=indent,eol,start \" modern backspace behavior set belloff=all \" disable the bell set cscopeverbose \" verbose cscope output set complete-=i \" don't scan current on included \" files for completion set display=lastline,msgsep \" display more message text set encoding=utf-8 \" set default encoding set fillchars=vert:|,fold: \" separator characters set formatoptions=tcqj \" more intuitive autoformatting set fsync \" call fsync() for robust file saving set history=10000 \" longest possible command history set hlsearch \" highlight search results set incsearch \" move cursor as you type when searching set langnoremap \" helps avoid mappings breaking set laststatus=2 \" always display a status line set listchars=tab:\u003e\\ ,trail:-,nbsp:+ \" chars for :list set nrformats=bin,hex \" and support set ruler \" display current line # in a corner set sessionoptions-=options \" do not carry options across sessions set shortmess=F \" less verbose file info set showcmd \" show last command in the status line set sidescroll=1 \" smoother sideways scrolling set smarttab \" tab setting aware key set tabpagemax=50 \" maximum number of tabs open by -p flag set tags=./tags;,tags \" filenames to look for the tag command set ttimeoutlen=50 \" ms to wait for next key in a sequence set ttyfast \" indicates that our connection is fast set viminfo+=! \" save global variables across sessions set wildmenu \" enhanced command line completion endif plugin dein 插件管理 denite for search nyaovim neomake linting :Neomake Neoterm 拓宽终端支持 NCM2 代码补全 gen_tags for ctags GUI Oni ctrl-shift-p ctrl+g 可访问页面 ",
+  "wordCount" : "359",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/ide+/vim+/neovim/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;359 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/IDE&#43;/Vim&#43;/neovim.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#oni">Oni</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="install">install<a hidden class="anchor" aria-hidden="true" href="#install">#</a></h1>
+<ul>
+<li>sudo pacman -S neovim</li>
+<li>sudo pacman -S python-pynvim</li>
+<li>Python 2 and Ruby modules (currently only supported in neovim-git) are available from the AUR as python2-neovim and ruby-neovim respectively.</li>
+</ul>
+<h1 id="nvim">nvim<a hidden class="anchor" aria-hidden="true" href="#nvim">#</a></h1>
+<ul>
+<li>
+<p>.config/nvim</p>
+</li>
+<li>
+<p>.config/nvim/init.vim -&gt; ~/.vimrc</p>
+</li>
+<li>
+<p>.config/nvim -&gt; ~/.vim</p>
+<pre><code>  mkdir -p $HOME/.config
+  ln -s $HOME/.vim $HOME/.config/nvim
+  ln -s $HOME/.vim/.vimrc $HOME/.config/nvim/init.vim
+
+  windows:
+  mklink /D %USERPROFILE%\AppData\Local\nvim %USERPROFILE%\vimfiles
+  mklink %USERPROFILE%\AppData\Local\nvim\init.vim %USERPROFILE%\_vimrc
+</code></pre>
+</li>
+</ul>
+<h1 id="check">check<a hidden class="anchor" aria-hidden="true" href="#check">#</a></h1>
+<ul>
+<li>
+<p>:checkhealth</p>
+</li>
+<li>
+<p>pip install neovim  &quot; for python2</p>
+</li>
+<li>
+<p>python3 -m pip install neovim  &quot; for python3</p>
+</li>
+</ul>
+<h1 id="config">config<a hidden class="anchor" aria-hidden="true" href="#config">#</a></h1>
+<ul>
+<li>
+<p>:help nvim-defaults</p>
+<pre><code>  if !has('nvim')
+    set nocompatible                &quot; not compatible with Vi
+    filetype plugin indent on       &quot; mandatory for modern plugins
+    syntax on                       &quot; enable syntax highlighting
+    set autoindent                  &quot; copy indent from the previous line
+    set autoread                    &quot; reload from disk
+    set backspace=indent,eol,start  &quot; modern backspace behavior
+    set belloff=all                 &quot; disable the bell
+    set cscopeverbose               &quot; verbose cscope output
+    set complete-=i                 &quot; don't scan current on included
+                                    &quot; files for completion
+    set display=lastline,msgsep     &quot; display more message text
+    set encoding=utf-8              &quot; set default encoding
+    set fillchars=vert:|,fold:      &quot; separator characters
+    set formatoptions=tcqj          &quot; more intuitive autoformatting
+    set fsync                       &quot; call fsync() for robust file saving
+    set history=10000               &quot; longest possible command history
+    set hlsearch                    &quot; highlight search results
+    set incsearch                   &quot; move cursor as you type when searching
+    set langnoremap                 &quot; helps avoid mappings breaking
+    set laststatus=2                &quot; always display a status line
+    set listchars=tab:&gt;\ ,trail:-,nbsp:+  &quot; chars for :list
+    set nrformats=bin,hex           &quot; &lt;c-a&gt; and &lt;c-x&gt; support
+    set ruler                       &quot; display current line # in a corner
+    set sessionoptions-=options     &quot; do not carry options across sessions
+    set shortmess=F                 &quot; less verbose file info
+    set showcmd                     &quot; show last command in the status line
+    set sidescroll=1                &quot; smoother sideways scrolling
+    set smarttab                    &quot; tab setting aware &lt;Tab&gt; key
+    set tabpagemax=50               &quot; maximum number of tabs open by -p flag
+    set tags=./tags;,tags           &quot; filenames to look for the tag command
+    set ttimeoutlen=50              &quot; ms to wait for next key in a sequence
+    set ttyfast                     &quot; indicates that our connection is fast
+    set viminfo+=!                  &quot; save global variables across sessions
+    set wildmenu                    &quot; enhanced command line completion
+  endif
+</code></pre>
+</li>
+</ul>
+<h1 id="plugin">plugin<a hidden class="anchor" aria-hidden="true" href="#plugin">#</a></h1>
+<ul>
+<li>dein 插件管理</li>
+<li>denite for search</li>
+<li>nyaovim</li>
+<li>neomake linting  :Neomake</li>
+<li>Neoterm  拓宽终端支持</li>
+<li>NCM2  代码补全</li>
+<li>gen_tags  for ctags</li>
+</ul>
+<h1 id="gui">GUI<a hidden class="anchor" aria-hidden="true" href="#gui">#</a></h1>
+<h2 id="oni">Oni<a hidden class="anchor" aria-hidden="true" href="#oni">#</a></h2>
+<ul>
+<li>ctrl-shift-p</li>
+<li>ctrl+g 可访问页面</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/git/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/plugins/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

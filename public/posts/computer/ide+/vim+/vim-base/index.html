@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Vim Base | My Blog Site</title>
+<meta name="keywords" content="vim">
+<meta name="description" content="一些基础的vim操作">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-base/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-base/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="Vim Base" />
+<meta property="og:description" content="一些基础的vim操作" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-base/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-27T18:48:46+08:00" />
+<meta property="article:modified_time" content="2023-03-27T18:48:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Vim Base"/>
+<meta name="twitter:description" content="一些基础的vim操作"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Vim Base",
+      "item": "http://localhost:1313/posts/computer/ide+/vim+/vim-base/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Vim Base",
+  "name": "Vim Base",
+  "description": "一些基础的vim操作",
+  "keywords": [
+    "vim"
+  ],
+  "articleBody": "easy operation [[ 跳转到代码块的开头去(但要求代码块中 ‘{’ 必须单独占一行)\ngD 跳转到局部变量的定义处\ngood operation\n_：行首 $：行尾 {：上一文本块 }：下 %：匹配括号 zz/zt/zb：将当前行移动到中央，顶，底 f+ vi\" */# c-o/c-i/'' cc mx/'x :Ex \u003e\u003e \u003c\u003c 缩进 使用 easymotion + w b e ge/tT/fF/kj/nN to start g gj gk: for long sentence gh: select mode??? gf: go to file gd: like *, # 移动光标（普通模式下） h j k l\nctr+f(b,d,u) (翻页)\n行： 0 _ (行首) ^(移动到本行的第一个不是 blank 字符) $(行尾) g_ （移动到本行最后一个不是 blank 字符的位置）\n( 上一个句子， ) 下一个句子\n{ 上一段， } 下一段\n词： w （下一个单词的开头） e (结尾) b（上头）/ge W E B(广义单词，空格)\n狭义单词由数字，字母，下划线组成，广义单词除空白字符外所有字符组成。\n行内查找： f nf（第 n 个） F（反向查找）nF t （移动光标至字符的前一个字符）nt /T\n; 和, 当使用 f, F, t ,T, 关键字指定字符跳转的时候，使用 ；可以快速跳转到下一个指定的字符，, 是跳到前一个指定的字符\n% 匹配括号移动，包括 ( , { , [ 光标 on it.\n全文: gg G nG （n 行的行首）\n页: H M L zt (把当前行移动到当前屏幕的最上方) zz (中间) zb (尾部???)\n*（或 g*) 和 # 匹配光标当前所在的单词，移动光标到下一个（或者上一个）匹配的单词（ * 是下一个，# 是上一个）\n返回回撤 光标返回： ctr+o(ctr+i 反) /‘’ ^M 是 Ctrl + v + m 打出来的（按下这三个键，VIM 会显示成 ^M ）,^M 代表快捷键是 Ctrl + m ,\n编辑 进入插入模式： i a I A s(删除字符后进入, ns) gi(上一次插入)\ndelete: x\no O(行插入)\n行合并： J\nr(替换一个) R(依次替换) c(删除字符后插入，cc/S（一行, 会保持前一行的缩进）！！！) C(到尾) :help vreplace-mode\ncw (use :help text-objects) ciw ci( ci\" ci( ci\" caw … w 表示词/W, s 表示句子，p 表示段落，t 表示 HTML/XML 标签\nd(dd ndd d4l db dW) y p/P\nyi\" yi( yf…\n撤销： u ctr+r（反撤销）\n~: 将光标下的字母改变大小写(n~)\ng~~: 改变当前行字母的大小写\ngUU 将当前行的字母改成大写 gUw(词) guu 小写 guw\nMark mx 设置书签,x 只能是 a-z 的 26 个字母 a-zA-Z 是创建标记的名字，小写字母用来创建单个文件的标记，大些字母用来创建文件之间的标记。 `x 跳转到书签处(\"`“是 1 左边的键) `撇号通常用来定位到之前光标所在的位置 ‘单引号通常用来定位到标记所在的行 :marks 显示所有的标记 :delmarks 删除指定的标记 :delmarks! 删除所有标记（大些字母的标记除外) 可视模式 v/V :normal command (ps: isome) ctr+v no need, then :norm $cw.. o to move 注释 \" cc //nerdcommenter 插入模式 ctr+p/n:补全 c-o: go into normal, than return 命令模式 (ex 模式 Q into（无）) shift+k: can find a function in man\n. 该命令是重复上一个操作的命令 (n.)\n:3 (行号) :+3\n:ab email kickcodeman@gmail.com, ab 是关键字 ,该命令执行后，然后切换到编辑模式下,输入 email 会把输入的 email 自动替换成 kickcodeman@gmail.com。这个命令主要是处理频繁输入同样的长串字符串\n:Set spell (拼写检查)\nc-p/c-n: 相当 ↑↓\nc-b/c-e：命令开头，结尾\nc+↑↓\nc-f: look history, c-c to edit\n:help comdline-editing\nctr+x+s 匹配 z= 在词处显示提示词 : 注释:s#^#//#g 删除空行 命令模式下 g/^$/d，前面 g 命令是扩展到全局，中间是匹配空行，后面 d 命令是执行删除动作。用替换也可以实现，键入 %s#^\\n##g，意思是把所有以换行开头的行全部替换为空。类似地，如果要把多个空行转换为一个可以输入 g/^\\n$/d 或者 %s#^\\n$##g\n:color (default) terminal mode :! :后面紧跟着!，!后面紧跟着 linux 命令（command 指操作 Linux 系统的一系列命令，如创建文件，新建文件夹，查询文件的属性的等 保存: :w !sudo tee % :terminal(term) :vert term(vsplit) :term ls \" Navigate windows with in terminal job mode. tnoremap tnoremap tnoremap tnoremap … don’t know\nc-w+n: enter terminal-normal(i, a… will into work) c-w+”: 寄存器 c-w,c-c… 替换 substitute g: 行， %：全行第一个 $: last line, 结合可视模式 :help cmdline-ranges\ns/zempty/handsome/g (行 zempty 替换成 handsome) (no g, replace next)\n%s/zempty/handsome/g (全文)\nn1,n2s/zempty/handsome/g (n1 到 n2 行)\n12;$s/zempty/handsome/g (12 行到最后一行)\n12;/dog/s/zempty/handsome/g (12 行开始搜索到有 dog 的行, 其间替换)\n只匹配 s，no ss: /\\ to search\ni 表示大小写不敏感查找，I 表示大小写敏感：\n%s/zempty/handsome/i 替换掉所有行第一个出现 zempty (不区分大小写) 为 handsome 。\n%s/zempty/handsome/gi 替换掉所有行出现 zempty (不区分大小写) 为 handsome\nc 表示需要确认 e 表示不显示错误\n搜索: /(front): n(next) N(before) ?(back) set hlsearch set incsearch(未输入完就跳转) :noh (no hlsearch) 跨文件 :grep // great tool :vimgrep(:vim grep main */.py) then, :cn, :cp to move, :copen will open all ack sudo apt-get install ack-grep // linux use ack ack.vim :ack –file what ",
+  "wordCount" : "489",
+  "inLanguage": "en",
+  "datePublished": "2023-03-27T18:48:46+08:00",
+  "dateModified": "2023-03-27T18:48:46+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/ide+/vim+/vim-base/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Vim Base
+    </h1>
+    <div class="post-description">
+      一些基础的vim操作
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-03-27 18:48:46 &#43;0800 CST&#39;&gt;March 27, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;3 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/IDE&#43;/Vim&#43;/vim-base.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#easy-operation" aria-label="easy operation">easy operation</a></li>
+                <li>
+                    <a href="#g" aria-label="g">g</a></li>
+                <li>
+                    <a href="#%e7%a7%bb%e5%8a%a8%e5%85%89%e6%a0%87%e6%99%ae%e9%80%9a%e6%a8%a1%e5%bc%8f%e4%b8%8b" aria-label="移动光标（普通模式下）">移动光标（普通模式下）</a></li>
+                <li>
+                    <a href="#%e8%bf%94%e5%9b%9e%e5%9b%9e%e6%92%a4" aria-label="返回回撤">返回回撤</a></li>
+                <li>
+                    <a href="#%e7%bc%96%e8%be%91" aria-label="编辑">编辑</a></li>
+                <li>
+                    <a href="#mark" aria-label="Mark">Mark</a></li>
+                <li>
+                    <a href="#%e5%8f%af%e8%a7%86%e6%a8%a1%e5%bc%8f" aria-label="可视模式">可视模式</a></li>
+                <li>
+                    <a href="#%e6%b3%a8%e9%87%8a" aria-label="注释">注释</a></li>
+                <li>
+                    <a href="#%e6%8f%92%e5%85%a5%e6%a8%a1%e5%bc%8f" aria-label="插入模式">插入模式</a></li>
+                <li>
+                    <a href="#%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f-ex-%e6%a8%a1%e5%bc%8f-q-into%e6%97%a0" aria-label="命令模式 (ex 模式 Q into（无）)">命令模式 (ex 模式 Q into（无）)</a></li>
+                <li>
+                    <a href="#terminal-mode" aria-label="terminal mode">terminal mode</a></li>
+                <li>
+                    <a href="#%e6%9b%bf%e6%8d%a2" aria-label="替换">替换</a></li>
+                <li>
+                    <a href="#%e6%90%9c%e7%b4%a2" aria-label="搜索:">搜索:</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="easy-operation">easy operation<a hidden class="anchor" aria-hidden="true" href="#easy-operation">#</a></h2>
+<ul>
+<li>
+<p>[[ 跳转到代码块的开头去(但要求代码块中 &lsquo;{&rsquo; 必须单独占一行)</p>
+</li>
+<li>
+<p>gD 跳转到局部变量的定义处</p>
+</li>
+<li>
+<p>good operation</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">_：行首 $：行尾
+</span></span><span class="line"><span class="cl">{：上一文本块 }：下
+</span></span><span class="line"><span class="cl">%：匹配括号
+</span></span><span class="line"><span class="cl">zz/zt/zb：将当前行移动到中央，顶，底
+</span></span><span class="line"><span class="cl">f+
+</span></span><span class="line"><span class="cl">vi&#34;
+</span></span><span class="line"><span class="cl">*/#
+</span></span><span class="line"><span class="cl">c-o/c-i/&#39;&#39;
+</span></span><span class="line"><span class="cl">cc
+</span></span><span class="line"><span class="cl">mx/&#39;x
+</span></span><span class="line"><span class="cl">:Ex
+</span></span><span class="line"><span class="cl">&gt;&gt; &lt;&lt;  缩进
+</span></span></code></pre></div><ul>
+<li>使用 easymotion</li>
+<li><code>&lt;Leader&gt;&lt;Leader&gt;</code>+ w b e ge/tT/fF/kj/nN to start</li>
+</ul>
+<h2 id="g">g<a hidden class="anchor" aria-hidden="true" href="#g">#</a></h2>
+<ul>
+<li>gj gk: for long sentence</li>
+<li>gh: select mode???</li>
+<li>gf: go to file</li>
+<li>gd: like *, #</li>
+</ul>
+<h2 id="移动光标普通模式下">移动光标（普通模式下）<a hidden class="anchor" aria-hidden="true" href="#移动光标普通模式下">#</a></h2>
+<ul>
+<li>
+<p>h j k l</p>
+</li>
+<li>
+<p>ctr+f(b,d,u) (翻页)</p>
+</li>
+<li>
+<p>行： 0 _ (行首) ^(移动到本行的第一个不是 blank 字符) $(行尾) g_ （移动到本行最后一个不是 blank 字符的位置）</p>
+</li>
+<li>
+<p>( 上一个句子， ) 下一个句子</p>
+</li>
+<li>
+<p>{ 上一段， } 下一段</p>
+</li>
+<li>
+<p>词： w （下一个单词的开头） e (结尾) b（上头）/ge W E B(广义单词，空格)</p>
+<blockquote>
+<p>狭义单词由数字，字母，下划线组成，广义单词除空白字符外所有字符组成。</p>
+</blockquote>
+</li>
+<li>
+<p>行内查找： f nf（第 n 个） F（反向查找）nF t （移动光标至字符的前一个字符）nt /T</p>
+<blockquote>
+<p>; 和, 当使用 f, F, t ,T, 关键字指定字符跳转的时候，使用 ；可以快速跳转到下一个指定的字符，, 是跳到前一个指定的字符</p>
+</blockquote>
+</li>
+<li>
+<p>% 匹配括号移动，包括 ( , { , [ 光标 on it.</p>
+</li>
+<li>
+<p>全文: gg G nG （n 行的行首）</p>
+</li>
+<li>
+<p>页: H M L zt (把当前行移动到当前屏幕的最上方) zz (中间) zb (尾部???)</p>
+</li>
+<li>
+<p>*（或 g*) 和 # 匹配光标当前所在的单词，移动光标到下一个（或者上一个）匹配的单词（ * 是下一个，# 是上一个）</p>
+</li>
+</ul>
+<h2 id="返回回撤">返回回撤<a hidden class="anchor" aria-hidden="true" href="#返回回撤">#</a></h2>
+<ul>
+<li>光标返回： ctr+o(ctr+i 反) /‘’</li>
+</ul>
+<blockquote>
+<p>^M 是 Ctrl + v + m 打出来的（按下这三个键，VIM 会显示成 ^M ）,^M 代表快捷键是 Ctrl + m ,</p>
+</blockquote>
+<h2 id="编辑">编辑<a hidden class="anchor" aria-hidden="true" href="#编辑">#</a></h2>
+<ul>
+<li>
+<p>进入插入模式： i a I A s(删除字符后进入, ns) gi(上一次插入)</p>
+</li>
+<li>
+<p>delete: x</p>
+</li>
+<li>
+<p>o O(行插入)</p>
+</li>
+<li>
+<p>行合并： J</p>
+</li>
+<li>
+<p>r(替换一个) R(依次替换) c(删除字符后插入，cc/S（一行, 会保持前一行的缩进）！！！) C(到尾) :help vreplace-mode</p>
+<blockquote>
+<p>cw (use :help text-objects)
+ciw ci( ci&quot; ci( ci&quot;
+caw &hellip;
+w 表示词/W, s 表示句子，p 表示段落，t 表示 HTML/XML 标签</p>
+</blockquote>
+</li>
+<li>
+<p>d(dd ndd d4l db dW) y p/P</p>
+<blockquote>
+<p>yi&quot; yi(
+yf&hellip;</p>
+</blockquote>
+</li>
+<li>
+<p>撤销： u ctr+r（反撤销）</p>
+</li>
+<li>
+<p>~: 将光标下的字母改变大小写(n~)</p>
+</li>
+<li>
+<p>g~~: 改变当前行字母的大小写</p>
+</li>
+<li>
+<p>gUU 将当前行的字母改成大写 gUw(词) guu 小写 guw</p>
+</li>
+</ul>
+<h2 id="mark">Mark<a hidden class="anchor" aria-hidden="true" href="#mark">#</a></h2>
+<ul>
+<li>mx 设置书签,x 只能是 a-z 的 26 个字母 a-zA-Z 是创建标记的名字，小写字母用来创建单个文件的标记，大些字母用来创建文件之间的标记。</li>
+<li>`x 跳转到书签处(&quot;`&ldquo;是 1 左边的键) `撇号通常用来定位到之前光标所在的位置 ‘单引号通常用来定位到标记所在的行</li>
+<li>:marks 显示所有的标记</li>
+<li>:delmarks 删除指定的标记</li>
+<li>:delmarks! 删除所有标记（大些字母的标记除外)</li>
+</ul>
+<h2 id="可视模式">可视模式<a hidden class="anchor" aria-hidden="true" href="#可视模式">#</a></h2>
+<ul>
+<li>v/V</li>
+<li>:normal command (ps: isome)</li>
+<li>ctr+v no need, then :norm $cw..</li>
+<li>o to move</li>
+</ul>
+<h2 id="注释">注释<a hidden class="anchor" aria-hidden="true" href="#注释">#</a></h2>
+<ul>
+<li>&quot;</li>
+<li><space>cc //nerdcommenter</li>
+</ul>
+<h2 id="插入模式">插入模式<a hidden class="anchor" aria-hidden="true" href="#插入模式">#</a></h2>
+<ul>
+<li>ctr+p/n:补全</li>
+<li>c-o: go into normal, than return</li>
+</ul>
+<h2 id="命令模式-ex-模式-q-into无">命令模式 (ex 模式 Q into（无）)<a hidden class="anchor" aria-hidden="true" href="#命令模式-ex-模式-q-into无">#</a></h2>
+<ul>
+<li>
+<p>shift+k: can find a function in man</p>
+</li>
+<li>
+<p>. 该命令是重复上一个操作的命令 (n.)</p>
+</li>
+<li>
+<p>:3 (行号) :+3</p>
+</li>
+<li>
+<p>:ab email <a href="mailto:kickcodeman@gmail.com">kickcodeman@gmail.com</a>, ab 是关键字 ,该命令执行后，然后切换到编辑模式下,输入 email 会把输入的 email 自动替换成 <a href="mailto:kickcodeman@gmail.com">kickcodeman@gmail.com</a>。这个命令主要是处理频繁输入同样的长串字符串</p>
+</li>
+<li>
+<p>:Set spell (拼写检查)</p>
+</li>
+<li>
+<p>c-p/c-n: 相当 ↑↓</p>
+</li>
+<li>
+<p>c-b/c-e：命令开头，结尾</p>
+</li>
+<li>
+<p>c+↑↓</p>
+</li>
+<li>
+<p>c-f: look history, c-c to edit</p>
+<blockquote>
+<p>:help comdline-editing</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>ctr+x+s 匹配
+z= 在词处显示提示词
+:
+注释:s#^#//#g
+删除空行
+命令模式下 g/^$/d，前面 g 命令是扩展到全局，中间是匹配空行，后面 d 命令是执行删除动作。用替换也可以实现，键入 %s#^\n##g，意思是把所有以换行开头的行全部替换为空。类似地，如果要把多个空行转换为一个可以输入 g/^\n$/d 或者 %s#^\n$##g</p>
+</blockquote>
+<ul>
+<li>:color (default)</li>
+</ul>
+<h2 id="terminal-mode">terminal mode<a hidden class="anchor" aria-hidden="true" href="#terminal-mode">#</a></h2>
+<ul>
+<li>:! :后面紧跟着!，!后面紧跟着 linux 命令（command 指操作 Linux 系统的一系列命令，如创建文件，新建文件夹，查询文件的属性的等</li>
+<li>保存: <code>:w !sudo tee % </code></li>
+<li>:terminal(term) :vert term(vsplit)</li>
+<li>:term ls
+&quot; Navigate windows with <Ctrl-hjkl> in terminal job mode.
+tnoremap <c-j> <c-w><c-j>
+tnoremap <c-k> <c-w><c-k>
+tnoremap <c-l> <c-w><c-l>
+tnoremap <c-h> <c-w><c-h></li>
+</ul>
+<p>&hellip; don&rsquo;t know</p>
+<ul>
+<li>c-w+n: enter terminal-normal(i, a&hellip; will into work)</li>
+<li>c-w+&rdquo;: 寄存器</li>
+<li>c-w,c-c&hellip;</li>
+</ul>
+<h2 id="替换">替换<a hidden class="anchor" aria-hidden="true" href="#替换">#</a></h2>
+<ul>
+<li>substitute</li>
+<li>g: 行，</li>
+<li>%：全行第一个</li>
+<li>$: last line,</li>
+<li>结合可视模式</li>
+</ul>
+<blockquote>
+<p>:help cmdline-ranges</p>
+</blockquote>
+<ul>
+<li>
+<p>s/zempty/handsome/g (行 zempty 替换成 handsome) (no g, replace next)</p>
+</li>
+<li>
+<p>%s/zempty/handsome/g (全文)</p>
+</li>
+<li>
+<p>n1,n2s/zempty/handsome/g (n1 到 n2 行)</p>
+</li>
+<li>
+<p>12;$s/zempty/handsome/g (12 行到最后一行)</p>
+</li>
+<li>
+<p>12;/dog/s/zempty/handsome/g (12 行开始搜索到有 dog 的行, 其间替换)</p>
+</li>
+<li>
+<p>只匹配 s，no ss: /\&lt;s\&gt; to search</p>
+</li>
+<li>
+<p>i 表示大小写不敏感查找，I 表示大小写敏感：</p>
+</li>
+<li>
+<p>%s/zempty/handsome/i 替换掉所有行第一个出现 zempty (不区分大小写) 为 handsome 。</p>
+</li>
+<li>
+<p>%s/zempty/handsome/gi 替换掉所有行出现 zempty (不区分大小写) 为 handsome</p>
+</li>
+<li>
+<p>c 表示需要确认 e 表示不显示错误</p>
+</li>
+</ul>
+<h2 id="搜索">搜索:<a hidden class="anchor" aria-hidden="true" href="#搜索">#</a></h2>
+<ul>
+<li>/(front): n(next) N(before)</li>
+<li>?(back)</li>
+<li>set hlsearch set incsearch(未输入完就跳转)</li>
+<li>:noh (no hlsearch)</li>
+</ul>
+<ol>
+<li>跨文件</li>
+</ol>
+<ul>
+<li>:grep // great tool</li>
+<li>:vimgrep(:vim grep main <em>*/</em>.py) then, :cn, :cp to move, :copen will open all</li>
+</ul>
+<ol start="2">
+<li>ack</li>
+</ol>
+<ul>
+<li>sudo apt-get install ack-grep // linux use ack</li>
+<li>ack.vim</li>
+<li>:ack &ndash;file what</li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/vim/">Vim</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-more/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Vim More</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/way/">
+    <span class="title">Next »</span>
+    <br>
+    <span>学习之路</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

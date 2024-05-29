@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimscript/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimscript/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/ide+/vim+/vimscript/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "vim 脚本文件 使用 : 去执行命令 (单步调试) :source 执行整个脚本文件 后缀.vim :source *.vim (:so %) :echo variable(print it) grammar 无专门的boolean, 1 is true, 0 is false\nvariables set(inner variable)\nlet 非内部变量的赋值\nlet g:hh=‘liu’ g作用域 g全局（默认的） v（vim定义的全局作用域） l（局部，函数内部默认） b（当前缓冲区） w（当前窗口） t（当前标签页） s(使用:source’d执行的vim脚本文件中的局部文件作用域) a(函数的参数) let @a=‘liu’ (寄存器) let \u0026ignorecase = 0 (可用\u0026访问set命令的变量，即内部变量) 整数变量可用+ - * / 运算，字符串拼接使用 . (如: ‘h’.’ello’), 字符串内使用 ’ (要使用两个 ‘’)\n‘内为字符串, “内可有非字面量字符, 但注释也使用, 所以有些命令后面不能用注释\necho echo g:animal (echomsg/echom can keep the msg to log, use :messages can look up) :help message-history\nconditionals if\nif animal == 'cat' ... elseif ... ... else ... endif ? :\nif !(cat || dog) if !cat \u0026\u0026 !dog\n== 比较字符串，==? 忽略大小写, ==# 考虑大小写, =~ 左操作数与右操作数匹配(=~? =~#), !~ 反=~\n默认大小写取决于ignorecase\necho 'cat' ==? 'CAT' echo 'cat' ==# 'CAT' set ignorecase | echo 'cat' == 'CAT' echo 'cat' =~ 'c.\\+' echo 'cat' =~# 'C.\\+' echo 'cat' !~ '.at' echo 'cat' !~? 'C.\\+' lists let animals = [‘cat’, ‘dog’, ‘parrot’]\nlet cat = animals[0] \" get first element\nlet dog = animals[1] \" get second element\nlet parrot = animals[-1] \" get last element\nlet slice = animals[1:] let slice = animals[0:1] \" include begin and end elements\ncall add(animals, ‘octopus’) or let animals = add(animals, ‘octopus’)\n除非函数是表达式的一部分, 否则单独调用都要call\ncall insert(animals, ‘bobcat’) \" at first\ncall insert(animals, ‘raven’, 2) \" assign index\nunlet animals[2] \" delete\ncall remove(animals, -1)\nunlet animals[:1] call remove(animals, 0, 1)\nlet mammals = [‘dog’, ‘cat’]\nlet birds = [‘raven’, ‘parrot’]\nlet animals = mammals + birds\ncall extend(mammals, birds)\ncall sort(animals) \" 按字母排序\nlet i = index(animals, ‘parrot’) \" i is 2\nif empty(animals) echo 'There aren''t any animals!' endif echo ‘There are ’ . len(animals) . ’ animals.’ \" len get the length of lists\necho ‘There are ’ . count(animals, ‘cat’) . ’ cats here.’ \" count can get how much the element in list\n:help list\ndictionaries let animal_names = { \\ 'cat': 'Miss Cattington', \\ 'dog': 'Mr Dogson', \\ 'parrot': 'Polly' \\ } use \\ to wrap lines\nlet cat_name = animal_names[‘cat’] or let cat_name = animal_names.cat \" get an element\nthe . 只适用于元素仅包含数字, 字母, 下划线\nlet animal_names[‘raven’] = ‘Raven R. Raventon’\nunlet animal_names[‘raven’] or let raven = remove(animal_names, ‘raven’)\ncall extend(animal_names, {‘bobcat’: ‘Sir Meowtington’}) \" extend two dictionaries, change the first, if have the same elements, it will cover\nif !empty(animal_names) echo 'We have names for ' . len(animal_names) . ' animals' endif if has_key(animal_names, 'cat') \" if have the element echo 'Cat''s name is ' . animal_names['cat'] endif :help dict\nloop for animal in animals echo animal endfor for animal in keys(animal_names) echo 'This ' . animal . '''s name is ' . animal_names[animal] endfor for [animal, name] in items(animal_names) echo 'This ' . animal . '''s name is ' . name endfor for animal in animals if animal == 'cat' echo 'It''s a cat! Breaking!' break endif echo 'Looking at a ' . animal . ', it''s not a cat yet...' endfor for animal in animals if animal == 'cat' echo 'Ignoring the cat...' continue endif echo 'Looking at a ' . animal endfor while !empty(animals) echo remove(animals, 0) endwhil while len(animals) \u003e 0 let animal = remove(animals, 0) if animal == 'dog' echo 'Encountered a dog, breaking!' break endif echo 'Looking at a ' . animal endwhile function 定义的函数必须大写开头（除非在脚本作用域或命名空间中）\n函数内访问参数需 a: 作用域\nfunction! AnimalGreeting(animal) echo a:animal . ' says hello!' endfunction call AnimalGreeting('cat') vimscript 可能加载多次，重定可能出错，可加!\nfunction! AnimalGreeting(animal) return a:animal . ' says hello!' endfunction echo AnimalGreeting('dog') \" 输出函数的返回值 function! AnimalGreeting(...) \" 可变参 echo a:1 . ' says hi to ' . a:2 endfunction call AnimalGreeting('cat', 'dog') function! ListArgs(...) echo a:000 \" get all arguments endfunction call ListArgs('cat', 'dog', 'parrot') function! AnimalGreeting(animal, ...) echo a:animal . ' says hi to ' . a:1 endfunction call AnimalGreeting('cat', 'dog') function s:AnimalGreeting(animal) \" 局部作用域 echo a:animal . 'says hi!' endfunction call s:AnimalGreeting('cat') classes let animal_names = { \\ 'cat': 'Miss Cattington', \\ 'dog': 'Mr Dogson', \\ 'parrot': 'Polly' \\ } function! animal_names.GetGreeting(animal) return self[a:animal] . ' says hello' endfunction echo animal_names.GetGreeting('cat') let animals = { \\ 'animal_names' : { \\ 'cat': 'Miss Cattington', \\ 'dog': 'Mr Dogson', \\ 'parrot': 'Polly' \\ } \\ } \" 为类加函数 function GetGreeting(animal) dict return self.animal_names[a:animal] . ' says hello' endfunction let animals['GetGreeting'] = function('GetGreeting') echo animals.GetGreeting('dog') lambda let AnimalGreeting = {animal -\u003e animal . ' says hello'} echo AnimalGreeting('cat') 清晰函数 map / filter function! IsProperName(name) if a:name =~? '\\(Mr\\|Miss\\) .\\+' return 1 endif return 0 endfunction let animal_names = { \\ 'cat': 'Miss Cattington', \\ 'dog': 'Mr Dogson', \\ 'parrot': 'Polly' \\ } call filter(animal_names, 'IsProperName(v:val)') let IsProperName2 = function('IsProperName') echo IsProperName2('Mr Dogson') function! FunctionCaller(func, arg) return a:func(a:arg) endfunction echo FunctionCaller(IsProperName2, 'Miss Catington') function! IsProperNameKeyValue(key, value) if a:value =~? '\\(Mr\\|Miss\\) .\\+' return 1 endif return 0 endfunction call filter(animal_names, function('IsProperNameKeyValue')) echo animal_names let animal_names = ['Miss Cattington', 'Mr Dogson', 'Polly', 'Meowtington'] call map(animal_names, \\ {key, val -\u003e IsProperName(val) ? val : 'Miss ' . val}) echo animal_names function! MakeProperName(name) if IsProperName(a:name) return a:name endif return 'Miss ' . a:name endfunction call map(animal_names, 'MakeProperName(v:val)') interacting echo animal . ' says hello' execute 'echo ' . animal . ' says hello' execute \"normal /catdw\" \" is ctrl+v+enter, 要忽略自定义的键映射，use normal! \" silent to hide command, add ! to hide external commands silent echo animal . ' says hello' silent execute 'echo ' . animal . ' says hello' silent !echo 'this is running in a shell' if has('python3') echom 'Your Vim was compiled with Python 3 support!' endif :help feature-list file echom 'Current file extension is ' . expand('%:e') if filereadable(expand('%')) echom 'Current file (' . expand('%:t') . ') is readable!' endif execute 'edit animals.py' prompts let answer = confirm(‘Is cat your favorite animal?’, “\u0026yes\\n\u0026no”) echo answer\nlet answer = confirm( \\ ‘Is cat your favorite animal?’, “absolutely \u0026yes\\nhell \u0026no”)\nlet animal = input(‘What is your favorite animal? ‘) echo “\\n” echo ‘What a coincidence! My favorite animal is a ’ . animal . ’ too!’\nfunction! AskAnimalName() call inputsave() let name = input(‘What is the animal’’s name? ‘) call inputrestore() return name endfunction\nnnoremap a = :let name = AskAnimalName():echo name\nstyle plugin ",
+  "wordCount" : "1010",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/ide+/vim+/vimscript/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">5 min&amp;nbsp;·&amp;nbsp;1010 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/IDE&#43;/Vim&#43;/vimscript.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#variables">variables</a></li>
+    <li><a href="#conditionals">conditionals</a></li>
+    <li><a href="#lists">lists</a></li>
+    <li><a href="#dictionaries">dictionaries</a></li>
+    <li><a href="#loop">loop</a></li>
+    <li><a href="#function">function</a></li>
+    <li><a href="#classes">classes</a></li>
+    <li><a href="#lambda">lambda</a></li>
+    <li><a href="#map--filter">map / filter</a></li>
+    <li><a href="#interacting">interacting</a></li>
+    <li><a href="#file">file</a></li>
+    <li><a href="#prompts">prompts</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="vim-脚本文件">vim 脚本文件<a hidden class="anchor" aria-hidden="true" href="#vim-脚本文件">#</a></h1>
+<ul>
+<li>使用 : 去执行命令 (单步调试) :source 执行整个脚本文件</li>
+<li>后缀.vim</li>
+<li>:source *.vim (:so %)</li>
+<li>:echo variable(print it)</li>
+</ul>
+<h1 id="grammar">grammar<a hidden class="anchor" aria-hidden="true" href="#grammar">#</a></h1>
+<blockquote>
+<p>无专门的boolean, 1 is true, 0 is false</p>
+</blockquote>
+<h2 id="variables">variables<a hidden class="anchor" aria-hidden="true" href="#variables">#</a></h2>
+<ol>
+<li>
+<p>set(inner variable)</p>
+</li>
+<li>
+<p>let 非内部变量的赋值</p>
+<ul>
+<li>let g:hh=&lsquo;liu&rsquo; g作用域</li>
+<li>g全局（默认的） v（vim定义的全局作用域） l（局部，函数内部默认） b（当前缓冲区） w（当前窗口） t（当前标签页） s(使用:source&rsquo;d执行的vim脚本文件中的局部文件作用域)  a(函数的参数)</li>
+<li>let @a=&lsquo;liu&rsquo; (寄存器)</li>
+<li>let &amp;ignorecase = 0 (可用&amp;访问set命令的变量，即内部变量)</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>整数变量可用+ - * / 运算，字符串拼接使用 . (如: &lsquo;h&rsquo;.&rsquo;ello&rsquo;), 字符串内使用 &rsquo; (要使用两个 &lsquo;&rsquo;)</p>
+<blockquote>
+<p>&lsquo;内为字符串, &ldquo;内可有非字面量字符, 但注释也使用, 所以有些命令后面不能用注释</p>
+</blockquote>
+</blockquote>
+<ol start="3">
+<li>echo
+<ul>
+<li>echo g:animal  (echomsg/echom can keep the msg to log, use :messages can look up)</li>
+</ul>
+<blockquote>
+<p>:help message-history</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="conditionals">conditionals<a hidden class="anchor" aria-hidden="true" href="#conditionals">#</a></h2>
+<ol>
+<li>
+<p>if</p>
+<pre><code> if animal == 'cat'
+     ...
+ elseif ...
+     ...
+ else
+     ...
+ endif
+</code></pre>
+<ul>
+<li>
+<p>? :</p>
+</li>
+<li>
+<p>if !(cat || dog)  if !cat &amp;&amp; !dog</p>
+</li>
+<li>
+<p>== 比较字符串，==? 忽略大小写, ==# 考虑大小写, =~ 左操作数与右操作数匹配(=~? =~#), !~ 反=~</p>
+</li>
+<li>
+<p>默认大小写取决于ignorecase</p>
+<pre><code>  echo 'cat' ==? 'CAT'
+  echo 'cat' ==# 'CAT'
+  set ignorecase | echo 'cat' == 'CAT'
+  echo 'cat' =~ 'c.\+'
+  echo 'cat' =~# 'C.\+'
+  echo 'cat' !~ '.at'
+  echo 'cat' !~? 'C.\+'
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="lists">lists<a hidden class="anchor" aria-hidden="true" href="#lists">#</a></h2>
+<ul>
+<li>
+<p>let animals = [&lsquo;cat&rsquo;, &lsquo;dog&rsquo;, &lsquo;parrot&rsquo;]</p>
+</li>
+<li>
+<p>let cat = animals[0]      &quot; get first element</p>
+</li>
+<li>
+<p>let dog = animals[1]      &quot; get second element</p>
+</li>
+<li>
+<p>let parrot = animals[-1]  &quot; get last element</p>
+</li>
+<li>
+<p>let slice = animals[1:] let slice = animals[0:1]  &quot; include begin and end elements</p>
+</li>
+<li>
+<p>call add(animals, &lsquo;octopus&rsquo;) or let animals = add(animals, &lsquo;octopus&rsquo;)</p>
+</li>
+</ul>
+<blockquote>
+<p>除非函数是表达式的一部分, 否则单独调用都要call</p>
+</blockquote>
+<ul>
+<li>
+<p>call insert(animals, &lsquo;bobcat&rsquo;)  &quot; at first</p>
+</li>
+<li>
+<p>call insert(animals, &lsquo;raven&rsquo;, 2)  &quot; assign index</p>
+</li>
+<li>
+<p>unlet animals[2]  &quot; delete</p>
+</li>
+<li>
+<p>call remove(animals, -1)</p>
+</li>
+<li>
+<p>unlet animals[:1]   call remove(animals, 0, 1)</p>
+</li>
+<li>
+<p>let mammals = [&lsquo;dog&rsquo;, &lsquo;cat&rsquo;]</p>
+</li>
+<li>
+<p>let birds = [&lsquo;raven&rsquo;, &lsquo;parrot&rsquo;]</p>
+</li>
+<li>
+<p>let animals = mammals + birds</p>
+</li>
+<li>
+<p>call extend(mammals, birds)</p>
+</li>
+<li>
+<p>call sort(animals)   &quot; 按字母排序</p>
+</li>
+<li>
+<p>let i = index(animals, &lsquo;parrot&rsquo;)  &quot; i is 2</p>
+<pre><code>  if empty(animals)
+    echo 'There aren''t any animals!'
+  endif
+</code></pre>
+</li>
+<li>
+<p>echo &lsquo;There are &rsquo; . len(animals) . &rsquo; animals.&rsquo;    &quot; len get the length of lists</p>
+</li>
+<li>
+<p>echo &lsquo;There are &rsquo; . count(animals, &lsquo;cat&rsquo;) . &rsquo; cats here.&rsquo;    &quot; count can get how much the element in list</p>
+</li>
+</ul>
+<blockquote>
+<p>:help list</p>
+</blockquote>
+<h2 id="dictionaries">dictionaries<a hidden class="anchor" aria-hidden="true" href="#dictionaries">#</a></h2>
+<pre><code>let animal_names = {
+  \ 'cat': 'Miss Cattington',
+  \ 'dog': 'Mr Dogson',
+  \ 'parrot': 'Polly'
+  \ }
+</code></pre>
+<ul>
+<li>
+<p>use \ to wrap lines</p>
+</li>
+<li>
+<p>let cat_name = animal_names[&lsquo;cat&rsquo;]  or let cat_name = animal_names.cat   &quot; get an element</p>
+</li>
+</ul>
+<blockquote>
+<p>the . 只适用于元素仅包含数字, 字母, 下划线</p>
+</blockquote>
+<ul>
+<li>
+<p>let animal_names[&lsquo;raven&rsquo;] = &lsquo;Raven R. Raventon&rsquo;</p>
+</li>
+<li>
+<p>unlet animal_names[&lsquo;raven&rsquo;]  or  let raven = remove(animal_names, &lsquo;raven&rsquo;)</p>
+</li>
+<li>
+<p>call extend(animal_names, {&lsquo;bobcat&rsquo;: &lsquo;Sir Meowtington&rsquo;})  &quot; extend two dictionaries, change the first, if have the same elements, it will cover</p>
+<pre><code>  if !empty(animal_names)
+    echo 'We have names for ' . len(animal_names) . ' animals'
+  endif
+
+  if has_key(animal_names, 'cat')  &quot; if have the element
+    echo 'Cat''s name is ' . animal_names['cat']
+  endif
+</code></pre>
+</li>
+</ul>
+<blockquote>
+<p>:help dict</p>
+</blockquote>
+<h2 id="loop">loop<a hidden class="anchor" aria-hidden="true" href="#loop">#</a></h2>
+<pre><code>for animal in animals
+  echo animal
+endfor
+
+for animal in keys(animal_names)
+  echo 'This ' . animal . '''s name is ' . animal_names[animal]
+endfor
+
+for [animal, name] in items(animal_names)
+  echo 'This ' . animal . '''s name is ' . name
+endfor
+
+for animal in animals
+  if animal == 'cat'
+    echo 'It''s a cat! Breaking!'
+    break
+  endif
+  echo 'Looking at a ' . animal . ', it''s not a cat yet...'
+endfor
+
+for animal in animals
+  if animal == 'cat'
+    echo 'Ignoring the cat...'
+    continue
+  endif
+  echo 'Looking at a ' . animal
+endfor
+
+while !empty(animals)
+  echo remove(animals, 0)
+endwhil
+
+while len(animals) &gt; 0
+  let animal = remove(animals, 0)
+  if animal == 'dog'
+    echo 'Encountered a dog, breaking!'
+    break
+  endif
+  echo 'Looking at a ' . animal
+endwhile
+</code></pre>
+<h2 id="function">function<a hidden class="anchor" aria-hidden="true" href="#function">#</a></h2>
+<ul>
+<li>
+<p>定义的函数必须大写开头（除非在脚本作用域或命名空间中）</p>
+</li>
+<li>
+<p>函数内访问参数需 a: 作用域</p>
+<pre><code>  function! AnimalGreeting(animal)
+    echo a:animal . ' says hello!'
+  endfunction
+
+  call AnimalGreeting('cat')
+</code></pre>
+</li>
+<li>
+<p>vimscript 可能加载多次，重定可能出错，可加!</p>
+<pre><code>  function! AnimalGreeting(animal)
+    return a:animal . ' says hello!'
+  endfunction
+
+  echo AnimalGreeting('dog')   &quot; 输出函数的返回值
+
+  function! AnimalGreeting(...)  &quot; 可变参
+    echo a:1 . ' says hi to ' . a:2
+  endfunction
+
+  call AnimalGreeting('cat', 'dog')
+
+  function! ListArgs(...)
+    echo a:000  &quot; get all arguments
+  endfunction
+
+  call ListArgs('cat', 'dog', 'parrot')
+
+  function! AnimalGreeting(animal, ...)
+    echo a:animal . ' says hi to ' . a:1
+  endfunction
+
+  call AnimalGreeting('cat', 'dog')
+
+
+  function s:AnimalGreeting(animal)   &quot; 局部作用域
+    echo a:animal . 'says hi!'
+  endfunction
+
+  call s:AnimalGreeting('cat')
+</code></pre>
+</li>
+</ul>
+<h2 id="classes">classes<a hidden class="anchor" aria-hidden="true" href="#classes">#</a></h2>
+<pre><code>    let animal_names = {
+      \ 'cat': 'Miss Cattington',
+      \ 'dog': 'Mr Dogson',
+      \ 'parrot': 'Polly'
+      \ }
+    
+    function! animal_names.GetGreeting(animal)
+      return self[a:animal] . ' says hello'
+    endfunction
+    
+    echo animal_names.GetGreeting('cat')
+    
+    let animals = {
+      \ 'animal_names' : {
+        \ 'cat': 'Miss Cattington',
+        \ 'dog': 'Mr Dogson',
+        \ 'parrot': 'Polly'
+        \ }
+      \ }
+    
+    &quot; 为类加函数
+    function GetGreeting(animal) dict
+      return self.animal_names[a:animal] . ' says hello'
+    endfunction
+    
+    let animals['GetGreeting'] = function('GetGreeting')
+    
+    echo animals.GetGreeting('dog')
+</code></pre>
+<h2 id="lambda">lambda<a hidden class="anchor" aria-hidden="true" href="#lambda">#</a></h2>
+<pre><code>let AnimalGreeting = {animal -&gt; animal . ' says hello'}
+
+echo AnimalGreeting('cat')
+</code></pre>
+<ul>
+<li>清晰函数</li>
+</ul>
+<h2 id="map--filter">map / filter<a hidden class="anchor" aria-hidden="true" href="#map--filter">#</a></h2>
+<pre><code>    function! IsProperName(name)
+      if a:name =~? '\(Mr\|Miss\) .\+'
+        return 1
+      endif
+      return 0
+    endfunction
+    
+    let animal_names = {
+      \ 'cat': 'Miss Cattington',
+      \ 'dog': 'Mr Dogson',
+      \ 'parrot': 'Polly'
+      \ }
+    
+    call filter(animal_names, 'IsProperName(v:val)')
+    
+    let IsProperName2 = function('IsProperName')
+    
+    echo IsProperName2('Mr Dogson')
+    
+    function! FunctionCaller(func, arg)
+      return a:func(a:arg)
+    endfunction
+    
+    echo FunctionCaller(IsProperName2, 'Miss Catington')
+    
+    function! IsProperNameKeyValue(key, value)
+      if a:value =~? '\(Mr\|Miss\) .\+'
+        return 1
+      endif
+      return 0
+    endfunction
+    
+    call filter(animal_names, function('IsProperNameKeyValue'))
+    
+    echo animal_names
+    
+    let animal_names = ['Miss Cattington', 'Mr Dogson', 'Polly', 'Meowtington']
+    
+    call map(animal_names,
+      \ {key, val -&gt; IsProperName(val) ? val : 'Miss ' .  val})
+    
+    echo animal_names
+    
+    function! MakeProperName(name)
+      if IsProperName(a:name)
+        return a:name
+      endif
+      return 'Miss ' . a:name
+    endfunction
+    call map(animal_names, 'MakeProperName(v:val)')
+</code></pre>
+<h2 id="interacting">interacting<a hidden class="anchor" aria-hidden="true" href="#interacting">#</a></h2>
+<pre><code>echo animal . ' says hello'   execute 'echo ' . animal . ' says hello'
+
+execute &quot;normal /cat&lt;cr&gt;dw&quot;  &quot; &lt;cr&gt; is ctrl+v+enter, 要忽略自定义的键映射，use normal!
+
+&quot; silent to hide command, add ! to hide external commands
+silent echo animal . ' says hello'
+silent execute 'echo ' . animal . ' says hello'
+silent !echo 'this is running in a shell'
+
+if has('python3')
+  echom 'Your Vim was compiled with Python 3 support!'
+endif
+</code></pre>
+<ul>
+<li>:help feature-list</li>
+</ul>
+<h2 id="file">file<a hidden class="anchor" aria-hidden="true" href="#file">#</a></h2>
+<pre><code>echom 'Current file extension is ' . expand('%:e')
+
+if filereadable(expand('%'))
+  echom 'Current file (' . expand('%:t') . ') is readable!'
+endif
+
+execute 'edit animals.py'
+</code></pre>
+<h2 id="prompts">prompts<a hidden class="anchor" aria-hidden="true" href="#prompts">#</a></h2>
+<p>let answer = confirm(&lsquo;Is cat your favorite animal?&rsquo;, &ldquo;&amp;yes\n&amp;no&rdquo;)
+echo answer</p>
+<p>let answer = confirm(
+\ &lsquo;Is cat your favorite animal?&rsquo;, &ldquo;absolutely &amp;yes\nhell &amp;no&rdquo;)</p>
+<p>let animal = input(&lsquo;What is your favorite animal? &lsquo;)
+echo &ldquo;\n&rdquo;
+echo &lsquo;What a coincidence! My favorite animal is a &rsquo; . animal . &rsquo; too!&rsquo;</p>
+<p>function! AskAnimalName()
+call inputsave()
+let name = input(&lsquo;What is the animal&rsquo;&rsquo;s name? &lsquo;)
+call inputrestore()
+return name
+endfunction</p>
+<p>nnoremap <leader>a = :let name = AskAnimalName()<cr>:echo name<cr></p>
+<h1 id="style">style<a hidden class="anchor" aria-hidden="true" href="#style">#</a></h1>
+<h1 id="plugin">plugin<a hidden class="anchor" aria-hidden="true" href="#plugin">#</a></h1>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vimrc/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/ide&#43;/vscode/vscode/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

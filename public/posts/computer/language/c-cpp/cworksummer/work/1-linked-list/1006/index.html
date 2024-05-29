@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="">
+<meta name="description" content="按值大小插入 可将空链表与插入头节点放在一起讨论，简化 按值大小插入较简单，只需找到前一节点即可，无需看后面的量 struct link *InsertOrderNode(struct link *head,int nodeData) { struct link *p=head,*end,node=(struct link)malloc(sizeof(struct link)); node-&gt;data=nodeData; // define node; if(p==NULL||nodeData&lt;=p-&gt;data) //注意先后 { head=node; node-&gt;next=p; return head; };//first solve the problem of head,and if the struct is none. for(;p!=NULL&amp;&amp;p-&gt;data&lt;nodeData;) { end=p; p=p-&gt;next; };//find the node in front of nodeData. end-&gt;next=node; node-&gt;next=p; return head; };">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1006/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1006/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="按值大小插入 可将空链表与插入头节点放在一起讨论，简化 按值大小插入较简单，只需找到前一节点即可，无需看后面的量 struct link *InsertOrderNode(struct link *head,int nodeData) { struct link *p=head,*end,node=(struct link)malloc(sizeof(struct link)); node-&gt;data=nodeData; // define node; if(p==NULL||nodeData&lt;=p-&gt;data) //注意先后 { head=node; node-&gt;next=p; return head; };//first solve the problem of head,and if the struct is none. for(;p!=NULL&amp;&amp;p-&gt;data&lt;nodeData;) { end=p; p=p-&gt;next; };//find the node in front of nodeData. end-&gt;next=node; node-&gt;next=p; return head; };" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1006/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="按值大小插入 可将空链表与插入头节点放在一起讨论，简化 按值大小插入较简单，只需找到前一节点即可，无需看后面的量 struct link *InsertOrderNode(struct link *head,int nodeData) { struct link *p=head,*end,node=(struct link)malloc(sizeof(struct link)); node-&gt;data=nodeData; // define node; if(p==NULL||nodeData&lt;=p-&gt;data) //注意先后 { head=node; node-&gt;next=p; return head; };//first solve the problem of head,and if the struct is none. for(;p!=NULL&amp;&amp;p-&gt;data&lt;nodeData;) { end=p; p=p-&gt;next; };//find the node in front of nodeData. end-&gt;next=node; node-&gt;next=p; return head; };"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1006/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "按值大小插入 可将空链表与插入头节点放在一起讨论，简化 按值大小插入较简单，只需找到前一节点即可，无需看后面的量 struct link *InsertOrderNode(struct link *head,int nodeData) { struct link *p=head,*end,node=(struct link)malloc(sizeof(struct link)); node-\u0026gt;data=nodeData; // define node; if(p==NULL||nodeData\u0026lt;=p-\u0026gt;data) //注意先后 { head=node; node-\u0026gt;next=p; return head; };//first solve the problem of head,and if the struct is none. for(;p!=NULL\u0026amp;\u0026amp;p-\u0026gt;data\u0026lt;nodeData;) { end=p; p=p-\u0026gt;next; };//find the node in front of nodeData. end-\u0026gt;next=node; node-\u0026gt;next=p; return head; };",
+  "keywords": [
+    
+  ],
+  "articleBody": "按值大小插入 可将空链表与插入头节点放在一起讨论，简化 按值大小插入较简单，只需找到前一节点即可，无需看后面的量 struct link *InsertOrderNode(struct link *head,int nodeData) { struct link *p=head,*end,node=(struct link)malloc(sizeof(struct link)); node-\u003edata=nodeData; // define node; if(p==NULL||nodeData\u003c=p-\u003edata) //注意先后 { head=node; node-\u003enext=p; return head; };//first solve the problem of head,and if the struct is none. for(;p!=NULL\u0026\u0026p-\u003edatanext; };//find the node in front of nodeData. end-\u003enext=node; node-\u003enext=p; return head; };\n",
+  "wordCount" : "53",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1006/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-meta">1 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Language/C-Cpp/cworksummer/work/1-linked%20list/1006.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e6%8c%89%e5%80%bc%e5%a4%a7%e5%b0%8f%e6%8f%92%e5%85%a5" aria-label="按值大小插入">按值大小插入</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="按值大小插入">按值大小插入<a hidden class="anchor" aria-hidden="true" href="#按值大小插入">#</a></h1>
+<ol>
+<li>可将空链表与插入头节点放在一起讨论，简化</li>
+<li>按值大小插入较简单，只需找到前一节点即可，无需看后面的量</li>
+</ol>
+<p>struct link *InsertOrderNode(struct link *head,int nodeData)
+{
+struct link *p=head,*end,<em>node=(struct link</em>)malloc(sizeof(struct link));
+node-&gt;data=nodeData; // define node;
+if(p==NULL||nodeData&lt;=p-&gt;data) //注意先后
+{
+head=node;
+node-&gt;next=p;
+return head;
+};//first solve the problem of head,and if the struct is none.
+for(;p!=NULL&amp;&amp;p-&gt;data&lt;nodeData;)
+{
+end=p;
+p=p-&gt;next;
+};//find the node in front of nodeData.
+end-&gt;next=node;
+node-&gt;next=p;
+return head;
+};</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1005/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/language/c-cpp/cworksummer/work/1-linked-list/1007/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

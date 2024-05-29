@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/ide&#43;/gcc/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/ide&#43;/gcc/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/ide+/gcc/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "gcc 相关 use: gcc *.c or g++ *.cpp, then create a *.out, ./*.out will execute it. multifiles: gcc 1.c 2.c 3.c … -o main or: (-o: rename a.out) gcc -c 1.c, gcc -c 2.c … then: gcc *.o -o main .c+.h(预编译’#‘内容)-\u003e.i (汇编)-\u003e.s (二进制)-\u003e.obj(win)/.o(linux)+printf.o(链接)-\u003e.exe/.out\ngcc -o filename file.c -lm(libm.a/.so 库) or -L /usr/lib/.. 预编译 #include copy paste #define 字符串替换 loop up:\ngcc -E 1.c\nno create file 汇编 gcc -S 1.c\ncreate XXX.s 编译 gcc -c XXX.s also: gcc -c 1.c\ncreate XXX.o 链接(无编译器的事) gcc XXX.o XXX.o\nj do gcc 1.c, file(.s, .o) is in: ls /tmp/cc* 2\u003e/dev/null\nbut you can’t see it, too fast!\nuse bash:\n#!/bin/bash g++ main.cpp \u0026 sleep 0.05 ls --color=auto /tmp/cc* 优化编译加速 use pipe ( | ) 将临时文件直接在内存中传输，而不是磁盘！ gcc -pipe 1.c\n-O gcc 每次调用一个函数之后,先压栈,然后又转到寄存器中 use gcc -O 1.c: 移除栈操作 -O 选项还可以加数字,表示优化的级别。 没有数字默认是 1,最大可以加到 3， 不加-O，级别是 0。 优化级别越高,产生的代码的执行效率就越高。 g++ -O2 -s main.cpp -o main.O2.s 原因是,优化的级别越高, 虽然最后生成的代码的执行效率就会越高, 但是编译的过程花费的时间 会越长。 在执行效率和编译时间之间, 需要做出一个权衡 输出 wrong gcc -Wreturn-type 1.c return-type 只是检查返回值类型。 gcc -Wuninitialized 1.c gcc -Wall 1.c gcc 有个选项,叫-Werror。 它会把所有的警告当成错误进行处理\n-I 这个-I 是 gcc 的一个选项, 它的作用是把一个路径加入到系统路径, 这样当使用 include 指令时, 就可以用尖括号来指定文件 可以用绝对路径、相对路径。 甚至可以把当前路径加入到系统路径中, 这样就可以用尖括号来指定当 目录下的一个文件了 ps: -I/usr/include/qt4/QtCore -D 一般我们在开发项目时,都会做两个版本,一个 debug 版,一个 release 版。 通常我们在 debug 版本中会加入调试输出,方便查找 BUG。 而在 release 版本中,删除这些输出,以提高执行速度并减少可执行文件的大小。 实现的方式是通过宏。\n我们用 g++ main.cpp -DDEBUG编译出来的就是 debug 版本,用 g++ main.cpp 编译出来的 是 release 版本。 the version problem error: argument list for class template “std::pair” is missing error: template parameter “_t1” may not be redeclared in this scope /usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a “)” ",
+  "wordCount" : "239",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/ide+/gcc/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;239 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/IDE&#43;/gcc.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#预编译">预编译</a></li>
+    <li><a href="#汇编">汇编</a></li>
+    <li><a href="#编译">编译</a></li>
+    <li><a href="#链接无编译器的事">链接(无编译器的事)</a></li>
+    <li><a href="#j">j</a></li>
+    <li><a href="#优化编译加速">优化编译加速</a></li>
+    <li><a href="#输出-wrong">输出 wrong</a></li>
+    <li><a href="#-i">-I</a></li>
+    <li><a href="#-d">-D</a></li>
+    <li><a href="#the-version-problem">the version problem</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="gcc-相关">gcc 相关<a hidden class="anchor" aria-hidden="true" href="#gcc-相关">#</a></h1>
+<ul>
+<li>use: gcc *.c or g++ *.cpp, then create a *.out, ./*.out will execute it.</li>
+<li>multifiles: gcc 1.c 2.c 3.c &hellip; -o main or: (-o: rename a.out)</li>
+<li>gcc -c 1.c, gcc -c 2.c &hellip; then: gcc *.o -o main</li>
+</ul>
+<blockquote>
+<p>.c+.h(预编译&rsquo;#&lsquo;内容)-&gt;.i (汇编)-&gt;.s (二进制)-&gt;.obj(win)/.o(linux)+printf.o(链接)-&gt;.exe/.out</p>
+</blockquote>
+<ul>
+<li>gcc -o filename file.c -lm(libm.a/.so 库) or -L /usr/lib/..</li>
+</ul>
+<h2 id="预编译">预编译<a hidden class="anchor" aria-hidden="true" href="#预编译">#</a></h2>
+<ol>
+<li>#include copy paste</li>
+<li>#define 字符串替换</li>
+</ol>
+<p>loop up:</p>
+<blockquote>
+<p>gcc -E 1.c</p>
+</blockquote>
+<ul>
+<li>no create file</li>
+</ul>
+<h2 id="汇编">汇编<a hidden class="anchor" aria-hidden="true" href="#汇编">#</a></h2>
+<blockquote>
+<p>gcc -S 1.c</p>
+</blockquote>
+<ul>
+<li>create XXX.s</li>
+</ul>
+<h2 id="编译">编译<a hidden class="anchor" aria-hidden="true" href="#编译">#</a></h2>
+<blockquote>
+<p>gcc -c XXX.s also: gcc -c 1.c</p>
+</blockquote>
+<ul>
+<li>create XXX.o</li>
+</ul>
+<h2 id="链接无编译器的事">链接(无编译器的事)<a hidden class="anchor" aria-hidden="true" href="#链接无编译器的事">#</a></h2>
+<blockquote>
+<p>gcc XXX.o XXX.o</p>
+</blockquote>
+<h2 id="j">j<a hidden class="anchor" aria-hidden="true" href="#j">#</a></h2>
+<ul>
+<li>
+<p>do gcc 1.c, file(.s, .o) is in: ls /tmp/cc* 2&gt;/dev/null</p>
+</li>
+<li>
+<p>but you can&rsquo;t see it, too fast!</p>
+</li>
+<li>
+<p>use bash:</p>
+<pre><code>  #!/bin/bash
+  g++ main.cpp &amp;
+  sleep 0.05
+  ls --color=auto /tmp/cc*
+</code></pre>
+</li>
+</ul>
+<h2 id="优化编译加速">优化编译加速<a hidden class="anchor" aria-hidden="true" href="#优化编译加速">#</a></h2>
+<ol>
+<li>use pipe ( | )
+<ul>
+<li>将临时文件直接在内存中传输，而不是磁盘！</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>gcc -pipe 1.c</p>
+</blockquote>
+<ol>
+<li>-O
+<ul>
+<li>gcc 每次调用一个函数之后,先压栈,然后又转到寄存器中</li>
+<li>use gcc -O 1.c: 移除栈操作</li>
+<li>-O 选项还可以加数字,表示优化的级别。 没有数字默认是 1,最大可以加到 3，</li>
+<li>不加-O，级别是 0。 优化级别越高,产生的代码的执行效率就越高。 g++ -O2 -s main.cpp -o main.O2.s</li>
+<li>原因是,优化的级别越高, 虽然最后生成的代码的执行效率就会越高, 但是编译的过程花费的时间 会越长。 在执行效率和编译时间之间, 需要做出一个权衡</li>
+</ul>
+</li>
+</ol>
+<h2 id="输出-wrong">输出 wrong<a hidden class="anchor" aria-hidden="true" href="#输出-wrong">#</a></h2>
+<p>gcc -Wreturn-type 1.c return-type 只是检查返回值类型。
+gcc -Wuninitialized 1.c
+gcc -Wall 1.c
+gcc 有个选项,叫-Werror。 它会把所有的警告当成错误进行处理</p>
+<h2 id="-i">-I<a hidden class="anchor" aria-hidden="true" href="#-i">#</a></h2>
+<ul>
+<li>这个-I 是 gcc 的一个选项, 它的作用是把一个路径加入到系统路径, 这样当使用 include 指令时, 就可以用尖括号来指定文件</li>
+<li>可以用绝对路径、相对路径。 甚至可以把当前路径加入到系统路径中, 这样就可以用尖括号来指定当 目录下的一个文件了</li>
+<li>ps: -I/usr/include/qt4/QtCore</li>
+</ul>
+<h2 id="-d">-D<a hidden class="anchor" aria-hidden="true" href="#-d">#</a></h2>
+<p>一般我们在开发项目时,都会做两个版本,一个 debug 版,一个 release 版。
+通常我们在 debug 版本中会加入调试输出,方便查找 BUG。
+而在 release 版本中,删除这些输出,以提高执行速度并减少可执行文件的大小。
+实现的方式是通过宏。</p>
+<ul>
+<li>我们用 g++ main.cpp -D<strong>DEBUG</strong>编译出来的就是 debug 版本,用 g++ main.cpp 编译出来的 是 release 版本。</li>
+</ul>
+<h2 id="the-version-problem">the version problem<a hidden class="anchor" aria-hidden="true" href="#the-version-problem">#</a></h2>
+<ul>
+<li>error: argument list for class template &ldquo;std::pair&rdquo; is missing</li>
+<li>error: template parameter &ldquo;_t1&rdquo; may not be redeclared in this scope</li>
+<li>/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a &ldquo;)&rdquo;</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/ide&#43;/cmake/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/ide&#43;/gdb/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

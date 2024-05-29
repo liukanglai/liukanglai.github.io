@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/typesetting/latex/typing/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/typesetting/latex/typing/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/typesetting/latex/typing/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "documentclass \\documentclass[a4paper]{article(book, report, …)}\n\\begin{document}\nHello World ! % This is your content\n\\end{document}\ntitle \\documentclass[UTF8]{ctexart} \\title{你好，world!} \\author{Liam} \\date{\\today} \\begin{document} \\maketitle 你好，world! \\end{document} List Unordered List\n\\begin{itemize} \\item Item. \\item Another Item. \\end{itemize} Ordered List\n\\begin{enumerate} \\item Item. \\item Another Item. \\end{enumerate} Paragraph and section \\paragraph{} and \\subparagraph{}\n\\section{} and \\subsection{}\nuse \\tableofcontents to create contents\n\\newpage\n\\newline or \\\n\\bigskip :空行\n在report/ctexrep中，还有\\chapter{·}；在文档类book/ctexbook中，还定义了\\part{·}\nFootnotes Hi let me introduce myself\\footnote{\\label{myfootnote}Hello footnote}. ... (later on) I'm referring to myself \\ref{myfootnote}. Table \\begin{table}[h!] \\centering \\caption{Caption for the table.} \\label{tab:table1} \\begin{tabular}{l|c||r} 1 \u0026 2 \u0026 3\\\\ \\hline a \u0026 b \u0026 c\\\\ \\end{tabular} \\end{table} \\usepackage{booktabs} for a visually better table. h (here) — same location t (top) — top of page b (bottom) — bottom of page p (page) — on an extra page ! (override) — will force the specified location 先写\\caption{}再写\\label{}\nImages \\usepackage{graphicx}\n\\begin{figure} \\includegraphics[width=\\linewidth]{filename.jpg} \\includegraphics[scale=0.5]{HardwareInfo} \\caption{What is it about?} \\label{fig:whateverlabel} \\end{figure} \\includegraphics[width = .8\\textwidth]{a.jpg} 这样图片的宽度会被缩放至页面宽度的百分之八十，图片的总高度会按比例缩放。\nCode \\begin{verbatim} #include int main() { std::cout \u003c\u003c \"hello world!\\n\"; return 0; } \\end{verbatim} including insert code inline, make custom styles code, choose a specific language for code, import code from another file within the same directory…. With this method, you dont use {verbatim}, but include a package package named listings.\n\\usepackage{listings} \\usepackage{color} \\lstdefinestyle{mystyle}{ keywordstyle=\\color{magenta}, backgroundcolor=\\color{yellow}, commentstyle=\\color{green}, basicstyle=\\footnotesize, } \\lstset{style=mystyle} \\begin{lstlisting}[language=Python] print \"Hello World!\" \\end{lstlisting} \\lstinputlisting[language=C++]{hello.cpp} %import a file named hello.cpp in the same directory \\lstinline{} %inset inline code Math 使用 $ … $ 可以插入行内公式，使用 [ … ] 可以插入行间公式\n\\begin{equation} … \\end{equation}\n\\usepackage{amsmath}\nEinstein 's $E=mc^2$. \\[ E=mc^2. \\] \\begin{equation} E=mc^2. E=mc^{2\\pi} E=log_23 \\end{equation} $\\sqrt{x}$, $\\frac{1}{2}$. https://liam.page/2014/09/08/latex-introduction/\nEscape the _ ",
+  "wordCount" : "265",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/typesetting/latex/typing/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;265 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/TypeSetting/Latex/typing.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents"></nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="documentclass">documentclass<a hidden class="anchor" aria-hidden="true" href="#documentclass">#</a></h1>
+<p>\documentclass[a4paper]{article(book, report, &hellip;)}</p>
+<p>\begin{document}</p>
+<p>Hello World !  % This is your content</p>
+<p>\end{document}</p>
+<h1 id="title">title<a hidden class="anchor" aria-hidden="true" href="#title">#</a></h1>
+<pre><code>    \documentclass[UTF8]{ctexart}
+    \title{你好，world!}
+    \author{Liam}
+    \date{\today}
+    \begin{document}
+    \maketitle
+    你好，world!
+    \end{document}
+</code></pre>
+<h1 id="list">List<a hidden class="anchor" aria-hidden="true" href="#list">#</a></h1>
+<ol>
+<li>
+<p>Unordered List</p>
+<pre><code> \begin{itemize}
+ \item Item.
+ \item Another Item.
+ \end{itemize}
+</code></pre>
+</li>
+<li>
+<p>Ordered List</p>
+<pre><code> \begin{enumerate}
+ \item Item.
+ \item Another Item.
+ \end{enumerate}
+</code></pre>
+</li>
+</ol>
+<h1 id="paragraph-and-section">Paragraph and section<a hidden class="anchor" aria-hidden="true" href="#paragraph-and-section">#</a></h1>
+<ul>
+<li>
+<p>\paragraph{} and \subparagraph{}</p>
+</li>
+<li>
+<p>\section{} and \subsection{}</p>
+</li>
+<li>
+<p>use \tableofcontents to create contents</p>
+</li>
+<li>
+<p>\newpage</p>
+</li>
+<li>
+<p>\newline  or \</p>
+</li>
+<li>
+<p>\bigskip :空行</p>
+</li>
+</ul>
+<blockquote>
+<p>在report/ctexrep中，还有\chapter{·}；在文档类book/ctexbook中，还定义了\part{·}</p>
+</blockquote>
+<h1 id="footnotes">Footnotes<a hidden class="anchor" aria-hidden="true" href="#footnotes">#</a></h1>
+<pre><code>    Hi let me introduce myself\footnote{\label{myfootnote}Hello footnote}.
+    ... (later on)
+    I'm referring to myself \ref{myfootnote}.
+</code></pre>
+<h1 id="table">Table<a hidden class="anchor" aria-hidden="true" href="#table">#</a></h1>
+<pre><code>    \begin{table}[h!]
+      \centering
+      \caption{Caption for the table.}
+      \label{tab:table1}
+      \begin{tabular}{l|c||r}
+        1 &amp; 2 &amp; 3\\
+        \hline
+        a &amp; b &amp; c\\
+      \end{tabular}
+    \end{table}
+</code></pre>
+<ul>
+<li>\usepackage{booktabs} for a visually better table.</li>
+<li>h (here) — same location</li>
+<li>t (top) — top of page</li>
+<li>b (bottom) — bottom of page</li>
+<li>p (page) — on an extra page</li>
+<li>! (override) — will force the specified location</li>
+</ul>
+<blockquote>
+<p>先写\caption{}再写\label{}</p>
+</blockquote>
+<h1 id="images">Images<a hidden class="anchor" aria-hidden="true" href="#images">#</a></h1>
+<ul>
+<li>
+<p>\usepackage{graphicx}</p>
+<pre><code>  \begin{figure}
+  \includegraphics[width=\linewidth]{filename.jpg}
+  \includegraphics[scale=0.5]{HardwareInfo}
+  \caption{What is it about?}
+  \label{fig:whateverlabel}
+  \end{figure}
+</code></pre>
+</li>
+<li>
+<p>\includegraphics[width = .8\textwidth]{a.jpg}
+这样图片的宽度会被缩放至页面宽度的百分之八十，图片的总高度会按比例缩放。</p>
+</li>
+</ul>
+<h1 id="code">Code<a hidden class="anchor" aria-hidden="true" href="#code">#</a></h1>
+<ol>
+<li></li>
+</ol>
+<pre><code>    \begin{verbatim}
+    #include &lt;iostream&gt;
+    
+    int main()
+    {
+    	std::cout &lt;&lt; &quot;hello world!\n&quot;;
+    	return 0;
+    }
+    \end{verbatim}
+</code></pre>
+<ol start="2">
+<li>
+<p>including insert code inline, make custom styles code, choose a specific language for code, import code from another file within the same directory&hellip;. With this method, you dont use {verbatim}, but include a package package named listings.</p>
+<pre><code> \usepackage{listings}
+ \usepackage{color}
+
+ \lstdefinestyle{mystyle}{
+ keywordstyle=\color{magenta},
+ backgroundcolor=\color{yellow},
+ commentstyle=\color{green},
+ basicstyle=\footnotesize,
+ }
+ \lstset{style=mystyle}
+
+ \begin{lstlisting}[language=Python]
+ print &quot;Hello World!&quot;
+ \end{lstlisting}
+ \lstinputlisting[language=C++]{hello.cpp} %import a file named hello.cpp in the same directory
+ \lstinline{} %inset inline code
+</code></pre>
+</li>
+</ol>
+<h1 id="math">Math<a hidden class="anchor" aria-hidden="true" href="#math">#</a></h1>
+<ul>
+<li>
+<p>使用 $ &hellip; $ 可以插入行内公式，使用 [ &hellip; ] 可以插入行间公式</p>
+</li>
+<li>
+<p>\begin{equation} &hellip;  \end{equation}</p>
+</li>
+<li>
+<p>\usepackage{amsmath}</p>
+<pre><code>  Einstein 's $E=mc^2$.
+  \[ E=mc^2. \]
+  \begin{equation}
+  E=mc^2.
+  E=mc^{2\pi}
+  E=log_23
+  \end{equation}
+  $\sqrt{x}$, $\frac{1}{2}$.
+</code></pre>
+</li>
+<li>
+<p><a href="https://liam.page/2014/09/08/latex-introduction/">https://liam.page/2014/09/08/latex-introduction/</a></p>
+</li>
+</ul>
+<h1 id="escape">Escape<a hidden class="anchor" aria-hidden="true" href="#escape">#</a></h1>
+<ul>
+<li>the _</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/typesetting/latex/more/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/typesetting/markdown/equation/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

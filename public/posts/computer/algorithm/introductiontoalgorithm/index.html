@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>IntroductionToAlgorithm小记 | My Blog Site</title>
+<meta name="keywords" content="Algorithm">
+<meta name="description" content=" ">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/algorithm/introductiontoalgorithm/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/algorithm/introductiontoalgorithm/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="IntroductionToAlgorithm小记" />
+<meta property="og:description" content=" " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/algorithm/introductiontoalgorithm/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-28T12:44:45+08:00" />
+<meta property="article:modified_time" content="2023-03-28T12:44:45+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="IntroductionToAlgorithm小记"/>
+<meta name="twitter:description" content=" "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "IntroductionToAlgorithm小记",
+      "item": "http://localhost:1313/posts/computer/algorithm/introductiontoalgorithm/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "IntroductionToAlgorithm小记",
+  "name": "IntroductionToAlgorithm小记",
+  "description": " ",
+  "keywords": [
+    "Algorithm"
+  ],
+  "articleBody": "analysis T(n) worst time average time: weighted average best time(bogus): cheat time computer relative speed(same computer) absolute speed(different computer) asymptotic analysis (渐进分析)，忽略依赖机器的常量，不检查实际运行时间，关注运行时间的增长\n去低阶，去常量\nn-\u003e ,\nΘ(): O and Ω, seem as =, 忽略了。。。\nO(): \u003c=; Ex: 2n^2 = O(n^3) (2n^2 ∈ O(n^3))\no(): \u003c\nΩ(): \u003e=\nω(): \u003e\nrecurrences use recursion tree to guess, than use substitution to proof\nsubstitution, 归纳\nguess the form, such as n^2…\n归纳\n求常数\nT(n) = 4T(n/2) + n, T(1) = Θ(1)\nT(n) = O(n^2) assume: T(k) \u003c= ck^2, k \u003c=n T(n) \u003c= cn^2 + n … \u003c= cn^2 即可 can’t, let T(k) \u003c= c1k^2 -c2k make a c, remember the T(1) recursion tree\n1 + 1/2 + 1/4 + … use binary, is 1.1111… is 2\nT(n) = T(n/4) + T(n/2) + N^2 is O(n^2) 对每一层就解，然后相加，可找规律 master method 特定的递归：T(n) = aT(n/b) + f(n), a \u003e= 1, b \u003e 1, n \u003e= n0 with f(n) \u003e 0; compare f(n) with n^logb(a)(树叶节点) f(n) = O(n^(logb(a)-c)), c \u003e 0; T(n) = Θ(n^logb(a)) f(n) = Θ(n^logb(a) _ log2n ^ k), k \u003e= 0; T(n) = Θ(n^logb(a) _ log2n ^(k+1)) f(n) = Ω(n^logb(a) + c), c \u003e 0, af(n/b) \u003c= (1-c0)f(n), c0 \u003e 0 上一层大于下一层; T(n) = Θ(f(n)) design divide and conquer divide conquer combine sorting insertion sort algorithm\nfor j \u003c- [1-n]; key = a[j]; i = j - 1; while(i \u003e= 0) a[i+1] = a[i]; if(a[i--] \u003c key) break; a[i+1] = key; while(i \u003e= 0 \u0026\u0026 a[i] \u003e key) a[i+1] = a[i]; i--; a[i+1] = key; θ(n^2) merge sort\nn = 1, break; θ(1) just a constant\nrecursively sort a[0, n/2(向上取整)] and a[n/2 + 1(向下取整), n]; 2T(n/2)\nmerge subroutine. θ(n)\nconquer: 比较两数组的第一项，谁小入谁，接着比.\nT(n) = 2T(n/2) + cn = 2(2T(n/4) +cn/2) + cn = … recursive tree, height is lg2n, leaves are n T(n) = (cn)lg2n + θ(n) = θ(nlg2n) Binary search T(n) = T(n/2) + Θ(1) = Θ(log2n) Fibonacci numbers f(n) = 0, n = 0 f(n) = 1, n = 1 f(n) = f(n-1) + f(n-2), n \u003e= 2 native recursive\nΩ(φ^n); φ = (1 + $\\sqrt{2}$)/2 Bottom-up\ncompute f0, f1, f2…; T(n) = Θ(n) ",
+  "wordCount" : "349",
+  "inLanguage": "en",
+  "datePublished": "2023-03-28T12:44:45+08:00",
+  "dateModified": "2023-03-28T12:44:45+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/algorithm/introductiontoalgorithm/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      IntroductionToAlgorithm小记
+    </h1>
+    <div class="post-description">
+       
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-03-28 12:44:45 &#43;0800 CST&#39;&gt;March 28, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;2 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Algorithm/IntroductionToAlgorithm.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#analysis" aria-label="analysis">analysis</a><ul>
+                        
+                <li>
+                    <a href="#tn" aria-label="T(n)">T(n)</a></li>
+                <li>
+                    <a href="#time" aria-label="time">time</a></li></ul>
+                </li>
+                <li>
+                    <a href="#asymptotic-analysis" aria-label="asymptotic analysis">asymptotic analysis</a></li>
+                <li>
+                    <a href="#recurrences" aria-label="recurrences">recurrences</a></li>
+                <li>
+                    <a href="#design" aria-label="design">design</a></li>
+                <li>
+                    <a href="#divide-and-conquer" aria-label="divide and conquer">divide and conquer</a></li>
+                <li>
+                    <a href="#sorting" aria-label="sorting">sorting</a></li>
+                <li>
+                    <a href="#binary-search" aria-label="Binary search">Binary search</a></li>
+                <li>
+                    <a href="#fibonacci-numbers" aria-label="Fibonacci numbers">Fibonacci numbers</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="analysis">analysis<a hidden class="anchor" aria-hidden="true" href="#analysis">#</a></h1>
+<h2 id="tn">T(n)<a hidden class="anchor" aria-hidden="true" href="#tn">#</a></h2>
+<ul>
+<li>worst time</li>
+<li>average time: weighted average</li>
+<li>best time(bogus): cheat</li>
+</ul>
+<h2 id="time">time<a hidden class="anchor" aria-hidden="true" href="#time">#</a></h2>
+<ol>
+<li>computer</li>
+</ol>
+<ul>
+<li>relative speed(same computer)</li>
+<li>absolute speed(different computer)</li>
+</ul>
+<h1 id="asymptotic-analysis">asymptotic analysis<a hidden class="anchor" aria-hidden="true" href="#asymptotic-analysis">#</a></h1>
+<ul>
+<li>
+<p>(渐进分析)，忽略依赖机器的常量，不检查实际运行时间，关注运行时间的增长</p>
+</li>
+<li>
+<p>去低阶，去常量</p>
+</li>
+<li>
+<p>n-&gt; ,</p>
+</li>
+<li>
+<p>Θ(): O and Ω, seem as =, 忽略了。。。</p>
+</li>
+<li>
+<p>O(): &lt;=; Ex: 2n^2 = O(n^3) (2n^2 ∈ O(n^3))</p>
+</li>
+<li>
+<p>o(): &lt;</p>
+</li>
+<li>
+<p>Ω(): &gt;=</p>
+</li>
+<li>
+<p>ω(): &gt;</p>
+</li>
+</ul>
+<h1 id="recurrences">recurrences<a hidden class="anchor" aria-hidden="true" href="#recurrences">#</a></h1>
+<blockquote>
+<p>use recursion tree to guess, than use substitution to proof</p>
+</blockquote>
+<ol>
+<li>
+<p>substitution, 归纳</p>
+<ul>
+<li>
+<p>guess the form, such as n^2&hellip;</p>
+</li>
+<li>
+<p>归纳</p>
+</li>
+<li>
+<p>求常数</p>
+<p>T(n) = 4T(n/2) + n, T(1) = Θ(1)</p>
+<ol>
+<li>T(n) = O(n^2)</li>
+<li>assume: T(k) &lt;= ck^2, k &lt;=n
+T(n) &lt;= cn^2 + n &hellip; &lt;= cn^2 即可
+can&rsquo;t, let T(k) &lt;= c1k^2 -c2k</li>
+<li>make a c, remember the T(1)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>recursion tree</p>
+</li>
+</ol>
+<blockquote>
+<p>1 + 1/2 + 1/4 + &hellip; use binary, is 1.1111&hellip; is 2</p>
+</blockquote>
+<pre><code>    T(n) = T(n/4) + T(n/2) + N^2 is O(n^2)
+    对每一层就解，然后相加，可找规律
+</code></pre>
+<ol start="3">
+<li>master method
+<ul>
+<li>特定的递归：T(n) = aT(n/b) + f(n), a &gt;= 1, b &gt; 1, n &gt;= n0 with f(n) &gt; 0;</li>
+</ul>
+<ol>
+<li>compare f(n) with n^logb(a)(树叶节点)
+<ul>
+<li>f(n) = O(n^(logb(a)-c)), c &gt; 0; T(n) = Θ(n^logb(a))</li>
+<li>f(n) = Θ(n^logb(a) _ log2n ^ k), k &gt;= 0; T(n) = Θ(n^logb(a) _ log2n ^(k+1))</li>
+<li>f(n) = Ω(n^logb(a) + c), c &gt; 0, af(n/b) &lt;= (1-c0)f(n), c0 &gt; 0 上一层大于下一层; T(n) = Θ(f(n))</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="design">design<a hidden class="anchor" aria-hidden="true" href="#design">#</a></h1>
+<h1 id="divide-and-conquer">divide and conquer<a hidden class="anchor" aria-hidden="true" href="#divide-and-conquer">#</a></h1>
+<ol>
+<li>divide</li>
+<li>conquer</li>
+<li>combine</li>
+</ol>
+<h1 id="sorting">sorting<a hidden class="anchor" aria-hidden="true" href="#sorting">#</a></h1>
+<ol>
+<li>
+<p>insertion sort algorithm</p>
+<pre><code>for j &lt;- [1-n];
+    key = a[j];
+    i = j - 1;
+    while(i &gt;= 0)
+        a[i+1] = a[i];
+        if(a[i--] &lt; key)
+            break;
+    a[i+1] = key;
+
+    while(i &gt;= 0 &amp;&amp; a[i] &gt; key)
+        a[i+1] = a[i];
+        i--;
+    a[i+1] = key;
+</code></pre>
+</li>
+</ol>
+<ul>
+<li>θ(n^2)</li>
+</ul>
+<ol start="2">
+<li>
+<p>merge sort</p>
+<ul>
+<li>
+<p>n = 1, break; θ(1) just a constant</p>
+</li>
+<li>
+<p>recursively sort a[0, n/2(向上取整)] and a[n/2 + 1(向下取整), n]; 2T(n/2)</p>
+</li>
+<li>
+<p>merge subroutine. θ(n)</p>
+</li>
+<li>
+<p>conquer: 比较两数组的第一项，谁小入谁，接着比.</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>T(n) = 2T(n/2) + cn = 2(2T(n/4) +cn/2) + cn = &hellip;</li>
+<li>recursive tree, height is lg2n, leaves are n</li>
+<li>T(n) = (cn)lg2n + θ(n) = θ(nlg2n)</li>
+</ul>
+<h1 id="binary-search">Binary search<a hidden class="anchor" aria-hidden="true" href="#binary-search">#</a></h1>
+<ul>
+<li>T(n) = T(n/2) + Θ(1) = Θ(log2n)</li>
+</ul>
+<h1 id="fibonacci-numbers">Fibonacci numbers<a hidden class="anchor" aria-hidden="true" href="#fibonacci-numbers">#</a></h1>
+<ul>
+<li>f(n) = 0, n = 0</li>
+<li>f(n) = 1, n = 1</li>
+<li>f(n) = f(n-1) + f(n-2), n &gt;= 2</li>
+</ul>
+<ol>
+<li>
+<p>native recursive</p>
+<ul>
+<li>Ω(φ^n); φ = (1 + $\sqrt{2}$)/2</li>
+</ul>
+</li>
+<li>
+<p>Bottom-up</p>
+<ul>
+<li>compute f0, f1, f2&hellip;; T(n) = Θ(n)</li>
+</ul>
+</li>
+</ol>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/algorithm/">Algorithm</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/database/sql/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Sql</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/algorithm/algorithm/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Algorithm基础</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

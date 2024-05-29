@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Vim More | My Blog Site</title>
+<meta name="keywords" content="vim">
+<meta name="description" content="vim面板？">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-more/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-more/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="Vim More" />
+<meta property="og:description" content="vim面板？" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-more/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-27T19:02:31+08:00" />
+<meta property="article:modified_time" content="2023-03-27T19:02:31+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Vim More"/>
+<meta name="twitter:description" content="vim面板？"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Vim More",
+      "item": "http://localhost:1313/posts/computer/ide+/vim+/vim-more/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Vim More",
+  "name": "Vim More",
+  "description": "vim面板？",
+  "keywords": [
+    "vim"
+  ],
+  "articleBody": "buffer :ls look files(same as :buffers, :files)\n:e file (file tree)\n:bn(next)/bp(previous) b 1(or b1) b name(partly, can use tab to complete)\n:bd (only close a file)\nvim-unimpaired\n[b ]b 循环遍历缓冲区 [f ]f 循环遍历同一目录下文件，并生成缓冲区 [l ]l 遍历位置列表 [q ]q 遍历快速修复列表 [q ]q 遍历tag Tab :tabnew web 使用 ：tabnew 创建一个名字叫 web 的 tab ,当然名字也可以没有，这样会创建一个没有名字的 tab :tabc(close) 关闭当前的 tab :tabn 切换到下一个 tab /gt /ngt /:tabmove N :tabp 切换到上一个 tab /gT /ngT :tabs 查看一共有几个 tab :tabe \u003e+/-tabnext tabmove N split :split(sp) file vsplit(vs)\nctr+w+hjkl 光标移动\nCtrl + w s/v 上下/分割当前打开的文件。\n左右分屏： vim -On file1 file2 … filen\n上下分屏： vim -on file1 file2 … filen\nCtrl + w c 关闭当前的分屏\nCtrl + w q 关闭当前的分屏，如果是最后一个分屏将会退出 VIM\nCtrl + w o 关闭所有其他\n:wqa(w,q,all) 关闭所有并退出\n关闭缓冲区，而不关窗口，in vimrc: command! Bd :bp | :sp | :bn | :bd, then use :Bd\n窗口 :help window-moving, :help window-resize\nc-w+HJKL: move the current window to …\nchange: c-w-r,x…\n编号算了。。。\nc-w-=: all windows high and weigh same\nc-w–,+,\u003c,\u003e\n:resize(res) +,-N… :vertical resize(vert res) +,-N…\nfold 设置折叠模式: set foldmethod=indent(manual, expr（正则）, marker(文中的特殊标记如（{【), syntax, diff) autocmd BufRead * normal zR , will open all fold when open a file zo: open fold zc: close za: open/close zR: open all zM: close all undotree gundo.vim noremap :GundoToggle help: undo-tree\nfiletree (内置)Netrw: use :Ex enter, -(上一层目录), D(delete), R :Vex(左右分割打开 Netrw），:Sex, :Lex :Ex(or :e) sftp:////, :e scp://// set wildmenu(启动增强的 tab 自动补全)，set wildmode=list:longest,full(允许的最长字符串) :e, then use tab, can open file(shift+tab, turn) NERDTree :NERDTree to start bookmarks: use :Bookmark to make a bookmark(is a file), use B to look let NERDTreeShowBookmarks = 1 audocmd VimEnter * NERDTree “自动打开 Vinegar use - will enter Netrw (use I to show the help, shift+~will open ~) CtrP 按 ctr+P 会进入文件选择，ctr+j,k 上下，esc 退出 ctr+f，b 切换搜索模式，打开搜索模式 :CtrlPBuffer, :CtrlPMRU(最近使用), :CtrlPMixed（同时） open file vim *.c +14(行号) Register \" 访问寄存器\n“ayy 表示的是复制当前行内容到 a 寄存器当中，如需附加复制，使用 A\n“ap 表示的是从 a 寄存器当中取出内容\n:reg 该命令会列出所有的寄存器\n:reg a 会查看 a 寄存器里寄存的内容 ((%寄存)器当前文件名，#上次打开的文件名，.最后插入的文本，:最后的命令)\n“” 两个双引号就是一个无名寄存器，通常我们复制黏贴的时候都会自动启用这个寄存器。\n0 寄存器是最近一次的 （1，2, …）\n插入模式下:c-r+寄存器会粘贴\n*寄存器（macOS，windows 的），+寄存器（linux 默认的 ctr+c，ctr+v）\n.vimrc: set clipboard=unamed \" 复制到**\nset clipboard=unnamedplus \" 复制到+\nset clipboard=unamed, unnamedplus \" 同时\n快速恢复列表 quickfix 为了方便的跳转到文件的某个部分, 如:make, :grep 等产生的信息\n:copen to open all :cclose/:bd :cnext(cn) :cprevious(cp/cN) :cwindow/:cw 只在出错时打开 位置列表 :lgrep :lmake to open :lopne :lclose … diff ",
+  "wordCount" : "358",
+  "inLanguage": "en",
+  "datePublished": "2023-03-27T19:02:31+08:00",
+  "dateModified": "2023-03-27T19:02:31+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/ide+/vim+/vim-more/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Vim More
+    </h1>
+    <div class="post-description">
+      vim面板？
+    </div>
+    <div class="post-meta">&lt;span title=&#39;2023-03-27 19:02:31 &#43;0800 CST&#39;&gt;March 27, 2023&lt;/span&gt;&amp;nbsp;·&amp;nbsp;2 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/IDE&#43;/Vim&#43;/vim-more.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#buffer" aria-label="buffer">buffer</a></li></ul>
+                    
+                <li>
+                    <a href="#tab" aria-label="Tab">Tab</a></li>
+                <li>
+                    <a href="#split" aria-label="split">split</a></li>
+                <li>
+                    <a href="#%e7%aa%97%e5%8f%a3" aria-label="窗口">窗口</a></li>
+                <li>
+                    <a href="#fold" aria-label="fold">fold</a></li>
+                <li>
+                    <a href="#undotree" aria-label="undotree">undotree</a></li>
+                <li>
+                    <a href="#filetree" aria-label="filetree">filetree</a></li>
+                <li>
+                    <a href="#open-file" aria-label="open file">open file</a></li>
+                <li>
+                    <a href="#register" aria-label="Register">Register</a></li>
+                <li>
+                    <a href="#%e5%bf%ab%e9%80%9f%e6%81%a2%e5%a4%8d%e5%88%97%e8%a1%a8-quickfix" aria-label="快速恢复列表 quickfix">快速恢复列表 quickfix</a></li>
+                <li>
+                    <a href="#%e4%bd%8d%e7%bd%ae%e5%88%97%e8%a1%a8" aria-label="位置列表">位置列表</a></li>
+                <li>
+                    <a href="#diff" aria-label="diff">diff</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="buffer">buffer<a hidden class="anchor" aria-hidden="true" href="#buffer">#</a></h2>
+<ul>
+<li>
+<p>:ls look files(same as :buffers, :files)</p>
+</li>
+<li>
+<p>:e file (file tree)</p>
+</li>
+<li>
+<p>:bn(next)/bp(previous) b 1(or b1) b name(partly, can use tab to complete)</p>
+</li>
+<li>
+<p>:bd (only close a file)</p>
+</li>
+<li>
+<p>vim-unimpaired</p>
+<pre><code>  [b ]b 循环遍历缓冲区
+  [f ]f 循环遍历同一目录下文件，并生成缓冲区
+  [l ]l 遍历位置列表
+  [q ]q 遍历快速修复列表
+  [q ]q 遍历tag
+</code></pre>
+</li>
+</ul>
+<h1 id="tab">Tab<a hidden class="anchor" aria-hidden="true" href="#tab">#</a></h1>
+<ul>
+<li>:tabnew web 使用 ：tabnew 创建一个名字叫 web 的 tab ,当然名字也可以没有，这样会创建一个没有名字的 tab</li>
+<li>:tabc(close) 关闭当前的 tab</li>
+<li>:tabn 切换到下一个 tab /gt /ngt /:tabmove N</li>
+<li>:tabp 切换到上一个 tab /gT /ngT</li>
+<li>:tabs 查看一共有几个 tab</li>
+<li>:tabe &gt;+/-tabnext</li>
+<li>tabmove N</li>
+</ul>
+<h1 id="split">split<a hidden class="anchor" aria-hidden="true" href="#split">#</a></h1>
+<ul>
+<li>
+<p>:split(sp) file vsplit(vs)</p>
+</li>
+<li>
+<p>ctr+w+hjkl 光标移动</p>
+</li>
+<li>
+<p>Ctrl + w s/v 上下/分割当前打开的文件。</p>
+</li>
+<li>
+<p>左右分屏： vim -On file1 file2 &hellip; filen</p>
+</li>
+<li>
+<p>上下分屏： vim -on file1 file2 &hellip; filen</p>
+</li>
+<li>
+<p>Ctrl + w c 关闭当前的分屏</p>
+</li>
+<li>
+<p>Ctrl + w q 关闭当前的分屏，如果是最后一个分屏将会退出 VIM</p>
+</li>
+<li>
+<p>Ctrl + w o 关闭所有其他</p>
+</li>
+<li>
+<p>:wqa(w,q,all) 关闭所有并退出</p>
+</li>
+<li>
+<p>关闭缓冲区，而不关窗口，in vimrc: command! Bd :bp | :sp | :bn | :bd, then use :Bd</p>
+</li>
+</ul>
+<h1 id="窗口">窗口<a hidden class="anchor" aria-hidden="true" href="#窗口">#</a></h1>
+<ul>
+<li>
+<p>:help window-moving, :help window-resize</p>
+</li>
+<li>
+<p>c-w+HJKL: move the current window to &hellip;</p>
+</li>
+<li>
+<p>change: c-w-r,x&hellip;</p>
+</li>
+<li>
+<p>编号算了。。。</p>
+</li>
+<li>
+<p>c-w-=: all windows high and weigh same</p>
+</li>
+<li>
+<p>c-w&ndash;,+,&lt;,&gt;</p>
+</li>
+<li>
+<p>:resize(res) +,-N&hellip; :vertical resize(vert res) +,-N&hellip;</p>
+</li>
+</ul>
+<h1 id="fold">fold<a hidden class="anchor" aria-hidden="true" href="#fold">#</a></h1>
+<ul>
+<li>设置折叠模式: set foldmethod=indent(manual, expr（正则）, marker(文中的特殊标记如（{【), syntax, diff)</li>
+<li>autocmd BufRead * normal zR , will open all fold when open a file</li>
+<li>zo: open fold</li>
+<li>zc: close</li>
+<li>za: open/close</li>
+<li>zR: open all</li>
+<li>zM: close all</li>
+</ul>
+<h1 id="undotree">undotree<a hidden class="anchor" aria-hidden="true" href="#undotree">#</a></h1>
+<ul>
+<li>gundo.vim</li>
+<li>noremap <f5> :GundoToggle<cr>
+<blockquote>
+<p>help: undo-tree</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="filetree">filetree<a hidden class="anchor" aria-hidden="true" href="#filetree">#</a></h1>
+<ol>
+<li>(内置)Netrw: use :Ex
+<ul>
+<li>enter, -(上一层目录), D(delete), R :Vex(左右分割打开 Netrw），:Sex, :Lex :Ex(or :e) sftp://<domain>/<directory>/, :e scp://<domain>/<directory>/<file></li>
+</ul>
+</li>
+<li>set wildmenu(启动增强的 tab 自动补全)，set wildmode=list:longest,full(允许的最长字符串)
+<ul>
+<li>:e, then use tab, can open file(shift+tab, turn)</li>
+</ul>
+</li>
+<li>NERDTree
+<ul>
+<li>:NERDTree to start</li>
+<li>bookmarks: use :Bookmark to make a bookmark(is a file), use B to look</li>
+<li>let NERDTreeShowBookmarks = 1</li>
+<li>audocmd VimEnter * NERDTree &ldquo;自动打开</li>
+</ul>
+</li>
+<li>Vinegar
+<ul>
+<li>use - will enter Netrw (use I to show the help, shift+~will open ~)</li>
+</ul>
+</li>
+<li>CtrP
+<ul>
+<li>按 ctr+P 会进入文件选择，ctr+j,k 上下，esc 退出</li>
+<li>ctr+f，b 切换搜索模式，打开搜索模式 :CtrlPBuffer, :CtrlPMRU(最近使用), :CtrlPMixed（同时）</li>
+</ul>
+</li>
+</ol>
+<h1 id="open-file">open file<a hidden class="anchor" aria-hidden="true" href="#open-file">#</a></h1>
+<ul>
+<li>vim *.c +14(行号)</li>
+</ul>
+<h1 id="register">Register<a hidden class="anchor" aria-hidden="true" href="#register">#</a></h1>
+<ul>
+<li>
+<p>&quot; 访问寄存器</p>
+</li>
+<li>
+<p>&ldquo;ayy 表示的是复制当前行内容到 a 寄存器当中，如需附加复制，使用 A</p>
+</li>
+<li>
+<p>“ap 表示的是从 a 寄存器当中取出内容</p>
+</li>
+<li>
+<p>:reg 该命令会列出所有的寄存器</p>
+</li>
+<li>
+<p>:reg a 会查看 a 寄存器里寄存的内容 ((%寄存)器当前文件名，#上次打开的文件名，.最后插入的文本，:最后的命令)</p>
+</li>
+<li>
+<p>“” 两个双引号就是一个无名寄存器，通常我们复制黏贴的时候都会自动启用这个寄存器。</p>
+</li>
+<li>
+<p>0 寄存器是最近一次的 （1，2, &hellip;）</p>
+</li>
+<li>
+<p>插入模式下:c-r+寄存器会粘贴</p>
+</li>
+<li>
+<p>*寄存器（macOS，windows 的），+寄存器（linux 默认的 ctr+c，ctr+v）</p>
+</li>
+<li>
+<p>.vimrc: set clipboard=unamed &quot; 复制到**</p>
+</li>
+<li>
+<p>set clipboard=unnamedplus &quot; 复制到+</p>
+</li>
+<li>
+<p>set clipboard=unamed, unnamedplus &quot; 同时</p>
+</li>
+</ul>
+<h1 id="快速恢复列表-quickfix">快速恢复列表 quickfix<a hidden class="anchor" aria-hidden="true" href="#快速恢复列表-quickfix">#</a></h1>
+<p>为了方便的跳转到文件的某个部分, 如:make, :grep 等产生的信息</p>
+<ul>
+<li>:copen to open all</li>
+<li>:cclose/:bd</li>
+<li>:cnext(cn) :cprevious(cp/cN)</li>
+<li>:cwindow/:cw 只在出错时打开</li>
+</ul>
+<h1 id="位置列表">位置列表<a hidden class="anchor" aria-hidden="true" href="#位置列表">#</a></h1>
+<ul>
+<li>:lgrep :lmake to open</li>
+<li>:lopne :lclose &hellip;</li>
+</ul>
+<h1 id="diff">diff<a hidden class="anchor" aria-hidden="true" href="#diff">#</a></h1>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/vim/">Vim</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/linux/arch/arch-install/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>ArchLinux Install</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/vim-base/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Vim Base</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

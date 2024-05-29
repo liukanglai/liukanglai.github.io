@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="">
+<meta name="description" content="简单的项目 https://www.cnblogs.com/three-fighter/p/14332288.html
+前后端分离，通过 ajax 调用后端的 restuful api 进行数据交互 前端：
+vue， ElementPlus: a UI of VUE 后端：
+spring-boot: java 后端框架 maven mybatis mysql 后端 h 环境 java idea mysql idea New Project-Spring Intializr 依赖: web, mysql, lombok application.yml:
+server: port:9090 spring: application: name: ${APP_NAME:unnamed} datasource: url: jdbc:mysql://localhost:3306/ username: sa password: driver-class-name: org.mysql.jdbc.Driver hikari: auto-commit: false connection-timeout: 3000 validation-timeout: 3000 max-lifetime: 60000 maximum-pool-size: 20 minimum-idle: 1 mybatis-plus 不用自己写增删改查！！！ &lt;!--mybatis-plus依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;com.baomidou&lt;/groupId&gt; &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt; &lt;version&gt;3.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="http://localhost:1313/posts/computer/web/springbootvue/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/web/springbootvue/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="简单的项目 https://www.cnblogs.com/three-fighter/p/14332288.html
+前后端分离，通过 ajax 调用后端的 restuful api 进行数据交互 前端：
+vue， ElementPlus: a UI of VUE 后端：
+spring-boot: java 后端框架 maven mybatis mysql 后端 h 环境 java idea mysql idea New Project-Spring Intializr 依赖: web, mysql, lombok application.yml:
+server: port:9090 spring: application: name: ${APP_NAME:unnamed} datasource: url: jdbc:mysql://localhost:3306/ username: sa password: driver-class-name: org.mysql.jdbc.Driver hikari: auto-commit: false connection-timeout: 3000 validation-timeout: 3000 max-lifetime: 60000 maximum-pool-size: 20 minimum-idle: 1 mybatis-plus 不用自己写增删改查！！！ &lt;!--mybatis-plus依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;com.baomidou&lt;/groupId&gt; &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt; &lt;version&gt;3." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/web/springbootvue/" /><meta property="og:image" content="http://localhost:1313/papermod-cover.png"/><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/papermod-cover.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="简单的项目 https://www.cnblogs.com/three-fighter/p/14332288.html
+前后端分离，通过 ajax 调用后端的 restuful api 进行数据交互 前端：
+vue， ElementPlus: a UI of VUE 后端：
+spring-boot: java 后端框架 maven mybatis mysql 后端 h 环境 java idea mysql idea New Project-Spring Intializr 依赖: web, mysql, lombok application.yml:
+server: port:9090 spring: application: name: ${APP_NAME:unnamed} datasource: url: jdbc:mysql://localhost:3306/ username: sa password: driver-class-name: org.mysql.jdbc.Driver hikari: auto-commit: false connection-timeout: 3000 validation-timeout: 3000 max-lifetime: 60000 maximum-pool-size: 20 minimum-idle: 1 mybatis-plus 不用自己写增删改查！！！ &lt;!--mybatis-plus依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;com.baomidou&lt;/groupId&gt; &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt; &lt;version&gt;3."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/web/springbootvue/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "简单的项目 https://www.cnblogs.com/three-fighter/p/14332288.html\n前后端分离，通过 ajax 调用后端的 restuful api 进行数据交互 前端：\nvue， ElementPlus: a UI of VUE 后端：\nspring-boot: java 后端框架 maven mybatis mysql 后端 h 环境 java idea mysql idea New Project-Spring Intializr 依赖: web, mysql, lombok application.yml:\nserver: port:9090 spring: application: name: ${APP_NAME:unnamed} datasource: url: jdbc:mysql://localhost:3306/ username: sa password: driver-class-name: org.mysql.jdbc.Driver hikari: auto-commit: false connection-timeout: 3000 validation-timeout: 3000 max-lifetime: 60000 maximum-pool-size: 20 minimum-idle: 1 mybatis-plus 不用自己写增删改查！！！ \u0026lt;!--mybatis-plus依赖--\u0026gt; \u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;com.baomidou\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;mybatis-plus-boot-starter\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;3.",
+  "keywords": [
+    
+  ],
+  "articleBody": "简单的项目 https://www.cnblogs.com/three-fighter/p/14332288.html\n前后端分离，通过 ajax 调用后端的 restuful api 进行数据交互 前端：\nvue， ElementPlus: a UI of VUE 后端：\nspring-boot: java 后端框架 maven mybatis mysql 后端 h 环境 java idea mysql idea New Project-Spring Intializr 依赖: web, mysql, lombok application.yml:\nserver: port:9090 spring: application: name: ${APP_NAME:unnamed} datasource: url: jdbc:mysql://localhost:3306/ username: sa password: driver-class-name: org.mysql.jdbc.Driver hikari: auto-commit: false connection-timeout: 3000 validation-timeout: 3000 max-lifetime: 60000 maximum-pool-size: 20 minimum-idle: 1 mybatis-plus 不用自己写增删改查！！！ com.baomidou mybatis-plus-boot-starter 3.4.1 mysql mysql-connector-java runtime spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver spring.datasource.url=jdbc:mysql://localhost:3306/mp-demo?characterEncoding=utf-8\u0026allowMultiQueries=true\u0026serverTimezone=GMT%2B8 spring.datasource.username=root spring.datasource.password=root 前端 环境 nodejs，npm (node -v; npm -v)\nvue-cli(npm install -g vue-cli)\nvetur, eslint, prettier\nchrome, chrome 插件：Vue.js devtools\nAjax 前后端分离情况下，前后端交互的模式是前端发出异步式请求，后端返回 json 。\naxios 是一个基于 Promise 用于浏览器和 nodejs 的 HTTP 客户端，\n本质上也是对原生 XHR 的封装，只不过它是 Promise 的实现版本，符合最新的 ES 规范。\n在这里我们只需要知道它是非常强大的网络请求处理库，且得到广泛应用即可。\nnpm install axios\nin main.ts: var axios = require(‘axios’) Vue.prototype.$axios = axios\n在前后端分离的情况下，比较流行的认证方案是 JWT认证 认证，和传统的session认证不同，jwt是一种无状态的认证方法，也就是服务端不再保存任何认证信息\nvuex\n",
+  "wordCount" : "136",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/web/springbootvue/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-meta">1 min&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/liukanglai/liukanglai.github.io/content/posts/Computer/Web/springBootVue.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%ae%80%e5%8d%95%e7%9a%84%e9%a1%b9%e7%9b%ae" aria-label="简单的项目">简单的项目</a><ul>
+                        
+                <li>
+                    <a href="#%e5%90%8e%e7%ab%af" aria-label="后端">后端</a><ul>
+                        
+                <li>
+                    <a href="#h-%e7%8e%af%e5%a2%83" aria-label="h 环境">h 环境</a></li>
+                <li>
+                    <a href="#idea" aria-label="idea">idea</a></li>
+                <li>
+                    <a href="#mybatis-plus" aria-label="mybatis-plus">mybatis-plus</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%89%8d%e7%ab%af" aria-label="前端">前端</a><ul>
+                        
+                <li>
+                    <a href="#%e7%8e%af%e5%a2%83" aria-label="环境">环境</a></li>
+                <li>
+                    <a href="#ajax" aria-label="Ajax">Ajax</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="简单的项目">简单的项目<a hidden class="anchor" aria-hidden="true" href="#简单的项目">#</a></h1>
+<blockquote>
+<p><code>https://www.cnblogs.com/three-fighter/p/14332288.html</code></p>
+</blockquote>
+<ul>
+<li>前后端分离，通过 ajax 调用后端的 restuful api 进行数据交互</li>
+</ul>
+<p>前端：</p>
+<ul>
+<li>vue，</li>
+<li>ElementPlus: a UI of VUE</li>
+</ul>
+<p>后端：</p>
+<ul>
+<li>spring-boot: java 后端框架</li>
+<li>maven</li>
+<li>mybatis</li>
+<li>mysql</li>
+</ul>
+<h2 id="后端">后端<a hidden class="anchor" aria-hidden="true" href="#后端">#</a></h2>
+<h3 id="h-环境">h 环境<a hidden class="anchor" aria-hidden="true" href="#h-环境">#</a></h3>
+<ul>
+<li>java</li>
+<li>idea</li>
+<li>mysql</li>
+</ul>
+<h3 id="idea">idea<a hidden class="anchor" aria-hidden="true" href="#idea">#</a></h3>
+<ul>
+<li>New Project-Spring Intializr</li>
+<li>依赖: web, mysql, lombok</li>
+</ul>
+<p>application.yml:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l">port:9090</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">${APP_NAME:unnamed}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">jdbc:mysql://localhost:3306/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">sa</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver-class-name</span><span class="p">:</span><span class="w"> </span><span class="l">org.mysql.jdbc.Driver</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">hikari</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">auto-commit</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">connection-timeout</span><span class="p">:</span><span class="w"> </span><span class="m">3000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">validation-timeout</span><span class="p">:</span><span class="w"> </span><span class="m">3000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">max-lifetime</span><span class="p">:</span><span class="w"> </span><span class="m">60000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">maximum-pool-size</span><span class="p">:</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">minimum-idle</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span></code></pre></div><h3 id="mybatis-plus">mybatis-plus<a hidden class="anchor" aria-hidden="true" href="#mybatis-plus">#</a></h3>
+<ul>
+<li>不用自己写增删改查！！！</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">        <span class="c">&lt;!--mybatis-plus依赖--&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>com.baomidou<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>mybatis-plus-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;version&gt;</span>3.4.1<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!--mysql驱动--&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><ul>
+<li>spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</li>
+<li>spring.datasource.url=jdbc:mysql://localhost:3306/mp-demo?characterEncoding=utf-8&amp;allowMultiQueries=true&amp;serverTimezone=GMT%2B8</li>
+<li>spring.datasource.username=root</li>
+<li>spring.datasource.password=root</li>
+</ul>
+<h2 id="前端">前端<a hidden class="anchor" aria-hidden="true" href="#前端">#</a></h2>
+<h3 id="环境">环境<a hidden class="anchor" aria-hidden="true" href="#环境">#</a></h3>
+<ul>
+<li>
+<p>nodejs，npm (node -v; npm -v)</p>
+</li>
+<li>
+<p>vue-cli(npm install -g vue-cli)</p>
+</li>
+<li>
+<p>vetur, eslint, prettier</p>
+</li>
+<li>
+<p>chrome, chrome 插件：Vue.js devtools</p>
+</li>
+</ul>
+<h3 id="ajax">Ajax<a hidden class="anchor" aria-hidden="true" href="#ajax">#</a></h3>
+<ul>
+<li>
+<p>前后端分离情况下，前后端交互的模式是前端发出异步式请求，后端返回 json 。</p>
+</li>
+<li>
+<p>axios 是一个基于 Promise 用于浏览器和 nodejs 的 HTTP 客户端，</p>
+</li>
+<li>
+<p>本质上也是对原生 XHR 的封装，只不过它是 Promise 的实现版本，符合最新的 ES 规范。</p>
+</li>
+<li>
+<p>在这里我们只需要知道它是非常强大的网络请求处理库，且得到广泛应用即可。</p>
+</li>
+<li>
+<p>npm install axios</p>
+</li>
+<li>
+<p>in main.ts: var axios = require(&lsquo;axios&rsquo;) Vue.prototype.$axios = axios</p>
+</li>
+<li>
+<p>在前后端分离的情况下，比较流行的认证方案是 JWT认证 认证，和传统的session认证不同，jwt是一种无状态的认证方法，也就是服务端不再保存任何认证信息</p>
+</li>
+<li>
+<p>vuex</p>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/web/maven/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/web/web-projects/liukanglai.github.io/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

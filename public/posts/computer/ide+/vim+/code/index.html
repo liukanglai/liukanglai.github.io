@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/code/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/code/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/ide+/vim+/code/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "complete vim 内置\nc-p/n 插入补全模式：c-x, than: c-i(补全整行) c-j(补全标签) c-f(补全文件名) s(拼写建议的补全, set spell) :help ins-completion :help ‘complete’\nYouCompleteMe\nlsp\nbash\nsudo npm i -g bash-language-server browse better use lsp !!!\ngd/D: 跳转函数定义 Exuberant ctag\npacman -S ctags\nctags -R(create tags)\nc-]: 会跳转, c-t: turn back, 若有同名 :tn(next) :tp(previous) :ts(select)\ng]: select\nvim -t tags(直接跳转)\n\" Regenerate tags when saving Python files. autocmd BufWritePost *.py silent! !ctags -R \u0026\nset tags=tags; \" 在父目录中递归查找tags，; 使持续查找 set tags=/home/tags \" set a folder taglist/tagbar\ngtags: https://zhuanlan.zhihu.com/p/36279445\nvimdiff vimdiff *.md *.md ]c [c to move do/:diffget get the different content dp/:diffput put the different content :%diffget/:%diffput all file to copy 手动修改需更新高亮 :diffupdate/:diffu 可多个文件, 但无 do/dp :diffget/:diffput 需指定参数:ls!或文件名 for git git config\n$ git config --global merge.tool vimdiff $ git config --global merge.conflictstyle diff3 $ git config --global mergetool.prompt false 略\nwith tmux vim-tmux-navigator\nc-h/j/k/l to move screen see it in vim wikia Linting python use Pylint Flake8 autopep8\nLinter\n:make | copen\n\" Use :make to run pylint for Python files. autocmd filetype python setlocal makeprg=pylint3\\ –reports=n\\ –msg-template=\"{path}:{line}:\\ {msg_id}\\ {symbol},\\ {obj}\\ {msg}\"\\ %:p autocmd filetype python setlocal errorformat=%f:%l:\\ %m\nsyntastic(plug)\n显示的是位置列表\n\" Plug ‘vim-syntastic/syntastic’\n\" set statusline+=%#warningmsg# \" set statusline+=%{SyntasticStatuslineFlag()} \" set statusline+=%*\n\" let g:syntastic_always_populate_loc_list = 1 \" let g:syntastic_auto_loc_list = 1 \" let g:syntastic_check_on_open = 1 \" let g:syntastic_check_on_wq = 0\n\" let g:syntastic_python_pylint_exe = ‘pylint3’\nale(异步调用)\narglist(argument list) do a same operation in multiple files\n:arg **/*.py (define files)\n:argdo %s/hell/hello/ge | update\n:args (to display files)\n:set hidden (same with e)\n:wa (save all)\n:bufdo(argdo) (all buffer do)\nrefactor use regex to substitute, search, 宏… google: vim refactoring plugins debug termdebug(plug) ",
+  "wordCount" : "269",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/ide+/vim+/code/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;269 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/IDE&#43;/Vim&#43;/code.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#for-git">for git</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="complete">complete<a hidden class="anchor" aria-hidden="true" href="#complete">#</a></h1>
+<ol>
+<li>
+<p>vim 内置</p>
+<ul>
+<li>c-p/n</li>
+<li>插入补全模式：c-x, than: c-i(补全整行) c-j(补全标签) c-f(补全文件名) s(拼写建议的补全, set spell)
+<blockquote>
+<p>:help ins-completion :help &lsquo;complete&rsquo;</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>YouCompleteMe</p>
+</li>
+<li>
+<p>lsp</p>
+</li>
+<li>
+<p>bash</p>
+<ul>
+<li>sudo npm i -g bash-language-server</li>
+</ul>
+</li>
+</ol>
+<h1 id="browse">browse<a hidden class="anchor" aria-hidden="true" href="#browse">#</a></h1>
+<blockquote>
+<p>better use lsp !!!</p>
+</blockquote>
+<ul>
+<li>gd/D: 跳转函数定义</li>
+</ul>
+<ol>
+<li>
+<p>Exuberant ctag</p>
+<ul>
+<li>
+<p>pacman -S ctags</p>
+</li>
+<li>
+<p>ctags -R(create tags)</p>
+</li>
+<li>
+<p>c-]: 会跳转, c-t: turn back, 若有同名 :tn(next) :tp(previous) :ts(select)</p>
+</li>
+<li>
+<p>g]: select</p>
+</li>
+<li>
+<p>vim -t tags(直接跳转)</p>
+</li>
+<li>
+<p>&quot; Regenerate tags when saving Python files. autocmd BufWritePost *.py silent! !ctags -R &amp;</p>
+<pre><code>  set tags=tags;  &quot; 在父目录中递归查找tags，; 使持续查找
+  set tags=/home/tags  &quot; set a folder
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>taglist/tagbar</p>
+</li>
+<li>
+<p>gtags: <code>https://zhuanlan.zhihu.com/p/36279445</code></p>
+</li>
+</ol>
+<h1 id="vimdiff">vimdiff<a hidden class="anchor" aria-hidden="true" href="#vimdiff">#</a></h1>
+<ul>
+<li>vimdiff *.md *.md</li>
+<li>
+<ul>
+<li>]c [c to move</li>
+</ul>
+</li>
+<li>do/:diffget get the different content</li>
+<li>dp/:diffput put the different content</li>
+<li>:%diffget/:%diffput all file to copy</li>
+<li>手动修改需更新高亮 :diffupdate/:diffu</li>
+<li>可多个文件, 但无 do/dp :diffget/:diffput 需指定参数:ls!或文件名</li>
+</ul>
+<h2 id="for-git">for git<a hidden class="anchor" aria-hidden="true" href="#for-git">#</a></h2>
+<ol>
+<li>
+<p>git config</p>
+<pre><code>$ git config --global merge.tool vimdiff
+$ git config --global merge.conflictstyle diff3
+$ git config --global mergetool.prompt false
+</code></pre>
+</li>
+<li>
+<p>略</p>
+</li>
+</ol>
+<h1 id="with-tmux">with tmux<a hidden class="anchor" aria-hidden="true" href="#with-tmux">#</a></h1>
+<p>vim-tmux-navigator</p>
+<ul>
+<li>c-h/j/k/l to move</li>
+</ul>
+<h1 id="screen">screen<a hidden class="anchor" aria-hidden="true" href="#screen">#</a></h1>
+<ul>
+<li>see it in vim wikia</li>
+</ul>
+<h1 id="linting">Linting<a hidden class="anchor" aria-hidden="true" href="#linting">#</a></h1>
+<blockquote>
+<p>python use Pylint Flake8 autopep8</p>
+</blockquote>
+<ol>
+<li>
+<p>Linter</p>
+<ul>
+<li>
+<p>:make | copen</p>
+<p>&quot; Use :make to run pylint for Python files.
+autocmd filetype python setlocal makeprg=pylint3\ &ndash;reports=n\ &ndash;msg-template=&quot;{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}&quot;\ %:p
+autocmd filetype python setlocal errorformat=%f:%l:\ %m</p>
+</li>
+</ul>
+</li>
+<li>
+<p>syntastic(plug)</p>
+<ul>
+<li>
+<p>显示的是位置列表</p>
+<p>&quot; Plug &lsquo;vim-syntastic/syntastic&rsquo;</p>
+<p>&quot; set statusline+=%#warningmsg#
+&quot; set statusline+=%{SyntasticStatuslineFlag()}
+&quot; set statusline+=%*</p>
+<p>&quot; let g:syntastic_always_populate_loc_list = 1
+&quot; let g:syntastic_auto_loc_list = 1
+&quot; let g:syntastic_check_on_open = 1
+&quot; let g:syntastic_check_on_wq = 0</p>
+<p>&quot; let g:syntastic_python_pylint_exe = &lsquo;pylint3&rsquo;</p>
+</li>
+</ul>
+</li>
+<li>
+<p>ale(异步调用)</p>
+</li>
+</ol>
+<h1 id="arglistargument-list">arglist(argument list)<a hidden class="anchor" aria-hidden="true" href="#arglistargument-list">#</a></h1>
+<p>do a same operation in multiple files</p>
+<ul>
+<li>
+<p>:arg **/*.py (define files)</p>
+</li>
+<li>
+<p>:argdo %s/hell/hello/ge | update</p>
+</li>
+<li>
+<p>:args (to display files)</p>
+</li>
+<li>
+<p>:set hidden (same with e)</p>
+</li>
+<li>
+<p>:wa (save all)</p>
+</li>
+<li>
+<p>:bufdo(argdo) (all buffer do)</p>
+</li>
+</ul>
+<h1 id="refactor">refactor<a hidden class="anchor" aria-hidden="true" href="#refactor">#</a></h1>
+<ul>
+<li>use regex to substitute, search, 宏&hellip;</li>
+<li>google: vim refactoring plugins</li>
+</ul>
+<h1 id="debug">debug<a hidden class="anchor" aria-hidden="true" href="#debug">#</a></h1>
+<ul>
+<li>termdebug(plug)</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/ccls/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/ide&#43;/vim&#43;/git/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

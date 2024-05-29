@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/os/list/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/os/list/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/os/list/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "Nice: https://www.cnblogs.com/yangguang-it/p/11667772.html\nlist_entry: 获得节点对应的入口 list_first_entry: 获得第一个入口 list_last_entry: 获得最后一个入口 list_first_entry_or_null: 获得第一个入口或 NULL list_next_entry: 获得下一个入口 list_prev_entry: 获得前一个入口 list_for_each: 正序遍历所有节点 list_for_each_prev: 倒叙遍历所有节点 list_for_each_safe: 安全正序遍历所有节点 list_for_each_prev_safe: 安全倒叙遍历所有节点 list_for_each_entry: 正序遍历所有入口 list_for_each_entry_reverse: 倒叙遍历所有入口 list_prepare_entry: 获得指定入口 list_for_each_entry_continue: 从指定入口开始正序遍历剩余的入口 list_for_each_entry_continue_reverse: 从指定入口开始倒叙遍历剩余的入口 list_for_each_entry_from: 从指定入口正序遍历剩余入口 list_for_each_entry_from_reverse: 从指定入口倒序遍历剩余入口 list_for_each_entry_safe: 安全正序遍历所有入口 list_for_each_entry_safe_continue: 安全从指定入口正序遍历剩余入口 list_for_each_entry_safe_from: 安全从指定入口正序遍历剩余入口 list_for_each_entry_safe_reverse: 安全从指定入口倒序遍历剩余入口 list_safe_reset_next: 安全获得下一个入口 list_head struct list_head{ struct list_head *prev, *next; } #define LIST_HEAD_INIT(name) {\u0026(name), \u0026(name)} #define LIST_HEAD(name) struct list_head name = LIST_HEAD_INIT(name) INIT_LIST_HEAD(struct list_head *list){ list-\u003eprev = list; list-\u003enext = list; } so INIT_LIST_HEAD(need a struct list_head!) is same as LIST_HEAD(just need a name). list_add 头插法:\nstatic inline void __list_add(struct list_head *new, struct list_head *prev, struct list_head *next) { if (!__list_add_valid(new, prev, next)) return; next-\u003eprev = new; new-\u003enext = next; new-\u003eprev = prev; WRITE_ONCE(prev-\u003enext, new); } // 4次插入 /** * list_add - add a new entry * @new: new entry to be added * @head: list head to add it after * * Insert a new entry after the specified head. * This is good for implementing stacks. */ static inline void list_add(struct list_head *new, struct list_head *head) { __list_add(new, head, head-\u003enext); } 尾:\n/** * list_add_tail - add a new entry * @new: new entry to be added * @head: list head to add it before * * Insert a new entry before the specified head. * This is useful for implementing queues. */ static inline void list_add_tail(struct list_head *new, struct list_head *head) { __list_add(new, head-\u003eprev, head); } list_for_each /** * list_for_each\t-\titerate over a list * @pos:\tthe \u0026struct list_head to use as a loop cursor. * @head:\tthe head for your list. */ #define list_for_each(pos, head) \\ for (pos = (head)-\u003enext; pos != (head); pos = pos-\u003enext) end when pos = head\nlist_for_each的第一个参数pos，代表位置，struct list_head * ，临时变量 print:\n使用printf(\"age = %d\\n\",((struct person *)pos)-\u003eage), 将链表放在结构体的首地址处? no 处于结构体的首地址, container_of，offsetof这两个广为人知的宏。 offsetof #define offsetof(TYPE, MEMBER) ((size_t) \u0026((TYPE *)0)-\u003eMEMBER) //TYPE（结构体）类型中成员MEMBER相对于结构体的偏移地址 // 很有意思的是，空指针是可以引用的，在这相当与取 0 地址!!! get the offset address, we can find the value in struct container_of #define container_of(ptr, type, member) ({ \\ const typeof( ((type *)0)-\u003emember ) *__mptr = (ptr); \\ (type *)( (char *)__mptr - offsetof(type,member) );}) typeof: get the type ptr: \u0026member 宏没有参数检查的功能，const typeof( ((type *)0)-\u003emember ) *__mptr = (ptr)，如果类型不匹配，会有警告 get the address of the type! list_for_each_entry #define list_entry(ptr, type, member) \\ container_of(ptr, type, member) #define list_for_each_entry(pos, head, member)\t\\ for (pos = list_first_entry(head, typeof(*pos), member);\t\\ !list_entry_is_head(pos, head, member);\t\\ pos = list_next_entry(pos, member)) pos: struct * head: in struct list_head *, is \u0026member, but is the head! member: *head 在上面的实践中，使用 list_for_each() 函数的时候，当每次遍历一个节点的时候， list_for_each() 函数通过当前节点找到下一个节点，如下：\n#define list_for_each(pos, head) \\ for (pos = (head)-\u003enext; pos != (head); pos = pos-\u003enext) 如果是正常的遍历，那么下一个节点可以从当前节点中获得。如果此时将当前节点从链表中 删除之后，此时当前节点的 next 和 prev 指针已经被指向了一个不可用的地址。如果此时 还再使用当前节点去查找下一个节点的会必然会引起内核 panic。因此此时需要使用 safe 类 的接口解决这个问题，正如 list_for_each_safe() 函数定义，如下：\n#define list_for_each_safe(pos, n, head) \\ for (pos = (head)-\u003enext, n = pos-\u003enext; pos != (head); \\ pos = n, n = pos-\u003enext) 每次遍历的时候，函数都会提前将下一个节点缓存在 n 参数里，如果当前节点被删除之后， 下一个节点也可以从 n 参数中获得，这样不会导致内核 panic。\nlist_del static inline void __list_del(struct list_head * prev, struct list_head * next) { next-\u003eprev = prev; WRITE_ONCE(prev-\u003enext, next); } // list_del, NULL, may need: static inline void list_del_init(struct list_head *entry) { __list_del_entry(entry); INIT_LIST_HEAD(entry); } static inline void __list_del_entry(struct list_head *entry) { if (!__list_del_entry_valid(entry)) return; __list_del(entry-\u003eprev, entry-\u003enext); } static inline void list_del(struct list_head *entry) { __list_del_entry(entry); entry-\u003enext = LIST_POISON1; entry-\u003eprev = LIST_POISON2; } but:\nlist_del(\u0026pos-\u003elist); break; // !!! why not safe???\nhttps://biscuitos.github.io/blog/LIST_ADV_safe/\nlis_move和list_move_tail都有删除操作，但是这里却可以不使用list_for_each_entry_safe而直接使用list_for_each_entry，想想这是为什么呢？ 这是因为move函数，后面有一个添加链表的操作，将删除的节点前驱后继的LIST_POISON1和LIST_POISON2（本例中为NULL），重新赋值了 list_for_each_entry_safe #define list_for_each_entry_safe(pos, n, head, member)\t\\ for (pos = list_first_entry(head, typeof(*pos), member),\t\\ n = list_next_entry(pos, member);\t\\ !list_entry_is_head(pos, head, member); \\ pos = n, n = list_next_entry(n, member)) 把后一个节点取出来使用n作为缓存，这样在还没删除节点时，就得到了要删除节点的下一个节点的地址，从而避免了程序出错。 /* 在编译时加上-std=c99，使用c99标准，对内核链表进行编译，会报语法错误，那是因为c99并不支持某些gcc的语法特性，如果想在GNU中启用c99标准，可以使用-std=gnu99，使用这个选项之后，会对gnu语法进行特殊处理，并使用c99标准 */\n",
+  "wordCount" : "573",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/os/list/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">3 min&amp;nbsp;·&amp;nbsp;573 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/OS/list.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#offsetof">offsetof</a></li>
+    <li><a href="#container_of">container_of</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Nice: <code>https://www.cnblogs.com/yangguang-it/p/11667772.html</code></p>
+<pre><code>    list_entry: 获得节点对应的入口
+
+    list_first_entry: 获得第一个入口
+
+    list_last_entry: 获得最后一个入口
+
+    list_first_entry_or_null: 获得第一个入口或 NULL
+
+    list_next_entry: 获得下一个入口
+
+    list_prev_entry: 获得前一个入口
+
+    list_for_each: 正序遍历所有节点
+
+    list_for_each_prev: 倒叙遍历所有节点
+
+    list_for_each_safe: 安全正序遍历所有节点
+
+    list_for_each_prev_safe: 安全倒叙遍历所有节点
+
+    list_for_each_entry: 正序遍历所有入口
+
+    list_for_each_entry_reverse: 倒叙遍历所有入口
+
+    list_prepare_entry: 获得指定入口
+
+    list_for_each_entry_continue: 从指定入口开始正序遍历剩余的入口
+
+    list_for_each_entry_continue_reverse: 从指定入口开始倒叙遍历剩余的入口
+
+    list_for_each_entry_from: 从指定入口正序遍历剩余入口
+
+    list_for_each_entry_from_reverse: 从指定入口倒序遍历剩余入口
+
+    list_for_each_entry_safe: 安全正序遍历所有入口
+
+    list_for_each_entry_safe_continue: 安全从指定入口正序遍历剩余入口
+
+    list_for_each_entry_safe_from: 安全从指定入口正序遍历剩余入口
+
+    list_for_each_entry_safe_reverse: 安全从指定入口倒序遍历剩余入口
+
+    list_safe_reset_next: 安全获得下一个入口
+</code></pre>
+<h1 id="list_head">list_head<a hidden class="anchor" aria-hidden="true" href="#list_head">#</a></h1>
+<pre><code>struct list_head{
+  struct list_head *prev, *next;
+}
+
+#define LIST_HEAD_INIT(name) {&amp;(name), &amp;(name)}
+
+#define LIST_HEAD(name) struct list_head name = LIST_HEAD_INIT(name)
+
+INIT_LIST_HEAD(struct list_head *list){
+  list-&gt;prev = list;
+  list-&gt;next = list;
+}
+
+so INIT_LIST_HEAD(need a struct list_head!) is same as LIST_HEAD(just need a name).
+</code></pre>
+<h1 id="list_add">list_add<a hidden class="anchor" aria-hidden="true" href="#list_add">#</a></h1>
+<ul>
+<li>
+<p>头插法:</p>
+<pre><code>  static inline void __list_add(struct list_head *new,
+              struct list_head *prev,
+              struct list_head *next)
+  {
+    if (!__list_add_valid(new, prev, next))
+      return;
+
+    next-&gt;prev = new;
+    new-&gt;next = next;
+    new-&gt;prev = prev;
+    WRITE_ONCE(prev-&gt;next, new);
+  } // 4次插入
+
+  /**
+   * list_add - add a new entry
+   * @new: new entry to be added
+   * @head: list head to add it after
+   *
+   * Insert a new entry after the specified head.
+   * This is good for implementing stacks.
+   */
+  static inline void list_add(struct list_head *new, struct list_head *head)
+  {
+    __list_add(new, head, head-&gt;next);
+  }
+</code></pre>
+</li>
+<li>
+<p>尾:</p>
+<pre><code>  /**
+   * list_add_tail - add a new entry
+   * @new: new entry to be added
+   * @head: list head to add it before
+   *
+   * Insert a new entry before the specified head.
+   * This is useful for implementing queues.
+   */
+  static inline void list_add_tail(struct list_head *new, struct list_head *head)
+  {
+    __list_add(new, head-&gt;prev, head);
+  }
+</code></pre>
+</li>
+</ul>
+<h1 id="list_for_each">list_for_each<a hidden class="anchor" aria-hidden="true" href="#list_for_each">#</a></h1>
+<pre><code>    /**
+     * list_for_each	-	iterate over a list
+     * @pos:	the &amp;struct list_head to use as a loop cursor.
+     * @head:	the head for your list.
+     */
+    #define list_for_each(pos, head) \
+      for (pos = (head)-&gt;next; pos != (head); pos = pos-&gt;next)
+</code></pre>
+<ul>
+<li>
+<p>end when pos = head</p>
+<pre><code>  list_for_each的第一个参数pos，代表位置，struct list_head * ，临时变量
+</code></pre>
+</li>
+<li>
+<p>print:</p>
+<pre><code>  使用printf(&quot;age = %d\n&quot;,((struct person *)pos)-&gt;age), 将链表放在结构体的首地址处?
+  no 处于结构体的首地址, container_of，offsetof这两个广为人知的宏。
+</code></pre>
+</li>
+</ul>
+<h2 id="offsetof">offsetof<a hidden class="anchor" aria-hidden="true" href="#offsetof">#</a></h2>
+<pre><code>    #define offsetof(TYPE, MEMBER) ((size_t) &amp;((TYPE *)0)-&gt;MEMBER)
+    //TYPE（结构体）类型中成员MEMBER相对于结构体的偏移地址
+    // 很有意思的是，空指针是可以引用的，在这相当与取 0 地址!!!
+</code></pre>
+<ul>
+<li>get the offset address, we can find the value in struct</li>
+</ul>
+<h2 id="container_of">container_of<a hidden class="anchor" aria-hidden="true" href="#container_of">#</a></h2>
+<pre><code>    #define container_of(ptr, type, member) ({
+          \ const typeof( ((type *)0)-&gt;member ) *__mptr = (ptr); \ (type *)( (char *)__mptr - offsetof(type,member) );})
+</code></pre>
+<ul>
+<li>typeof: get the type</li>
+<li>ptr: &amp;member</li>
+<li>宏没有参数检查的功能，<code>const typeof( ((type *)0)-&gt;member ) *__mptr = (ptr)</code>，如果类型不匹配，会有警告</li>
+<li>get the address of the type!</li>
+</ul>
+<h1 id="list_for_each_entry">list_for_each_entry<a hidden class="anchor" aria-hidden="true" href="#list_for_each_entry">#</a></h1>
+<pre><code>    #define list_entry(ptr, type, member) \
+      	container_of(ptr, type, member)
+
+    #define list_for_each_entry(pos, head, member)				\
+        for (pos = list_first_entry(head, typeof(*pos), member);	\
+           !list_entry_is_head(pos, head, member);			\
+           pos = list_next_entry(pos, member))
+</code></pre>
+<ul>
+<li>pos: struct *</li>
+<li>head: in struct list_head *, is &amp;member, but is the head!</li>
+<li>member: *head</li>
+</ul>
+<p>在上面的实践中，使用 list_for_each() 函数的时候，当每次遍历一个节点的时候， list_for_each() 函数通过当前节点找到下一个节点，如下：</p>
+<pre><code>    #define list_for_each(pos, head) \
+    for (pos = (head)-&gt;next; pos != (head); pos = pos-&gt;next)
+</code></pre>
+<p>如果是正常的遍历，那么下一个节点可以从当前节点中获得。如果此时将当前节点从链表中 删除之后，此时当前节点的 next 和 prev 指针已经被指向了一个不可用的地址。如果此时 还再使用当前节点去查找下一个节点的会必然会引起内核 panic。因此此时需要使用 safe 类 的接口解决这个问题，正如 list_for_each_safe() 函数定义，如下：</p>
+<pre><code>    #define list_for_each_safe(pos, n, head) \
+    for (pos = (head)-&gt;next, n = pos-&gt;next; pos != (head); \
+            pos = n, n = pos-&gt;next)
+</code></pre>
+<p>每次遍历的时候，函数都会提前将下一个节点缓存在 n 参数里，如果当前节点被删除之后， 下一个节点也可以从 n 参数中获得，这样不会导致内核 panic。</p>
+<h1 id="list_del">list_del<a hidden class="anchor" aria-hidden="true" href="#list_del">#</a></h1>
+<pre><code>    static inline void __list_del(struct list_head * prev, struct list_head * next)
+    {
+      next-&gt;prev = prev;
+      WRITE_ONCE(prev-&gt;next, next);
+    }
+
+    // list_del, NULL, may need:
+
+    static inline void list_del_init(struct list_head *entry)
+    {
+      __list_del_entry(entry);
+      INIT_LIST_HEAD(entry);
+    }
+
+
+    static inline void __list_del_entry(struct list_head *entry)
+    {
+      if (!__list_del_entry_valid(entry))
+        return;
+
+      __list_del(entry-&gt;prev, entry-&gt;next);
+    }
+
+    static inline void list_del(struct list_head *entry)
+    {
+      __list_del_entry(entry);
+      entry-&gt;next = LIST_POISON1;
+      entry-&gt;prev = LIST_POISON2;
+    }
+</code></pre>
+<p>but:</p>
+<pre><code>    list_del(&amp;pos-&gt;list);
+    break; // !!!
+</code></pre>
+<ul>
+<li>
+<p>why not safe???</p>
+</li>
+<li>
+<p><code>https://biscuitos.github.io/blog/LIST_ADV_safe/</code></p>
+<pre><code>  lis_move和list_move_tail都有删除操作，但是这里却可以不使用list_for_each_entry_safe而直接使用list_for_each_entry，想想这是为什么呢？
+  这是因为move函数，后面有一个添加链表的操作，将删除的节点前驱后继的LIST_POISON1和LIST_POISON2（本例中为NULL），重新赋值了
+</code></pre>
+</li>
+</ul>
+<h1 id="list_for_each_entry_safe">list_for_each_entry_safe<a hidden class="anchor" aria-hidden="true" href="#list_for_each_entry_safe">#</a></h1>
+<pre><code>    #define list_for_each_entry_safe(pos, n, head, member)			\
+        for (pos = list_first_entry(head, typeof(*pos), member),	\
+          n = list_next_entry(pos, member);			\
+             !list_entry_is_head(pos, head, member); 			\
+             pos = n, n = list_next_entry(n, member))
+</code></pre>
+<ul>
+<li>把后一个节点取出来使用n作为缓存，这样在还没删除节点时，就得到了要删除节点的下一个节点的地址，从而避免了程序出错。</li>
+</ul>
+<blockquote>
+<p>/* 在编译时加上-std=c99，使用c99标准，对内核链表进行编译，会报语法错误，那是因为c99并不支持某些gcc的语法特性，如果想在GNU中启用c99标准，可以使用-std=gnu99，使用这个选项之后，会对gnu语法进行特殊处理，并使用c99标准 */</p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/openwrt&#43;/use/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/os/module/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

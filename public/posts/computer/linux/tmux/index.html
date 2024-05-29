@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Blog Site</title>
+<meta name="keywords" content="first">
+<meta name="description" content="Desc Text.">
+<meta name="author" content="liukanglai">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/computer/linux/tmux/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Desc Text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computer/linux/tmux/" />
+<meta property="og:image" content="http://localhost:1313/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Desc Text."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/posts/computer/linux/tmux/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Desc Text.",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "leader tmux -V\ntmux to open\nall use need a leader(c-b)\n# Use Ctrl-\\ as a prefix. alt is M-b unbind-key C-b set -g prefix 'C-\\' bind-key 'C-\\' send-prefix c-b, than :source-file ~/.tmux.conf\nexit or c-d\n# 列出所有快捷键，及其对应的 Tmux 命令 $ tmux list-keys # 列出所有 Tmux 命令及其参数 $ tmux list-commands # 列出当前所有 Tmux 会话的信息 $ tmux info # 重新加载当前的 Tmux 配置 $ tmux source-file ~/.tmux.conf windows vsplit: leader + %\n# Use - to create vertical splits. bind - split-window -v unbind '%' split: leader + \"\n# Use | to create horizontal splits. bind | split-window -h unbind '\"' leader + 方向键跳转\n# Navigate panes with hjkl. bind h select-pane -L bind j select-pane -D bind k select-pane -U bind l select-pane -R open a window: leader + c\nleader + x : exit a window\nCtrl+b c：创建一个新窗口，状态栏会显示多个窗口的信息。 Ctrl+b p：切换到上一个窗口（按照状态栏上的顺序）。 Ctrl+b n：切换到下一个窗口。 Ctrl+b ：切换到指定编号的窗口，其中的是状态栏上的窗口编号。 Ctrl+b w：从列表中选择窗口。 Ctrl+b ,：窗口重命名。 Ctrl+b %：划分左右两个窗格。 Ctrl+b \"：划分上下两个窗格。 Ctrl+b ：光标切换到其他窗格。是指向要切换到的窗格的方向键，比如切换到下方窗格，就按方向键↓。 Ctrl+b ;：光标切换到上一个窗格。 Ctrl+b o：光标切换到下一个窗格。 Ctrl+b {：当前窗格与上一个窗格交换位置。 Ctrl+b }：当前窗格与下一个窗格交换位置。 Ctrl+b Ctrl+o：所有窗格向前移动一个位置，第一个窗格变成最后一个窗格。 Ctrl+b Alt+o：所有窗格向后移动一个位置，最后一个窗格变成第一个窗格。 Ctrl+b x：关闭当前窗格。 Ctrl+b !：将当前窗格拆分为一个独立窗口。 Ctrl+b z：当前窗格全屏显示，再使用一次会变回原来大小。 Ctrl+b Ctrl+：按箭头方向调整窗格大小。 Ctrl+b q：显示窗格编号。 会话(detach) 会话与窗口分离\ntmux new -s name\nlist: leader + s, tmux ls / list-sessions\ntmux attach -t name\nswitch: tmux switch -t name\nleader + (/) to move\nrename: leader + $, tmux rename-session -t name new-name\nexit(don’t leave the window, can recover): leader + d, tmux detach\nkill: tmux kill-session -t name\n# Smart pane switching with awareness of Vim splits. # See: https://github.com/christoomey/vim-tmux-navigator is_vim=\"ps -o state= -o comm= -t '#{pane_tty}' \\ | grep -iqE '^[^TXZ ]+ +(\\\\S+\\\\/)?g?(view|n?vim?x?)(diff)?$'\" bind-key -n C-h if-shell \"$is_vim\" \"send-keys C-h\" \"select-pane -L\" bind-key -n C-j if-shell \"$is_vim\" \"send-keys C-j\" \"select-pane -D\" bind-key -n C-k if-shell \"$is_vim\" \"send-keys C-k\" \"select-pane -U\" bind-key -n C-l if-shell \"$is_vim\" \"send-keys C-l\" \"select-pane -R\" bind-key -T copy-mode-vi C-h select-pane -L bind-key -T copy-mode-vi C-j select-pane -D bind-key -T copy-mode-vi C-k select-pane -U bind-key -T copy-mode-vi C-l select-pane -R # use with tpm: set -g @plugin 'christoomey/vim-tmux-navigator' run '~/.tmux/plugins/tpm/tpm' copy-mode leader + [ use vi: setw -g mode-keys vi TPM https://github.com/tmux-plugins/tpm\ntheme \u0026 color https://github.com/egel/tmux-gruvbox\nin terminal: echo $TERM\nin tmux: echo $TERM\nset -g default-terminal “xterm-256color” or “screen-256color” same as the terminal\nuse “set -g default-terminal “tmux-256color”” int tmux (form neovim)\nescape-time 韦易笑\n",
+  "wordCount" : "374",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/%3Cimage%20path/url%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "liukanglai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/computer/linux/tmux/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My Blog Site (Alt + H)">My Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/liukanglai" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-description">
+      Desc Text.
+    </div>
+    <div class="post-meta">2 min&amp;nbsp;·&amp;nbsp;374 words&amp;nbsp;·&amp;nbsp;liukanglai&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/posts/Computer/Linux/tmux.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#leader">leader</a></li>
+    <li><a href="#windows">windows</a></li>
+    <li><a href="#会话detach">会话(detach)</a></li>
+    <li><a href="#copy-mode">copy-mode</a></li>
+    <li><a href="#tpm">TPM</a></li>
+    <li><a href="#theme--color">theme &amp; color</a></li>
+    <li><a href="#escape-time">escape-time</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="leader">leader<a hidden class="anchor" aria-hidden="true" href="#leader">#</a></h2>
+<ul>
+<li>
+<p>tmux -V</p>
+</li>
+<li>
+<p>tmux to open</p>
+</li>
+<li>
+<p>all use need a leader(c-b)</p>
+<pre><code>  # Use Ctrl-\ as a prefix. alt is M-b
+  unbind-key C-b
+  set -g prefix 'C-\'
+  bind-key 'C-\' send-prefix
+</code></pre>
+</li>
+<li>
+<p>c-b, than :source-file ~/.tmux.conf</p>
+</li>
+<li>
+<p>exit or c-d</p>
+<pre><code>  # 列出所有快捷键，及其对应的 Tmux 命令
+  $ tmux list-keys
+  # 列出所有 Tmux 命令及其参数
+  $ tmux list-commands
+  # 列出当前所有 Tmux 会话的信息
+  $ tmux info
+  # 重新加载当前的 Tmux 配置
+  $ tmux source-file ~/.tmux.conf
+</code></pre>
+</li>
+</ul>
+<h2 id="windows">windows<a hidden class="anchor" aria-hidden="true" href="#windows">#</a></h2>
+<ul>
+<li>
+<p>vsplit: leader + %</p>
+<pre><code>  # Use - to create vertical splits.
+  bind - split-window -v
+  unbind '%'
+</code></pre>
+</li>
+<li>
+<p>split: leader + &quot;</p>
+<pre><code>  # Use | to create horizontal splits.
+  bind | split-window -h
+  unbind '&quot;'
+</code></pre>
+</li>
+<li>
+<p>leader + 方向键跳转</p>
+<pre><code>  # Navigate panes with hjkl.
+  bind h select-pane -L
+  bind j select-pane -D
+  bind k select-pane -U
+  bind l select-pane -R
+</code></pre>
+</li>
+<li>
+<p>open a window: leader + c</p>
+</li>
+<li>
+<p>leader + x : exit a window</p>
+<pre><code>  Ctrl+b c：创建一个新窗口，状态栏会显示多个窗口的信息。
+
+  Ctrl+b p：切换到上一个窗口（按照状态栏上的顺序）。
+  Ctrl+b n：切换到下一个窗口。
+  Ctrl+b &lt;number&gt;：切换到指定编号的窗口，其中的&lt;number&gt;是状态栏上的窗口编号。
+  Ctrl+b w：从列表中选择窗口。
+
+  Ctrl+b ,：窗口重命名。
+
+  Ctrl+b %：划分左右两个窗格。
+  Ctrl+b &quot;：划分上下两个窗格。
+  Ctrl+b &lt;arrow key&gt;：光标切换到其他窗格。&lt;arrow key&gt;是指向要切换到的窗格的方向键，比如切换到下方窗格，就按方向键↓。
+  Ctrl+b ;：光标切换到上一个窗格。
+  Ctrl+b o：光标切换到下一个窗格。
+  Ctrl+b {：当前窗格与上一个窗格交换位置。
+  Ctrl+b }：当前窗格与下一个窗格交换位置。
+  Ctrl+b Ctrl+o：所有窗格向前移动一个位置，第一个窗格变成最后一个窗格。
+  Ctrl+b Alt+o：所有窗格向后移动一个位置，最后一个窗格变成第一个窗格。
+  Ctrl+b x：关闭当前窗格。
+
+  Ctrl+b !：将当前窗格拆分为一个独立窗口。
+  Ctrl+b z：当前窗格全屏显示，再使用一次会变回原来大小。
+
+  Ctrl+b Ctrl+&lt;arrow key&gt;：按箭头方向调整窗格大小。
+
+  Ctrl+b q：显示窗格编号。
+</code></pre>
+</li>
+</ul>
+<h2 id="会话detach">会话(detach)<a hidden class="anchor" aria-hidden="true" href="#会话detach">#</a></h2>
+<blockquote>
+<p>会话与窗口分离</p>
+</blockquote>
+<ul>
+<li>
+<p>tmux new -s name</p>
+</li>
+<li>
+<p>list: leader + s, tmux ls / list-sessions</p>
+</li>
+<li>
+<p>tmux attach -t name</p>
+</li>
+<li>
+<p>switch: tmux switch -t name</p>
+</li>
+<li>
+<p>leader + (/) to move</p>
+</li>
+<li>
+<p>rename: leader + $, tmux rename-session -t name new-name</p>
+</li>
+<li>
+<p>exit(don&rsquo;t leave the window, can recover): leader + d, tmux detach</p>
+</li>
+<li>
+<p>kill: tmux kill-session -t name</p>
+<pre><code>  # Smart pane switching with awareness of Vim splits.
+  # See: https://github.com/christoomey/vim-tmux-navigator
+  is_vim=&quot;ps -o state= -o comm= -t '#{pane_tty}' \
+   | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'&quot;
+  bind-key -n C-h if-shell &quot;$is_vim&quot; &quot;send-keys C-h&quot; &quot;select-pane -L&quot;
+  bind-key -n C-j if-shell &quot;$is_vim&quot; &quot;send-keys C-j&quot; &quot;select-pane -D&quot;
+  bind-key -n C-k if-shell &quot;$is_vim&quot; &quot;send-keys C-k&quot; &quot;select-pane -U&quot;
+  bind-key -n C-l if-shell &quot;$is_vim&quot; &quot;send-keys C-l&quot; &quot;select-pane -R&quot;
+  bind-key -T copy-mode-vi C-h select-pane -L
+  bind-key -T copy-mode-vi C-j select-pane -D
+  bind-key -T copy-mode-vi C-k select-pane -U
+  bind-key -T copy-mode-vi C-l select-pane -R
+  # use with tpm:
+  set -g @plugin 'christoomey/vim-tmux-navigator'
+  run '~/.tmux/plugins/tpm/tpm'
+</code></pre>
+</li>
+</ul>
+<h2 id="copy-mode">copy-mode<a hidden class="anchor" aria-hidden="true" href="#copy-mode">#</a></h2>
+<ul>
+<li>leader + [</li>
+<li>use vi: setw -g mode-keys vi</li>
+</ul>
+<h2 id="tpm">TPM<a hidden class="anchor" aria-hidden="true" href="#tpm">#</a></h2>
+<blockquote>
+<p><code>https://github.com/tmux-plugins/tpm</code></p>
+</blockquote>
+<h2 id="theme--color">theme &amp; color<a hidden class="anchor" aria-hidden="true" href="#theme--color">#</a></h2>
+<ul>
+<li>
+<p><code>https://github.com/egel/tmux-gruvbox</code></p>
+</li>
+<li>
+<p>in terminal: echo $TERM</p>
+</li>
+<li>
+<p>in tmux: echo $TERM</p>
+</li>
+</ul>
+<blockquote>
+<p>set -g default-terminal &ldquo;xterm-256color&rdquo; or &ldquo;screen-256color&rdquo; same as the terminal</p>
+<blockquote>
+<p>use &ldquo;set -g default-terminal &ldquo;tmux-256color&rdquo;&rdquo; int tmux (form neovim)</p>
+</blockquote>
+</blockquote>
+<h2 id="escape-time">escape-time<a hidden class="anchor" aria-hidden="true" href="#escape-time">#</a></h2>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/47801331">韦易笑</a></p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/first/">First</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/computer/linux/swap/">
+    <span class="title">« Prev</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/computer/linux/zsh/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">My Blog Site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

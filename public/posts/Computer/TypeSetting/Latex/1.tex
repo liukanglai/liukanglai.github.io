@@ -1,0 +1,75 @@
+\documentclass{article}
+\author{liukanglai}
+\usepackage{booktabs}
+%\usepackage{graphicx}
+
+\usepackage{listings}
+\usepackage{color}
+
+\lstdefinestyle{mystyle}
+{keywordstyle=\color{magenta}, 
+backgroundcolor=\color{yellow}, 
+commentstyle=\color{green}, 
+basicstyle=\footnotesize}
+    
+\lstset{style=mystyle}
+
+\begin{document}
+
+\tableofcontents
+
+%\textbf{}
+%\textit{}
+% 段落，两个换行符
+\underline{hello}
+
+
+\begin{itemize}
+    \item hello0
+    \item hello1
+    \item hello2
+\end{itemize}
+
+\begin{enumerate}
+    \item hello0
+    \item hello1
+    \item hello2
+\end{enumerate}
+
+
+\begin{equation}
+    e=mc^2
+    e = \log
+    e = log_23
+\end{equation}
+
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        1 & 2 & 3\\
+        1 & 2 & 3\\ 
+    \end{tabular}
+    \caption{head}
+\end{table}
+
+\begin{lstlisting}[language=c]
+#include<stdio.h>
+int main(void){
+    printf("Hello World\n");
+    return 0;
+}
+\end{lstlisting}
+
+\section{hello}
+Welcome to come the world of \lstinline{inthaha} LaTex!
+\\Enjoy yourself!
+\subsection{}
+\subsubsection{}
+
+Hello Latex, This is my first part.
+
+\input{second_file}
+liu
+
+\end{document}
