@@ -131,7 +131,7 @@ Tools:
 
 1. Web
 
-> https://developer.mozilla.org/zh-CN/docs/Learn
+> <https://developer.mozilla.org/zh-CN/docs/Learn>
 
 - HTML 与 CSS 入门经典
 - JavaScript DOM 编程艺术
@@ -178,7 +178,7 @@ Diamond
 Tair
 TDDL
 
-> more: https://www.zhihu.com/question/30978728
+> more: <https://www.zhihu.com/question/30978728>
 
 ## Logic
 
@@ -215,12 +215,16 @@ TDDL
 
 ## en
 
-- 刘晓艳
+- 语法：刘晓艳
 - 英阅阅读器
 
 ## ？
 
 - 三论：信息论，系统论，控制论
 - 韦尔奇
+
+## eco
+
+- 小狗钱钱-经济学原理曼昆-长期主义
 
 ---

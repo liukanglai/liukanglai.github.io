@@ -115,6 +115,7 @@ autocmd InsertEnter * :silent if fcitx5state == 2 | call system("fcitx5-remote -
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
 vim.o.updatetime = 250
+
 lvim.lsp.diagnostics.underline = false
 lvim.lsp.diagnostics.virtual_text = false
 -- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
